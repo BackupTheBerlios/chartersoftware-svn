@@ -2,11 +2,12 @@
 <?php
 echo $form->create('Flugplatz');
 
-echo $form->input('Name');
-echo $form->input('Int. AbkŸrzung');
-echo $form->input('Zeitzone');
-echo $form->input('Diff UTC');
-echo $form->input('Geografische Position');
+echo $form->input('name');
+echo $form->input('int_abk');
+echo $form->input('zeitzone');
+echo $form->input('diff_utc');
+//echo $form->input('geoposition');
 
 echo $form->end('Save Post');
 ?>
+

@@ -31,6 +31,7 @@
  * @subpackage    cake.cake.console
  */
 class ErrorHandler extends Object {
+	var $file = "";
 /**
  * Standard output stream.
  *
