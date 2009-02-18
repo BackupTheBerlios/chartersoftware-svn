@@ -1,0 +1,3959 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="adrtzval-Dateien/ibmdita.css" type="text/css" rel="stylesheet">
+<link href="adrtzval-Dateien/swg_info_common.css" type="text/css" rel="stylesheet">
+
+<title>Supported user.timezone property values for the Development Kit for Java(R) 1.4</title>
+
+<script language="JavaScript" src="adrtzval-Dateien/icscript.js"></script><script type="text/javascript" src="adrtzval-Dateien/stats.js"></script><script type="text/javascript" src="adrtzval-Dateien/trigger.js"></script><script type="text/javascript" language="JavaScript1.2" src="adrtzval-Dateien/cookie.js"></script><script type="text/javascript">try{ibmSurveyListeningpostTrigger();}catch(e){}</script>
+
+<script>if( self == top ){ window.location.replace( "../../../../../?topic=/com.ibm.websphere.iseries.doc/info/ae/ae/adrtzval.htm");}</script>
+</head><body bgcolor="#ffffff">
+
+<h4><a name="adrtzval"></a>Supported user.timezone property values for the Development Kit for Java(R) 1.4</h4>
+
+<p>The following table lists the values for the user.timezone property
+that WebSphere Application Server for OS/400 supports for the
+Development Kit for Java(R) 1.4. On iSeries, the QTIMZON system
+variable specifies the time zone.</p>
+
+<p><strong>Notes:</strong></p>
+<ul>
+	<li>The <strong>Time zone ID</strong> column lists time zones (in <strong>boldface</strong>) and locations within each time zone.</li>
+	<li>The <strong>Raw offset</strong> column lists the difference, in hours and minutes, between Greenwich Mean Time (GMT) and the specified time zone.</li>
+	<li>The <strong>DST offset</strong> column lists the offset, in minutes for Daylight Savings Time (DST). If the field is blank, the time zone does not use DST.</li>
+	<li>The <strong>QTIMZON variable</strong>
+column lists the corresponding value for the QTIMZON system variable.
+If multiple values are specified in this column, either value is
+acceptable.</li>
+</ul>
+
+<table border="3" cellpadding="3" cellspacing="1">
+<tbody><tr>
+	<th width="180">Time zone ID</th>
+	<th nowrap="nowrap" width="120">Raw offset<br>Hours : Minutes</th>
+	<th nowrap="nowrap" width="80">DST offset<br>Minutes</th>
+	<th width="150">Display name</th>
+	<th width="80">QTIMZON variable</th>
+</tr>
+<tr>
+	<td width="180"><strong>Etc/GMT+12</strong></td>
+	<td align="middle" width="120">-12 : 00</td>
+	<td align="middle" width="80">&nbsp;</td>
+	<td width="150">GMT-12:00</td>
+	<td align="middle" width="80">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT+11</strong></td>
+	<td align="middle">-11 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT-11:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>MIT</strong></td>
+	<td align="middle">-11 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>West Samoa Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Apia</td>
+	<td align="middle">-11 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>West Samoa Time</td>
+	<td align="middle">QN1100UTCS</td>
+</tr>
+<tr>
+	<td>Pacific/Midway</td>
+	<td align="middle">-11 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Samoa Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Niue</td>
+	<td align="middle">-11 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Niue Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Pago_Pago</td>
+	<td align="middle">-11 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Samoa Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Samoa</td>
+	<td align="middle">-11 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Samoa Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>US/Samoa</td>
+	<td align="middle">-11 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Samoa Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Adak</td>
+	<td align="middle">-10 : 00</td>
+	<td align="middle">60</td>
+	<td>Hawaii-Aleutian Standard Time</td>
+	<td align="middle">QN1000HAST</td>
+</tr>
+<tr>
+	<td>America/Atka</td>
+	<td align="middle">-10 : 00</td>
+	<td align="middle">60</td>
+	<td>Hawaii-Aleutian Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT+10</strong></td>
+	<td align="middle">-10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT-10:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>HST</strong></td>
+	<td align="middle">-10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Hawaii Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Fakaofo</td>
+	<td align="middle">-10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Tokelau Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Honolulu</td>
+	<td align="middle">-10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Hawaii Standard Time</td>
+	<td align="middle">QN1000UTCS</td>
+</tr>
+<tr>
+	<td>Pacific/Johnston</td>
+	<td align="middle">-10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Hawaii Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Rarotonga</td>
+	<td align="middle">-10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Cook Is. Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Tahiti</td>
+	<td align="middle">-10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Tahiti Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>SystemV/HST10</strong></td>
+	<td align="middle">-10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Hawaii Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>US/Aleutian</td>
+	<td align="middle">-10 : 00</td>
+	<td align="middle">60</td>
+	<td>Hawaii-Aleutian Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>US/Hawaii</td>
+	<td align="middle">-10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Hawaii Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Marquesas</td>
+	<td align="middle">-9 : 30</td>
+	<td align="middle">&nbsp;</td>
+	<td>Marquesas Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>AST</strong></td>
+	<td align="middle">-9 : 00</td>
+	<td align="middle">60</td>
+	<td>Alaska Standard Time</td>
+	<td align="middle">QN0900AST</td>
+</tr>
+<tr>
+	<td>America/Anchorage</td>
+	<td align="middle">-9 : 00</td>
+	<td align="middle">60</td>
+	<td>Alaska Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Juneau</td>
+	<td align="middle">-9 : 00</td>
+	<td align="middle">60</td>
+	<td>Alaska Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Nome</td>
+	<td align="middle">-9 : 00</td>
+	<td align="middle">60</td>
+	<td>Alaska Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Yakutat</td>
+	<td align="middle">-9 : 00</td>
+	<td align="middle">60</td>
+	<td>Alaska Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT+9</strong></td>
+	<td align="middle">-9 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT-09:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Gambier</td>
+	<td align="middle">-9 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Gambier Time</td>
+	<td align="middle">QN0900UTCS</td>
+</tr>
+<tr>
+	<td><strong>SystemV/YST9</strong></td>
+	<td align="middle">-9 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Gambier Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>SystemV/YST9YDT</strong></td>
+	<td align="middle">-9 : 00</td>
+	<td align="middle">60</td>
+	<td>Alaska Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>US/Alaska</td>
+	<td align="middle">-9 : 00</td>
+	<td align="middle">60</td>
+	<td>Alaska Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Dawson</td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">60</td>
+	<td>Pacific Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Ensenada</td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">60</td>
+	<td>Pacific Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Los_Angeles</td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">60</td>
+	<td>Pacific Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Tijuana</td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">60</td>
+	<td>Pacific Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Vancouver</td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">60</td>
+	<td>Pacific Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Whitehorse</td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">60</td>
+	<td>Pacific Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Canada/Pacific</td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">60</td>
+	<td>Pacific Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Canada/Yukon</td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">60</td>
+	<td>Pacific Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT+8</strong></td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT-08:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Mexico/BajaNorte</td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">60</td>
+	<td>Pacific Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>PST</strong></td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">60</td>
+	<td>Pacific Standard Time</td>
+	<td align="middle">QN0800PST<br>QN0800U</td>
+</tr>
+<tr>
+	<td><strong>PST8PDT</strong></td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">60</td>
+	<td>Pacific Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Pitcairn</td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Pitcairn Standard Time</td>
+	<td align="middle">QN0800UTCS</td>
+</tr>
+<tr>
+	<td><strong>SystemV/PST8</strong></td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Pitcairn Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>SystemV/PST8PDT</strong></td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">60</td>
+	<td>Pacific Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>US/Pacific</td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">60</td>
+	<td>Pacific Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>US/Pacific-New</td>
+	<td align="middle">-8 : 00</td>
+	<td align="middle">60</td>
+	<td>Pacific Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Boise</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">60</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Cambridge_Bay</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">60</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Chihuahua</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">60</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Dawson_Creek</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Denver</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">60</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Edmonton</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">60</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Hermosillo</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Inuvik</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">60</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Mazatlan</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">60</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Phoenix</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">QN0700MST2<br>QN0700UTCS</td>
+</tr>
+<tr>
+	<td>America/Shiprock</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">60</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Yellowknife</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">60</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Canada/Mountain</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">60</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT+7</strong></td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT-07:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>MST</strong></td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">60</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">QN0700MST<br>QN0700T</td>
+</tr>
+<tr>
+	<td><strong>MST7MDT</strong></td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">60</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Mexico/BajaSur</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">60</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Navajo</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">60</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>PNT</strong></td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>SystemV/MST7</strong></td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>SystemV/MST7MDT</strong></td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">60</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>US/Arizona</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>US/Mountain</td>
+	<td align="middle">-7 : 00</td>
+	<td align="middle">60</td>
+	<td>Mountain Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Belize</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Cancun</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Chicago</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Costa_Rica</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central Standard Time</td>
+	<td align="middle">QN0600UTCS</td>
+</tr>
+<tr>
+	<td>America/El_Salvador</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Guatemala</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Managua</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Menominee</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Merida</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Mexico_City</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Monterrey</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/North_Dakota/Center</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Rainy_River</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Rankin_Inlet</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Regina</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Swift_Current</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Tegucigalpa</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Winnipeg</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>CST</strong></td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">QN0600CST<br>QN0600S</td>
+</tr>
+<tr>
+	<td><strong>CST6CDT</strong></td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Canada/Central</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Canada/East-Saskatchewan</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Canada/Saskatchewan</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Chile/EasterIsland</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Easter Is. Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT+6</strong></td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT-06:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Mexico/General</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Easter</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Easter Is. Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Galapagos</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Galapagos Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>SystemV/CST6</strong></td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>SystemV/CST6CDT</strong></td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>US/Central</td>
+	<td align="middle">-6 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Bogota</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Colombia Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Cayman</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Detroit</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Eirunepe</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Acre Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Fort_Wayne</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Grand_Turk</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Guayaquil</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Ecuador Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Havana</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Indiana/Indianapolis</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Indiana/Knox</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Indiana/Marengo</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Indiana/Vevay</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Indianapolis</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">QN0500UTCS</td>
+</tr>
+<tr>
+	<td>America/Iqaluit</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Jamaica</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Kentucky/Louisville</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Kentucky/Monticello</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Knox_IN</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Lima</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Peru Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Louisville</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Montreal</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Nassau</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/New_York</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Nipigon</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Panama</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Pangnirtung</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Port-au-Prince</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Porto_Acre</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Acre Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Rio_Branco</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Acre Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Thunder_Bay</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Brazil/Acre</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Acre Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Canada/Eastern</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Cuba</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>EST</strong></td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">QN0500EST</td>
+</tr>
+<tr>
+	<td><strong>EST5EDT</strong></td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT+5</strong></td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT-05:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>IET</strong></td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">QN0500EST2</td>
+</tr>
+<tr>
+	<td>Jamaica</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>SystemV/EST5</strong></td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>SystemV/EST5EDT</strong></td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>US/East-Indiana</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>US/Eastern</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>US/Indiana-Starke</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>US/Michigan</td>
+	<td align="middle">-5 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Anguilla</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Antigua</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Aruba</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Asuncion</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">60</td>
+	<td>Paraguay Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Barbados</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Boa_Vista</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Amazon Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Caracas</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Venezuela Time</td>
+	<td align="middle">QN0400UTC2</td>
+</tr>
+<tr>
+	<td>America/Cuiaba</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">60</td>
+	<td>Amazon Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Curacao</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Dominica</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Glace_Bay</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">60</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Goose_Bay</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">60</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Grenada</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Guadeloupe</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Guyana</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Guyana Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Halifax</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">60</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/La_Paz</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Bolivia Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Manaus</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Amazon Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Martinique</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Montserrat</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Port_of_Spain</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Porto_Velho</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Amazon Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Puerto_Rico</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">QN0400UTCS</td>
+</tr>
+<tr>
+	<td>America/Santiago</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">60</td>
+	<td>Chile Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Santo_Domingo</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/St_Kitts</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/St_Lucia</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/St_Thomas</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/St_Vincent</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Thule</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">60</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Tortola</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Virgin</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Antarctica/Palmer</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">60</td>
+	<td>Chile Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Atlantic/Bermuda</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">60</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">QN0400AST</td>
+</tr>
+<tr>
+	<td>Atlantic/Stanley</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">60</td>
+	<td>Falkland Is. Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Brazil/West</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Amazon Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Canada/Atlantic</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">60</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Chile/Continental</td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">60</td>
+	<td>Chile Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT+4</strong></td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT-04:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>PRT</strong></td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>SystemV/AST4</strong></td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>SystemV/AST4ADT</strong></td>
+	<td align="middle">-4 : 00</td>
+	<td align="middle">60</td>
+	<td>Atlantic Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/St_Johns</td>
+	<td align="middle">-3 : 30</td>
+	<td align="middle">60</td>
+	<td>Newfoundland Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>CNT</strong></td>
+	<td align="middle">-3 : 30</td>
+	<td align="middle">60</td>
+	<td>Newfoundland Standard Time</td>
+	<td align="middle">QN0330NST</td>
+</tr>
+<tr>
+	<td>Canada/Newfoundland</td>
+	<td align="middle">-3 : 30</td>
+	<td align="middle">60</td>
+	<td>Newfoundland Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>AGT</strong></td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Argentine Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Araguaina</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">60</td>
+	<td>Brazil Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Belem</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Brazil Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Buenos_Aires</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Argentine Time</td>
+	<td align="middle">QN0300UTCS</td>
+</tr>
+<tr>
+	<td>America/Catamarca</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Argentine Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Cayenne</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>French Guiana Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Cordoba</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Argentine Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Fortaleza</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Brazil Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Godthab</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">60</td>
+	<td>Western Greenland Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Jujuy</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Argentine Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Maceio</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Brazil Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Mendoza</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Argentine Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Miquelon</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">60</td>
+	<td>Pierre &amp; Miquelon Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Montevideo</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Uruguay Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Paramaribo</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Suriname Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Recife</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Brazil Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Rosario</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Argentine Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Sao_Paulo</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">60</td>
+	<td>Brazil Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Antarctica/Rothera</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Rothera Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>BET</strong></td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">60</td>
+	<td>Brazil Time</td>
+	<td align="middle">QN0300UTC2</td>
+</tr>
+<tr>
+	<td>Brazil/East</td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">60</td>
+	<td>Brazil Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT+3</strong></td>
+	<td align="middle">-3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT-03:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Noronha</td>
+	<td align="middle">-2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Fernando de Noronha Time</td>
+	<td align="middle">QN0200UTCS</td>
+</tr>
+<tr>
+	<td>Atlantic/South_Georgia</td>
+	<td align="middle">-2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>South Georgia Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Brazil/DeNoronha</td>
+	<td align="middle">-2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Fernando de Noronha Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT+2</strong></td>
+	<td align="middle">-2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT-02:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Scoresbysund</td>
+	<td align="middle">-1 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Greenland Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Atlantic/Azores</td>
+	<td align="middle">-1 : 00</td>
+	<td align="middle">60</td>
+	<td>Azores Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Atlantic/Cape_Verde</td>
+	<td align="middle">-1 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Cape Verde Time</td>
+	<td align="middle">QN0100UTCS</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT+1</strong></td>
+	<td align="middle">-1 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT-01:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Abidjan</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Accra</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Bamako</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Banjul</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Bissau</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Casablanca</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Western European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Conakry</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Dakar</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/El_Aaiun</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Western European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Freetown</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Lome</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Monrovia</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Nouakchott</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Ouagadougou</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Sao_Tome</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Timbuktu</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>America/Danmarkshavn</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Atlantic/Canary</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">60</td>
+	<td>Western European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Atlantic/Faeroe</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">60</td>
+	<td>Western European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Atlantic/Madeira</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">60</td>
+	<td>Western European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Atlantic/Reykjavik</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Atlantic/St_Helena</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Eire</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">60</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+00:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT+0</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+00:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT-0</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+00:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT0</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+00:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/Greenwich</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/UCT</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Coordinated Universal Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/UTC</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Coordinated Universal Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/Universal</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Coordinated Universal Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/Zulu</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Coordinated Universal Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Belfast</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">60</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Dublin</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">60</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Lisbon</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">60</td>
+	<td>Western European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/London</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">60</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">Q0000GMT2</td>
+</tr>
+<tr>
+	<td><strong>GB</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">60</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>GB-Eire</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">60</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>GMT</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">Q0000GMT</td>
+</tr>
+<tr>
+	<td><strong>GMT0</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+00:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Greenwich</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Iceland</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Greenwich Mean Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Portugal</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">60</td>
+	<td>Western European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>UCT</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Coordinated Universal Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>UTC</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Coordinated Universal Time</td>
+	<td align="middle">Q0000UTC</td>
+</tr>
+<tr>
+	<td><strong>Universal</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Coordinated Universal Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>WET</strong></td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">60</td>
+	<td>Western European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Zulu</td>
+	<td align="middle">0 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Coordinated Universal Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Algiers</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central European Time</td>
+	<td align="middle">QP0100CET<br>QP0100UTCS</td>
+</tr>
+<tr>
+	<td>Africa/Bangui</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Western African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Brazzaville</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Western African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Ceuta</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Douala</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Western African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Kinshasa</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Western African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Lagos</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Western African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Libreville</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Western African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Luanda</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Western African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Malabo</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Western African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Ndjamena</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Western African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Niamey</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Western African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Porto-Novo</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Western African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Tunis</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Windhoek</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Western African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Arctic/Longyearbyen</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Atlantic/Jan_Mayen</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Greenland Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>CET</strong></td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>ECT</strong></td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">QP0100CET3</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT-1</strong></td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+01:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Amsterdam</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Andorra</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Belgrade</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Berlin</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Bratislava</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Brussels</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Budapest</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Copenhagen</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Gibraltar</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Ljubljana</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Luxembourg</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Madrid</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Malta</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Monaco</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Oslo</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Paris</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Prague</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Rome</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/San_Marino</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Sarajevo</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Skopje</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Stockholm</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Tirane</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Vaduz</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Vatican</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Vienna</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Warsaw</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Zagreb</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Zurich</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">QP0100CET2</td>
+</tr>
+<tr>
+	<td><strong>MET</strong></td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Middle Europe Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Poland</td>
+	<td align="middle">1 : 00</td>
+	<td align="middle">60</td>
+	<td>Central European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>ART</strong></td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Blantyre</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Bujumbura</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Cairo</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Gaborone</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Harare</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Johannesburg</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>South Africa Standard Time</td>
+	<td align="middle">QP0200SAST</td>
+</tr>
+<tr>
+	<td>Africa/Kigali</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Lubumbashi</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Lusaka</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Maputo</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Maseru</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>South Africa Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Mbabane</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>South Africa Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Tripoli</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Amman</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Beirut</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Damascus</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Gaza</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Istanbul</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Jerusalem</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Israel Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Nicosia</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Tel_Aviv</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Israel Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>CAT</strong></td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>EET</strong></td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">QP0200EET</td>
+</tr>
+<tr>
+	<td>Egypt</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT-2</strong></td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+02:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Athens</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Bucharest</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Chisinau</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Helsinki</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Istanbul</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Kaliningrad</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Kiev</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Minsk</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Nicosia</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Riga</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Simferopol</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Sofia</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Tallinn</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">QP0200EET2<br>QP0200UTCS</td>
+</tr>
+<tr>
+	<td>Europe/Tiraspol</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Uzhgorod</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Vilnius</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Zaporozhye</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Israel</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Israel Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Libya</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Turkey</td>
+	<td align="middle">2 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern European Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Addis_Ababa</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern African Time</td>
+	<td align="middle">QP0300UTCS</td>
+</tr>
+<tr>
+	<td>Africa/Asmera</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Dar_es_Salaam</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Djibouti</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Kampala</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Khartoum</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Mogadishu</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Africa/Nairobi</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Antarctica/Syowa</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Syowa Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Aden</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Arabia Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Baghdad</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">60</td>
+	<td>Arabia Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Bahrain</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Arabia Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Kuwait</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Arabia Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Qatar</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Arabia Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Riyadh</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Arabia Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>EAT</strong></td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT-3</strong></td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+03:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Moscow</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">60</td>
+	<td>Moscow Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Indian/Antananarivo</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Indian/Comoro</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Indian/Mayotte</td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern African Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>W-SU</strong></td>
+	<td align="middle">3 : 00</td>
+	<td align="middle">60</td>
+	<td>Moscow Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Riyadh87</td>
+	<td align="middle">3 : 07</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+03:07</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Riyadh88</td>
+	<td align="middle">3 : 07</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+03:07</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Riyadh89</td>
+	<td align="middle">3 : 07</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+03:07</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Mideast/Riyadh87</td>
+	<td align="middle">3 : 07</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+03:07</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Mideast/Riyadh88</td>
+	<td align="middle">3 : 07</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+03:07</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Mideast/Riyadh89</td>
+	<td align="middle">3 : 07</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+03:07</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Tehran</td>
+	<td align="middle">3 : 30</td>
+	<td align="middle">60</td>
+	<td>Iran Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Iran</td>
+	<td align="middle">3 : 30</td>
+	<td align="middle">60</td>
+	<td>Iran Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Aqtau</td>
+	<td align="middle">4 : 00</td>
+	<td align="middle">60</td>
+	<td>Aqtau Time</td>
+	<td align="middle">QP0400UTC2</td>
+</tr>
+<tr>
+	<td>Asia/Baku</td>
+	<td align="middle">4 : 00</td>
+	<td align="middle">60</td>
+	<td>Azerbaijan Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Dubai</td>
+	<td align="middle">4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Gulf Standard Time</td>
+	<td align="middle">QP0400UTCS</td>
+</tr>
+<tr>
+	<td>Asia/Muscat</td>
+	<td align="middle">4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Gulf Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Oral</td>
+	<td align="middle">4 : 00</td>
+	<td align="middle">60</td>
+	<td>Oral Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Tbilisi</td>
+	<td align="middle">4 : 00</td>
+	<td align="middle">60</td>
+	<td>Georgia Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Yerevan</td>
+	<td align="middle">4 : 00</td>
+	<td align="middle">60</td>
+	<td>Armenia Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT-4</strong></td>
+	<td align="middle">4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+04:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Europe/Samara</td>
+	<td align="middle">4 : 00</td>
+	<td align="middle">60</td>
+	<td>Samara Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Indian/Mahe</td>
+	<td align="middle">4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Seychelles Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Indian/Mauritius</td>
+	<td align="middle">4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Mauritius Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Indian/Reunion</td>
+	<td align="middle">4 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Reunion Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>NET</strong></td>
+	<td align="middle">4 : 00</td>
+	<td align="middle">60</td>
+	<td>Armenia Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Kabul</td>
+	<td align="middle">4 : 30</td>
+	<td align="middle">&nbsp;</td>
+	<td>Afghanistan Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Aqtobe</td>
+	<td align="middle">5 : 00</td>
+	<td align="middle">60</td>
+	<td>Aqtobe Time</td>
+	<td align="middle">QP0500UTC2</td>
+</tr>
+<tr>
+	<td>Asia/Ashgabat</td>
+	<td align="middle">5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Turkmenistan Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Ashkhabad</td>
+	<td align="middle">5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Turkmenistan Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Bishkek</td>
+	<td align="middle">5 : 00</td>
+	<td align="middle">60</td>
+	<td>Kirgizstan Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Dushanbe</td>
+	<td align="middle">5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Tajikistan Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Karachi</td>
+	<td align="middle">5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Pakistan Time</td>
+	<td align="middle">QP0500UTCS</td>
+</tr>
+<tr>
+	<td>Asia/Samarkand</td>
+	<td align="middle">5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Turkmenistan Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Tashkent</td>
+	<td align="middle">5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Uzbekistan Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Yekaterinburg</td>
+	<td align="middle">5 : 00</td>
+	<td align="middle">60</td>
+	<td>Yekaterinburg Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT-5</strong></td>
+	<td align="middle">5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+05:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Indian/Kerguelen</td>
+	<td align="middle">5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>French Southern &amp; Antarctic Lands Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Indian/Maldives</td>
+	<td align="middle">5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Maldives Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>PLT</strong></td>
+	<td align="middle">5 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Pakistan Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Calcutta</td>
+	<td align="middle">5 : 30</td>
+	<td align="middle">&nbsp;</td>
+	<td>India Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>IST</strong></td>
+	<td align="middle">5 : 30</td>
+	<td align="middle">&nbsp;</td>
+	<td>India Standard Time</td>
+	<td align="middle">QP0530IST</td>
+</tr>
+<tr>
+	<td>Asia/Katmandu</td>
+	<td align="middle">5 : 45</td>
+	<td align="middle">&nbsp;</td>
+	<td>Nepal Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Antarctica/Mawson</td>
+	<td align="middle">6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Mawson Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Antarctica/Vostok</td>
+	<td align="middle">6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Vostok Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Almaty</td>
+	<td align="middle">6 : 00</td>
+	<td align="middle">60</td>
+	<td>Alma-Ata Time</td>
+	<td align="middle">QP0600UTC2</td>
+</tr>
+<tr>
+	<td>Asia/Colombo</td>
+	<td align="middle">6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Sri Lanka Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Dacca</td>
+	<td align="middle">6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Bangladesh Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Dhaka</td>
+	<td align="middle">6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Bangladesh Time</td>
+	<td align="middle">QP0600UTCS</td>
+</tr>
+<tr>
+	<td>Asia/Novosibirsk</td>
+	<td align="middle">6 : 00</td>
+	<td align="middle">60</td>
+	<td>Novosibirsk Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Omsk</td>
+	<td align="middle">6 : 00</td>
+	<td align="middle">60</td>
+	<td>Omsk Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Qyzylorda</td>
+	<td align="middle">6 : 00</td>
+	<td align="middle">60</td>
+	<td>Qyzylorda Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Thimbu</td>
+	<td align="middle">6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Bhutan Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Thimphu</td>
+	<td align="middle">6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Bhutan Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>BST</strong></td>
+	<td align="middle">6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Bangladesh Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT-6</strong></td>
+	<td align="middle">6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+06:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Indian/Chagos</td>
+	<td align="middle">6 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Indian Ocean Territory Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Rangoon</td>
+	<td align="middle">6 : 30</td>
+	<td align="middle">&nbsp;</td>
+	<td>Myanmar Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Indian/Cocos</td>
+	<td align="middle">6 : 30</td>
+	<td align="middle">&nbsp;</td>
+	<td>Cocos Islands Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Antarctica/Davis</td>
+	<td align="middle">7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Davis Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Bangkok</td>
+	<td align="middle">7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Indochina Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Hovd</td>
+	<td align="middle">7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Hovd Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Jakarta</td>
+	<td align="middle">7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>West Indonesia Time</td>
+	<td align="middle">QP0700WIB</td>
+</tr>
+<tr>
+	<td>Asia/Krasnoyarsk</td>
+	<td align="middle">7 : 00</td>
+	<td align="middle">60</td>
+	<td>Krasnoyarsk Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Phnom_Penh</td>
+	<td align="middle">7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Indochina Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Pontianak</td>
+	<td align="middle">7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>West Indonesia Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Saigon</td>
+	<td align="middle">7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Indochina Time</td>
+	<td align="middle">QP0700UTCS</td>
+</tr>
+<tr>
+	<td>Asia/Vientiane</td>
+	<td align="middle">7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Indochina Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT-7</strong></td>
+	<td align="middle">7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+07:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Indian/Christmas</td>
+	<td align="middle">7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Christmas Island Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>VST</strong></td>
+	<td align="middle">7 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Indochina Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Antarctica/Casey</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Western Standard Time (Australia)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Brunei</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Brunei Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Chongqing</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>China Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Chungking</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>China Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Harbin</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>China Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Hong_Kong</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Hong Kong Time</td>
+	<td align="middle">QP0800JIST<br>QP0800UTCS</td>
+</tr>
+<tr>
+	<td>Asia/Irkutsk</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">60</td>
+	<td>Irkutsk Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Kashgar</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>China Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Kuala_Lumpur</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Malaysia Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Kuching</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Malaysia Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Macao</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>China Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Macau</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>China Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Makassar</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central Indonesia Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Manila</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Philippines Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Shanghai</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>China Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Singapore</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Singapore Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Taipei</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>China Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Ujung_Pandang</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central Indonesia Time</td>
+	<td align="middle">QP0800WITA</td>
+</tr>
+<tr>
+	<td>Asia/Ulaanbaatar</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Ulaanbaatar Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Ulan_Bator</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Ulaanbaatar Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Urumqi</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>China Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/Perth</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Western Standard Time (Australia)</td>
+	<td align="middle">QP0800AWST</td>
+</tr>
+<tr>
+	<td>Australia/West</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Western Standard Time (Australia)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>CTT</strong></td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>China Standard Time</td>
+	<td align="middle">QP0800BST</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT-8</strong></td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+08:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Hongkong</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Hong Kong Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>PRC</strong></td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>China Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Singapore</td>
+	<td align="middle">8 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Singapore Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Choibalsan</td>
+	<td align="middle">9 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Choibalsan Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Dili</td>
+	<td align="middle">9 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>East Timor Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Jayapura</td>
+	<td align="middle">9 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>East Indonesia Time</td>
+	<td align="middle">QP0900WIT</td>
+</tr>
+<tr>
+	<td>Asia/Pyongyang</td>
+	<td align="middle">9 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Korea Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Seoul</td>
+	<td align="middle">9 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Korea Standard Time</td>
+	<td align="middle">QP0900KST</td>
+</tr>
+<tr>
+	<td>Asia/Tokyo</td>
+	<td align="middle">9 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Japan Standard Time</td>
+	<td align="middle">QP0900UTCS</td>
+</tr>
+<tr>
+	<td>Asia/Yakutsk</td>
+	<td align="middle">9 : 00</td>
+	<td align="middle">60</td>
+	<td>Yakutsk Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT-9</strong></td>
+	<td align="middle">9 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+09:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>JST</strong></td>
+	<td align="middle">9 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Japan Standard Time</td>
+	<td align="middle">QP0900JST</td>
+</tr>
+<tr>
+	<td>Japan</td>
+	<td align="middle">9 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Japan Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Palau</td>
+	<td align="middle">9 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Palau Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>ROK</strong></td>
+	<td align="middle">9 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Korea Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>ACT</strong></td>
+	<td align="middle">9 : 30</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central Standard Time (Northern Territory)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/Adelaide</td>
+	<td align="middle">9 : 30</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time (South Australia)</td>
+	<td align="middle">QP0930ACST</td>
+</tr>
+<tr>
+	<td>Australia/Broken_Hill</td>
+	<td align="middle">9 : 30</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time (South Australia/New South Wales)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/Darwin</td>
+	<td align="middle">9 : 30</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central Standard Time (Northern Territory)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/North</td>
+	<td align="middle">9 : 30</td>
+	<td align="middle">&nbsp;</td>
+	<td>Central Standard Time (Northern Territory)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/South</td>
+	<td align="middle">9 : 30</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time (South Australia)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/Yancowinna</td>
+	<td align="middle">9 : 30</td>
+	<td align="middle">60</td>
+	<td>Central Standard Time (South Australia/New South Wales)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>AET</strong></td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time (New South Wales)</td>
+	<td align="middle">QP1000AEST</td>
+</tr>
+<tr>
+	<td>Antarctica/DumontDUrville</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Dumont-d'Urville Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Sakhalin</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">60</td>
+	<td>Sakhalin Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Vladivostok</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">60</td>
+	<td>Vladivostok Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/ACT</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time (New South Wales)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/Brisbane</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time (Queensland)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/Canberra</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time (New South Wales)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/Hobart</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time (Tasmania)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/Lindeman</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time (Queensland)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/Melbourne</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time (Victoria)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/NSW</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time (New South Wales)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/Queensland</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Eastern Standard Time (Queensland)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/Sydney</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time (New South Wales)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/Tasmania</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time (Tasmania)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/Victoria</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">60</td>
+	<td>Eastern Standard Time (Victoria)</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT-10</strong></td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+10:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Guam</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Chamorro Standard Time</td>
+	<td align="middle">QP1000UTCS</td>
+</tr>
+<tr>
+	<td>Pacific/Port_Moresby</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Papua New Guinea Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Saipan</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Chamorro Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Truk</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Truk Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Yap</td>
+	<td align="middle">10 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Yap Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/LHI</td>
+	<td align="middle">10 : 30</td>
+	<td align="middle">30</td>
+	<td>Load Howe Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Australia/Lord_Howe</td>
+	<td align="middle">10 : 30</td>
+	<td align="middle">30</td>
+	<td>Load Howe Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Magadan</td>
+	<td align="middle">11 : 00</td>
+	<td align="middle">60</td>
+	<td>Magadan Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT-11</strong></td>
+	<td align="middle">11 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+11:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Efate</td>
+	<td align="middle">11 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Vanuatu Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Guadalcanal</td>
+	<td align="middle">11 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Solomon Is. Time</td>
+	<td align="middle">QP1100UTCS</td>
+</tr>
+<tr>
+	<td>Pacific/Kosrae</td>
+	<td align="middle">11 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Kosrae Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Noumea</td>
+	<td align="middle">11 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>New Caledonia Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Ponape</td>
+	<td align="middle">11 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Ponape Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>SST</strong></td>
+	<td align="middle">11 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Solomon Is. Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Norfolk</td>
+	<td align="middle">11 : 30</td>
+	<td align="middle">&nbsp;</td>
+	<td>Norfolk Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Antarctica/McMurdo</td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">60</td>
+	<td>New Zealand Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Antarctica/South_Pole</td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">60</td>
+	<td>New Zealand Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Anadyr</td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">60</td>
+	<td>Anadyr Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Asia/Kamchatka</td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">60</td>
+	<td>Petropavlovsk-Kamchatski Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT-12</strong></td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+12:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Kwajalein</td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Marshall Islands Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>NST</strong></td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">60</td>
+	<td>New Zealand Standard Time</td>
+	<td align="middle">QP1200NZST</td>
+</tr>
+<tr>
+	<td><strong>NZ</strong></td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">60</td>
+	<td>New Zealand Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Auckland</td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">60</td>
+	<td>New Zealand Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Fiji</td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Fiji Time</td>
+	<td align="middle">QN1200UTCS<br>QP1200UTCS</td>
+</tr>
+<tr>
+	<td>Pacific/Funafuti</td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Tuvalu Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Kwajalein</td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Marshall Islands Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Majuro</td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Marshall Islands Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Nauru</td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Nauru Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Tarawa</td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Gilbert Is. Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Wake</td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Wake Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Wallis</td>
+	<td align="middle">12 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Wallis &amp; Futuna Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>NZ-CHAT</strong></td>
+	<td align="middle">12 : 45</td>
+	<td align="middle">60</td>
+	<td>Chatham Standard Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Chatham</td>
+	<td align="middle">12 : 45</td>
+	<td align="middle">60</td>
+	<td>Chatham Standard Time</td>
+	<td align="middle">QP1245UTCS</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT-13</strong></td>
+	<td align="middle">13 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+13:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Enderbury</td>
+	<td align="middle">13 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Phoenix Is. Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Tongatapu</td>
+	<td align="middle">13 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Tonga Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td><strong>Etc/GMT-14</strong></td>
+	<td align="middle">14 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>GMT+14:00</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+<tr>
+	<td>Pacific/Kiritimati</td>
+	<td align="middle">14 : 00</td>
+	<td align="middle">&nbsp;</td>
+	<td>Line Is. Time</td>
+	<td align="middle">&nbsp;</td>
+</tr>
+</tbody></table>
+
+<!-- Footer Links  -->
+<p align="center"><a href="http://www14.software.ibm.com/webapp/download/category.jsp?s=s&amp;cat=webservers&amp;source=sd" class="footer-links" target="_blank">Downloads</a> 
+	    &nbsp; | &nbsp; <a href="http://www-3.ibm.com/software/webservers/appserv/was/library/" class="footer-links" target="_blank">Library</a> 
+		&nbsp; | &nbsp; <a href="http://www-3.ibm.com/software/webservers/appserv/was/support/" class="footer-links" target="_blank">Support</a>
+		&nbsp; | &nbsp; <a href="http://techsupport.services.ibm.com/guides/handbook.html" class="footer-links" target="_blank">Support Policy</a>
+		&nbsp; | &nbsp; <a href="http://www.ibm.com/legal" class="footer-links" target="_blank">Terms of Use</a> 
+		&nbsp; | &nbsp; <a target="_blank" href="mailto:wasdoc@us.ibm.com" class="footer-links">Feedback</a>
+</p>
+<!-- End Footer Links  -->
+</body></html>
