@@ -80,12 +80,12 @@ Configure::write('App.baseUrl', env('SCRIPT_NAME'));
  * or in each action using $this->cacheAction = true.
  *
  */
-	//Configure::write('Cache.check', true);
+Configure::write('Cache.check', true);
 /**
  * Defines the default error type when using the log() function. Used for
  * differentiating error logging and debugging. Currently PHP supports LOG_DEBUG.
  */
-	define('LOG_ERROR', 2);
+define('LOG_ERROR', 2);
 /**
  * The preferred session handling method. Valid values:
  *
@@ -144,7 +144,7 @@ Configure::write('App.baseUrl', env('SCRIPT_NAME'));
  * CakePHP session IDs are also regenerated between requests if
  * 'Security.level' is set to 'high'.
  */
-	Configure::write('Security.level', 'high');
+	Configure::write('Security.level', 'low');
 /**
  * A random string used in security hashing methods.
  */
