@@ -65,21 +65,17 @@ CREATE TABLE `zeitzones` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   `differenzUtc` tinyint(4) NOT NULL,
+  `sommerzeitRegel` varchar(30),
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 INSERT INTO `zeitzones` (`id`,`name`,`differenzUtc`)
 VALUES
-	(1,'Europa/Berlin',2),
-	(2,'Europa/Prag',2),
-	(4,'Europa/Wien',2),
-	(13,'afd',3),
-	(11,22,3),
-	(12,'asdf',3),
-	(14,'aaa',3),
-	(15,'ss',3),
-	(16,'s',3);
+	(1,'Europa/Berlin',1),
+	(2,'Europa/Prag',1),
+	(3,'Europa/Wien',1),
+	(4,'Europa/Warschau',1);
 
 
 
