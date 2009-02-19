@@ -21,7 +21,7 @@ class FlugzeugHerstellersController extends AppController
     public function index() 
 	{   
 		$alle = $this->FlugzeugHersteller->findAll();
-		$this->set('flugzeugherstellers',$alle);     
+		$this->set('flugzeug_herstellers',$alle);     
 	}
 
     
