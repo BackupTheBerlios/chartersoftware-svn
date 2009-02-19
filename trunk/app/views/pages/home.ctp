@@ -9,7 +9,7 @@ Nun gehts los
 </p>
 
 <p>
-<?php echo $html->link('Flugzeughersteller','/flugzeug_hersteller')?>
+<?php echo $html->link('Flugzeughersteller','/flugzeug_herstellers')?>
 </p>
 
 <p>
