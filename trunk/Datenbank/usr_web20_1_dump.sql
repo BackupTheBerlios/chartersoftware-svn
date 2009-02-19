@@ -4,13 +4,11 @@
 #
 # Host: localhost (MySQL 5.1.31)
 # Database: usr_web20_1
-# Generation Time: 2009-02-19 22:20:10 +0100
+# Generation Time: 2009-02-19 23:03:36 +0100
 # ************************************************************
 
 # Dump of table flugplatzentfernungs
 # ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `flugplatzentfernungs`;
 
 CREATE TABLE `flugplatzentfernungs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -35,8 +33,6 @@ VALUES
 # Dump of table flugplatzs
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `flugplatzs`;
-
 CREATE TABLE `flugplatzs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
@@ -58,14 +54,12 @@ VALUES
 # Dump of table flugzeugherstellers
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `flugzeugherstellers`;
-
 CREATE TABLE `flugzeugherstellers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 INSERT INTO `flugzeugherstellers` (`id`,`name`)
 VALUES
@@ -86,8 +80,6 @@ VALUES
 # Dump of table flugzeugs
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `flugzeugs`;
-
 CREATE TABLE `flugzeugs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kennzeichen` varchar(50) NOT NULL,
@@ -101,8 +93,6 @@ CREATE TABLE `flugzeugs` (
 # Dump of table flugzeugtyps
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `flugzeugtyps`;
-
 CREATE TABLE `flugzeugtyps` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -112,7 +102,7 @@ CREATE TABLE `flugzeugtyps` (
   `vmax` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 INSERT INTO `flugzeugtyps` (`id`,`name`,`flugzeughersteller_id`,`bild`,`reichweite`,`vmax`)
 VALUES
@@ -128,8 +118,6 @@ VALUES
 # Dump of table zeitzones
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `zeitzones`;
-
 CREATE TABLE `zeitzones` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
@@ -137,11 +125,11 @@ CREATE TABLE `zeitzones` (
   `sommerzeitRegel` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 INSERT INTO `zeitzones` (`id`,`name`,`differenzUtc`,`sommerzeitRegel`)
 VALUES
-	(1,'Europa/Berlin',1,NULL),
+	(1,'Europa/Berlin',2,''),
 	(2,'Europa/Prag',1,NULL),
 	(3,'Europa/Wien',1,NULL),
 	(4,'Europa/Warschau',1,NULL);

@@ -12,15 +12,15 @@
  * Dabei kann es sein, dass ein Parameter Ÿbergeben wird oder auch nicht.
  * 
  */
-class FlugzeugTypsController extends AppController 
+class FlugzeugtypsController extends AppController 
 {
-	var $name = 'FlugzeugTyp';
+	var $name = 'Flugzeugtyps';
 	var $helpers = array('Form'); //Bedeutet: Fuer diesen Controller werden HTML-Formulare benoetigt.
 	
 	/**Anzeigen einer Liste*/
     public function index() 
 	{   
-		$alle = $this->FlugzeugTyp->findAll();
+		$alle = $this->Flugzeugtyp->findAll();
 		$this->set('flugzeugtyps',$alle);     
 	}
 
@@ -34,8 +34,8 @@ class FlugzeugTypsController extends AppController
 	{  
         if ($id != null) 
         {      
-		  $this->FlugzeugTyp->id = $id;        
-		  $this->set('zeitzone', $this->FlugzeugTyp->read());
+		  $this->Flugzeugtyp->id = $id;        
+		  $this->set('flugzeugtyp', $this->Flugzeugtyp->read());
         }    
 	}
 	
@@ -44,7 +44,7 @@ class FlugzeugTypsController extends AppController
 	{   
 		if (!empty($this->data)) 
 		{
-        	if ($this->FlugzeugTyp->save($this->data)) 
+        	if ($this->Flugzeugtyp->save($this->data)) 
         	{
                 $this->flash('gespeichert', '/flugzeugtyps');
         	} 
@@ -61,7 +61,7 @@ class FlugzeugTypsController extends AppController
 	{
 		if (!empty($id))
 		{
-            $this->FlugzeugTyp->del($id);
+            $this->Flugzeugtyp->del($id);
             $this->flash('geloescht', '/flugzeugtyps');
 		}
 	}
@@ -72,7 +72,7 @@ class FlugzeugTypsController extends AppController
 	{
 		if (!empty($this->data)) 
 		{
-        	if ($this->FlugzeugTyp->save($this->data)) 
+        	if ($this->Flugzeugtyp->save($this->data)) 
         	{
                 $this->flash('geaendert', '/flugzeugtyps');
         	}
@@ -83,8 +83,8 @@ class FlugzeugTypsController extends AppController
 		}
       	else 
       	{
-        	$this->FlugzeugTyp->id = $id;
-        	$this->data = $this->FlugzeugTyp->read();
+        	$this->Flugzeugtyp->id = $id;
+        	$this->data = $this->Flugzeugtyp->read();
         	$this->set('id',$id);
       	}
 	}

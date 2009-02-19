@@ -11,11 +11,11 @@
 
 	<?php foreach ($flugzeugtyps as $zeile): ?>
 	<tr>
-		<td><?php echo $zeile['FlugzeugTyp']['id']; ?></td>
-		<td><?php echo $html->link($zeile['FlugzeugTyp']['name'], "/flugzeugtyps/view/".$zeile['FlugzeugTyp']['id']); ?></td>
-		<td><?php echo $html->link($zeile['FlugzeugTyp']['name'], "/flugzeugtyps/view/".$zeile['FlugzeugTyp']['id']); ?></td>
-		<td><?php echo $html->link('Aendern', "/flugzeugtyps/edit/{$zeile['FlugzeugTyp']['id']}");?></td>
-		<td><?php echo $html->link('Loeschen', "/flugzeugtyps/delete/{$zeile['FlugzeugTyp']['id']}", null, 'Sind Sie sich sicher?' )?></td>
+		<td><?php echo $zeile['Flugzeugtyp']['id']; ?></td>
+		<td><?php echo $html->link($zeile['Flugzeugtyp']['name'], "/flugzeugtyps/view/".$zeile['Flugzeugtyp']['id']); ?></td>
+		<td><?php echo $html->link($zeile['Flugzeugtyp']['name'], "/flugzeugtyps/view/".$zeile['Flugzeugtyp']['id']); ?></td>
+		<td><?php echo $html->link('Aendern', "/flugzeugtyps/edit/{$zeile['Flugzeugtyp']['id']}");?></td>
+		<td><?php echo $html->link('Loeschen', "/flugzeugtyps/delete/{$zeile['Flugzeugtyp']['id']}", null, 'Sind Sie sich sicher?' )?></td>
 	</tr>
 	<?php endforeach; ?>
 

@@ -12,16 +12,16 @@
  * Dabei kann es sein, dass ein Parameter Ÿbergeben wird oder auch nicht.
  * 
  */
-class FlugzeugHerstellersController extends AppController 
+class FlugzeugherstellersController extends AppController 
 {
-	var $name = 'FlugzeugHersteller';
+	var $name = 'Flugzeugherstellers';
 	var $helpers = array('Form'); //Bedeutet: Fuer diesen Controller werden HTML-Formulare benoetigt.
 	
 	/**Anzeigen einer Liste*/
     public function index() 
 	{   
-		$alle = $this->FlugzeugHersteller->findAll();
-		$this->set('flugzeug_herstellers',$alle);     
+		$alle = $this->Flugzeughersteller->findAll();
+		$this->set('flugzeugherstellers',$alle);     
 	}
 
     
@@ -34,8 +34,8 @@ class FlugzeugHerstellersController extends AppController
 	{  
         if ($id != null) 
         {      
-		  $this->FlugzeugHersteller->id = $id;        
-		  $this->set('flugzeughersteller', $this->FlugzeugHersteller->read());
+		  $this->Flugzeughersteller->id = $id;        
+		  $this->set('flugzeughersteller', $this->Flugzeughersteller->read());
         }    
 	}
 	
@@ -44,9 +44,9 @@ class FlugzeugHerstellersController extends AppController
 	{   
 		if (!empty($this->data)) 
 		{
-        	if ($this->FlugzeugHersteller->save($this->data)) 
+        	if ($this->Flugzeughersteller->save($this->data)) 
         	{
-                $this->flash('gespeichert', '/flugzeug_herstellers');
+                $this->flash('gespeichert', '/flugzeugherstellers');
         	} 
         	else
         	{
@@ -61,8 +61,8 @@ class FlugzeugHerstellersController extends AppController
 	{
 		if (!empty($id))
 		{
-            $this->FlugzeugHersteller->del($id);
-            $this->flash('geloescht', '/flugzeug_herstellers');
+            $this->Flugzeughersteller->del($id);
+            $this->flash('geloescht', '/flugzeugherstellers');
 		}
 	}
 
@@ -72,9 +72,9 @@ class FlugzeugHerstellersController extends AppController
 	{
 		if (!empty($this->data)) 
 		{
-        	if ($this->FlugzeugHersteller->save($this->data)) 
+        	if ($this->Flugzeughersteller->save($this->data)) 
         	{
-                $this->flash('geaendert', '/flugzeug_herstellers');
+                $this->flash('geaendert', '/flugzeugherstellers');
         	}
             else
             {
@@ -83,8 +83,8 @@ class FlugzeugHerstellersController extends AppController
 		}
       	else 
       	{
-        	$this->FlugzeugHersteller->id = $id;
-        	$this->data = $this->FlugzeugHersteller->read();
+        	$this->Flugzeughersteller->id = $id;
+        	$this->data = $this->Flugzeughersteller->read();
         	$this->set('id',$id);
       	}
 	}
