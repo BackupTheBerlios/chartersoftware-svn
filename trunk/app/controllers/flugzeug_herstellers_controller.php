@@ -35,7 +35,7 @@ class FlugzeugHerstellersController extends AppController
         if ($id != null) 
         {      
 		  $this->FlugzeugHersteller->id = $id;        
-		  $this->set('zeitzone', $this->FlugzeugHersteller->read());
+		  $this->set('flugzeughersteller', $this->FlugzeugHersteller->read());
         }    
 	}
 	
@@ -46,7 +46,7 @@ class FlugzeugHerstellersController extends AppController
 		{
         	if ($this->FlugzeugHersteller->save($this->data)) 
         	{
-                $this->flash('gespeichert', '/flugzeugherstellers');
+                $this->flash('gespeichert', '/flugzeug_herstellers');
         	} 
         	else
         	{
@@ -62,7 +62,7 @@ class FlugzeugHerstellersController extends AppController
 		if (!empty($id))
 		{
             $this->FlugzeugHersteller->del($id);
-            $this->flash('geloescht', '/flugzeugherstellers');
+            $this->flash('geloescht', '/flugzeug_herstellers');
 		}
 	}
 
@@ -74,7 +74,7 @@ class FlugzeugHerstellersController extends AppController
 		{
         	if ($this->FlugzeugHersteller->save($this->data)) 
         	{
-                $this->flash('geaendert', '/flugzeugherstellers');
+                $this->flash('geaendert', '/flugzeug_herstellers');
         	}
             else
             {
