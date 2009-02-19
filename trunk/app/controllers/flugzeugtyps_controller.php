@@ -14,7 +14,7 @@
  */
 class FlugzeugTypsController extends AppController 
 {
-	var $name = 'FlugzeugTypsController';
+	var $name = 'FlugzeugTyp';
 	var $helpers = array('Form'); //Bedeutet: Fuer diesen Controller werden HTML-Formulare benoetigt.
 	
 	/**Anzeigen einer Liste*/

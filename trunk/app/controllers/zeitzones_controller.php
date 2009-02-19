@@ -14,13 +14,13 @@
  */
 class ZeitzonesController extends AppController 
 {
-	var $name = 'ZeitzonesController';
+	var $name = 'Zeitzones';
 	var $helpers = array('Form'); //Bedeutet: Fuer diesen Controller werden HTML-Formulare benoetigt.
 	
 	/**Anzeigen einer Liste von Zeitzonen*/
     public function index() 
 	{   
-		$alle = $this->FlugzeugHersteller->findAll();
+		$alle = $this->Zeitzone->findAll();
 		$this->set('zeitzones',$alle);     
 	}
 
@@ -34,8 +34,8 @@ class ZeitzonesController extends AppController
 	{  
         if ($id != null) 
         {      
-		  $this->FlugzeugHersteller->id = $id;        
-		  $this->set('zeitzone', $this->FlugzeugHersteller->read());
+		  $this->Zeitzone->id = $id;        
+		  $this->set('zeitzone', $this->Zeitzone->read());
         }    
 	}
 	
@@ -44,7 +44,7 @@ class ZeitzonesController extends AppController
 	{   
 		if (!empty($this->data)) 
 		{
-        	if ($this->FlugzeugHersteller->save($this->data)) 
+        	if ($this->Zeitzone->save($this->data)) 
         	{
                 $this->flash('gespeichert', '/zeitzones');
         	} 
