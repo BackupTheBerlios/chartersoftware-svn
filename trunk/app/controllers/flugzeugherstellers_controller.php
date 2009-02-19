@@ -7,27 +7,27 @@
  * 
  * 
  * Grundprinzip: Jede Methode ist eine Action und kann von au§en aufgerufen
- * werden. Etwa "/cake/index.php/zeitzones/edit". 
+ * werden. Etwa "/cake/index.php/flugzeugherstellers/edit". 
  * 
  * Dabei kann es sein, dass ein Parameter Ÿbergeben wird oder auch nicht.
  * 
  */
-class ZeitzonesController extends AppController 
+class FlugzeugHerstellersController extends AppController 
 {
-	var $name = 'ZeitzonesController';
+	var $name = 'FlugzeugHerstellersController';
 	var $helpers = array('Form'); //Bedeutet: Fuer diesen Controller werden HTML-Formulare benoetigt.
 	
-	/**Anzeigen einer Liste von Zeitzonen*/
+	/**Anzeigen einer Liste*/
     public function index() 
 	{   
 		$alle = $this->FlugzeugHersteller->findAll();
-		$this->set('zeitzones',$alle);     
+		$this->set('flugzeugherstellers',$alle);     
 	}
 
     
-	/**Anzeigen einer Zeitzone
+	/**Anzeigen einer
      * 
-     * @param id ist optional, wenn gesetzt, wird eine einzelne Zeitzone miteben
+     * @param id ist optional, wenn gesetzt, wird eine einzelne Typ mit eben
      * der id angezeigt
      * */
 	public function view($id = null) 
@@ -39,14 +39,14 @@ class ZeitzonesController extends AppController
         }    
 	}
 	
-	/**Aufruf der ZufŸgenseite einer Zeitzone*/
+	/**Aufruf der ZufŸgenseite*/
 	public function add() 
 	{   
 		if (!empty($this->data)) 
 		{
         	if ($this->FlugzeugHersteller->save($this->data)) 
         	{
-                $this->flash('gespeichert', '/zeitzones');
+                $this->flash('gespeichert', '/flugzeugherstellers');
         	} 
         	else
         	{
@@ -56,25 +56,25 @@ class ZeitzonesController extends AppController
 	}
 
 
-	/**Lšschen einer Zeitzone*/
+	/**Lšschen */
 	function delete($id) 
 	{
 		if (!empty($id))
 		{
-            $this->Zeitzone->del($id);
-            $this->flash('geloescht', '/zeitzones');
+            $this->FlugzeugHersteller->del($id);
+            $this->flash('geloescht', '/flugzeugherstellers');
 		}
 	}
 
 
-	/**Editieren einer Zeitzone*/
+	/**Editieren*/
 	function edit($id = null) 
 	{
 		if (!empty($this->data)) 
 		{
-        	if ($this->Zeitzone->save($this->data)) 
+        	if ($this->FlugzeugHersteller->save($this->data)) 
         	{
-                $this->flash('geaendert', '/zeitzones');
+                $this->flash('geaendert', '/flugzeugherstellers');
         	}
             else
             {
@@ -83,8 +83,8 @@ class ZeitzonesController extends AppController
 		}
       	else 
       	{
-        	$this->Zeitzone->id = $id;
-        	$this->data = $this->Zeitzone->read();
+        	$this->FlugzeugHersteller->id = $id;
+        	$this->data = $this->FlugzeugHersteller->read();
         	$this->set('id',$id);
       	}
 	}
