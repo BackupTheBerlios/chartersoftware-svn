@@ -19,8 +19,9 @@ class Flugzeugtyp extends AppModel {
 	//ist optional. Wenn nicht vorhanden, wird nicht
 	//validiert
     var $validate = array('name' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>49))));
-    
-    var $hasOne = 'Flugzeughersteller';
+
+	//Datenbank-Assoziationen
+	var $belongsTo = array('Flugzeughersteller');    
 }
                           
 ?>
