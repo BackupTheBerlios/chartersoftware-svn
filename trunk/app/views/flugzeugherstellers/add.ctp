@@ -1,4 +1,4 @@
-<h1>Flugzeug Hersteller hinzufuegen</h1>
+<h2>Flugzeug Hersteller hinzufuegen</h2>
 <?php
 	echo $form->create('Flugzeughersteller');
 	

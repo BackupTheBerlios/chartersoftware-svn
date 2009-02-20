@@ -1,4 +1,4 @@
-<h1>Zeitzone</h1>
+<h2>Zeitzone</h2>
 <?php echo $html->link('Neue Zeitzone anlegen','/zeitzones/add')?>
 <table>
 	<tr>

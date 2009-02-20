@@ -1,7 +1,5 @@
-<h1>4linkx</h1>
+<h2>4linkx</h2>
 
-Nun gehts los
-<hr />
 
 
 <p>

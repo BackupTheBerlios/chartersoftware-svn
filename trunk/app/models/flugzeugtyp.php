@@ -13,6 +13,7 @@ class Flugzeugtyp extends AppModel {
 	//wird als Instanzvariable bei Datenzugriffen
 	//benutzt
     var $name = 'Flugzeugtyp';
+    var $hersteller = 'Flugzeughersteller';
 
 
 	//Das ist ein Array mit Valididierungsrichtilinien
@@ -21,7 +22,9 @@ class Flugzeugtyp extends AppModel {
     var $validate = array('name' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>49))));
 
 	//Datenbank-Assoziationen
-	var $belongsTo = array('Flugzeughersteller');    
+    var $belongsTo = array('Flugzeughersteller' => array(           
+        'className'    => 'Flugzeughersteller',            
+        'foreignKey'    => 'flugzeughersteller_id'));      
 }
                           
 ?>

@@ -1,12 +1,15 @@
-<h1>Flugzeugtyp <?php echo $flugzeugtyp['Flugzeugtyp']['name']?></h1>
+<h2>Flugzeugtyp</h2>
 
-Hier alle Infos ueber einen Flugzeugtyp
+<h3>Informationen</h3>
 
-<p>ID = <?php echo $flugzeugtyp['Flugzeugtyp']['id']?></p>
-<p>Name = <?php echo $flugzeugtyp['Flugzeugtyp']['name']?></p>
-<p>Hersteller = <?php echo $flugzeugtyp['Flugzeugtyp']['flugzeughersteller_id']?></p>
-<p>Reichweite = <?php echo $flugzeugtyp['Flugzeugtyp']['reichweite']?></p>
-<p>V-Max = <?php echo $flugzeugtyp['Flugzeugtyp']['vmax']?></p>
+<dl>
+<dt>ID</dt>  <dd><?php echo $flugzeugtyp['Flugzeugtyp']['id']?></dd>
+<dt>Name</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['name']?></dd>
+<dt>Hersteller</dt><dd><?php echo $flugzeugtyp['Flugzeughersteller']['name']?></dd>
+<dt>Hersteller ID</dt><dd><?php echo $flugzeugtyp['Flugzeughersteller']['id']?></dd>
+<dt>Reichweite</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['reichweite']?></dd>
+<dt>Geschwindigkeit</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['vmax']?></dd>
+</dl>
 
 <!--
 //TODO: Bild des Flugzeugs

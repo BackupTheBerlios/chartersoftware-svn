@@ -1,10 +1,11 @@
-<h1>Zeitzone <?php echo $zeitzone['Zeitzone']['name']?></h1>
+<h2>Zeitzone</h2>
 
-Hier alle Infos ueber eine Zeitzone
+<h3>Informationen</h3>
 
-<p>ID = <?php echo $zeitzone['Zeitzone']['id']?></p>
-<p>Name = <?php echo $zeitzone['Zeitzone']['name']?></p>
-<p>Differenz zu UTC = <?php echo $zeitzone['Zeitzone']['differenzUtc']?></p>
-<p>Sommerzeitregel = <?php echo $zeitzone['Zeitzone']['sommerzeitRegel']?></p>
-
+<dl>
+<dt>ID</dt>  <dd><?php echo $zeitzone['Zeitzone']['id']?></dd>
+<dt>Name</dt><dd><?php echo $zeitzone['Zeitzone']['name']?></dd>
+<dt>Differenz zur UTC</dt><dd><?php echo $zeitzone['Zeitzone']['differenzUtc']?></dd>
+<dt>Sommerzeitregel</dt><dd><?php echo $zeitzone['Zeitzone']['sommerzeitRegel']?></dd>
+</dl>
 

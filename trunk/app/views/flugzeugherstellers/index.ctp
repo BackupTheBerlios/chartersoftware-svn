@@ -1,4 +1,4 @@
-<h1>Flugzeug Hersteller</h1>
+<h2>Flugzeug Hersteller</h2>
 <?php echo $html->link('Neuen Hersteller anlegen','/flugzeugherstellers/add')?>
 <table>
 	<tr>

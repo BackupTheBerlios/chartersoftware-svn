@@ -1,4 +1,4 @@
-<h1>Zeitzone hinzufuegen</h1>
+<h2>Zeitzone hinzufuegen</h2>
 <?php
 	echo $form->create('Zeitzone');
 	
