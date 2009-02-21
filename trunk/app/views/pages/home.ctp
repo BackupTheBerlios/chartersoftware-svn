@@ -13,3 +13,11 @@
 <p>
 <?php echo $html->link('Flugzeugtypen','/flugzeugtyps')?>
 </p>
+
+<p>
+<?php echo $html->link('Flugplaetze','/flugplatzs')?>
+</p>
+
+<p>
+<?php echo $html->link('Flugplatz-Entfernungen','/flugplatzentfernungs')?>
+</p>
