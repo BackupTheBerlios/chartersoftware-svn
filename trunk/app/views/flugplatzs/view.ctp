@@ -4,14 +4,8 @@
 
 <dl>
 <dt>ID</dt>  <dd><?php echo $flugplatz['Flugplatz']['id']?></dd>
-<dt>Name</dt><dd><?php echo $flugplatz['Flugplatz']['name']?></dd>
-<dt>Hersteller</dt><dd><?php echo $flugplatz['Flugplatz']['internatKuerzel']?></dd>
-<dt>Hersteller ID</dt><dd><?php echo $flugzeugtyp['Flugzeughersteller']['id']?></dd>
-<dt>Reichweite</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['reichweite']?></dd>
-<dt>Geschwindigkeit</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['vmax']?></dd>
+<dt>Bezeichnung</dt><dd><?php echo $flugplatz['Flugplatz']['name']?></dd>
+<dt>Intnat. Abkuerzung</dt><dd><?php echo $flugplatz['Flugplatz']['internatKuerzel']?></dd>
+<dt>Zeitzone</dt><dd><?php echo $flugplatz['Zeitzone']['name']?></dd>
 </dl>
 
-<!--
-//TODO: Bild des Flugzeugs
-//TODO: Hersteller
--->

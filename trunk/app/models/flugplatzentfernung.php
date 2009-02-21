@@ -21,7 +21,12 @@ class Flugplatzentfernung extends AppModel {
     var $validate = array('name' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>49))));
 
 	//Datenbank-Assoziationen
-    var $belongsTo = array('Flugplatz');      
+    var $belongsTo = array(
+        'Flugplatz' => array(
+            'className'    => 'Flugplatz',
+            'foreignKey'    => 'flugplatzstart_id'
+        )
+    );       
 }
                           
 ?>

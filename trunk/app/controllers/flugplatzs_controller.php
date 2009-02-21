@@ -35,7 +35,7 @@ class FlugplatzsController extends AppController
         if ($id != null) 
         {      
 		  $this->Flugplatz->id = $id;        
-		  $this->set('flugzeughersteller', $this->Flugplatz->read());
+		  $this->set('flugplatz', $this->Flugplatz->read());
         }    
 	}
 	

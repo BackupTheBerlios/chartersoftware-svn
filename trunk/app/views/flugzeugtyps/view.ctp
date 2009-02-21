@@ -13,5 +13,4 @@
 
 <!--
 //TODO: Bild des Flugzeugs
-//TODO: Hersteller
 -->

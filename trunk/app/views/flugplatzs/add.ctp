@@ -1,16 +1,15 @@
-<h2>Flugzeugtyp zufuegen</h2>
+<h2>Flugplatz zufuegen</h2>
 <?php
-	echo $form->create('Flugzeugtyp');
+	echo $form->create('Flugplatz');
 	
-    echo $form->input('Flugzeugtyp.name', array('error'=>array('required'=>'Bitte den Namen eingeben','length'=>'Das Feld darf nicht laenger als 49 Zeichen sein')));
+    echo $form->input('Flugplatz.name', array('error'=>array('required'=>'Bitte den Namen eingeben','length'=>'Das Feld darf nicht laenger als 49 Zeichen sein')));
+    echo $form->input('Flugplatz.internatKuerzel', array('error'=>array('required'=>'Bitte internationale AbkŸrzung eingeben','length'=>'Das Feld darf nicht laenger als 4 Zeichen sein')));
 
     //Anzeigen einer Auswahlbox fuer Hersteller
-    $herstellerModell = new Flugzeughersteller(); //Modell fuer Flugzeughersteller erzeugen
-    echo $form->input('flugzeughersteller_id', array('options' => $herstellerModell->find('list')));//auswahlbox anzeigen
-
-    echo $form->input('Flugzeugtyp.reichweite', array('label'=>'Reichweite'));
-    echo $form->input('Flugzeugtyp.vmax', array('label'=>'Geschwindigkeit'));
+    $zeitzoneModell = new Zeitzone();
+    echo $form->input('zeitzone_id', array('options' => $zeitzoneModell->find('list')));//auswahlbox anzeigen
 
 	echo $form->submit('Speichern');
  	echo $form->end();
 ?>
+

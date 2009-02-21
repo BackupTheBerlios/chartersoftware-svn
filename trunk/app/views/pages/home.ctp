@@ -1,7 +1,10 @@
 <h2>4linkx</h2>
 
 
-
+<p>
+Umlaut-Test
+öäüßÖÄÜ
+</p>
 <p>
 <?php echo $html->link('Zeitzonen','/zeitzones')?>
 </p>
@@ -15,7 +18,7 @@
 </p>
 
 <p>
-<?php echo $html->link('Flugplaetze','/flugplatzs')?>
+<?php echo $html->link('Flugplätze','/flugplatzs')?>
 </p>
 
 <p>

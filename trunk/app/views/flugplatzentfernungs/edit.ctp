@@ -1,21 +1,16 @@
-<h2>Flugzeugtyp aendern</h2>
+<h2>Flugplatz Entfernung aendern</h2>
 <?php
-	echo $form->create('Flugzeugtyp', array('action' => 'edit'));
-	
-    echo $form->input('name', array('error'=>array('required'=>'Bitte den Namen eingeben','length'=>'Das Feld darf nicht laenger als 49 Zeichen sein')));
+    echo $form->create('Flugplatzentfernung', array('action' => 'edit'));
 
+    $flugplatzModell = new Flugplatz(); 
+    $flugplatz =$flugplatzModell->find('list');
+    
     //Anzeigen einer Auswahlbox fuer Hersteller
-    $herstellerModell = new Flugzeughersteller(); //Modell fuer Flugzeughersteller erzeugen
-    echo $form->input('flugzeughersteller_id', array('options' => $herstellerModell->find('list')));//auswahlbox anzeigen
+    echo $form->input('flugplatzstart_id', array('label'=>'Startflugplatz', 'options' => $flugplatz));//auswahlbox anzeigen
+    echo $form->input('flugplatzziel_id', array('label'=>'Zielflugplatz', 'options' => $flugplatz));//auswahlbox anzeigen
 
-    echo $form->input('Flugzeugtyp.reichweite', array('label'=>'Reichweite'));
-    echo $form->input('Flugzeugtyp.vmax', array('label'=>'Geschwindigkeit'));
-    
+    echo $form->input('entfernung', array('label'=>'Entfernung'));
 
-    //Speichern button
-	echo $form->submit('Speichern');
-    
-    
-    //Form schliessen
- 	echo $form->end();
+    echo $form->submit('Speichern');
+    echo $form->end();
 ?>
