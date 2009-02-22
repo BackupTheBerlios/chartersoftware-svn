@@ -4,7 +4,7 @@
 #
 # Host: localhost (MySQL 5.1.31)
 # Database: usr_web20_1
-# Generation Time: 2009-02-22 21:21:53 +0100
+# Generation Time: 2009-02-22 23:29:56 +0100
 # ************************************************************
 
 # Dump of table flugplatzentfernungs
@@ -96,7 +96,12 @@ CREATE TABLE `flugzeugs` (
   `flugzeugtyp_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `kennzeichen` (`kennzeichen`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+INSERT INTO `flugzeugs` (`id`,`kennzeichen`,`flugzeugtyp_id`)
+VALUES
+	(1,'NA-13',3),
+	(2,'NA-2',6);
 
 
 

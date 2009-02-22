@@ -18,6 +18,10 @@ Umlaut-Test
 </p>
 
 <p>
+<?php echo $html->link('Flugzeuge','/flugzeugs')?>
+</p>
+
+<p>
 <?php echo $html->link('Flugplätze','/flugplatzs')?>
 </p>
 

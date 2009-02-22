@@ -15,6 +15,29 @@
 <dt>Kabinen Personal</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['cabinPersonal']?></dd>
 </dl>
 
+<h3>Bestand an Flugzeugen</h3>
+
+
+<?php echo $html->link('Neues Flugzeug anlegen','/flugzeugs/add')?>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Kennzeichen</th>
+        <th>Aendern</th>
+        <th>Loeschen</th>
+    </tr>
+
+    <?php foreach ($flugzeugtyp['Flugzeug'] as $zeile):?>
+    <tr>
+        <td><?php echo $zeile['id']; ?></td>
+        <td><?php echo $html->link($zeile['kennzeichen'], "/flugzeugs/view/".$zeile['id']); ?></td>
+        <td><?php echo $html->link('Aendern', "/flugzeugs/edit/{$zeile['id']}");?></td>
+        <td><?php echo $html->link('Loeschen', "/flugzeugs/delete/{$zeile['id']}", null, 'Sind Sie sich sicher?' )?></td>
+    </tr>
+    <?php endforeach; ?>
+
+</table>
 <!--
 //TODO: Bild des Flugzeugs
 -->
