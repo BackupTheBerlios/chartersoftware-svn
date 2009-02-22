@@ -4,11 +4,13 @@
 #
 # Host: localhost (MySQL 5.1.31)
 # Database: usr_web20_1
-# Generation Time: 2009-02-19 23:03:36 +0100
+# Generation Time: 2009-02-22 21:21:53 +0100
 # ************************************************************
 
 # Dump of table flugplatzentfernungs
 # ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `flugplatzentfernungs`;
 
 CREATE TABLE `flugplatzentfernungs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -20,18 +22,21 @@ CREATE TABLE `flugplatzentfernungs` (
   KEY `flugplatzentfernungs_flugplatzstart_id` (`flugplatzstart_id`),
   CONSTRAINT `flugplatzentfernungs_flugplatzstart_id` FOREIGN KEY (`flugplatzstart_id`) REFERENCES `zeitzones` (`id`),
   CONSTRAINT `flugplatzentfernungs_flugplatzziel_id` FOREIGN KEY (`flugplatzziel_id`) REFERENCES `zeitzones` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 INSERT INTO `flugplatzentfernungs` (`id`,`flugplatzstart_id`,`flugplatzziel_id`,`entfernung`)
 VALUES
 	(1,1,2,100),
 	(2,2,1,100),
-	(3,3,1,600);
+	(3,3,1,600),
+	(6,1,3,170);
 
 
 
 # Dump of table flugplatzs
 # ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `flugplatzs`;
 
 CREATE TABLE `flugplatzs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -41,18 +46,21 @@ CREATE TABLE `flugplatzs` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `internatKuerzel` (`internatKuerzel`),
   KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 INSERT INTO `flugplatzs` (`id`,`name`,`internatKuerzel`,`zeitzone_id`)
 VALUES
 	(1,'Mülheim','MU-ES',1),
 	(2,'Frankfurt/Germany','FFH',1),
-	(3,'Dresden','DD',1);
+	(3,'Dresden','DD',1),
+	(5,'Berlin','BRL',1);
 
 
 
 # Dump of table flugzeugherstellers
 # ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `flugzeugherstellers`;
 
 CREATE TABLE `flugzeugherstellers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -80,6 +88,8 @@ VALUES
 # Dump of table flugzeugs
 # ------------------------------------------------------------
 
+DROP TABLE IF EXISTS `flugzeugs`;
+
 CREATE TABLE `flugzeugs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kennzeichen` varchar(50) NOT NULL,
@@ -93,30 +103,38 @@ CREATE TABLE `flugzeugs` (
 # Dump of table flugzeugtyps
 # ------------------------------------------------------------
 
+DROP TABLE IF EXISTS `flugzeugtyps`;
+
 CREATE TABLE `flugzeugtyps` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `flugzeughersteller_id` int(11) NOT NULL,
-  `bild` blob,
-  `reichweite` int(11) NOT NULL,
-  `vmax` int(11) NOT NULL,
+  `bild` varchar(255) DEFAULT NULL,
+  `reichweite` int(11) NOT NULL DEFAULT '0',
+  `vmax` int(11) NOT NULL DEFAULT '0',
+  `jahreskosten` bigint(20) NOT NULL DEFAULT '0',
+  `stundenkosten` bigint(20) NOT NULL DEFAULT '0',
+  `crewPersonal` tinyint(4) NOT NULL DEFAULT '1',
+  `cabinPersonal` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
-INSERT INTO `flugzeugtyps` (`id`,`name`,`flugzeughersteller_id`,`bild`,`reichweite`,`vmax`)
+INSERT INTO `flugzeugtyps` (`id`,`name`,`flugzeughersteller_id`,`bild`,`reichweite`,`vmax`,`jahreskosten`,`stundenkosten`,`crewPersonal`,`cabinPersonal`)
 VALUES
-	(1,'Citation CJ1',8,NULL,2408,720),
-	(2,'Citation Mustang',8,NULL,2366,620),
-	(3,'Citation CXLR',8,NULL,4009,795),
-	(4,'GIV SP',9,NULL,7820,851),
-	(5,'Global Express',10,NULL,12038,935),
-	(6,'Malibu Mirage',11,NULL,2491,394);
+	(1,'Citation CJ1',8,'',2408,720,21800000,72700,1,0),
+	(2,'Citation Mustang',8,'',2366,620,10700000,42000,1,0),
+	(3,'Citation CXLR',8,'',4009,795,24240000,68000,2,1),
+	(4,'GIV SP',9,'',7820,851,45330000,278000,2,1),
+	(5,'Global Express',10,'',12038,935,51300000,310000,2,2),
+	(6,'Malibu Mirage',11,'',2491,394,6000000,20000,1,0);
 
 
 
 # Dump of table zeitzones
 # ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `zeitzones`;
 
 CREATE TABLE `zeitzones` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

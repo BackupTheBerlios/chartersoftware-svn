@@ -9,6 +9,10 @@
 <dt>Hersteller ID</dt><dd><?php echo $flugzeugtyp['Flugzeughersteller']['id']?></dd>
 <dt>Reichweite</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['reichweite']?></dd>
 <dt>Geschwindigkeit</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['vmax']?></dd>
+<dt>Jährliche Kosten</dt><dd><?php echo number_format($flugzeugtyp['Flugzeugtyp']['jahreskosten'] / 100,2 , ",", ".");?></dd>
+<dt>Stündliche Kosten</dt><dd><?php echo number_format($flugzeugtyp['Flugzeugtyp']['stundenkosten'] / 100,2 , ",", ".");?></dd>
+<dt>Crew Personal</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['crewPersonal']?></dd>
+<dt>Kabinen Personal</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['cabinPersonal']?></dd>
 </dl>
 
 <!--

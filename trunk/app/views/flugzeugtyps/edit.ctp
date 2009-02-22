@@ -11,6 +11,11 @@
     echo $form->input('Flugzeugtyp.reichweite', array('label'=>'Reichweite'));
     echo $form->input('Flugzeugtyp.vmax', array('label'=>'Geschwindigkeit'));
     
+    echo $form->input('Flugzeugtyp.bild', array('label'=>'Bild URL'));
+    echo $form->input('Flugzeugtyp.jahreskosten', array('label'=>'Jährliche Kosten'));
+    echo $form->input('Flugzeugtyp.stundenkosten', array('label'=>'Stündliche Kosten'));
+    echo $form->input('Flugzeugtyp.crewPersonal', array('label'=>'Crew Personal'));
+    echo $form->input('Flugzeugtyp.cabinPersonal', array('label'=>'Kabinenpersonal'));
 
     //Speichern button
 	echo $form->submit('Speichern');
