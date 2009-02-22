@@ -4,7 +4,7 @@
 #
 # Host: localhost (MySQL 5.1.31)
 # Database: usr_web20_1
-# Generation Time: 2009-02-22 23:29:56 +0100
+# Generation Time: 2009-02-22 23:34:18 +0100
 # ************************************************************
 
 # Dump of table flugplatzentfernungs
@@ -96,12 +96,31 @@ CREATE TABLE `flugzeugs` (
   `flugzeugtyp_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `kennzeichen` (`kennzeichen`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 INSERT INTO `flugzeugs` (`id`,`kennzeichen`,`flugzeugtyp_id`)
 VALUES
-	(1,'NA-13',3),
-	(2,'NA-2',6);
+	(1,'NA-1',1),
+	(2,'NA-2',1),
+	(3,'NA-3',1),
+	(4,'NA-4',1),
+	(5,'NA-5',1),
+	(6,'NA-6',1),
+	(7,'M-1',2),
+	(8,'M-2',2),
+	(9,'M-3',2),
+	(10,'M-4',2),
+	(11,'M-5',2),
+	(12,'M-6',2),
+	(13,'CX-1',3),
+	(14,'CX-2',3),
+	(15,'GU-1',4),
+	(16,'GU-2',4),
+	(17,'BO-1',5),
+	(18,'PI-1',6),
+	(19,'PI-2',6),
+	(20,'PI-3',6),
+	(21,'PI-4',6);
 
 
 
