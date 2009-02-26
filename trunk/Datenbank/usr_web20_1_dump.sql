@@ -7,6 +7,29 @@
 # Generation Time: 2009-02-22 23:34:18 +0100
 # ************************************************************
 
+# Dump of table zeitzones
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `zeitzones`;
+
+CREATE TABLE `zeitzones` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) NOT NULL,
+  `differenzUtc` tinyint(4) NOT NULL,
+  `sommerzeitRegel` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+INSERT INTO `zeitzones` (`id`,`name`,`differenzUtc`,`sommerzeitRegel`)
+VALUES
+	(1,'Europa/Berlin',2,''),
+	(2,'Europa/Prag',1,NULL),
+	(3,'Europa/Wien',1,NULL),
+	(4,'Europa/Warschau',1,NULL);
+
+
+	
 # Dump of table flugplatzentfernungs
 # ------------------------------------------------------------
 
@@ -45,7 +68,9 @@ CREATE TABLE `flugplatzs` (
   `zeitzone_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `internatKuerzel` (`internatKuerzel`),
-  KEY `name` (`name`)
+  KEY `name` (`name`),
+  KEY `flugplatzs_zeitzone_id` (`zeitzone_id`),
+  CONSTRAINT `flugplatzs_zeitzone_id` FOREIGN KEY (`zeitzone_id`) REFERENCES `zeitzones` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 INSERT INTO `flugplatzs` (`id`,`name`,`internatKuerzel`,`zeitzone_id`)
@@ -85,6 +110,42 @@ VALUES
 
 
 
+
+
+# Dump of table flugzeugtyps
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `flugzeugtyps`;
+
+CREATE TABLE `flugzeugtyps` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `flugzeughersteller_id` int(11) NOT NULL,
+  `bild` varchar(255) DEFAULT NULL,
+  `reichweite` int(11) NOT NULL DEFAULT '0',
+  `vmax` int(11) NOT NULL DEFAULT '0',
+  `jahreskosten` bigint(20) NOT NULL DEFAULT '0',
+  `stundenkosten` bigint(20) NOT NULL DEFAULT '0',
+  `crewPersonal` tinyint(4) NOT NULL DEFAULT '1',
+  `cabinPersonal` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
+  KEY `flugzeugtyps_flugzeughersteller_id` (`flugzeughersteller_id`),
+  CONSTRAINT `flugzeugtyps_flugzeughersteller_id` FOREIGN KEY (`flugzeughersteller_id`) REFERENCES `flugzeugherstellers` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+INSERT INTO `flugzeugtyps` (`id`,`name`,`flugzeughersteller_id`,`bild`,`reichweite`,`vmax`,`jahreskosten`,`stundenkosten`,`crewPersonal`,`cabinPersonal`)
+VALUES
+	(1,'Citation CJ1',8,'',2408,720,21800000,72700,1,0),
+	(2,'Citation Mustang',8,'',2366,620,10700000,42000,1,0),
+	(3,'Citation CXLR',8,'',4009,795,24240000,68000,2,1),
+	(4,'GIV SP',9,'',7820,851,45330000,278000,2,1),
+	(5,'Global Express',10,'',12038,935,51300000,310000,2,2),
+	(6,'Malibu Mirage',11,'',2491,394,6000000,20000,1,0);
+
+
+
+
 # Dump of table flugzeugs
 # ------------------------------------------------------------
 
@@ -95,7 +156,9 @@ CREATE TABLE `flugzeugs` (
   `kennzeichen` varchar(50) NOT NULL,
   `flugzeugtyp_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `kennzeichen` (`kennzeichen`)
+  UNIQUE KEY `kennzeichen` (`kennzeichen`),
+  KEY `flugzeugs_flugzeugtyp_id` (`flugzeugtyp_id`),
+  CONSTRAINT `flugzeugs_flugzeugtyp_id` FOREIGN KEY (`flugzeugtyp_id`) REFERENCES `flugzeugtyps` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 INSERT INTO `flugzeugs` (`id`,`kennzeichen`,`flugzeugtyp_id`)
@@ -121,60 +184,5 @@ VALUES
 	(19,'PI-2',6),
 	(20,'PI-3',6),
 	(21,'PI-4',6);
-
-
-
-# Dump of table flugzeugtyps
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `flugzeugtyps`;
-
-CREATE TABLE `flugzeugtyps` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
-  `flugzeughersteller_id` int(11) NOT NULL,
-  `bild` varchar(255) DEFAULT NULL,
-  `reichweite` int(11) NOT NULL DEFAULT '0',
-  `vmax` int(11) NOT NULL DEFAULT '0',
-  `jahreskosten` bigint(20) NOT NULL DEFAULT '0',
-  `stundenkosten` bigint(20) NOT NULL DEFAULT '0',
-  `crewPersonal` tinyint(4) NOT NULL DEFAULT '1',
-  `cabinPersonal` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
-
-INSERT INTO `flugzeugtyps` (`id`,`name`,`flugzeughersteller_id`,`bild`,`reichweite`,`vmax`,`jahreskosten`,`stundenkosten`,`crewPersonal`,`cabinPersonal`)
-VALUES
-	(1,'Citation CJ1',8,'',2408,720,21800000,72700,1,0),
-	(2,'Citation Mustang',8,'',2366,620,10700000,42000,1,0),
-	(3,'Citation CXLR',8,'',4009,795,24240000,68000,2,1),
-	(4,'GIV SP',9,'',7820,851,45330000,278000,2,1),
-	(5,'Global Express',10,'',12038,935,51300000,310000,2,2),
-	(6,'Malibu Mirage',11,'',2491,394,6000000,20000,1,0);
-
-
-
-# Dump of table zeitzones
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `zeitzones`;
-
-CREATE TABLE `zeitzones` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(30) NOT NULL,
-  `differenzUtc` tinyint(4) NOT NULL,
-  `sommerzeitRegel` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
-
-INSERT INTO `zeitzones` (`id`,`name`,`differenzUtc`,`sommerzeitRegel`)
-VALUES
-	(1,'Europa/Berlin',2,''),
-	(2,'Europa/Prag',1,NULL),
-	(3,'Europa/Wien',1,NULL),
-	(4,'Europa/Warschau',1,NULL);
-
 
 
