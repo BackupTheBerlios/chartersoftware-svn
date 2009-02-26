@@ -122,6 +122,7 @@ CREATE TABLE `flugzeugtyps` (
   `name` varchar(50) NOT NULL,
   `flugzeughersteller_id` int(11) NOT NULL,
   `bild` varchar(255) DEFAULT NULL,
+  `wikipedia` varchar(255) DEFAULT NULL,
   `reichweite` int(11) NOT NULL DEFAULT '0',
   `vmax` int(11) NOT NULL DEFAULT '0',
   `jahreskosten` bigint(20) NOT NULL DEFAULT '0',
@@ -136,12 +137,12 @@ CREATE TABLE `flugzeugtyps` (
 
 INSERT INTO `flugzeugtyps` (`id`,`name`,`flugzeughersteller_id`,`bild`,`reichweite`,`vmax`,`jahreskosten`,`stundenkosten`,`crewPersonal`,`cabinPersonal`)
 VALUES
-	(1,'Citation CJ1',8,'',2408,720,21800000,72700,1,0),
-	(2,'Citation Mustang',8,'',2366,620,10700000,42000,1,0),
-	(3,'Citation CXLR',8,'',4009,795,24240000,68000,2,1),
-	(4,'GIV SP',9,'',7820,851,45330000,278000,2,1),
-	(5,'Global Express',10,'',12038,935,51300000,310000,2,2),
-	(6,'Malibu Mirage',11,'',2491,394,6000000,20000,1,0);
+	(1,'Citation CJ1',8,'','http://de.wikipedia.org/wiki/Cessna_CitationJet',2408,720,21800000,72700,1,0),
+	(2,'Citation Mustang',8,'','http://de.wikipedia.org/wiki/Cessna_Citation_Mustang',2366,620,10700000,42000,1,0),
+	(3,'Citation CXLR',8,'','',4009,795,24240000,68000,2,1),
+	(4,'GIV SP',9,'','http://www.aerokurier.de/de/gulfstream-giv-sp.5595.htm',7820,851,45330000,278000,2,1),
+	(5,'Global Express',10,'','',12038,935,51300000,310000,2,2),
+	(6,'Malibu Mirage',11,'','',2491,394,6000000,20000,1,0);
 
 
 
