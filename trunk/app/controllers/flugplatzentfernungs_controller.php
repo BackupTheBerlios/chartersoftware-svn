@@ -1,21 +1,21 @@
 <?php
 
 /**
- * Controller fŸr 
+ * Controller fÃ¼r 
  * 
  * @author A. Behrens
  * 
  * 
- * Grundprinzip: Jede Methode ist eine Action und kann von au§en aufgerufen
+ * Grundprinzip: Jede Methode ist eine Action und kann von auï¿½en aufgerufen
  * werden. Etwa "/cake/index.php/flugplatzs/edit". 
  * 
- * Dabei kann es sein, dass ein Parameter Ÿbergeben wird oder auch nicht.
+ * Dabei kann es sein, dass ein Parameter ï¿½bergeben wird oder auch nicht.
  * 
  */
 class FlugplatzentfernungsController extends AppController 
 {
 	var $name = 'Flugplatzentfernungs';
-	var $helpers = array('Form'); //Bedeutet: Fuer diesen Controller werden HTML-Formulare benoetigt.
+    var $helpers = array('Form','Html'); //Bedeutet: Fuer diesen Controller werden HTML-Formulare benoetigt.
 	
 	/**Anzeigen einer Liste*/
     public function index() 
@@ -26,7 +26,7 @@ class FlugplatzentfernungsController extends AppController
 
     
 	
-	/**Aufruf der ZufŸgenseite*/
+	/**Aufruf der Zufï¿½genseite*/
 	public function add() 
 	{   
 		if (!empty($this->data)) 
@@ -43,7 +43,7 @@ class FlugplatzentfernungsController extends AppController
 	}
 
 
-	/**Lšschen */
+	/**Lï¿½schen */
 	function delete($id) 
 	{
 		if (!empty($id))

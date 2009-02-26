@@ -9,7 +9,11 @@
 
 # Dump of table zeitzones
 # ------------------------------------------------------------
-
+DROP TABLE IF EXISTS `flugzeugs`;
+DROP TABLE IF EXISTS `flugzeugtyps`;
+DROP TABLE IF EXISTS `flugzeugherstellers`;
+DROP TABLE IF EXISTS `flugplatzentfernungs`;
+DROP TABLE IF EXISTS `flugplatzs`;
 DROP TABLE IF EXISTS `zeitzones`;
 
 CREATE TABLE `zeitzones` (
@@ -33,7 +37,6 @@ VALUES
 # Dump of table flugplatzentfernungs
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `flugplatzentfernungs`;
 
 CREATE TABLE `flugplatzentfernungs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -59,7 +62,6 @@ VALUES
 # Dump of table flugplatzs
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `flugplatzs`;
 
 CREATE TABLE `flugplatzs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -84,8 +86,6 @@ VALUES
 
 # Dump of table flugzeugherstellers
 # ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `flugzeugherstellers`;
 
 CREATE TABLE `flugzeugherstellers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -115,7 +115,6 @@ VALUES
 # Dump of table flugzeugtyps
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `flugzeugtyps`;
 
 CREATE TABLE `flugzeugtyps` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -135,7 +134,7 @@ CREATE TABLE `flugzeugtyps` (
   CONSTRAINT `flugzeugtyps_flugzeughersteller_id` FOREIGN KEY (`flugzeughersteller_id`) REFERENCES `flugzeugherstellers` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
-INSERT INTO `flugzeugtyps` (`id`,`name`,`flugzeughersteller_id`,`bild`,`reichweite`,`vmax`,`jahreskosten`,`stundenkosten`,`crewPersonal`,`cabinPersonal`)
+INSERT INTO `flugzeugtyps` (`id`,`name`,`flugzeughersteller_id`,`bild`,`wikipedia`,`reichweite`,`vmax`,`jahreskosten`,`stundenkosten`,`crewPersonal`,`cabinPersonal`)
 VALUES
 	(1,'Citation CJ1',8,'','http://de.wikipedia.org/wiki/Cessna_CitationJet',2408,720,21800000,72700,1,0),
 	(2,'Citation Mustang',8,'','http://de.wikipedia.org/wiki/Cessna_Citation_Mustang',2366,620,10700000,42000,1,0),
@@ -150,7 +149,6 @@ VALUES
 # Dump of table flugzeugs
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `flugzeugs`;
 
 CREATE TABLE `flugzeugs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

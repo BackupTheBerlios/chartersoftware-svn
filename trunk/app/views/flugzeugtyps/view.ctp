@@ -13,6 +13,8 @@
 <dt>Stündliche Kosten</dt><dd><?php echo number_format($flugzeugtyp['Flugzeugtyp']['stundenkosten'] / 100,2 , ",", ".");?></dd>
 <dt>Crew Personal</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['crewPersonal']?></dd>
 <dt>Kabinen Personal</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['cabinPersonal']?></dd>
+<dt>Wikipedia</dt><dd><a href="<?php echo $flugzeugtyp['Flugzeugtyp']['wikipedia']?>" target=_blank><?php echo $flugzeugtyp['Flugzeugtyp']['wikipedia']?></a></dd>
+<dt>Bild</dt><dd><?php echo $html->image($flugzeugtyp['Flugzeugtyp']['bild'])?></dd>
 </dl>
 
 <h3>Bestand an Flugzeugen</h3>
