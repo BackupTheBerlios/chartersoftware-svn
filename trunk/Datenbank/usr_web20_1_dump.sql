@@ -136,12 +136,12 @@ CREATE TABLE `flugzeugtyps` (
 
 INSERT INTO `flugzeugtyps` (`id`,`name`,`flugzeughersteller_id`,`bild`,`wikipedia`,`reichweite`,`vmax`,`jahreskosten`,`stundenkosten`,`crewPersonal`,`cabinPersonal`)
 VALUES
-	(1,'Citation CJ1',8,'','http://de.wikipedia.org/wiki/Cessna_CitationJet',2408,720,21800000,72700,1,0),
-	(2,'Citation Mustang',8,'','http://de.wikipedia.org/wiki/Cessna_Citation_Mustang',2366,620,10700000,42000,1,0),
-	(3,'Citation CXLR',8,'','',4009,795,24240000,68000,2,1),
-	(4,'GIV SP',9,'','http://www.aerokurier.de/de/gulfstream-giv-sp.5595.htm',7820,851,45330000,278000,2,1),
-	(5,'Global Express',10,'','',12038,935,51300000,310000,2,2),
-	(6,'Malibu Mirage',11,'','',2491,394,6000000,20000,1,0);
+	(1,'Citation CJ1',8,'cj1.jpg','http://de.wikipedia.org/wiki/Cessna_CitationJet',2408,720,21800000,72700,1,0),
+	(2,'Citation Mustang',8,'mustang.jpg','http://de.wikipedia.org/wiki/Cessna_Citation_Mustang',2366,620,10700000,42000,1,0),
+	(3,'Citation CXLR',8,'cxlr.jpg','html://nowhere.de',4009,795,24240000,68000,2,1),
+	(4,'GIV SP',9,'givsp.jpg','http://www.aerokurier.de/de/gulfstream-giv-sp.5595.htm',7820,851,45330000,278000,2,1),
+	(5,'Global Express',10,'globalexpress.jpg','html://nowhere.de',12038,935,51300000,310000,2,2),
+	(6,'Malibu Mirage',11,'mirage.jpg','html://nowhere.de',2491,394,6000000,20000,1,0);
 
 
 

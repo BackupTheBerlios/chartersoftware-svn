@@ -23,6 +23,8 @@ $hersteller = $herstellerModell->find('list');
 <dt>Stündliche Kosten</dt><dd><?php echo number_format($flugzeug['Flugzeugtyp']['stundenkosten'] / 100,2 , ",", ".");?></dd>
 <dt>Crew Personal</dt><dd><?php echo $flugzeug['Flugzeugtyp']['crewPersonal']?></dd>
 <dt>Kabinen Personal</dt><dd><?php echo $flugzeug['Flugzeugtyp']['cabinPersonal']?></dd>
+<dt>Link</dt><dd><a href="<?php echo $flugzeug['Flugzeugtyp']['wikipedia']?>" target=_blank><?php echo $flugzeug['Flugzeugtyp']['wikipedia']?></a></dd>
+<dt>Bild</dt><dd><?php echo $html->image($flugzeug['Flugzeugtyp']['bild'],array('width'=>'300' ))?></dd>
 </dl>
 
 <!--
