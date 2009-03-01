@@ -5,6 +5,8 @@
 <dl>
 <dt>ID</dt>  <dd><?php echo $flugzeughersteller['Flugzeughersteller']['id']?></dd>
 <dt>Name</dt><dd><?php echo $flugzeughersteller['Flugzeughersteller']['name']?></dd>
+<dt>Link</dt><dd><a href="<?php echo $flugzeughersteller['Flugzeughersteller']['link']?>" target=_blank><?php echo $flugzeughersteller['Flugzeughersteller']['link']?></a></dd>
+<dt>Informatioen</dt><dd><?php echo $flugzeughersteller['Flugzeughersteller']['information']?></dd>
 </dl>
 
 

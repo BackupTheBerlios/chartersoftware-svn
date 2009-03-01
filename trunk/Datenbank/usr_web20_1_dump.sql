@@ -86,27 +86,29 @@ VALUES
 
 # Dump of table flugzeugherstellers
 # ------------------------------------------------------------
-
 CREATE TABLE `flugzeugherstellers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
+  `link` varchar(255) DEFAULT 'http://',
+  `information` text ,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
-INSERT INTO `flugzeugherstellers` (`id`,`name`)
+INSERT INTO `flugzeugherstellers` (`id`,`name`,`link`,`information`)
 VALUES
-	(3,'Aerocar'),
-	(4,'Agusta'),
-	(5,'Aichi'),
-	(2,'Airbus'),
-	(6,'Alvis'),
-	(1,'Boing'),
-	(10,'Bombardier'),
-	(7,'British Aircraft Corporation'),
-	(8,'Cessna Aircraft Company'),
-	(9,'Gulfstream'),
-	(11,'Piper');
+	(1,'Boing','http://www.boeing.com/','<p>Das US-amerikanische Unternehmen <b>Boeing</b> <i>(The Boeing Company)</i> ist der weltweit größte Hersteller von zivilen und militärischen <a href=\"/wiki/Flugzeug\" title=\"Flugzeug\">Flugzeugen</a> und <a href=\"/wiki/Hubschrauber\" title=\"Hubschrauber\">Hubschraubern</a> sowie von Militär- und Weltraumtechnik.</p>\r\n<p>Mit <a href=\"/wiki/Airbus\" title=\"Airbus\">Airbus</a> bildet Boeing das <a href=\"/wiki/Duopol_f%C3%BCr_Gro%C3%9Fraumflugzeuge\" title=\"Duopol für Großraumflugzeuge\">Duopol für Großraumflugzeuge</a>.</p>\r\n<table id=\"toc\" class=\"toc\" summary=\"Inhaltsverzeichnis\">'),
+	(2,'Airbus',NULL,NULL),
+	(3,'Aerocar',NULL,NULL),
+	(4,'Agusta',NULL,NULL),
+	(5,'Aichi',NULL,NULL),
+	(6,'Alvis',NULL,NULL),
+	(7,'British Aircraft Corporation',NULL,NULL),
+	(8,'Cessna Aircraft Company',NULL,NULL),
+	(9,'Gulfstream',NULL,NULL),
+	(10,'Bombardier',NULL,NULL),
+	(11,'Piper',NULL,NULL);
+
 
 
 
