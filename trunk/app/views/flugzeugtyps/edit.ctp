@@ -6,7 +6,7 @@
 
     //Anzeigen einer Auswahlbox fuer Hersteller
     $herstellerModell = new Flugzeughersteller(); //Modell fuer Flugzeughersteller erzeugen
-    echo $form->input('flugzeughersteller_id', array('options' => $herstellerModell->find('list')));//auswahlbox anzeigen
+    echo $form->input('flugzeughersteller_id', array('label'=>'Hersteller','options' => $herstellerModell->find('list')));//auswahlbox anzeigen
 
     echo $form->input('Flugzeugtyp.reichweite', array('label'=>'Reichweite'));
     echo $form->input('Flugzeugtyp.vmax', array('label'=>'Geschwindigkeit'));

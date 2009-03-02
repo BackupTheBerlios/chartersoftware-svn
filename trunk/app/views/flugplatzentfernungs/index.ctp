@@ -1,28 +1,22 @@
 <h2>Entfernung zwischen Flugplaetzen</h2>
-<?php echo $html->link('Neue Flugplatz-Entfernung anlegen','/flugplatzentfernungs/add')?>
-<table>
-	<tr>
-		<th>Id</th>
-		<th>Start-Flugplatz</th>
-		<th>Ziel-Flugplatz</th>
-        <th>Entfernung</th>
-		<th>Aendern</th>
-		<th>Loeschen</th>
-	</tr>
 
-<?php
+<?php 
+	echo $html->link('Neue Flugplatz-Entfernung anlegen','/flugplatzentfernungs/add');
+    echo $html->tag('table'); 
+    echo $html->tableHeaders(array('Id', 'Start-Flugplatz', 'Ziel-Flugplatz', 'Entfernung','Ändern','Löschen'));
+
     $flugplatzModell = new Flugplatz(); 
     $flugplatz =$flugplatzModell->find('list');
-?>
-	<?php foreach ($flugplatzentfernungs as $zeile): ?>
-	<tr>
-		<td><?php echo $zeile['Flugplatzentfernung']['id']; ?></td>
-		<td><?php echo $flugplatz[$zeile['Flugplatzentfernung']['flugplatzstart_id']]?></td>
-        <td><?php echo $flugplatz[$zeile['Flugplatzentfernung']['flugplatzziel_id']]?></td>
-        <td><?php echo $zeile['Flugplatzentfernung']['entfernung']?></td>
-		<td><?php echo $html->link('Aendern', "/flugplatzentfernungs/edit/{$zeile['Flugplatzentfernung']['id']}");?></td>
-		<td><?php echo $html->link('Loeschen', "/flugplatzentfernungs/delete/{$zeile['Flugplatzentfernung']['id']}", null, 'Sind Sie sich sicher?' )?></td>
-	</tr>
-	<?php endforeach; ?>
 
-</table>
+	foreach ($flugplatzentfernungs as $zeile):
+	    echo $html->tableCells( array(
+			$zeile['Flugplatzentfernung']['id'],
+			$flugplatz[$zeile['Flugplatzentfernung']['flugplatzstart_id']],
+        	$flugplatz[$zeile['Flugplatzentfernung']['flugplatzziel_id']],
+        	$zeile['Flugplatzentfernung']['entfernung'],
+			$html->link('Ändern', "/flugplatzentfernungs/edit/{$zeile['Flugplatzentfernung']['id']}"),
+			$html->link('Löschen', "/flugplatzentfernungs/delete/{$zeile['Flugplatzentfernung']['id']}", null, 'Sind Sie sich sicher?' ),
+    	));
+    endforeach;
+    echo $html->tag('/table'); 
+?>

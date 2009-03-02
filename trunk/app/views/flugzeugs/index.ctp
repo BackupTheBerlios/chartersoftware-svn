@@ -1,24 +1,19 @@
 <h2>Flugzeuge</h2>
 
-<?php echo $html->link('Neues Flugzeug anlegen','/flugzeugs/add')?>
+<?php 
+	echo $html->link('Neues Flugzeug anlegen','/flugzeugs/add');
+    echo $html->tag('table'); 
+    echo $html->tableHeaders(array('Id', 'Kennzeichen', 'Typ', 'Ändern','Löschen'));
 
-<table>
-	<tr>
-		<th>Id</th>
-		<th>Kennzeichen</th>
-		<th>Typ</th>
-		<th>Aendern</th>
-		<th>Loeschen</th>
-	</tr>
+    foreach ($flugzeugs as $zeile):
+	    echo $html->tableCells( array(
+			$zeile['Flugzeug']['id'],
+			$html->link($zeile['Flugzeug']['kennzeichen'], "/flugzeugs/view/".$zeile['Flugzeug']['id']),
+			$html->link($zeile['Flugzeugtyp']['name'], "/flugzeugtyps/view/".$zeile['Flugzeugtyp']['id']),
+        	$html->link('Ändern', "/flugzeugs/edit/{$zeile['Flugzeug']['id']}"),
+			$html->link('Löschen', "/flugzeugs/delete/{$zeile['Flugzeug']['id']}", null, 'Sind Sie sich sicher?' )
+    	));
+	endforeach; 
 
-	<?php foreach ($flugzeugs as $zeile): ?>
-	<tr>
-		<td><?php echo $zeile['Flugzeug']['id']; ?></td>
-		<td><?php echo $html->link($zeile['Flugzeug']['kennzeichen'], "/flugzeugs/view/".$zeile['Flugzeug']['id']); ?></td>
-		<td><?php echo $html->link($zeile['Flugzeugtyp']['name'], "/flugzeugtyps/view/".$zeile['Flugzeugtyp']['id']); ?></td>
-        <td><?php echo $html->link('Aendern', "/flugzeugs/edit/{$zeile['Flugzeug']['id']}");?></td>
-		<td><?php echo $html->link('Loeschen', "/flugzeugs/delete/{$zeile['Flugzeug']['id']}", null, 'Sind Sie sich sicher?' )?></td>
-	</tr>
-	<?php endforeach; ?>
-
-</table>
+    echo $html->tag('/table'); 
+?>

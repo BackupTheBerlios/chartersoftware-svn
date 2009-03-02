@@ -1,21 +1,21 @@
 <?php
 
 /**
- * Controller fŸr Zeitzonen
+ * Controller fï¿½r Zeitzonen
  * 
  * @author A. Behrens
  * 
  * 
- * Grundprinzip: Jede Methode ist eine Action und kann von au§en aufgerufen
+ * Grundprinzip: Jede Methode ist eine Action und kann von auï¿½en aufgerufen
  * werden. Etwa "/cake/index.php/zeitzones/edit". 
  * 
- * Dabei kann es sein, dass ein Parameter Ÿbergeben wird oder auch nicht.
+ * Dabei kann es sein, dass ein Parameter ï¿½bergeben wird oder auch nicht.
  * 
  */
 class ZeitzonesController extends AppController 
 {
 	var $name = 'Zeitzones';
-	var $helpers = array('Form'); //Bedeutet: Fuer diesen Controller werden HTML-Formulare benoetigt.
+    var $helpers = array('Form','Html'); //Bedeutet: Fuer diesen Controller werden HTML-Formulare benoetigt.
 	
 	/**Anzeigen einer Liste von Zeitzonen*/
     public function index() 
@@ -39,7 +39,7 @@ class ZeitzonesController extends AppController
         }    
 	}
 	
-	/**Aufruf der ZufŸgenseite einer Zeitzone*/
+	/**Aufruf der Zufï¿½genseite einer Zeitzone*/
 	public function add() 
 	{   
 		if (!empty($this->data)) 
@@ -56,7 +56,7 @@ class ZeitzonesController extends AppController
 	}
 
 
-	/**Lšschen einer Zeitzone*/
+	/**Lï¿½schen einer Zeitzone*/
 	function delete($id) 
 	{
 		if (!empty($id))
