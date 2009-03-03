@@ -15,7 +15,6 @@
 class FlugplatzentfernungsController extends AppController 
 {
 	var $name = 'Flugplatzentfernungs';
-    var $helpers = array('Form','Html'); //Bedeutet: Fuer diesen Controller werden HTML-Formulare benoetigt.
 	
 	/**Anzeigen einer Liste*/
     public function index() 

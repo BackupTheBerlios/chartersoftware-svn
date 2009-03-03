@@ -15,11 +15,12 @@
 class FlugzeugsController extends AppController 
 {
 	var $name = 'Flugzeugs';
-    var $helpers = array('Form','Html'); //Bedeutet: Fuer diesen Controller werden HTML-Formulare benoetigt.
+    var $components = array('Index'); 
 	
 	/**Anzeigen einer Liste*/
     public function index() 
-	{   
+	{
+        //$this->Index('flugzeugs'
 		$alle = $this->Flugzeug->findAll();
 		$this->set('flugzeugs',$alle);     
 	}

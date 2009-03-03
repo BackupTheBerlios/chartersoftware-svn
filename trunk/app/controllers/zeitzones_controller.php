@@ -15,7 +15,6 @@
 class ZeitzonesController extends AppController 
 {
 	var $name = 'Zeitzones';
-    var $helpers = array('Form','Html'); //Bedeutet: Fuer diesen Controller werden HTML-Formulare benoetigt.
 	
 	/**Anzeigen einer Liste von Zeitzonen*/
     public function index() 

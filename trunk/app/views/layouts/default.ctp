@@ -19,8 +19,8 @@
 		echo $html->meta('icon');
 		echo $html->css('cake.generic');
 		echo $scripts_for_layout;
-		echo $javascript->link('prototype');
-		echo $javascript->link('scriptaculous.js?load=effects'); 
+		//echo $javascript->link('prototype');
+		//echo $javascript->link('scriptaculous.js?load=effects'); 
 	?>
 </head>
 
