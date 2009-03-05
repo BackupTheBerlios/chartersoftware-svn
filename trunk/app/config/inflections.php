@@ -31,7 +31,7 @@
  *
  *  $pluralRules = array('/(s)tatus$/i' => '\1\2tatuses', '/^(ox)$/i' => '\1\2en', '/([m|l])ouse$/i' => '\1ice');
  */
-	$pluralRules = array();
+	$pluralRules = array('/(f)lugplatz$/i' => '\1\2lugplaetze');
 /**
  * This is a key only array of plural words that should not be inflected.
  * Notice the last comma

@@ -1,8 +1,6 @@
-<h2>4linkx</h2>
+<h2>Start-Seite</h2>
 
-
-<p>Umlaut-Test Mac: öäüßÖÄÜ</p>
-<p>Umlaut-Test Windows: öäüÖÄÜß</p>
+<p>Umlaut-Test: öäüßÖÄÜ</p>
 <p>
 <?php echo $html->link('Zeitzonen','/zeitzones')?>
 </p>
@@ -21,5 +19,9 @@
 
 <p>
 <?php echo $html->link('Flugplätze','/flugplatzs')?>
+</p>
+
+<p>
+<?php echo $html->link('Entfernungen','/pages/entfernungsberechnung')?>
 </p>
 
