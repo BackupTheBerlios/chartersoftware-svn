@@ -22,6 +22,6 @@
 </p>
 
 <p>
-<?php echo $html->link('Entfernungen','/pages/entfernungsberechnung')?>
+<?php echo $html->link('Entfernungen','/entfernungen')?>
 </p>
 
