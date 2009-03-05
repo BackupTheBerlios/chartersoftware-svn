@@ -1,10 +1,8 @@
 <h2>4linkx</h2>
 
 
-<p>
-Umlaut-Test
-öäüßÖÄÜ
-</p>
+<p>Umlaut-Test Mac: öäüßÖÄÜ</p>
+<p>Umlaut-Test Windows: öäüÖÄÜß</p>
 <p>
 <?php echo $html->link('Zeitzonen','/zeitzones')?>
 </p>

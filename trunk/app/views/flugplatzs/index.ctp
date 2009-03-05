@@ -8,9 +8,9 @@
 	foreach ($flugplatzs as $zeile):
 	    echo $html->tableCells( array(
 			$zeile['Flugplatz']['id'],
-			$html->link($zeile['Flugplatz']['internatKuerzel'], "/flugplatzs/view/".$zeile['Flugplatz']['id']),
+			$html->link($zeile['Flugplatz']['iata'], "/flugplatzs/view/".$zeile['Flugplatz']['id']),
         	$html->link($zeile['Flugplatz']['name'], "/flugplatzs/view/".$zeile['Flugplatz']['id']),
-			$zeile['Flugplatz']['geoLokation'],
+			$zeile['Flugplatz']['geoPosition'],
 			$html->link($zeile['Zeitzone']['name'], "/zeitzones/view/".$zeile['Zeitzone']['id']),
 			$html->link('Ändern', "/flugplatzs/edit/{$zeile['Flugplatz']['id']}"),
 			$html->link('Löschen', "/flugplatzs/delete/{$zeile['Flugplatz']['id']}", null, 'Sind Sie sich sicher?' ),

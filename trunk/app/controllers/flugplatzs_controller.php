@@ -56,7 +56,7 @@ class FlugplatzsController extends AppController
 	}
 
 
-	/**L�schen */
+	/**löschen */
 	function delete($id) 
 	{
 		if (!empty($id))

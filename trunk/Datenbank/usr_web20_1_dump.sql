@@ -43,23 +43,27 @@ VALUES
 CREATE TABLE `flugplatzs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
-  `internatKuerzel` varchar(5) NOT NULL,
-  `geoLokation` varchar(15) NOT NULL,
+  `iata` varchar(10) NULL,
+  `geoPosition` varchar(35) NOT NULL,
   `zeitzone_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `internatKuerzel` (`internatKuerzel`),
-  UNIQUE KEY `geoLokation` (`geoLokation`),
+  UNIQUE KEY `geoPosition` (`geoPosition`),
   KEY `name` (`name`),
+  KEY `iata` (`iata`),
   KEY `flugplatzs_zeitzone_id` (`zeitzone_id`),
   CONSTRAINT `flugplatzs_zeitzone_id` FOREIGN KEY (`zeitzone_id`) REFERENCES `zeitzones` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
-INSERT INTO `flugplatzs` (`id`,`name`,`internatKuerzel`,`geoLokation`,`zeitzone_id`)
+--Take airports from http://www.azworldairports.com/azworld/p1600.cfm
+INSERT INTO `flugplatzs` (`id`,`name`,`iata`,`geoPosition`,`zeitzone_id`)
 VALUES
-	(1,'Mülheim','MU-ES','a',1),
-	(2,'Frankfurt/Germany','FFH','b',1),
-	(3,'Dresden','DD','c',1),
-	(5,'Berlin','BRL','d',1);
+	(1,'Essen-Mülheim','ESS/EDLE','51°24''08"N, 006°56''14"O',1),
+	(2,'Mülheim','ESS/EDLE','51°24''08"N, 006°56''14"O',1),
+	(3,'Frankfurt-Engelsbach','QEF','49°57''39"N, 8°38''29" O',1),
+	(4,'Engelsbach bei Frankfurt','QEF','49°57''39"N, 8°38''29" O',1),
+	(5,'Dresden Airport','DRS/EDDC','51°07''58"N, 013°46''02"O',1),
+	(6,'Erfurt Airport','ERF/EDDE','50°58''47"N, 010°57''29"E',1),
+	(7,'Augsburg Airport','AGB/EDMA','48°25''31"N, 010°55''54"E',1);
 
 
 
