@@ -39,7 +39,8 @@
 		</div>
 
 		<div id="footer">
-			<?php echo $html->link('Impressum','/impressum')?>
+            <?php echo $html->link('Start','/')?>
+            <?php echo $html->link('Impressum','/pages/impressum')?>
 		</div>
 	</div>
 	<?php echo $cakeDebug; ?>
