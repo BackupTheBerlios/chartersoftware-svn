@@ -18,7 +18,7 @@
 </p>
 
 <p>
-<?php echo $html->link('Flugplätze','/flugplatzs')?>
+<?php echo $html->link('Flugplätze','/flugplaetze')?>
 </p>
 
 <p>

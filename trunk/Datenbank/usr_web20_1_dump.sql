@@ -14,6 +14,7 @@ DROP TABLE IF EXISTS `flugzeugtyps`;
 DROP TABLE IF EXISTS `flugzeugherstellers`;
 DROP TABLE IF EXISTS `flugplatzentfernungs`;
 DROP TABLE IF EXISTS `flugplatzs`;
+DROP TABLE IF EXISTS `flugplaetze`;
 DROP TABLE IF EXISTS `zeitzones`;
 
 CREATE TABLE `zeitzones` (
@@ -40,7 +41,7 @@ VALUES
 # ------------------------------------------------------------
 
 
-CREATE TABLE `flugplatzs` (
+CREATE TABLE `flugplaetze` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   `iata` varchar(10) NULL,
@@ -50,12 +51,12 @@ CREATE TABLE `flugplatzs` (
   UNIQUE  KEY `name` (`name`),
   KEY `geoPosition` (`geoPosition`),
   KEY `iata` (`iata`),
-  KEY `flugplatzs_zeitzone_id` (`zeitzone_id`),
-  CONSTRAINT `flugplatzs_zeitzone_id` FOREIGN KEY (`zeitzone_id`) REFERENCES `zeitzones` (`id`)
+  KEY `flugplaetze_zeitzone_id` (`zeitzone_id`),
+  CONSTRAINT `flugplaetze_zeitzone_id` FOREIGN KEY (`zeitzone_id`) REFERENCES `zeitzones` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 #--Take airports from http://www.azworldairports.com/azworld/p1600.cfm
-INSERT INTO `flugplatzs` (`id`,`name`,`iata`,`geoPosition`,`zeitzone_id`)
+INSERT INTO `flugplaetze` (`id`,`name`,`iata`,`geoPosition`,`zeitzone_id`)
 VALUES
 	(1,'Essen-Mülheim','ESS/EDLE','51°24''08"N, 006°56''14"O',1),
 	(2,'Mülheim','ESS/EDLE','51°24''08"N, 006°56''14"O',1),

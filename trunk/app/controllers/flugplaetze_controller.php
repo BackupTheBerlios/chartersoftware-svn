@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Controller f�r 
+ * Controller für 
  * 
  * @author A. Behrens
  * 
@@ -12,9 +12,9 @@
  * Dabei kann es sein, dass ein Parameter �bergeben wird oder auch nicht.
  * 
  */
-class FlugplatzsController extends AppController 
+class FlugplaetzeController extends AppController 
 {
-	var $name = 'Flugplatzs';
+	var $name = 'Flugplatz';
     //var $helpers = array('Form','Html'); //Bedeutet: Fuer diesen Controller werden HTML-Formulare benoetigt.
 	
 	/**Anzeigen einer Liste*/
