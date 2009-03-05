@@ -47,14 +47,14 @@ CREATE TABLE `flugplatzs` (
   `geoPosition` varchar(35) NOT NULL,
   `zeitzone_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `geoPosition` (`geoPosition`),
-  KEY `name` (`name`),
+  UNIQUE  KEY `name` (`name`),
+  KEY `geoPosition` (`geoPosition`),
   KEY `iata` (`iata`),
   KEY `flugplatzs_zeitzone_id` (`zeitzone_id`),
   CONSTRAINT `flugplatzs_zeitzone_id` FOREIGN KEY (`zeitzone_id`) REFERENCES `zeitzones` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
---Take airports from http://www.azworldairports.com/azworld/p1600.cfm
+#--Take airports from http://www.azworldairports.com/azworld/p1600.cfm
 INSERT INTO `flugplatzs` (`id`,`name`,`iata`,`geoPosition`,`zeitzone_id`)
 VALUES
 	(1,'Essen-Mülheim','ESS/EDLE','51°24''08"N, 006°56''14"O',1),

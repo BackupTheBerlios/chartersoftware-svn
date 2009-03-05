@@ -23,6 +23,3 @@
 <?php echo $html->link('Flugplätze','/flugplatzs')?>
 </p>
 
-<p>
-<?php echo $html->link('Flugplatz-Entfernungen','/flugplatzentfernungs')?>
-</p>
