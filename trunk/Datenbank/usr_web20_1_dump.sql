@@ -34,29 +34,6 @@ VALUES
 
 
 	
-# Dump of table flugplatzentfernungs
-# ------------------------------------------------------------
-
-
-CREATE TABLE `flugplatzentfernungs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `flugplatzstart_id` int(11) NOT NULL,
-  `flugplatzziel_id` int(11) NOT NULL,
-  `entfernung` int(11) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `flugplatzentfernungs_flugplatzziel_id` (`flugplatzziel_id`),
-  KEY `flugplatzentfernungs_flugplatzstart_id` (`flugplatzstart_id`),
-  CONSTRAINT `flugplatzentfernungs_flugplatzstart_id` FOREIGN KEY (`flugplatzstart_id`) REFERENCES `zeitzones` (`id`),
-  CONSTRAINT `flugplatzentfernungs_flugplatzziel_id` FOREIGN KEY (`flugplatzziel_id`) REFERENCES `zeitzones` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-
-INSERT INTO `flugplatzentfernungs` (`id`,`flugplatzstart_id`,`flugplatzziel_id`,`entfernung`)
-VALUES
-	(1,1,2,100),
-	(2,2,1,100),
-	(3,3,1,600),
-	(6,1,3,170);
-
 
 
 # Dump of table flugplatzs
@@ -66,21 +43,23 @@ VALUES
 CREATE TABLE `flugplatzs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
-  `internatKuerzel` varchar(5) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `internatKuerzel` varchar(5) NOT NULL,
+  `geoLokation` varchar(15) NOT NULL,
   `zeitzone_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `internatKuerzel` (`internatKuerzel`),
+  UNIQUE KEY `geoLokation` (`geoLokation`),
   KEY `name` (`name`),
   KEY `flugplatzs_zeitzone_id` (`zeitzone_id`),
   CONSTRAINT `flugplatzs_zeitzone_id` FOREIGN KEY (`zeitzone_id`) REFERENCES `zeitzones` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
-INSERT INTO `flugplatzs` (`id`,`name`,`internatKuerzel`,`zeitzone_id`)
+INSERT INTO `flugplatzs` (`id`,`name`,`internatKuerzel`,`geoLokation`,`zeitzone_id`)
 VALUES
-	(1,'Mülheim','MU-ES',1),
-	(2,'Frankfurt/Germany','FFH',1),
-	(3,'Dresden','DD',1),
-	(5,'Berlin','BRL',1);
+	(1,'Mülheim','MU-ES','a',1),
+	(2,'Frankfurt/Germany','FFH','b',1),
+	(3,'Dresden','DD','c',1),
+	(5,'Berlin','BRL','d',1);
 
 
 

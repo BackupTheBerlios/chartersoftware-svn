@@ -20,7 +20,8 @@ class Flugplatz extends AppModel {
     //validiert
     var $validate = array(
         'name' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>49))),
-        'internatKuerzel' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>4)))
+        'internatKuerzel' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>4))),
+        'geoLokation' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>14)))
     );
 
     //Datenbank-Assoziationen
