@@ -13,7 +13,7 @@ class Flugzeug extends AppModel {
 	//wird als Instanzvariable bei Datenzugriffen
 	//benutzt
     var $name = 'Flugzeug';
-    var $flugzeugTyp = 'Flugzeugtyp';
+    //var $flugzeugTyp = 'Flugzeugtyp';
 
 
 	//Das ist ein Array mit Valididierungsrichtilinien
