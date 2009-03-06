@@ -10,6 +10,7 @@
 # Dump of table zeitzones
 # ------------------------------------------------------------
 DROP TABLE IF EXISTS `flugzeugs`;
+DROP TABLE IF EXISTS `flugzeuge`;
 DROP TABLE IF EXISTS `flugzeugtyps`;
 DROP TABLE IF EXISTS `flugzeugherstellers`;
 DROP TABLE IF EXISTS `flugplatzentfernungs`;
@@ -132,21 +133,21 @@ VALUES
 
 
 
-# Dump of table flugzeugs
+# Dump of table flugzeuge
 # ------------------------------------------------------------
 
 
-CREATE TABLE `flugzeugs` (
+CREATE TABLE `flugzeuge` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kennzeichen` varchar(50) NOT NULL,
   `flugzeugtyp_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `kennzeichen` (`kennzeichen`),
-  KEY `flugzeugs_flugzeugtyp_id` (`flugzeugtyp_id`),
-  CONSTRAINT `flugzeugs_flugzeugtyp_id` FOREIGN KEY (`flugzeugtyp_id`) REFERENCES `flugzeugtyps` (`id`)
+  KEY `flugzeuge_flugzeugtyp_id` (`flugzeugtyp_id`),
+  CONSTRAINT `flugzeuge_flugzeugtyp_id` FOREIGN KEY (`flugzeugtyp_id`) REFERENCES `flugzeugtyps` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
-INSERT INTO `flugzeugs` (`id`,`kennzeichen`,`flugzeugtyp_id`)
+INSERT INTO `flugzeuge` (`id`,`kennzeichen`,`flugzeugtyp_id`)
 VALUES
 	(1,'NA-1',1),
 	(2,'NA-2',1),

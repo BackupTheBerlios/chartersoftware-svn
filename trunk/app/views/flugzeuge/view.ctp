@@ -27,6 +27,3 @@ $hersteller = $herstellerModell->find('list');
 <dt>Bild</dt><dd><?php echo $html->image($flugzeug['Flugzeugtyp']['bild'],array('width'=>'300' ))?></dd>
 </dl>
 
-<!--
-//TODO: Bild des Flugzeugs
--->

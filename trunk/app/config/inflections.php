@@ -34,6 +34,7 @@
 	$pluralRules = array(
         '/(f)lugplatz$/i' => '\1\2lugplaetze',
         '/(e)ntfernung$/i' => '\1\2ntfernungen'
+        '/(f)lugzeug$/i' => '\1\2lugzeuge'
     );
 /**
  * This is a key only array of plural words that should not be inflected.

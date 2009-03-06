@@ -12,17 +12,16 @@
  * Dabei kann es sein, dass ein Parameter �bergeben wird oder auch nicht.
  * 
  */
-class FlugzeugsController extends AppController 
+class FlugzeugeController extends AppController 
 {
-	var $name = 'Flugzeugs';
+	var $name = 'Flugzeug';
     var $components = array('Index'); 
 	
 	/**Anzeigen einer Liste*/
     public function index() 
 	{
-        //$this->Index('flugzeugs'
 		$alle = $this->Flugzeug->findAll();
-		$this->set('flugzeugs',$alle);     
+		$this->set('flugzeuge',$alle);     
 	}
 
     
@@ -47,7 +46,7 @@ class FlugzeugsController extends AppController
 		{
         	if ($this->Flugzeug->save($this->data)) 
         	{
-                $this->flash('gespeichert', '/flugzeugs');
+                $this->flash('gespeichert', '/flugzeuge');
         	} 
         	else
         	{
@@ -63,7 +62,7 @@ class FlugzeugsController extends AppController
 		if (!empty($id))
 		{
             $this->Flugzeug->del($id);
-            $this->flash('geloescht', '/flugzeugs');
+            $this->flash('geloescht', '/flugzeuge');
 		}
 	}
 
@@ -75,7 +74,7 @@ class FlugzeugsController extends AppController
 		{
         	if ($this->Flugzeug->save($this->data)) 
         	{
-                $this->flash('geaendert', '/flugzeugs');
+                $this->flash('geaendert', '/flugzeuge');
         	}
             else
             {

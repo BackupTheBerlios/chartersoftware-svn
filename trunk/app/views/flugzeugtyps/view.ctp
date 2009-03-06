@@ -20,7 +20,7 @@
 <h3>Bestand an Flugzeugen</h3>
 
 
-<?php echo $html->link('Neues Flugzeug anlegen','/flugzeugs/add')?>
+<?php echo $html->link('Neues Flugzeug anlegen','/flugzeuge/add')?>
 
 <table>
     <tr>
@@ -33,13 +33,10 @@
     <?php foreach ($flugzeugtyp['Flugzeug'] as $zeile):?>
     <tr>
         <td><?php echo $zeile['id']; ?></td>
-        <td><?php echo $html->link($zeile['kennzeichen'], "/flugzeugs/view/".$zeile['id']); ?></td>
-        <td><?php echo $html->link('Aendern', "/flugzeugs/edit/{$zeile['id']}");?></td>
-        <td><?php echo $html->link('Loeschen', "/flugzeugs/delete/{$zeile['id']}", null, 'Sind Sie sich sicher?' )?></td>
+        <td><?php echo $html->link($zeile['kennzeichen'], "/flugzeuge/view/".$zeile['id']); ?></td>
+        <td><?php echo $html->link('Aendern', "/flugzeuge/edit/{$zeile['id']}");?></td>
+        <td><?php echo $html->link('Loeschen', "/flugzeuge/delete/{$zeile['id']}", null, 'Sind Sie sich sicher?' )?></td>
     </tr>
     <?php endforeach; ?>
 
 </table>
-<!--
-//TODO: Bild des Flugzeugs
--->

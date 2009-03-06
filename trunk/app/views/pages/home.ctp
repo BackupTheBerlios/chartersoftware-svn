@@ -14,7 +14,7 @@
 </p>
 
 <p>
-<?php echo $html->link('Flugzeuge','/flugzeugs')?>
+<?php echo $html->link('Flugzeuge','/flugzeuge')?>
 </p>
 
 <p>
