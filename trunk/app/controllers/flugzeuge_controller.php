@@ -12,10 +12,9 @@
  * Dabei kann es sein, dass ein Parameter �bergeben wird oder auch nicht.
  * 
  */
-class FlugzeugeController extends AppController 
+class FlugzeugController extends AppController 
 {
 	var $name = 'Flugzeug';
-    //var $components = array('Index'); 
 	
 	/**Anzeigen einer Liste*/
     public function index() 

@@ -12,7 +12,7 @@
  * Dabei kann es sein, dass ein Parameter �bergeben wird oder auch nicht.
  * 
  */
-class ZeitzonenController extends AppController 
+class ZeitzoneController extends AppController 
 {
 	var $name = 'Zeitzone';
 	
@@ -45,7 +45,7 @@ class ZeitzonenController extends AppController
 		{
         	if ($this->Zeitzone->save($this->data)) 
         	{
-                $this->flash('gespeichert', '/zeitzonen');
+                $this->flash('gespeichert', '/zeitzone');
         	} 
         	else
         	{
@@ -61,7 +61,7 @@ class ZeitzonenController extends AppController
 		if (!empty($id))
 		{
             $this->Zeitzone->del($id);
-            $this->flash('gelöscht', '/zeitzonen');
+            $this->flash('gelöscht', '/zeitzone');
 		}
 	}
 
@@ -73,7 +73,7 @@ class ZeitzonenController extends AppController
 		{
         	if ($this->Zeitzone->save($this->data)) 
         	{
-                $this->flash('geaendert', '/zeitzonen');
+                $this->flash('geaendert', '/zeitzone');
         	}
             else
             {
