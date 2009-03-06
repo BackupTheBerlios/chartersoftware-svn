@@ -17,6 +17,8 @@ DROP TABLE IF EXISTS `flugplatzentfernungs`;
 DROP TABLE IF EXISTS `flugplatzs`;
 DROP TABLE IF EXISTS `flugplaetze`;
 DROP TABLE IF EXISTS `zeitzones`;
+DROP TABLE IF EXISTS `mehrwertsteuersaetze`;
+DROP TABLE IF EXISTS `vorgangstypen`;
 
 CREATE TABLE `zeitzones` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -35,7 +37,41 @@ VALUES
 	(4,'Europa/Warschau',1,NULL);
 
 
+#-----------------------------------
+#-----------------------------------
+#-----------------------------------
+CREATE TABLE `mehrwertsteuersaetze` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `beschreibung` varchar(25) NOT NULL,
+  `satz` tinyint(4) NOT NULL,
+  `scale` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `beschreibung` (`beschreibung`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+INSERT INTO `mehrwertsteuersaetze` (`id`,`beschreibung`,`satz`,`scale`)
+VALUES
+	(1,'Voller Satz',1900,100),
+	(2,'Halber Satz',700,100),
+	(3,'Steuerfrei',0,100);
+
 	
+#-----------------------------------
+#-----------------------------------
+#-----------------------------------
+CREATE TABLE `vorgangstypen` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `beschreibung` varchar(25) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `beschreibung` (`beschreibung`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+INSERT INTO `vorgangstypen` (`id`,`beschreibung`)
+VALUES
+	(1,'Angebot'),
+	(2,'Vertrag'),
+	(3,'Rechnung');
+
 
 
 # Dump of table flugplatzs

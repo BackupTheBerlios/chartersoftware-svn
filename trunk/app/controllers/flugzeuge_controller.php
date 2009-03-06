@@ -15,7 +15,7 @@
 class FlugzeugeController extends AppController 
 {
 	var $name = 'Flugzeug';
-    var $components = array('Index'); 
+    //var $components = array('Index'); 
 	
 	/**Anzeigen einer Liste*/
     public function index() 

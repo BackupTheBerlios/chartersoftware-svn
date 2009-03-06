@@ -6,21 +6,17 @@
  * @author A. Behrens
  * 
  * 
- * Grundprinzip: Jede Methode ist eine Action und kann von au�en aufgerufen
- * werden. Etwa "/cake/index.php/flugplatzs/edit". 
- * 
- * Dabei kann es sein, dass ein Parameter �bergeben wird oder auch nicht.
  * 
  */
-class FlugplaetzeController extends AppController 
+class MehrwertsteuersaetzeController extends AppController 
 {
-	var $name = 'Flugplatz';
+	var $name = 'Mehrwertsteuersatz';
 	
 	/**Anzeigen einer Liste*/
     public function index() 
 	{   
-		$alle = $this->Flugplatz->find('all');
-		$this->set('flugplaetze',$alle);     
+		$alle = $this->Mehrwertsteuersatz->find('all');
+		$this->set('Mehrwertsteuersaetze',$alle);     
 	}
 
     
@@ -33,19 +29,19 @@ class FlugplaetzeController extends AppController
 	{  
         if ($id != null) 
         {      
-		  $this->Flugplatz->id = $id;        
-		  $this->set('flugplatz', $this->Flugplatz->read());
+		  $this->Mehrwertsteuersatz->id = $id;        
+		  $this->set('mehrwertsteuersatz', $this->Mehrwertsteuersatz->read());
         }    
 	}
 	
-	/**Aufruf der Zuf�genseite*/
+	/**Aufruf der Zufügenseite*/
 	public function add() 
 	{   
 		if (!empty($this->data)) 
 		{
-        	if ($this->Flugplatz->save($this->data)) 
+        	if ($this->Mehrwertsteuersatz->save($this->data)) 
         	{
-                $this->flash('gespeichert', '/flugplaetze');
+                $this->flash('gespeichert', '/mehrwertsteuersaetze');
         	} 
         	else
         	{
@@ -60,8 +56,8 @@ class FlugplaetzeController extends AppController
 	{
 		if (!empty($id))
 		{
-            $this->Flugplatz->del($id);
-            $this->flash('geloescht', '/flugplaetze');
+            $this->Mehrwertsteuersatz->del($id);
+            $this->flash('geloescht', '/mehrwertsteuersaetze');
 		}
 	}
 
@@ -71,9 +67,9 @@ class FlugplaetzeController extends AppController
 	{
 		if (!empty($this->data)) 
 		{
-        	if ($this->Flugplatz->save($this->data)) 
+        	if ($this->Mehrwertsteuersatz->save($this->data)) 
         	{
-                $this->flash('geaendert', '/flugplaetze');
+                $this->flash('geändert', '/mehrwertsteuersaetze');
         	}
             else
             {
@@ -82,8 +78,8 @@ class FlugplaetzeController extends AppController
 		}
       	else 
       	{
-        	$this->Flugplatz->id = $id;
-        	$this->data = $this->Flugplatz->read();
+        	$this->Mehrwertsteuersatz->id = $id;
+        	$this->data = $this->Mehrwertsteuersatz->read();
         	$this->set('id',$id);
       	}
 	}

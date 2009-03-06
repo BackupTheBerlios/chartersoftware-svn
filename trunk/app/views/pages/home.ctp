@@ -25,3 +25,11 @@
 <?php echo $html->link('Entfernungen','/entfernungen')?>
 </p>
 
+<p>
+<?php echo $html->link('Mehrwertsteuersätze','/mehrwertsteuersaetze')?>
+</p>
+
+<p>
+<?php echo $html->link('Vorgangstypen','/vorgangstypen')?>
+</p>
+

@@ -33,8 +33,10 @@
  */
 	$pluralRules = array(
         '/(f)lugplatz$/i' => '\1\2lugplaetze',
-        '/(e)ntfernung$/i' => '\1\2ntfernungen'
-        '/(f)lugzeug$/i' => '\1\2lugzeuge'
+        '/(e)ntfernung$/i' => '\1\2ntfernungen',
+        '/(f)lugzeug$/i' => '\1\2lugzeuge',
+        '/(v)organgstyp$/i' => '\1\2organgstypen',
+        '/(m)ehrwertsteuersatz$/i' => '\1\2ehrwertsteuersaetze'
     );
 /**
  * This is a key only array of plural words that should not be inflected.
