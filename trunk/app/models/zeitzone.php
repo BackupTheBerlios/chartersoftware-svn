@@ -10,7 +10,7 @@ class Zeitzone extends AppModel {
                           );
 
     //Datenbank-Assoziationen
-    var $hasMany = array('Flugplatz');
+    //var $hasMany = array('Flugplatz');
 
 }
 

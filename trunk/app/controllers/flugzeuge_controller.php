@@ -12,7 +12,7 @@
  * Dabei kann es sein, dass ein Parameter �bergeben wird oder auch nicht.
  * 
  */
-class FlugzeugController extends AppController 
+class FlugzeugeController extends AppController 
 {
 	var $name = 'Flugzeug';
 	

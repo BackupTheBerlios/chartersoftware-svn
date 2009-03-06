@@ -11,23 +11,19 @@
 
 
 <h3>Flugplaetze in Zeitzone</h3>
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Internat. Kuerzel</th>
-        <th>Name</th>
-        <th>Aendern</th>
-        <th>Loeschen</th>
-    </tr>
+<?php
+    $model = new Flugplatz();
+    echo $html->tag('table'); 
+    echo $html->tableHeaders(array('Id', 'Kürzel', 'Name', 'Position', 'Zeitzone'));
 
-    <?php foreach ($zeitzone['Flugplatz'] as $zeile):?>
-    <tr>
-        <td><?php echo $zeile['id']; ?></td>
-        <td><?php echo $html->link($zeile['internatKuerzel'], "/flugplatzs/view/".$zeile['id']); ?></td>
-        <td><?php echo $html->link($zeile['name'], "/flugplatzs/view/".$zeile['id']); ?></td>
-        <td><?php echo $html->link('Aendern', "/flugplatzs/edit/{$zeile['id']}");?></td>
-        <td><?php echo $html->link('Loeschen', "/flugplatzs/delete/{$zeile['id']}", null, 'Sind Sie sich sicher?' )?></td>
-    </tr>
-    <?php endforeach; ?>
-
-</table>
+    foreach ($model->find('all') as $zeile):
+        echo $html->tableCells( array(
+            $zeile['Flugplatz']['id'],
+            $html->link($zeile['Flugplatz']['iata'], "/flugplaetze/view/".$zeile['Flugplatz']['id']),
+            $html->link($zeile['Flugplatz']['name'], "/flugplaetze/view/".$zeile['Flugplatz']['id']),
+            $zeile['Flugplatz']['geoPosition'],
+            $html->link($zeile['Zeitzone']['name'], "/zeitzonen/view/".$zeile['Zeitzone']['id']),
+        ));
+    endforeach;
+    echo $html->tag('/table'); 
+?>

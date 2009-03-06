@@ -7,7 +7,6 @@
 # Generation Time: 2009-02-22 23:34:18 +0100
 # ************************************************************
 
-# Dump of table zeitzones
 # ------------------------------------------------------------
 DROP TABLE IF EXISTS `flugzeugs`;
 DROP TABLE IF EXISTS `flugzeuge`;
@@ -17,10 +16,14 @@ DROP TABLE IF EXISTS `flugplatzentfernungs`;
 DROP TABLE IF EXISTS `flugplatzs`;
 DROP TABLE IF EXISTS `flugplaetze`;
 DROP TABLE IF EXISTS `zeitzones`;
+DROP TABLE IF EXISTS `zeitzonen`;
 DROP TABLE IF EXISTS `mehrwertsteuersaetze`;
 DROP TABLE IF EXISTS `vorgangstypen`;
 
-CREATE TABLE `zeitzones` (
+# ------------------------------------------------------------
+# ------------------------------------------------------------
+# ------------------------------------------------------------
+CREATE TABLE `zeitzonen` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   `differenzUtc` tinyint(4) NOT NULL,
@@ -28,7 +31,7 @@ CREATE TABLE `zeitzones` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
-INSERT INTO `zeitzones` (`id`,`name`,`differenzUtc`)
+INSERT INTO `zeitzonen` (`id`,`name`,`differenzUtc`)
 VALUES
 	(1,'Europa/Berlin',1),
 	(2,'Europa/Prag',1),
@@ -87,8 +90,8 @@ CREATE TABLE `flugplaetze` (
   UNIQUE  KEY `name` (`name`),
   KEY `geoPosition` (`geoPosition`),
   KEY `iata` (`iata`),
-  KEY `flugplaetze_zeitzone_id` (`zeitzone_id`),
-  CONSTRAINT `flugplaetze_zeitzone_id` FOREIGN KEY (`zeitzone_id`) REFERENCES `zeitzones` (`id`)
+  KEY `flugplaetze_zeitzonen_id` (`zeitzone_id`),
+  CONSTRAINT `flugplaetze_zeitzone_id` FOREIGN KEY (`zeitzone_id`) REFERENCES `zeitzonen` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 #--Take airports from http://www.azworldairports.com/azworld/p1600.cfm

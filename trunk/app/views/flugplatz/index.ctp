@@ -11,7 +11,7 @@
 			$html->link($zeile['Flugplatz']['iata'], "/flugplaetze/view/".$zeile['Flugplatz']['id']),
         	$html->link($zeile['Flugplatz']['name'], "/flugplaetze/view/".$zeile['Flugplatz']['id']),
 			$zeile['Flugplatz']['geoPosition'],
-			$html->link($zeile['Zeitzone']['name'], "/zeitzones/view/".$zeile['Zeitzone']['id']),
+			$html->link($zeile['Zeitzone']['name'], "/zeitzonen/view/".$zeile['Zeitzone']['id']),
 			$html->link('Ändern', "/flugplaetze/edit/{$zeile['Flugplatz']['id']}"),
 			$html->link('Löschen', "/flugplaetze/delete/{$zeile['Flugplatz']['id']}", null, 'Sind Sie sich sicher?' ),
     	));

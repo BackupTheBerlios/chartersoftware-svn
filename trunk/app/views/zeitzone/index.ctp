@@ -1,5 +1,5 @@
 <h2>Zeitzone</h2>
-<?php echo $html->link('Neue Zeitzone anlegen','/zeitzone/add')?>
+<?php echo $html->link('Neue Zeitzone anlegen','/zeitzonen/add')?>
 <table>
 	<tr>
 		<th>Id</th>
@@ -14,10 +14,10 @@
 	<?php foreach ($zeitzonen as $zone): ?>
 	<tr>
 		<td><?php echo $zone['Zeitzone']['id']; ?></td>
-		<td><?php echo $html->link($zone['Zeitzone']['name'], "/zeitzone/view/".$zone['Zeitzone']['id']); ?></td>
+		<td><?php echo $html->link($zone['Zeitzone']['name'], "/zeitzonen/view/".$zone['Zeitzone']['id']); ?></td>
 		<td><?php echo $zone['Zeitzone']['differenzUtc']; ?></td>
-		<td><?php echo $html->link('Aendern', "/zeitzone/edit/{$zone['Zeitzone']['id']}");?></td>
-		<td><?php echo $html->link('Loeschen', "/zeitzone/delete/{$zone['Zeitzone']['id']}", null, 'Sind Sie sich sicher?' )?></td>
+		<td><?php echo $html->link('Aendern', "/zeitzonen/edit/{$zone['Zeitzone']['id']}");?></td>
+		<td><?php echo $html->link('Loeschen', "/zeitzonen/delete/{$zone['Zeitzone']['id']}", null, 'Sind Sie sich sicher?' )?></td>
 	</tr>
 	<?php endforeach; ?>
 
