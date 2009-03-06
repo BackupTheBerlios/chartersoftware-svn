@@ -5,7 +5,7 @@
     echo $html->tag('table'); 
     echo $html->tableHeaders(array('Id', 'Kürzel', 'Name', 'Position', 'Zeitzone','Ändern','Löschen'));
 
-	foreach ($flugplatzs as $zeile):
+	foreach ($flugplaetze as $zeile):
 	    echo $html->tableCells( array(
 			$zeile['Flugplatz']['id'],
 			$html->link($zeile['Flugplatz']['iata'], "/flugplaetze/view/".$zeile['Flugplatz']['id']),

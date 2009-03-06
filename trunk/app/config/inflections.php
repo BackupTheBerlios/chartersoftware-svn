@@ -35,6 +35,7 @@
         '/(f)lugplatz$/i' => '\1\2lugplaetze',
         '/(e)ntfernung$/i' => '\1\2ntfernungen',
         '/(f)lugzeug$/i' => '\1\2lugzeuge',
+        '/(z)eitzone$/i' => '\1\2eitzonen',
         '/(v)organgstyp$/i' => '\1\2organgstypen',
         '/(m)ehrwertsteuersatz$/i' => '\1\2ehrwertsteuersaetze'
     );

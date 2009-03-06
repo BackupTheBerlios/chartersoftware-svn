@@ -7,20 +7,20 @@
  * 
  * 
  * Grundprinzip: Jede Methode ist eine Action und kann von au�en aufgerufen
- * werden. Etwa "/cake/index.php/zeitzones/edit". 
+ * werden. Etwa "/cake/index.php/zeitzonen/edit". 
  * 
  * Dabei kann es sein, dass ein Parameter �bergeben wird oder auch nicht.
  * 
  */
-class ZeitzonesController extends AppController 
+class ZeitzonenController extends AppController 
 {
-	var $name = 'Zeitzones';
+	var $name = 'Zeitzone';
 	
 	/**Anzeigen einer Liste von Zeitzonen*/
     public function index() 
 	{   
 		$alle = $this->Zeitzone->findAll();
-		$this->set('zeitzones',$alle);     
+		$this->set('zeitzonen',$alle);     
 	}
 
     
@@ -45,7 +45,7 @@ class ZeitzonesController extends AppController
 		{
         	if ($this->Zeitzone->save($this->data)) 
         	{
-                $this->flash('gespeichert', '/zeitzones');
+                $this->flash('gespeichert', '/zeitzonen');
         	} 
         	else
         	{
@@ -61,7 +61,7 @@ class ZeitzonesController extends AppController
 		if (!empty($id))
 		{
             $this->Zeitzone->del($id);
-            $this->flash('geloescht', '/zeitzones');
+            $this->flash('gelöscht', '/zeitzonen');
 		}
 	}
 
@@ -73,7 +73,7 @@ class ZeitzonesController extends AppController
 		{
         	if ($this->Zeitzone->save($this->data)) 
         	{
-                $this->flash('geaendert', '/zeitzones');
+                $this->flash('geaendert', '/zeitzonen');
         	}
             else
             {

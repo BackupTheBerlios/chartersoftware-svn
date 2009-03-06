@@ -2,7 +2,7 @@
 
 <p>Umlaut-Test: öäüßÖÄÜ</p>
 <p>
-<?php echo $html->link('Zeitzonen','/zeitzones')?>
+<?php echo $html->link('Zeitzonen','/zeitzonen')?>
 </p>
 
 <p>

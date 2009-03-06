@@ -24,17 +24,16 @@ CREATE TABLE `zeitzones` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   `differenzUtc` tinyint(4) NOT NULL,
-  `sommerzeitRegel` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
-INSERT INTO `zeitzones` (`id`,`name`,`differenzUtc`,`sommerzeitRegel`)
+INSERT INTO `zeitzones` (`id`,`name`,`differenzUtc`)
 VALUES
-	(1,'Europa/Berlin',2,''),
-	(2,'Europa/Prag',1,NULL),
-	(3,'Europa/Wien',1,NULL),
-	(4,'Europa/Warschau',1,NULL);
+	(1,'Europa/Berlin',1),
+	(2,'Europa/Prag',1),
+	(3,'Europa/Wien',1),
+	(4,'Europa/Warschau',1);
 
 
 #-----------------------------------
@@ -43,8 +42,8 @@ VALUES
 CREATE TABLE `mehrwertsteuersaetze` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `beschreibung` varchar(25) NOT NULL,
-  `satz` tinyint(4) NOT NULL,
-  `scale` tinyint(4) NOT NULL,
+  `satz` int(4) NOT NULL,
+  `scale` int(4) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `beschreibung` (`beschreibung`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;

@@ -16,7 +16,7 @@ class MehrwertsteuersaetzeController extends AppController
     public function index() 
 	{   
 		$alle = $this->Mehrwertsteuersatz->find('all');
-		$this->set('Mehrwertsteuersaetze',$alle);     
+		$this->set('mehrwertsteuersaetze',$alle);     
 	}
 
     
