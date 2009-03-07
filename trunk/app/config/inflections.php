@@ -21,12 +21,14 @@
  *  $pluralRules = array('/(s)tatus$/i' => '\1\2tatuses', '/^(ox)$/i' => '\1\2en', '/([m|l])ouse$/i' => '\1ice');
  */
 	$pluralRules = array(
-        '/(f)lugplatz$/i' => '\1\2lugplaetze',
         '/(e)ntfernung$/i' => '\1\2ntfernungen',
+        '/(f)lugplatz$/i' => '\1\2lugplaetze',
         '/(f)lugzeug$/i' => '\1\2lugzeuge',
-        '/(z)eitzone$/i' => '\1\2eitzonen',
+        //'/(f)lugzeughersteller$/i' => '\1\2lugzeughersteller',
+        '/(f)lugzeugtyp$/i' => '\1\2lugzeugtypen',
+        '/(m)ehrwertsteuersatz$/i' => '\1\2ehrwertsteuersaetze',
         '/(v)organgstyp$/i' => '\1\2organgstypen',
-        '/(m)ehrwertsteuersatz$/i' => '\1\2ehrwertsteuersaetze'
+        '/(z)eitzone$/i' => '\1\2eitzonen'
     );
 /**
  * This is a key only array of plural words that should not be inflected.
@@ -34,7 +36,7 @@
  *
  * $uninflectedPlural = array('.*[nrlm]ese', '.*deer', '.*fish', '.*measles', '.*ois', '.*pox');
  */
-	$uninflectedPlural = array();
+	$uninflectedPlural = array('.*lugzeughersteller');
 /**
  * This is a key => value array of plural irregular words.
  * If key matches then the value is returned.

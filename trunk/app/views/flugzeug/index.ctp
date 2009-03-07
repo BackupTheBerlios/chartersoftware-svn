@@ -9,7 +9,7 @@
 	    echo $html->tableCells( array(
 			$zeile['Flugzeug']['id'],
 			$html->link($zeile['Flugzeug']['kennzeichen'], "/flugzeuge/view/".$zeile['Flugzeug']['id']),
-			$html->link($zeile['Flugzeugtyp']['name'], "/flugzeugtyps/view/".$zeile['Flugzeugtyp']['id']),
+			$html->link($zeile['Flugzeugtyp']['name'], "/flugzeugtypen/view/".$zeile['Flugzeugtyp']['id']),
         	$html->link('Ändern', "/flugzeuge/edit/{$zeile['Flugzeug']['id']}"),
 			$html->link('Löschen', "/flugzeuge/delete/{$zeile['Flugzeug']['id']}", null, 'Sind Sie sich sicher?' )
     	));

@@ -6,11 +6,11 @@
 </p>
 
 <p>
-<?php echo $html->link('Flugzeughersteller','/flugzeugherstellers')?>
+<?php echo $html->link('Flugzeughersteller','/flugzeughersteller')?>
 </p>
 
 <p>
-<?php echo $html->link('Flugzeugtypen','/flugzeugtyps')?>
+<?php echo $html->link('Flugzeugtypen','/flugzeugtypen')?>
 </p>
 
 <p>

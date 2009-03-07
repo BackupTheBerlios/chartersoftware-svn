@@ -11,7 +11,9 @@
 DROP TABLE IF EXISTS `flugzeugs`;
 DROP TABLE IF EXISTS `flugzeuge`;
 DROP TABLE IF EXISTS `flugzeugtyps`;
+DROP TABLE IF EXISTS `flugzeugtypen`;
 DROP TABLE IF EXISTS `flugzeugherstellers`;
+DROP TABLE IF EXISTS `flugzeughersteller`;
 DROP TABLE IF EXISTS `flugplatzentfernungs`;
 DROP TABLE IF EXISTS `flugplatzs`;
 DROP TABLE IF EXISTS `flugplaetze`;
@@ -90,7 +92,7 @@ CREATE TABLE `flugplaetze` (
   UNIQUE  KEY `name` (`name`),
   KEY `geoPosition` (`geoPosition`),
   KEY `iata` (`iata`),
-  KEY `flugplaetze_zeitzonen_id` (`zeitzone_id`),
+  KEY `flugplaetze_zeitzone_id` (`zeitzone_id`),
   CONSTRAINT `flugplaetze_zeitzone_id` FOREIGN KEY (`zeitzone_id`) REFERENCES `zeitzonen` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
@@ -109,7 +111,7 @@ VALUES
 
 # Dump of table flugzeugherstellers
 # ------------------------------------------------------------
-CREATE TABLE `flugzeugherstellers` (
+CREATE TABLE `flugzeughersteller` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `link` varchar(255) DEFAULT 'http://',
@@ -118,7 +120,7 @@ CREATE TABLE `flugzeugherstellers` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
-INSERT INTO `flugzeugherstellers` (`id`,`name`,`link`,`information`)
+INSERT INTO `flugzeughersteller` (`id`,`name`,`link`,`information`)
 VALUES
 	(1,'Boing','http://www.boeing.com/','<p>Das US-amerikanische Unternehmen <b>Boeing</b> <i>(The Boeing Company)</i> ist der weltweit größte Hersteller von zivilen und militärischen <a href=\"/wiki/Flugzeug\" title=\"Flugzeug\">Flugzeugen</a> und <a href=\"/wiki/Hubschrauber\" title=\"Hubschrauber\">Hubschraubern</a> sowie von Militär- und Weltraumtechnik.</p>\r\n<p>Mit <a href=\"/wiki/Airbus\" title=\"Airbus\">Airbus</a> bildet Boeing das <a href=\"/wiki/Duopol_f%C3%BCr_Gro%C3%9Fraumflugzeuge\" title=\"Duopol für Großraumflugzeuge\">Duopol für Großraumflugzeuge</a>.</p>\r\n<table id=\"toc\" class=\"toc\" summary=\"Inhaltsverzeichnis\">'),
 	(2,'Airbus',NULL,NULL),
@@ -137,11 +139,11 @@ VALUES
 
 
 
-# Dump of table flugzeugtyps
+# Dump of table flugzeugtypen
 # ------------------------------------------------------------
 
 
-CREATE TABLE `flugzeugtyps` (
+CREATE TABLE `flugzeugtypen` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `flugzeughersteller_id` int(11) NOT NULL,
@@ -155,11 +157,11 @@ CREATE TABLE `flugzeugtyps` (
   `cabinPersonal` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
-  KEY `flugzeugtyps_flugzeughersteller_id` (`flugzeughersteller_id`),
-  CONSTRAINT `flugzeugtyps_flugzeughersteller_id` FOREIGN KEY (`flugzeughersteller_id`) REFERENCES `flugzeugherstellers` (`id`)
+  KEY `flugzeugtypen_flugzeughersteller_id` (`flugzeughersteller_id`),
+  CONSTRAINT `flugzeugtypen_flugzeughersteller_id` FOREIGN KEY (`flugzeughersteller_id`) REFERENCES `flugzeughersteller` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
-INSERT INTO `flugzeugtyps` (`id`,`name`,`flugzeughersteller_id`,`bild`,`wikipedia`,`reichweite`,`vmax`,`jahreskosten`,`stundenkosten`,`crewPersonal`,`cabinPersonal`)
+INSERT INTO `flugzeugtypen` (`id`,`name`,`flugzeughersteller_id`,`bild`,`wikipedia`,`reichweite`,`vmax`,`jahreskosten`,`stundenkosten`,`crewPersonal`,`cabinPersonal`)
 VALUES
 	(1,'Citation CJ1',8,'cj1.jpg','http://de.wikipedia.org/wiki/Cessna_CitationJet',2408,720,21800000,72700,1,0),
 	(2,'Citation Mustang',8,'mustang.jpg','http://de.wikipedia.org/wiki/Cessna_Citation_Mustang',2366,620,10700000,42000,1,0),
@@ -182,7 +184,7 @@ CREATE TABLE `flugzeuge` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `kennzeichen` (`kennzeichen`),
   KEY `flugzeuge_flugzeugtyp_id` (`flugzeugtyp_id`),
-  CONSTRAINT `flugzeuge_flugzeugtyp_id` FOREIGN KEY (`flugzeugtyp_id`) REFERENCES `flugzeugtyps` (`id`)
+  CONSTRAINT `flugzeuge_flugzeugtyp_id` FOREIGN KEY (`flugzeugtyp_id`) REFERENCES `flugzeugtypen` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 INSERT INTO `flugzeuge` (`id`,`kennzeichen`,`flugzeugtyp_id`)

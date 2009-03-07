@@ -15,6 +15,7 @@
 class ZeitzonenController extends AppController 
 {
 	var $name = 'Zeitzone';
+    var $uses = array('Flugplatz','Zeitzone');
 	
 	/**Anzeigen einer Liste von Zeitzonen*/
     public function index() 
@@ -73,7 +74,7 @@ class ZeitzonenController extends AppController
 		{
         	if ($this->Zeitzone->save($this->data)) 
         	{
-                $this->flash('geaendert', '/zeitzone');
+                $this->flash('geaendert', '/zeitzonen');
         	}
             else
             {

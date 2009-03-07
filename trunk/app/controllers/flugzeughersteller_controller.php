@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Controller f�r Zeitzonen
+ * Controller für Zeitzonen
  * 
  * @author A. Behrens
  * 
@@ -12,15 +12,15 @@
  * Dabei kann es sein, dass ein Parameter �bergeben wird oder auch nicht.
  * 
  */
-class FlugzeugherstellersController extends AppController 
+class FlugzeugherstellerController extends AppController 
 {
-	var $name = 'Flugzeugherstellers';
+	var $name = 'Flugzeughersteller';
 	
 	/**Anzeigen einer Liste*/
     public function index() 
 	{   
 		$alle = $this->Flugzeughersteller->findAll();
-		$this->set('flugzeugherstellers',$alle);     
+		$this->set('flugzeughersteller',$alle);     
 	}
 
     
@@ -45,7 +45,7 @@ class FlugzeugherstellersController extends AppController
 		{
         	if ($this->Flugzeughersteller->save($this->data)) 
         	{
-                $this->flash('gespeichert', '/flugzeugherstellers');
+                $this->flash('gespeichert', '/flugzeughersteller');
         	} 
         	else
         	{
@@ -61,7 +61,7 @@ class FlugzeugherstellersController extends AppController
 		if (!empty($id))
 		{
             $this->Flugzeughersteller->del($id);
-            $this->flash('geloescht', '/flugzeugherstellers');
+            $this->flash('geloescht', '/flugzeughersteller');
 		}
 	}
 
@@ -73,7 +73,7 @@ class FlugzeugherstellersController extends AppController
 		{
         	if ($this->Flugzeughersteller->save($this->data)) 
         	{
-                $this->flash('geaendert', '/flugzeugherstellers');
+                $this->flash('geaendert', '/flugzeughersteller');
         	}
             else
             {
