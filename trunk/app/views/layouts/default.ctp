@@ -8,6 +8,8 @@
 	<meta http-equiv="Content-Type"       content="text/html; charset=utf-8" />
 	<meta http-equiv="Content-Language"   content="de" />
 	<?php
+        echo $javascript->link('prototype');
+        echo $javascript->link('scriptaculous.js?load=effects'); 
 		echo $html->meta('icon');
 		echo $html->css('cake.generic');
 		echo $scripts_for_layout;

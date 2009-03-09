@@ -22,6 +22,7 @@ class ZeitzonenController extends AppController
 	{   
 		$alle = $this->Zeitzone->findAll();
 		$this->set('zeitzonen',$alle);     
+        //$this->render('index','ajax');
 	}
 
     
@@ -32,6 +33,7 @@ class ZeitzonenController extends AppController
      * */
 	public function view($id = null) 
 	{  
+        
         if ($id != null) 
         {      
 		  $this->Zeitzone->id = $id;        

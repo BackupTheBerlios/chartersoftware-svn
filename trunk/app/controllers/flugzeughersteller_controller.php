@@ -20,7 +20,8 @@ class FlugzeugherstellerController extends AppController
     public function index() 
 	{   
 		$alle = $this->Flugzeughersteller->findAll();
-		$this->set('flugzeughersteller',$alle);     
+		$this->set('flugzeughersteller',$alle);
+        //$this->render('index','ajax');
 	}
 
     
@@ -31,11 +32,13 @@ class FlugzeugherstellerController extends AppController
      * */
 	public function view($id = null) 
 	{  
+        
         if ($id != null) 
         {      
 		  $this->Flugzeughersteller->id = $id;        
 		  $this->set('flugzeughersteller', $this->Flugzeughersteller->read());
         }    
+        //$this->render('layout file', 'ajax');
 	}
 	
 	/**Aufruf der Zuf�genseite*/
