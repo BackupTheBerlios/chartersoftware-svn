@@ -7,10 +7,7 @@
     echo $form->input('Flugplatz.geoPosition', array('error'=>array('required'=>'Bitte geografische Position des Flugplatzes eingeben','length'=>'Das Feld darf nicht laenger als 34 Zeichen sein')));
 
     //Anzeigen einer Auswahlbox fuer Zeitzone
-    $zeitzoneModell = new Zeitzone();
-    echo $form->input('zeitzone_id', array('options' => $zeitzoneModell->find('list')));//auswahlbox anzeigen
+    echo $form->input('zeitzone_id', array('options' => $zeitzonenliste));//auswahlbox anzeigen
 
-	echo $form->submit('Speichern');
- 	echo $form->end();
+    echo $form->end('Speichern');
 ?>
-

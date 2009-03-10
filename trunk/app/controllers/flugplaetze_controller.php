@@ -15,6 +15,7 @@
 class FlugplaetzeController extends AppController 
 {
 	var $name = 'Flugplatz';
+    var $uses = array('Flugplatz','Zeitzone');
 	
 	/**Anzeigen einer Liste*/
     public function index() 
@@ -41,6 +42,8 @@ class FlugplaetzeController extends AppController
 	/**Aufruf der Zuf�genseite*/
 	public function add() 
 	{   
+        $this->set('zeitzonenliste', $this->Zeitzone->find('list'));//auswahlbox anzeigen
+        
 		if (!empty($this->data)) 
 		{
         	if ($this->Flugplatz->save($this->data)) 
@@ -69,6 +72,7 @@ class FlugplaetzeController extends AppController
 	/**Editieren*/
 	function edit($id = null) 
 	{
+        $this->set('zeitzonenliste', $this->Zeitzone->find('list'));//auswahlbox anzeigen
 		if (!empty($this->data)) 
 		{
         	if ($this->Flugplatz->save($this->data)) 

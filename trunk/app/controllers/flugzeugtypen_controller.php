@@ -15,7 +15,7 @@
 class FlugzeugtypenController extends AppController 
 {
 	var $name = 'Flugzeugtyp';
-    var $uses = array('Flugzeugtyp','Flugzeug');
+    var $uses = array('Flugzeugtyp','Flugzeug','Flugzeughersteller');
 	
 	/**Anzeigen einer Liste*/
     public function index() 
@@ -34,14 +34,17 @@ class FlugzeugtypenController extends AppController
 	{  
         if ($id != null) 
         {      
-		  $this->Flugzeugtyp->id = $id;        
-		  $this->set('flugzeugtyp', $this->Flugzeugtyp->read());
+          $this->Flugzeugtyp->id = $id;
+          $flugzeugtyp = $this->Flugzeugtyp->read();        
+          $this->set('flugzeugtyp', $flugzeugtyp);
         }    
 	}
 	
 	/**Aufruf der Zuf�genseite*/
 	public function add() 
 	{   
+        $this->set('herstellerliste', $this->Flugzeughersteller->find('list'));
+        
 		if (!empty($this->data)) 
 		{
         	if ($this->Flugzeugtyp->save($this->data)) 
@@ -70,6 +73,7 @@ class FlugzeugtypenController extends AppController
 	/**Editieren*/
 	function edit($id = null) 
 	{
+        $this->set('herstellerliste', $this->Flugzeughersteller->find('list'));
 		if (!empty($this->data)) 
 		{
         	if ($this->Flugzeugtyp->save($this->data)) 

@@ -5,8 +5,7 @@
     echo $form->input('name', array('error'=>array('required'=>'Bitte den Namen eingeben','length'=>'Das Feld darf nicht laenger als 49 Zeichen sein')));
 
     //Anzeigen einer Auswahlbox fuer Hersteller
-    $herstellerModell = new Flugzeughersteller(); //Modell fuer Flugzeughersteller erzeugen
-    echo $form->input('flugzeughersteller_id', array('label'=>'Hersteller','options' => $herstellerModell->find('list')));//auswahlbox anzeigen
+    echo $form->input('flugzeughersteller_id', array('label'=>'Hersteller','options' => $herstellerliste));//auswahlbox anzeigen
 
     echo $form->input('Flugzeugtyp.reichweite', array('label'=>'Reichweite'));
     echo $form->input('Flugzeugtyp.vmax', array('label'=>'Geschwindigkeit'));
@@ -17,10 +16,5 @@
     echo $form->input('Flugzeugtyp.crewPersonal', array('label'=>'Crew Personal'));
     echo $form->input('Flugzeugtyp.cabinPersonal', array('label'=>'Kabinenpersonal'));
 
-    //Speichern button
-	echo $form->submit('Speichern');
-    
-    
-    //Form schliessen
- 	echo $form->end();
+    echo $form->end('Speichern');
 ?>

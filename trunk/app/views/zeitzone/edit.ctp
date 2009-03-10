@@ -1,7 +1,6 @@
 <h2>Ändern einer Zeitzone</h2>
 <?php
     $ajax->form('edit','post',array('model'=>'Zeitzone','update'=>'UserInfoDiv'));
-	//echo $form->create('Zeitzone', array('action' => 'edit'));
 	
     echo $form->input('id', array('type'=>'hidden')); 
     

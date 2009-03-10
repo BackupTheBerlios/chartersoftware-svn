@@ -33,11 +33,13 @@ class ZeitzonenController extends AppController
      * */
 	public function view($id = null) 
 	{  
-        
         if ($id != null) 
         {      
 		  $this->Zeitzone->id = $id;        
 		  $this->set('zeitzone', $this->Zeitzone->read());
+          $conditions = array("Flugplatz.zeitzone_id" => $id);
+          $this->set('flugplaetze', $this->Flugplatz->find('all',array('conditions'=>$conditions)));
+          
         }    
 	}
 	

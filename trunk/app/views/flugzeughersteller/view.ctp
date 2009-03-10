@@ -10,31 +10,21 @@
 </dl>
 
 
-
 <h3>Flugzeugtypen</h3>
 <?php 
-    $model = new Flugzeugtyp();
-    $flugzeugtypen = $model->find('all');
-
-    echo $html->link('Neuen Flugzeugtyp anlegen','/flugzeugtypen/add');
     echo $html->tag('table'); 
-    echo $html->tableHeaders(array('Id', 'Bild', 'Name', 'Kosten Jahr','Kosten Stunde','Crew','Kabine','Ändern','Löschen'));
+    echo $html->tableHeaders(array('Id', 'Bild', 'Name', 'Kosten Jahr','Kosten Stunde','Crew','Kabine'));
 
-    foreach ($flugzeugtypen as $zeile):
-        if ($zeile['Flugzeughersteller']['id'] == $flugzeughersteller['Flugzeughersteller']['id']) {
+    foreach ($flugzeughersteller['Flugzeugtyp'] as $zeile):
             echo $html->tableCells( array(
-                $zeile['Flugzeugtyp']['id'],
-                $html->image($zeile['Flugzeugtyp']['bild'],array('width'=>'90' )),
-                $html->link($zeile['Flugzeugtyp']['name'], "/flugzeugtypen/view/".$zeile['Flugzeugtyp']['id']),
-                number_format($zeile['Flugzeugtyp']['jahreskosten'] / 100,2 , ",", "."),
-                number_format($zeile['Flugzeugtyp']['stundenkosten'] / 100,2 , ",", "."),
-                $zeile['Flugzeugtyp']['crewPersonal'],
-                $zeile['Flugzeugtyp']['cabinPersonal'],
-                $html->link('Ändern', "/flugzeugtypen/edit/{$zeile['Flugzeugtyp']['id']}"),
-                $html->link('Löschen', "/flugzeugtypen/delete/{$zeile['Flugzeugtyp']['id']}", null, 'Sind Sie sich sicher?' )
+                $zeile['id'],
+                $html->image($zeile['bild'],array('width'=>'90' )),
+                $html->link($zeile['name'], "/flugzeugtypen/view/".$zeile['id']),
+                number_format($zeile['jahreskosten'] / 100,2 , ",", "."),
+                number_format($zeile['stundenkosten'] / 100,2 , ",", "."),
+                $zeile['crewPersonal'],
+                $zeile['cabinPersonal']
             ));
-        } 
-    
     endforeach;
     echo $html->tag('/table'); 
 ?>

@@ -12,11 +12,9 @@
 
 <h3>Flugplätze in Zeitzone</h3>
 <?php
-    $model = new Flugplatz();
-    echo $html->tag('table'); 
+    echo $html->tag('table');
     echo $html->tableHeaders(array('Id', 'Kürzel', 'Name', 'Position'));
-
-    foreach ($model->find('all') as $zeile):
+    foreach ($flugplaetze as $zeile):
         echo $html->tableCells( array(
             $zeile['Flugplatz']['id'],
             $html->link($zeile['Flugplatz']['iata'], "/flugplaetze/view/".$zeile['Flugplatz']['id']),

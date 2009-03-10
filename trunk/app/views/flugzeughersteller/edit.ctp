@@ -1,4 +1,4 @@
-<h2>Flugzeug Hersteller aendern</h2>
+<h2>Flugzeug Hersteller ändern</h2>
 <?php
 	echo $form->create('Flugzeughersteller', array('action' => 'edit'));
 	
@@ -6,6 +6,5 @@
     echo $form->input('link', array('label'=>'URL'));
     echo $form->input('information', array('label'=>'Informationen'));
 
-	echo $form->submit('Speichern');
- 	echo $form->end();
+    echo $form->end('Speichern');
 ?>

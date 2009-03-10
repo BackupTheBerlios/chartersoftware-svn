@@ -15,6 +15,7 @@
 class FlugzeugeController extends AppController 
 {
 	var $name = 'Flugzeug';
+    var $uses = array('Flugzeug', 'Flugzeugtyp','Flugzeughersteller');
 	
 	/**Anzeigen einer Liste*/
     public function index() 
@@ -33,14 +34,22 @@ class FlugzeugeController extends AppController
 	{  
         if ($id != null) 
         {      
-		  $this->Flugzeug->id = $id;        
-		  $this->set('flugzeug', $this->Flugzeug->read());
+		  $this->Flugzeug->id = $id;
+          
+          $flugzeug = $this->Flugzeug->read();        
+          $typ = $this->Flugzeugtyp->findById($flugzeug['Flugzeug']['flugzeugtyp_id']);
+          $hersteller = $this->Flugzeughersteller->findById($typ['Flugzeugtyp']['flugzeughersteller_id']);
+          
+          $this->set('flugzeug', $flugzeug);
+          $this->set('flugzeugtyp', $typ);//auswahlbox anzeigen
+          $this->set('flugzeughersteller', $hersteller);
         }    
 	}
 	
 	/**Aufruf der Zuf�genseite*/
 	public function add() 
 	{   
+        $this->set('typenliste', $this->Flugzeugtyp->find('list'));
 		if (!empty($this->data)) 
 		{
         	if ($this->Flugzeug->save($this->data)) 
@@ -69,6 +78,7 @@ class FlugzeugeController extends AppController
 	/**Editieren*/
 	function edit($id = null) 
 	{
+        $this->set('typenliste', $this->Flugzeugtyp->find('list'));
 		if (!empty($this->data)) 
 		{
         	if ($this->Flugzeug->save($this->data)) 

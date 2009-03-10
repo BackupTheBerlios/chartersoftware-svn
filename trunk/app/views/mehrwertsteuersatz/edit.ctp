@@ -6,7 +6,5 @@
     echo $form->input('satz', array('label'=>'Steuersatz'));
     echo $form->input('scale', array('label'=>'Skalierung'));
 
-
-    echo $form->submit('Speichern');
-    echo $form->end();
+    echo $form->end('Speichern');
 ?>

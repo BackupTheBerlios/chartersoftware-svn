@@ -6,6 +6,5 @@
     echo $form->input('link', array('label'=>'URL'));
     echo $form->input('information', array('label'=>'Informationen'));
 
-	echo $form->submit('Speichern');
- 	echo $form->end();
+ 	echo $form->end('Speichern');
 ?>
