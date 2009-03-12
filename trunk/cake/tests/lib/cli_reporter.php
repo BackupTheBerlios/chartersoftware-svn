@@ -42,7 +42,7 @@
  * @subpackage    cake.cake.tests.libs
  */
 class CLIReporter extends TextReporter {
-	var $faildetail_separator = ST_FAILDETAIL_SEPARATOR;
+	public $faildetail_separator = ST_FAILDETAIL_SEPARATOR;
 
 	function CLIReporter($faildetail_separator = NULL) {
 		$this->SimpleReporter();

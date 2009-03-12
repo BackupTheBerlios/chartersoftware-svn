@@ -37,8 +37,8 @@ App::import('Vendor', 'simpletest' . DS . 'unit_tester');
  * @subpackage    cake.cake.tests.lib
  */
 class CakeTestDispatcher extends Dispatcher {
-	var $controller;
-	var $testCase;
+	public $controller;
+	public $testCase;
 
 	function testCase(&$testCase) {
 		$this->testCase =& $testCase;
@@ -73,9 +73,9 @@ class CakeTestCase extends UnitTestCase {
  * @var array
  * @access private
  */
-	var $methods = array('start', 'end', 'startcase', 'endcase', 'starttest', 'endtest');
-	var $__truncated = true;
-	var $__savedGetData = array();
+	public $methods = array('start', 'end', 'startcase', 'endcase', 'starttest', 'endtest');
+	public $__truncated = true;
+	public $__savedGetData = array();
 /**
  * By default, all fixtures attached to this class will be truncated and reloaded after each test.
  * Set this to false to handle manually
@@ -83,21 +83,21 @@ class CakeTestCase extends UnitTestCase {
  * @var array
  * @access public
  */
-	var $autoFixtures = true;
+	public $autoFixtures = true;
 /**
  * Set this to false to avoid tables to be dropped if they already exist
  *
  * @var boolean
  * @access public
  */
-	var $dropTables = true;
+	public $dropTables = true;
 /**
  * Maps fixture class names to fixture identifiers as included in CakeTestCase::$fixtures
  *
  * @var array
  * @access protected
  */
-	var $_fixtureClassMap = array();
+	public $_fixtureClassMap = array();
 /**
  * Called when a test case (group of methods) is about to start (to be overriden when needed.)
  *
@@ -665,7 +665,7 @@ class CakeTestCase extends UnitTestCase {
 		ClassRegistry::config(array('ds' => 'test_suite'));
 	}
 /**
- * Load fixtures specified in var $fixtures.
+ * Load fixtures specified in public $fixtures.
  *
  * @access private
  */

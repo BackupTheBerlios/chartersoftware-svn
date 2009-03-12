@@ -5,12 +5,12 @@
  * To change the template for this generated file go to
  * Window - Preferences - PHPeclipse - PHP - Code Templates
  */
- 
+
 class AppController extends Controller {
-    var $helpers = array('Form','Html','Ajax','Javascript'); //Bedeutet: Fuer diesen Controller werden HTML-Formulare benoetigt.
-    var $components = array( 'RequestHandler' );
+    public $helpers = array('Form','Html','Ajax','Javascript'); //Bedeutet: Fuer diesen Controller werden HTML-Formulare benoetigt.
+    public $components = array( 'RequestHandler' );
 }
- 
+
 
 
 ?>

@@ -35,10 +35,10 @@ define('APP_TEST_GROUPS', TESTS . 'groups');
  * @subpackage    cake.cake.tests.lib
  */
 class TestManager {
-	var $_testExtension = '.test.php';
-	var $_groupExtension = '.group.php';
-	var $appTest = false;
-	var $pluginTest = false;
+	public $_testExtension = '.test.php';
+	public $_groupExtension = '.group.php';
+	public $appTest = false;
+	public $pluginTest = false;
 /**
  * Constructor for the TestManager class
  *
@@ -410,7 +410,7 @@ class CliTestManager extends TestManager {
  * @subpackage    cake.cake.tests.lib
  */
 class TextTestManager extends TestManager {
-	var $_url;
+	public $_url;
 /**
  * Constructor
  *
@@ -497,7 +497,7 @@ class TextTestManager extends TestManager {
  * @subpackage    cake.cake.tests.lib
  */
 class HtmlTestManager extends TestManager {
-	var $_url;
+	public $_url;
 /**
  * Constructor
  *

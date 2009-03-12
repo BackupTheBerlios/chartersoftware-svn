@@ -31,8 +31,8 @@
  * @subpackage    cake.cake.tests.lib
  */
 class CakeHtmlReporter extends SimpleReporter {
-	var $_character_set;
-	var $_show_passes = false;
+	public $_character_set;
+	public $_show_passes = false;
 /**
  *    Does nothing yet. The first output will
  *    be sent on the first test start. For use
