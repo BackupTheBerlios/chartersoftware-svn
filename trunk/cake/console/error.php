@@ -31,21 +31,21 @@
  * @subpackage    cake.cake.console
  */
 class ErrorHandler extends Object {
-	var $file = "";
+	public $file = "";
 /**
  * Standard output stream.
  *
- * @var filehandle
+ * @public filehandle
  * @access public
  */
-	var $stdout;
+	public $stdout;
 /**
  * Standard error stream.
  *
- * @var filehandle
+ * @public filehandle
  * @access public
  */
-	var $stderr;
+	public $stderr;
 /**
  * Class constructor.
  *

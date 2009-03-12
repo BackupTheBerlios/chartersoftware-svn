@@ -1,58 +1,58 @@
 <?php
 
 /**
- * Controller für 
- * 
+ * Controller für
+ *
  * @author A. Behrens
- * 
- * 
- * 
+ *
+ *
+ *
  */
-class MehrwertsteuersaetzeController extends AppController 
+class MehrwertsteuersaetzeController extends AppController
 {
-	var $name = 'Mehrwertsteuersatz';
-	
+	public $name = 'Mehrwertsteuersatz';
+
 	/**Anzeigen einer Liste*/
-    public function index() 
-	{   
+    public function index()
+	{
 		$alle = $this->Mehrwertsteuersatz->find('all');
-		$this->set('mehrwertsteuersaetze',$alle);     
+		$this->set('mehrwertsteuersaetze',$alle);
 	}
 
-    
+
 	/**Anzeigen einer
-     * 
+     *
      * @param id ist optional, wenn gesetzt, wird eine einzelne Typ mit eben
      * der id angezeigt
      * */
-	public function view($id = null) 
-	{  
-        if ($id != null) 
-        {      
-		  $this->Mehrwertsteuersatz->id = $id;        
+	public function view($id = null)
+	{
+        if ($id != null)
+        {
+		  $this->Mehrwertsteuersatz->id = $id;
 		  $this->set('mehrwertsteuersatz', $this->Mehrwertsteuersatz->read());
-        }    
+        }
 	}
-	
+
 	/**Aufruf der Zufügenseite*/
-	public function add() 
-	{   
-		if (!empty($this->data)) 
+	public function add()
+	{
+		if (!empty($this->data))
 		{
-        	if ($this->Mehrwertsteuersatz->save($this->data)) 
+        	if ($this->Mehrwertsteuersatz->save($this->data))
         	{
                 $this->flash('gespeichert', '/mehrwertsteuersaetze');
-        	} 
+        	}
         	else
         	{
                 $this->Session->setFlash('Fehler beim Speichern');
-        	} 
-        }     
+        	}
+        }
 	}
 
 
 	/**löschen */
-	function delete($id) 
+	function delete($id)
 	{
 		if (!empty($id))
 		{
@@ -63,20 +63,20 @@ class MehrwertsteuersaetzeController extends AppController
 
 
 	/**Editieren*/
-	function edit($id = null) 
+	function edit($id = null)
 	{
-		if (!empty($this->data)) 
+		if (!empty($this->data))
 		{
-        	if ($this->Mehrwertsteuersatz->save($this->data)) 
+        	if ($this->Mehrwertsteuersatz->save($this->data))
         	{
                 $this->flash('geändert', '/mehrwertsteuersaetze');
         	}
             else
             {
                 $this->Session->setFlash('Fehler beim Speichern');
-            } 
+            }
 		}
-      	else 
+      	else
       	{
         	$this->Mehrwertsteuersatz->id = $id;
         	$this->data = $this->Mehrwertsteuersatz->read();

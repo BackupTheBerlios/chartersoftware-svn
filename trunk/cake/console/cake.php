@@ -35,80 +35,80 @@ class ShellDispatcher {
 /**
  * Standard input stream.
  *
- * @var filehandle
+ * @public filehandle
  * @access public
  */
-	var $stdin;
+	public $stdin;
 /**
  * Standard output stream.
  *
- * @var filehandle
+ * @public filehandle
  * @access public
  */
-	var $stdout;
+	public $stdout;
 /**
  * Standard error stream.
  *
- * @var filehandle
+ * @public filehandle
  * @access public
  */
-	var $stderr;
+	public $stderr;
 /**
  * Contains command switches parsed from the command line.
  *
- * @var array
+ * @public array
  * @access public
  */
-	var $params = array();
+	public $params = array();
 /**
  * Contains arguments parsed from the command line.
  *
- * @var array
+ * @public array
  * @access public
  */
-	var $args = array();
+	public $args = array();
 /**
  * The file name of the shell that was invoked.
  *
- * @var string
+ * @public string
  * @access public
  */
-	var $shell = null;
+	public $shell = null;
 /**
  * The class name of the shell that was invoked.
  *
- * @var string
+ * @public string
  * @access public
  */
-	var $shellClass = null;
+	public $shellClass = null;
 /**
  * The command called if public methods are available.
  *
- * @var string
+ * @public string
  * @access public
  */
-	var $shellCommand = null;
+	public $shellCommand = null;
 /**
  * The path locations of shells.
  *
- * @var array
+ * @public array
  * @access public
  */
-	var $shellPaths = array();
+	public $shellPaths = array();
 /**
  * The path to the current shell location.
  *
- * @var string
+ * @public string
  * @access public
  */
-	var $shellPath = null;
+	public $shellPath = null;
 /**
  * The name of the shell in camelized.
  *
- * @var string
+ * @public string
  * @access public
  */
-	var $shellName = null;
+	public $shellName = null;
 /**
  * Constructs this ShellDispatcher instance.
  *

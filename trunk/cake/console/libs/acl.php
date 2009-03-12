@@ -39,28 +39,28 @@ class AclShell extends Shell {
  * @var object
  * @access public
  */
-	var $Acl;
+	public $Acl;
 /**
  * Contains arguments parsed from the command line.
  *
- * @var array
+ * @public array
  * @access public
  */
-	var $args;
+	public $args;
 /**
  * Contains database source to use
  *
- * @var string
+ * @public string
  * @access public
  */
-	var $dataSource = 'default';
+	public $dataSource = 'default';
 /**
  * Contains tasks to load and instantiate
  *
- * @var array
+ * @public array
  * @access public
  */
-	var $tasks = array('DbConfig');
+	public $tasks = array('DbConfig');
 /**
  * Override startup of the Shell
  *

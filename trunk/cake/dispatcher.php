@@ -44,42 +44,42 @@ class Dispatcher extends Object {
  * @var string
  * @access public
  */
-	var $base = false;
+	public $base = false;
 /**
  * webroot path
  *
  * @var string
  * @access public
  */
-	var $webroot = '/';
+	public $webroot = '/';
 /**
  * Current URL
  *
  * @var string
  * @access public
  */
-	var $here = false;
+	public $here = false;
 /**
  * Admin route (if on it)
  *
  * @var string
  * @access public
  */
-	var $admin = false;
+	public $admin = false;
 /**
  * Plugin being served (if any)
  *
  * @var string
  * @access public
  */
-	var $plugin = null;
+	public $plugin = null;
 /**
  * the params for this request
  *
  * @var string
  * @access public
  */
-	var $params = null;
+	public $params = null;
 /**
  * Constructor.
  */

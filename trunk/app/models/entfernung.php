@@ -1,16 +1,16 @@
 <?php
 
 /**
- * 
+ *
  * @abstract Modell fuer Flugzeug
- * 
- * @author anbehren 
- * 
+ *
+ * @author anbehren
+ *
  */
 
-class Entfernung extends AppModel 
+class Entfernung extends AppModel
 {
-    var $useTable = none;
+    public $useTable = none;
 }
-                          
+
 ?>
