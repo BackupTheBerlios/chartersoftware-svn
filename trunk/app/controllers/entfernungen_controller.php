@@ -20,6 +20,8 @@ class EntfernungenController extends AppController
     /**Anzeigen einer Liste*/
     public function index($id = null)
     {
+        //$arrZeitzonenNamen = timezone_identifiers_list();
+        //$this->set('zeitzonen', $arrZeitzonenNamen);
     }
 }
 ?>

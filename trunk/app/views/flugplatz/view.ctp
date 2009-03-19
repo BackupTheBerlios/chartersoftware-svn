@@ -7,6 +7,6 @@
 <dt>Bezeichnung</dt><dd><?php echo $flugplatz['Flugplatz']['name']?></dd>
 <dt>IATA</dt><dd><?php echo $flugplatz['Flugplatz']['iata']?></dd>
 <dt>Geogr. Position</dt><dd><?php echo $flugplatz['Flugplatz']['geoPosition']?></dd>
-<dt>Zeitzone</dt><dd><?php echo $flugplatz['Zeitzone']['name']?></dd>
+<dt>Zeitzone</dt><dd><?php echo $zeitzonenliste[$flugplatz['Flugplatz']['zeitzone_id']]?></dd>
 </dl>
 

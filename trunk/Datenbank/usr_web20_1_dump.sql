@@ -22,23 +22,6 @@ DROP TABLE IF EXISTS `zeitzonen`;
 DROP TABLE IF EXISTS `mehrwertsteuersaetze`;
 DROP TABLE IF EXISTS `vorgangstypen`;
 
-# ------------------------------------------------------------
-# ------------------------------------------------------------
-# ------------------------------------------------------------
-CREATE TABLE `zeitzonen` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(30) NOT NULL,
-  `differenzUtc` tinyint(4) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
-
-INSERT INTO `zeitzonen` (`id`,`name`,`differenzUtc`)
-VALUES
-	(1,'Europa/Berlin',1),
-	(2,'Europa/Prag',1),
-	(3,'Europa/Wien',1),
-	(4,'Europa/Warschau',1);
 
 
 #-----------------------------------
@@ -91,21 +74,19 @@ CREATE TABLE `flugplaetze` (
   PRIMARY KEY (`id`),
   UNIQUE  KEY `name` (`name`),
   KEY `geoPosition` (`geoPosition`),
-  KEY `iata` (`iata`),
-  KEY `flugplaetze_zeitzone_id` (`zeitzone_id`),
-  CONSTRAINT `flugplaetze_zeitzone_id` FOREIGN KEY (`zeitzone_id`) REFERENCES `zeitzonen` (`id`)
+  KEY `iata` (`iata`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 #--Take airports from http://www.azworldairports.com/azworld/p1600.cfm
 INSERT INTO `flugplaetze` (`id`,`name`,`iata`,`geoPosition`,`zeitzone_id`)
 VALUES
-	(1,'Essen-Mülheim','ESS/EDLE','51°24''08"N, 006°56''14"O',1),
-	(2,'Mülheim','ESS/EDLE','51°24''08"N, 006°56''14"O',1),
-	(3,'Frankfurt-Engelsbach','QEF','49°57''39"N, 8°38''29" O',1),
-	(4,'Engelsbach bei Frankfurt','QEF','49°57''39"N, 8°38''29" O',1),
-	(5,'Dresden Airport','DRS/EDDC','51°07''58"N, 013°46''02"O',1),
-	(6,'Erfurt Airport','ERF/EDDE','50°58''47"N, 010°57''29"E',1),
-	(7,'Augsburg Airport','AGB/EDMA','48°25''31"N, 010°55''54"E',1);
+	(1,'Essen-Mülheim','ESS/EDLE','51°24''08"N, 006°56''14"O',400),
+	(2,'Mülheim','ESS/EDLE','51°24''08"N, 006°56''14"O',400),
+	(3,'Frankfurt-Engelsbach','QEF','49°57''39"N, 8°38''29" O',400),
+	(4,'Engelsbach bei Frankfurt','QEF','49°57''39"N, 8°38''29" O',400),
+	(5,'Dresden Airport','DRS/EDDC','51°07''58"N, 013°46''02"O',400),
+	(6,'Erfurt Airport','ERF/EDDE','50°58''47"N, 010°57''29"E',400),
+	(7,'Augsburg Airport','AGB/EDMA','48°25''31"N, 010°55''54"E',400);
 
 
 

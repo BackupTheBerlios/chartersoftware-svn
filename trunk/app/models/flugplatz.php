@@ -23,9 +23,6 @@ class Flugplatz extends AppModel {
         'iata' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>9))),
         'geoPosition' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>34)))
     );
-
-    //Datenbank-Assoziationen
-    public $belongsTo = array('Zeitzone');
 }
 
 ?>
