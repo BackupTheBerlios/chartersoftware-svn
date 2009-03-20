@@ -37,38 +37,38 @@ class CodeCoverageManager {
  *
  * @var string
  */
-	public $appTest = false;
+	var $appTest = false;
 /**
  * Is this an app test case?
  *
  * @var string
  */
-	public $pluginTest = false;
+	var $pluginTest = false;
 /**
  * Is this a grouptest?
  *
  * @var string
  * @access public
  */
-	public $groupTest = false;
+	var $groupTest = false;
 /**
  * The test case file to analyze
  *
  * @var string
  */
-	public $testCaseFile = '';
+	var $testCaseFile = '';
 /**
  * The currently used CakeTestReporter
  *
  * @var string
  */
-	public $reporter = '';
+	var $reporter = '';
 /**
  * undocumented variable
  *
  * @var string
  */
-	public $numDiffContextLines = 7;
+	var $numDiffContextLines = 7;
 /**
  * Returns a singleton instance
  *

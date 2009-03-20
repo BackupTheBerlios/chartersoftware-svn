@@ -1,6 +1,5 @@
 <h2>Flugzeugtyp</h2>
 
-<!---------------------------------------------->
 <h3>Informationen</h3>
 <dl>
 <dt>ID</dt>  <dd><?php echo $flugzeugtyp['Flugzeugtyp']['id']?></dd>
@@ -18,7 +17,6 @@
 </dl>
 
 
-<!---------------------------------------------->
 <h3>Informationen zum Hersteller</h3>
 <dl>
 <dt>ID</dt>  <dd><?php echo $flugzeugtyp['Flugzeughersteller']['id']?></dd>
@@ -28,12 +26,11 @@
 </dl>
 
 
-<!---------------------------------------------->
 <h3>Bestand an Flugzeugen</h3>
 <?php
     $model = new Flugzeug();
     $flugzeuge = $model->find('all');
-    echo $html->tag('table'); 
+    echo $html->tag('table');
     echo $html->tableHeaders(array('Id', 'Kennzeichen'));
     foreach ($flugzeuge as $zeile):
         if ($zeile['Flugzeugtyp']['id'] == $flugzeugtyp['Flugzeugtyp']['id']) {
@@ -41,7 +38,7 @@
                 $zeile['Flugzeug']['id'],
                 $html->link($zeile['Flugzeug']['kennzeichen'], "/flugzeuge/view/".$zeile['Flugzeug']['id'])
             ));
-        } 
-    endforeach; 
+        }
+    endforeach;
     echo $html->tag('/table');
 ?>

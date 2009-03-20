@@ -1,6 +1,6 @@
 #!/usr/bin/php -q
 <?php
-/* SVN FILE: $Id: cake.php 7945 2008-12-19 02:16:01Z gwoo $ */
+/* SVN FILE: $Id: cake.php 8120 2009-03-19 20:25:10Z gwoo $ */
 /**
  * Command-line code generation utility to automate programmer chores.
  *
@@ -20,9 +20,9 @@
  * @package       cake
  * @subpackage    cake.cake.console
  * @since         CakePHP(tm) v 1.2.0.5012
- * @version       $Revision: 7945 $
+ * @version       $Revision: 8120 $
  * @modifiedby    $LastChangedBy: gwoo $
- * @lastmodified  $Date: 2008-12-18 18:16:01 -0800 (Thu, 18 Dec 2008) $
+ * @lastmodified  $Date: 2009-03-19 13:25:10 -0700 (Thu, 19 Mar 2009) $
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 /**
@@ -35,80 +35,80 @@ class ShellDispatcher {
 /**
  * Standard input stream.
  *
- * @public filehandle
+ * @var filehandle
  * @access public
  */
-	public $stdin;
+	var $stdin;
 /**
  * Standard output stream.
  *
- * @public filehandle
+ * @var filehandle
  * @access public
  */
-	public $stdout;
+	var $stdout;
 /**
  * Standard error stream.
  *
- * @public filehandle
+ * @var filehandle
  * @access public
  */
-	public $stderr;
+	var $stderr;
 /**
  * Contains command switches parsed from the command line.
  *
- * @public array
+ * @var array
  * @access public
  */
-	public $params = array();
+	var $params = array();
 /**
  * Contains arguments parsed from the command line.
  *
- * @public array
+ * @var array
  * @access public
  */
-	public $args = array();
+	var $args = array();
 /**
  * The file name of the shell that was invoked.
  *
- * @public string
+ * @var string
  * @access public
  */
-	public $shell = null;
+	var $shell = null;
 /**
  * The class name of the shell that was invoked.
  *
- * @public string
+ * @var string
  * @access public
  */
-	public $shellClass = null;
+	var $shellClass = null;
 /**
  * The command called if public methods are available.
  *
- * @public string
+ * @var string
  * @access public
  */
-	public $shellCommand = null;
+	var $shellCommand = null;
 /**
  * The path locations of shells.
  *
- * @public array
+ * @var array
  * @access public
  */
-	public $shellPaths = array();
+	var $shellPaths = array();
 /**
  * The path to the current shell location.
  *
- * @public string
+ * @var string
  * @access public
  */
-	public $shellPath = null;
+	var $shellPath = null;
 /**
  * The name of the shell in camelized.
  *
- * @public string
+ * @var string
  * @access public
  */
-	public $shellName = null;
+	var $shellName = null;
 /**
  * Constructs this ShellDispatcher instance.
  *
@@ -198,10 +198,14 @@ class ShellDispatcher {
  */
 	function __buildPaths() {
 		$paths = array();
-
 		$pluginPaths = Configure::read('pluginPaths');
+		if (!class_exists('Folder')) {
+			require LIBS . 'folder.php';
+		}
+
 		foreach ($pluginPaths as $pluginPath) {
-			$plugins = Configure::listObjects('plugin', $pluginPath);
+			$Folder =& new Folder($pluginPath);
+			list($plugins,) = $Folder->read(false, true);
 			foreach ((array)$plugins as $plugin) {
 				$path = $pluginPath . Inflector::underscore($plugin) . DS . 'vendors' . DS . 'shells' . DS;
 				if (file_exists($path)) {
@@ -262,7 +266,6 @@ class ShellDispatcher {
 		Configure::write('debug', 1);
 		return true;
 	}
-
 /**
  * Dispatches a CLI request
  *
@@ -542,16 +545,19 @@ class ShellDispatcher {
 
 		$this->stdout("\nAvailable Shells:");
 		$_shells = array();
+
 		foreach ($this->shellPaths as $path) {
 			if (is_dir($path)) {
 				$shells = Configure::listObjects('file', $path);
-				$path = str_replace(CORE_PATH, 'CORE/', $path);
+				$path = str_replace(CAKE_CORE_INCLUDE_PATH . DS . 'cake' . DS, 'CORE' . DS, $path);
+				$path = str_replace(APP, 'APP' . DS, $path);
 				$path = str_replace(ROOT, 'ROOT', $path);
 				$path = rtrim($path, DS);
 				$this->stdout("\n " . $path . ":");
 				if (empty($shells)) {
 					$this->stdout("\t - none");
 				} else {
+					sort($shells);
 					foreach ($shells as $shell) {
 						if ($shell !== 'shell.php') {
 							$this->stdout("\t " . str_replace('.php', '', $shell));

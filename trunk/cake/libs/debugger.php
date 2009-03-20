@@ -50,28 +50,28 @@ class Debugger extends Object {
  * @var array
  * @access public
  */
-	public $errors = array();
+	var $errors = array();
 /**
  * Contains the base URL for error code documentation.
  *
  * @var string
  * @access public
  */
-	public $helpPath = null;
+	var $helpPath = null;
 /**
  * The current output format.
  *
  * @var string
  * @access protected
  */
-	public $_outputFormat = 'js';
+	var $_outputFormat = 'js';
 /**
  * Holds current output data when outputFormat is false.
  *
  * @var string
  * @access private
  */
-	public $__data = array();
+	var $__data = array();
 /**
  * Constructor.
  *

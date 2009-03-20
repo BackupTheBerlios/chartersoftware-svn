@@ -50,7 +50,8 @@ foreach ($scaffoldFields as $_field) {
 }
 ?>
 	</dl>
-</div> <div class="actions">
+</div>
+<div class="actions">
 	<ul>
 <?php
 	echo "\t\t<li>" .$html->link(sprintf(__('Edit %s', true), $singularHumanName),   array('action'=>'edit', ${$singularVar}[$modelClass][$primaryKey])). " </li>\n";

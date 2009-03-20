@@ -1,4 +1,5 @@
 <?php
+/* SVN FILE: $Id: inflections.php 7945 2008-12-19 02:16:01Z gwoo $ */
 /**
  * Custom Inflected Words.
  *
@@ -13,6 +14,16 @@
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
+ * @filesource
+ * @copyright     Copyright 2005-2008, Cake Software Foundation, Inc. (http://www.cakefoundation.org)
+ * @link          http://www.cakefoundation.org/projects/info/cakephp CakePHP(tm) Project
+ * @package       cake
+ * @subpackage    cake.app.config
+ * @since         CakePHP(tm) v 1.0.0.2312
+ * @version       $Revision: 7945 $
+ * @modifiedby    $LastChangedBy: gwoo $
+ * @lastmodified  $Date: 2008-12-18 18:16:01 -0800 (Thu, 18 Dec 2008) $
+ * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 /**
  * This is a key => value array of regex used to match words.
@@ -20,23 +31,14 @@
  *
  *  $pluralRules = array('/(s)tatus$/i' => '\1\2tatuses', '/^(ox)$/i' => '\1\2en', '/([m|l])ouse$/i' => '\1ice');
  */
-	$pluralRules = array(
-        '/(e)ntfernung$/i' => '\1\2ntfernungen',
-        '/(f)lugplatz$/i' => '\1\2lugplaetze',
-        '/(f)lugzeug$/i' => '\1\2lugzeuge',
-        //'/(f)lugzeughersteller$/i' => '\1\2lugzeughersteller',
-        '/(f)lugzeugtyp$/i' => '\1\2lugzeugtypen',
-        '/(m)ehrwertsteuersatz$/i' => '\1\2ehrwertsteuersaetze',
-        '/(v)organgstyp$/i' => '\1\2organgstypen',
-        '/(z)eitzone$/i' => '\1\2eitzonen'
-    );
+	$pluralRules = array();
 /**
  * This is a key only array of plural words that should not be inflected.
  * Notice the last comma
  *
  * $uninflectedPlural = array('.*[nrlm]ese', '.*deer', '.*fish', '.*measles', '.*ois', '.*pox');
  */
-	$uninflectedPlural = array('.*lugzeughersteller');
+	$uninflectedPlural = array();
 /**
  * This is a key => value array of plural irregular words.
  * If key matches then the value is returned.

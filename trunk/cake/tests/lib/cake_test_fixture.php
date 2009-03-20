@@ -36,13 +36,13 @@ class CakeTestFixture extends Object {
  *
  * @access public
  */
-	public $db = null;
+	var $db = null;
 /**
  * Full Table Name
  *
  * @access public
  */
-	public $table = null;
+	var $table = null;
 
 /**
  * Instantiate the fixture.
