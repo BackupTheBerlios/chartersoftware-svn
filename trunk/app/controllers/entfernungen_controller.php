@@ -17,8 +17,6 @@ class EntfernungenController extends AppController
     public $uses = array('Flugplatz');
     public $name = 'Entfernung';
 
-	$this
-
     /**Anzeigen einer Liste*/
     public function index($id = null)
     {
