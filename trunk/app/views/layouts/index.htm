@@ -1,0 +1,49 @@
+<body>
+
+
+<div id="content">
+<div id="banner_top"></div>
+<div id="status">Startseite</div>
+<div id="logo"></div>
+<div id="navigation">
+	<ul>
+		<li><span>Navigation</span></li>
+		<li><a href="#" class="nav1 showhelp" title="Kundenangebot">Angebot erstellen</a></li>
+		<li><a href="#" class="nav1 showhelp" title="Vertrag">Vertrag Drucken</a></li>
+		<li><a href="#" class="nav1 showhelp" title="Rechnung">Rechnung Drucken</a></li>
+		<li><a href="#" class="nav1 showhelp">Zahlung eingegangen</a></li>
+		<li><a href="#" class="nav1 showhelp">Zahlung verfolgen</a></li>
+		<li><a href="#" class="nav1 showhelp">Kundenzufriedenheit</a></li>
+		<li><a href="#" class="nav1 showhelp">Gr&uuml;nde f&uuml;r Ablehnung</a></li>
+		<li><a href="#" class="nav1 showhelp">Analyse Drucken</a></li>
+		<li><a href="#" class="nav2 showhelp">Kundenverwaltung</a></li>
+		<li><a href="#" class="nav2 showhelp">Administration</a></li>
+	</ul>
+</div>
+<div id="txtcontent" class="start"></div>
+<div id="footer"></div>
+
+
+<div id="help_Kundenangebot" class="help"><span>Erstellen Sie ein neues Kundenangebot.</span></div>
+<div id="help_Vertrag" class="help"><span>Vertrag drucken und verschicken.</span></div>
+<div id="help_Rechnung" class="help"><span>Rechnung drucken und verschicken.</span></div>
+<div id="help_Kundenangebot" class="help"><span>Erstellen Sie ein neues Kundenangebot.</span></div>
+<div id="help_Kundenangebot" class="help"><span>Erstellen Sie ein neues Kundenangebot.</span></div>
+</div>
+
+<script language="javascript" type="text/javascript">
+
+$("*.showhelp").mouseenter(function(){   	
+	var title = $(this).attr("title");
+	$("#help_"+title).fadeIn("fast");
+}); 
+
+$("*.showhelp").mouseleave(function(){   
+    var title = $(this).attr("title");
+	$("#help_"+title).fadeOut("fast");
+}); 
+
+</script>
+
+</body>
+</html>

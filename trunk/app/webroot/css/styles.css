@@ -1,0 +1,184 @@
+
+* {
+text-align : left;
+font-family : arial;
+font-size : 11px;
+margin : 0;
+padding : 0;
+}
+body, html, ul, ol, h1, h2, h3, form, p, fieldset, input, img, li {
+padding : 0;
+margin : 0;
+border : 0;
+}
+ul, ol {
+list-style : none;
+}
+h1, h2, h3 {
+font-weight : normal;
+margin : 0;
+}
+a {
+text-decoration : none;
+font-weight : normal;
+color : #2f2f2f;
+}
+fieldset, img {
+border : 0;
+}
+h1 {
+font-weight : bold;
+font-size : 16px;
+margin : 15px 0;
+color : #fff;
+}
+.clear {
+clear : both;
+}
+
+body {
+background:#FFEBDF;
+}
+
+#content {
+width:800px;
+position:absolute;
+top:50%;
+left:50%;
+margin-left:-400px;
+margin-top:-300px;
+border:1px solid #132A56;
+height:600px;
+background:#FFF;
+}
+
+#txtcontent {
+width:555px;
+height:450px;
+position:absolute;
+top:90px;
+left:230px;
+background:#EEE;
+}
+
+#txtcontent.start {
+background : url(img/start.jpg) no-repeat center center #EEE;
+left:5px;
+width:790px;
+z-index:10;
+}
+
+#banner_top {
+width:790px;
+height:95px;
+position:absolute;
+top:5px;
+left:5px;
+background : url(img/bg_bannertop.gif) repeat-x center center;
+}
+
+#logo {
+width:200px;
+height:52px;
+position:absolute;
+top:17px;
+right:20px;
+background : url(img/logo.gif) no-repeat center center;
+}
+
+#status{
+width:200px;
+height:52px;
+position:absolute;
+top:20px;
+left:20px;
+font-size:16px;
+font-weight:bold;
+}
+
+#navigation {
+width:200px;
+position:absolute;
+top:105px;
+left:20px;
+z-index:11;
+background:#FFF;
+padding:2px;
+}
+
+#navigation li span{
+display:block;
+height:41px;
+line-height:41px;
+padding-left:10px;
+font-weight:bold;
+font-size:14px;
+background: url(img/bg_navtitle.gif) repeat-x center center;
+color:#FFF;
+margin:0 0 10px 0;
+}
+
+#navigation li a{
+display:block;
+height:22px;
+line-height:22px;
+padding: 0 0 0 15px;
+margin:2px 0 0 0;
+
+}
+
+#navigation li a.nav1{
+background: url(img/bg_nav1.gif) repeat-x center center;
+color:#000;
+font-weight:bold;
+border-top:1px solid #EEE;
+}
+
+#navigation li a.nav1:hover{
+background: url(img/bg_nav1_hover.gif) repeat-x center center;
+color:#000;
+font-weight:bold;
+}
+
+
+#navigation li a.nav2{
+background: url(img/bg_nav2.gif) repeat-x center center;
+color:#000;
+font-weight:bold;
+}
+
+#navigation li a.nav2:hover{
+background: url(img/bg_nav1_hover.gif) repeat-x center center;
+color:#000;
+font-weight:bold;
+}
+
+
+#footer {
+background:#EF5A00;
+width:790px;
+height:50px;
+position:absolute;
+top:545px;
+left:5px;
+}
+
+.help {
+display:none;
+background:url(img/icon_help.gif) no-repeat 10px center;
+width:790px;
+height:50px;
+position:absolute;
+top:545px;
+left:5px;
+}
+
+.help span {
+display:block;
+margin-left:60px;
+line-height:50px;
+font-weight:bold;
+font-size:14px;
+color:#FFF;
+}
+
