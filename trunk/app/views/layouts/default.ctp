@@ -8,7 +8,11 @@
 	<meta http-equiv="Content-Type"       content="text/html; charset=utf-8" />
 	<meta http-equiv="Content-Language"   content="de" />
 	<?php
+
         echo $javascript->link('jquery');
+        echo $javascript->link('prototype');
+        echo $javascript->link('scriptaculous');
+
 		echo $html->meta('icon');
 		echo $html->css('styles');
 		echo $scripts_for_layout;
@@ -25,8 +29,6 @@
 <div id="status">Status: <?php echo $html->link('Rent-A-Jet','/')?></div>
 <div id="logo"></div>
 <div id="navigation">
-            <?php $session->flash(); ?>
-            <?php echo $content_for_layout; ?>
 
     <ul>
         <li><span>Navigation</span></li>
@@ -43,7 +45,10 @@
         <li><a href="flugzeughersteller" class="nav2 showhelp">Flugzeughersteller</a></li>
     </ul>
 </div>
-<div id="txtcontent" class="start"></div>
+<div id="txtcontent" class="start">
+            <?php $session->flash(); ?>
+            <?php echo $content_for_layout; ?>
+</div>
 <div id="footer">
             <TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=0>
                 <COL WIDTH=128*>
@@ -76,8 +81,6 @@ $("*.showhelp").mouseleave(function(){
 });
 
 </script>
-
-
     <?php echo $cakeDebug; ?>
 </body>
 </html>
