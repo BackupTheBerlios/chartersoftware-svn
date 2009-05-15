@@ -1,5 +1,4 @@
 <?php
-/* SVN FILE: $Id: index.php 7945 2008-12-19 02:16:01Z gwoo $ */
 /**
  * Short description for file.
  *
@@ -27,6 +26,7 @@
 /**
  * Use the DS to separate the directories in other defines
  */
+
 	if (!defined('DS')) {
 		define('DS', DIRECTORY_SEPARATOR);
 	}
@@ -43,6 +43,7 @@
 	if (!defined('ROOT')) {
 		define('ROOT', dirname(dirname(dirname(__FILE__))));
 	}
+
 /**
  * The actual directory name for the "app".
  *
@@ -58,6 +59,7 @@
 		define('CAKE_CORE_INCLUDE_PATH', ROOT);
 	}
 
+
 /**
  * Editing below this line should NOT be necessary.
  * Change at your own risk.
@@ -69,6 +71,7 @@
 	if (!defined('WWW_ROOT')) {
 		define('WWW_ROOT', dirname(__FILE__) . DS);
 	}
+
 	if (!defined('CORE_PATH')) {
 		if (function_exists('ini_set') && ini_set('include_path', CAKE_CORE_INCLUDE_PATH . PATH_SEPARATOR . ROOT . DS . APP_DIR . DS . PATH_SEPARATOR . ini_get('include_path'))) {
 			define('APP_PATH', null);
@@ -90,4 +93,5 @@
 	if (Configure::read() > 0) {
 		echo "<!-- " . round(getMicrotime() - $TIME_START, 4) . "s -->";
 	}
+
 ?>
