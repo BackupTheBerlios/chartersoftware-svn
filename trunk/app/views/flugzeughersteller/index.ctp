@@ -1,5 +1,3 @@
-<div id="txtcontent">
-
 <h2>Flugzeug Hersteller</h2>
 
 <?php
@@ -18,4 +16,3 @@
 
     echo $html->tag('/table');
 ?>
-</div>

@@ -11,6 +11,8 @@
 class MehrwertsteuersaetzeController extends AppController
 {
 	public $name = 'Mehrwertsteuersatz';
+    public $helpers = array('Html','Ajax','Javascript','Form');
+    public $components = array( 'RequestHandler' );
 
 	/**Anzeigen einer Liste*/
     public function index()

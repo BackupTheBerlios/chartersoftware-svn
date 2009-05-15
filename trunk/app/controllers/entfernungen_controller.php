@@ -16,12 +16,13 @@ class EntfernungenController extends AppController
 {
     public $uses = array('Flugplatz');
     public $name = 'Entfernung';
+    public $helpers = array('Html','Ajax','Javascript','Form');
+    public $components = array( 'RequestHandler' );
 
     /**Anzeigen einer Liste*/
     public function index($id = null)
     {
-        //$arrZeitzonenNamen = timezone_identifiers_list();
-        //$this->set('zeitzonen', $arrZeitzonenNamen);
+        //do nothing
     }
 }
 ?>

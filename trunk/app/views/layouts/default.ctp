@@ -9,6 +9,8 @@
     <meta http-equiv="Content-Language"   content="de" />
     <?php
         echo $javascript->link('jquery');
+        echo $javascript->link('prototype');
+        echo $javascript->link('scriptaculous');
         echo $html->meta('icon');
         echo $html->css('styles');
         //echo $scripts_for_layout;
@@ -29,13 +31,13 @@
 <?php
     $list = array(
         '<span>Administration</span>',
-        $html->link('Flugzeughersteller','/flugzeughersteller',array('class'=>'nav1 showhelp')),
-        $html->link('Flugzeugtypen','/flugzeugtypen',array('class'=>'nav1 showhelp')),
-        $html->link('Flugzeuge','/flugzeuge',array('class'=>'nav1 showhelp')),
-        $html->link('Flugplätze','/flugplaetze',array('class'=>'nav1 showhelp')),
-        $html->link('Entfernungen','/entfernungen',array('class'=>'nav1 showhelp')),
-        $html->link('Mehrwertsteuersätze','/mehrwertsteuersaetze',array('class'=>'nav1 showhelp')),
-        $html->link('Vorgangstypen','/vorgangstypen',array('class'=>'nav1 showhelp'))
+        $ajax->link('Flugzeughersteller','/flugzeughersteller',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
+        $ajax->link('Flugzeugtypen','/flugzeugtypen',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
+        $ajax->link('Flugzeuge','/flugzeuge',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
+        $ajax->link('Flugplätze','/flugplaetze',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
+        $ajax->link('Entfernungen','/entfernungen',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
+        $ajax->link('Mehrwertsteuersätze','/mehrwertsteuersaetze',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
+        $ajax->link('Vorgangstypen','/vorgangstypen',array('update'=>'txtcontent','class'=>'nav1 showhelp'))
     );
     echo $html->nestedList($list);
 ?>
@@ -55,14 +57,15 @@
     </ul>
     -->
 </div>
-<!--
-<div id="txtcontent" class="start">
--->
-            <?php
-            $session->flash();
-            echo $content_for_layout; ?>
 
-<!--</div>-->
+<!--BEGIN txtcontent-->
+<div id="txtcontent">
+<?php //$session->flash(); echo $content_for_layout; ?>
+</div>
+<!--END txtcontent-->
+
+
+
 <div id="footer">
             <TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=0>
                 <COL WIDTH=128*>
