@@ -52,11 +52,7 @@ class FlugzeugeController extends AppController
         $this->set('typenliste', $this->Flugzeugtyp->find('list'));
 		if (!empty($this->data))
 		{
-        	if ($this->Flugzeug->save($this->data))
-        	{
-                $this->flash('gespeichert', '/flugzeuge');
-        	}
-        	else
+        	if (!$this->Flugzeug->save($this->data))
         	{
                 $this->Session->setFlash('Fehler beim Speichern');
         	}
@@ -70,7 +66,6 @@ class FlugzeugeController extends AppController
 		if (!empty($id))
 		{
             $this->Flugzeug->del($id);
-            $this->flash('geloescht', '/flugzeuge');
 		}
 	}
 
@@ -78,14 +73,19 @@ class FlugzeugeController extends AppController
 	/**Editieren*/
 	function edit($id = null)
 	{
+
+        if ($id == null) {
+            echo "ID == NULL";
+        } else {
+            echo "ID != NULL == ".$id;
+            $this->Flugzeug->id = $id;
+            $this->data = $this->Flugzeug->read();
+            $this->set('id',$id);
+        }
         $this->set('typenliste', $this->Flugzeugtyp->find('list'));
 		if (!empty($this->data))
 		{
-        	if ($this->Flugzeug->save($this->data))
-        	{
-                $this->flash('geaendert', '/flugzeuge');
-        	}
-            else
+        	if (!$this->Flugzeug->save($this->data))
             {
                 $this->Session->setFlash('Fehler beim Speichern');
             }
