@@ -46,7 +46,7 @@
  *  $irregularPlural = array('atlas' => 'atlases', 'beef' => 'beefs', 'brother' => 'brothers')
  */
 	$irregularPlural = array('vorgangstyp'=>'vorgangstypen','mehrwertsteuersatz'=>'mehrwertsteuersaetze','flugplatz'=>'flugplaetze',
-    'flugzeug'=>'flugzeuge','flugzeugtyp'=>'flugzeugtypen','flugzeughersteller'=>'flugzeughersteller'
+    'flugzeug'=>'flugzeuge','flugzeugtyp'=>'flugzeugtypen','flugzeughersteller'=>'flugzeughersteller','entfernung'=>'entfernungen'
 
     );
 /**

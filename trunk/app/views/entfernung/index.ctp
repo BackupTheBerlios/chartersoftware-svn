@@ -1,3 +1,4 @@
+<div id="txtcontent">
 <h2>Entfernungsberechnungen</h2>
 
 <?php
@@ -33,3 +34,4 @@
 
     echo $form->end();
 ?>
+</div">

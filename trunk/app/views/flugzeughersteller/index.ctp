@@ -1,8 +1,10 @@
+<div id="txtcontent">
+
 <h2>Flugzeug Hersteller</h2>
 
-<?php 
+<?php
 	echo $html->link('Neuen Hersteller anlegen','/flugzeughersteller/add');
-	echo $html->tag('table'); 
+	echo $html->tag('table');
     echo $html->tableHeaders(array('Id', 'Name', 'Ändern','Löschen'));
 
     foreach ($flugzeughersteller as $zeile):
@@ -12,7 +14,8 @@
 			$html->link('Ändern', "/flugzeughersteller/edit/{$zeile['Flugzeughersteller']['id']}"),
 			$html->link('Löschen', "/flugzeughersteller/delete/{$zeile['Flugzeughersteller']['id']}", null, 'Sind Sie sich sicher?' )
     	));
-	endforeach; 
+	endforeach;
 
-    echo $html->tag('/table'); 
+    echo $html->tag('/table');
 ?>
+</div>

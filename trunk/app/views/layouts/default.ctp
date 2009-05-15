@@ -8,42 +8,93 @@
     <meta http-equiv="Content-Type"       content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language"   content="de" />
     <?php
-        echo $javascript->link('prototype');
-        echo $javascript->link('scriptaculous.js?load=effects');
+        echo $javascript->link('jquery');
         echo $html->meta('icon');
-        echo $html->css('cake.generic');
-        echo $scripts_for_layout;
+        echo $html->css('styles');
+        //echo $scripts_for_layout;
     ?>
 </head>
 
 <!--HTML Body-->
 <body>
-    <div id="container">
-
-        <!--Kopfzeile-->
-        <div id="header">
-            <h1><?php echo $html->link('Rent-A-Jet','/')?></h1>
-        </div>
 
 
-        <!--Content-->
-        <div id="content">
-            <?php $session->flash(); ?>
-            <?php echo $content_for_layout; ?>
-        </div>
 
-        <!--Fussleiste-->
-        <div id="footer">
+<div id="content">
+<div id="banner_top"></div>
+<div id="status">Start <?php echo $html->link('Rent-A-Jet','/')?></div>
+<div id="logo"></div>
+<div id="navigation">
+
+<?php
+    $list = array(
+        '<span>Administration</span>',
+        $html->link('Flugzeughersteller','/flugzeughersteller',array('class'=>'nav1 showhelp')),
+        $html->link('Flugzeugtypen','/flugzeugtypen',array('class'=>'nav1 showhelp')),
+        $html->link('Flugzeuge','/flugzeuge',array('class'=>'nav1 showhelp')),
+        $html->link('Flugplätze','/flugplaetze',array('class'=>'nav1 showhelp')),
+        $html->link('Entfernungen','/entfernungen',array('class'=>'nav1 showhelp')),
+        $html->link('Mehrwertsteuersätze','/mehrwertsteuersaetze',array('class'=>'nav1 showhelp')),
+        $html->link('Vorgangstypen','/vorgangstypen',array('class'=>'nav1 showhelp'))
+    );
+    echo $html->nestedList($list);
+?>
+<!--
+    <ul>
+        <li><span>Navigation</span></li>
+        <li><a href="#" class="nav1 showhelp" title="Kundenangebot">Angebot erstellen</a></li>
+        <li><a href="#" class="nav1 showhelp" title="Vertrag">Vertrag Drucken</a></li>
+        <li><a href="#" class="nav1 showhelp" title="Rechnung">Rechnung Drucken</a></li>
+        <li><a href="#" class="nav1 showhelp">Zahlung eingegangen</a></li>
+        <li><a href="#" class="nav1 showhelp">Zahlung verfolgen</a></li>
+        <li><a href="#" class="nav1 showhelp">Kundenzufriedenheit</a></li>
+        <li><a href="#" class="nav1 showhelp">Gründe für Ablehnung</a></li>
+        <li><a href="#" class="nav1 showhelp">Analyse Drucken</a></li>
+        <li><a href="#" class="nav2 showhelp">Kundenverwaltung</a></li>
+        <li><a href="#" class="nav2 showhelp">Administration</a></li>
+    </ul>
+    -->
+</div>
+<!--
+<div id="txtcontent" class="start">
+-->
+            <?php
+            $session->flash();
+            echo $content_for_layout; ?>
+
+<!--</div>-->
+<div id="footer">
             <TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=0>
                 <COL WIDTH=128*>
-                <COL WIDTH=128*>
                 <TR VALIGN=TOP>
-                    <TD WIDTH=50%><?php echo $html->link('Start','/')?></TD>
-                    <TD WIDTH=50%><?php echo $html->link('Impressum','/pages/impressum')?></TD>
+                    <TD WIDTH=100%><?php echo $html->link('Impressum','/pages/impressum')?></TD>
                 </TR>
             </TABLE>
-        </div>
-    </div>
+</div>
+
+
+<div id="help_Kundenangebot" class="help"><span>Erstellen Sie ein neues Kundenangebot.</span></div>
+<div id="help_Vertrag" class="help"><span>Vertrag drucken und verschicken.</span></div>
+<div id="help_Rechnung" class="help"><span>Rechnung drucken und verschicken.</span></div>
+<div id="help_Kundenangebot" class="help"><span>Erstellen Sie ein neues Kundenangebot.</span></div>
+<div id="help_Kundenangebot" class="help"><span>Erstellen Sie ein neues Kundenangebot.</span></div>
+</div>
+
+<script language="javascript" type="text/javascript">
+
+$("*.showhelp").mouseenter(function(){
+    var title = $(this).attr("title");
+    $("#help_"+title).fadeIn("fast");
+});
+
+$("*.showhelp").mouseleave(function(){
+    var title = $(this).attr("title");
+    $("#help_"+title).fadeOut("fast");
+});
+
+</script>
+
+
     <?php echo $cakeDebug; ?>
 </body>
 </html>
