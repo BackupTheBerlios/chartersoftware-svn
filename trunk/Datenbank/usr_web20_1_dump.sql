@@ -6,7 +6,7 @@
 # Database: usr_web20_1
 # Generation Time: 2009-02-22 23:34:18 +0100
 # ************************************************************
-
+#
 # ------------------------------------------------------------
 DROP TABLE IF EXISTS `flugzeugs`;
 DROP TABLE IF EXISTS `flugzeuge`;
@@ -21,9 +21,9 @@ DROP TABLE IF EXISTS `zeitzones`;
 DROP TABLE IF EXISTS `zeitzonen`;
 DROP TABLE IF EXISTS `mehrwertsteuersaetze`;
 DROP TABLE IF EXISTS `vorgangstypen`;
-
-
-
+#
+#
+#
 #-----------------------------------
 #-----------------------------------
 #-----------------------------------
@@ -35,14 +35,14 @@ CREATE TABLE `mehrwertsteuersaetze` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `beschreibung` (`beschreibung`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
-
+#
 INSERT INTO `mehrwertsteuersaetze` (`id`,`beschreibung`,`satz`,`scale`)
 VALUES
 	(1,'Voller Satz',1900,100),
 	(2,'Halber Satz',700,100),
 	(3,'Steuerfrei',0,100);
-
-	
+#
+#	
 #-----------------------------------
 #-----------------------------------
 #-----------------------------------
@@ -52,19 +52,19 @@ CREATE TABLE `vorgangstypen` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `beschreibung` (`beschreibung`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
-
+#
 INSERT INTO `vorgangstypen` (`id`,`beschreibung`)
 VALUES
 	(1,'Angebot'),
 	(2,'Vertrag'),
 	(3,'Rechnung');
-
-
-
+#
+#
+#
 # Dump of table flugplatzs
 # ------------------------------------------------------------
-
-
+#
+#
 CREATE TABLE `flugplaetze` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
@@ -76,7 +76,7 @@ CREATE TABLE `flugplaetze` (
   KEY `geoPosition` (`geoPosition`),
   KEY `iata` (`iata`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-
+#
 #--Take airports from http://www.azworldairports.com/azworld/p1600.cfm
 INSERT INTO `flugplaetze` (`id`,`name`,`iata`,`geoPosition`,`zeitzone_id`)
 VALUES
@@ -87,10 +87,10 @@ VALUES
 	(5,'Dresden Airport','DRS/EDDC','51°07''58"N, 013°46''02"O',400),
 	(6,'Erfurt Airport','ERF/EDDE','50°58''47"N, 010°57''29"E',400),
 	(7,'Augsburg Airport','AGB/EDMA','48°25''31"N, 010°55''54"E',400);
-
-
-
-# Dump of table flugzeugherstellers
+#
+#
+#
+## Dump of table flugzeugherstellers
 # ------------------------------------------------------------
 CREATE TABLE `flugzeughersteller` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -100,7 +100,7 @@ CREATE TABLE `flugzeughersteller` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
-
+#
 INSERT INTO `flugzeughersteller` (`id`,`name`,`link`,`information`)
 VALUES
 	(1,'Boing','http://www.boeing.com/','<p>Das US-amerikanische Unternehmen <b>Boeing</b> <i>(The Boeing Company)</i> ist der weltweit größte Hersteller von zivilen und militärischen <a href=\"/wiki/Flugzeug\" title=\"Flugzeug\">Flugzeugen</a> und <a href=\"/wiki/Hubschrauber\" title=\"Hubschrauber\">Hubschraubern</a> sowie von Militär- und Weltraumtechnik.</p>\r\n<p>Mit <a href=\"/wiki/Airbus\" title=\"Airbus\">Airbus</a> bildet Boeing das <a href=\"/wiki/Duopol_f%C3%BCr_Gro%C3%9Fraumflugzeuge\" title=\"Duopol für Großraumflugzeuge\">Duopol für Großraumflugzeuge</a>.</p>\r\n<table id=\"toc\" class=\"toc\" summary=\"Inhaltsverzeichnis\">'),
@@ -114,16 +114,16 @@ VALUES
 	(9,'Gulfstream',NULL,NULL),
 	(10,'Bombardier',NULL,NULL),
 	(11,'Piper',NULL,NULL);
-
-
-
-
-
-
+#
+#
+#
+#
+#
+#
 # Dump of table flugzeugtypen
 # ------------------------------------------------------------
-
-
+#
+#
 CREATE TABLE `flugzeugtypen` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -141,7 +141,7 @@ CREATE TABLE `flugzeugtypen` (
   KEY `flugzeugtypen_flugzeughersteller_id` (`flugzeughersteller_id`),
   CONSTRAINT `flugzeugtypen_flugzeughersteller_id` FOREIGN KEY (`flugzeughersteller_id`) REFERENCES `flugzeughersteller` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
-
+#
 INSERT INTO `flugzeugtypen` (`id`,`name`,`flugzeughersteller_id`,`bild`,`wikipedia`,`reichweite`,`vmax`,`jahreskosten`,`stundenkosten`,`crewPersonal`,`cabinPersonal`)
 VALUES
 	(1,'Citation CJ1',8,'cj1.jpg','http://de.wikipedia.org/wiki/Cessna_CitationJet',2408,720,21800000,72700,1,0),
@@ -150,14 +150,14 @@ VALUES
 	(4,'GIV SP',9,'givsp.jpg','http://www.aerokurier.de/de/gulfstream-giv-sp.5595.htm',7820,851,45330000,278000,2,1),
 	(5,'Global Express',10,'globalexpress.jpg','html://nowhere.de',12038,935,51300000,310000,2,2),
 	(6,'Malibu Mirage',11,'mirage.jpg','html://nowhere.de',2491,394,6000000,20000,1,0);
-
-
-
-
-# Dump of table flugzeuge
-# ------------------------------------------------------------
-
-
+#
+#
+#
+#
+## Dump of table flugzeuge
+# #------------------------------------------------------------
+#
+#
 CREATE TABLE `flugzeuge` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kennzeichen` varchar(50) NOT NULL,
@@ -167,7 +167,7 @@ CREATE TABLE `flugzeuge` (
   KEY `flugzeuge_flugzeugtyp_id` (`flugzeugtyp_id`),
   CONSTRAINT `flugzeuge_flugzeugtyp_id` FOREIGN KEY (`flugzeugtyp_id`) REFERENCES `flugzeugtypen` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
-
+#
 INSERT INTO `flugzeuge` (`id`,`kennzeichen`,`flugzeugtyp_id`)
 VALUES
 	(1,'NA-1',1),
@@ -191,5 +191,3 @@ VALUES
 	(19,'PI-2',6),
 	(20,'PI-3',6),
 	(21,'PI-4',6);
-
-
