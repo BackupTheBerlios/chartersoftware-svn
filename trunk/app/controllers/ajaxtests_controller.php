@@ -20,9 +20,18 @@ class AjaxtestsController extends AppController
     public $components = array( 'RequestHandler' );
 
     /**Anzeigen einer Liste*/
+    public function screen($id = null)
+    {
+        $this->render('index');
+        exit;
+    }
+
+    /**Anzeigen einer Liste*/
     public function index($id = null)
     {
-        //do nothing
+        //$this->render('screen');
+        //$this->render('index','div);
+        //exit;
     }
 
 
@@ -33,5 +42,14 @@ class AjaxtestsController extends AppController
         $this->render('index');
         exit;
     }
+
+    /**Anzeigen einer Liste*/
+    public function add($id = null)
+    {
+        //echo "delete erfolgreich";
+        //$this->render('index');
+        //exit;
+    }
+
 }
 ?>

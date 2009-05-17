@@ -38,8 +38,8 @@
         $html->link('Entfernungen','/entfernungen',array('class'=>'nav1 showhelp')),
         $html->link('Mehrwertsteuersätze','/mehrwertsteuersaetze',array('class'=>'nav1 showhelp')),
         $html->link('Vorgangstypen','/vorgangstypen',array('class'=>'nav1 showhelp')),
-        $html->link('Ajax','/ajaxtests',array('class'=>'nav1 showhelp')),
-        $html->link('Ajax Test','/ajaxtests',array('class'=>'nav1 showhelp'))
+        $html->link('Ajax screen','/ajaxtests/index',array('class'=>'nav1 showhelp', 'onclick'=>"einblenden('txtcontent')")),
+        $ajax->link('Ajax index','/ajaxtests/index',array('class'=>'nav1 showhelp', 'onclick'=>"einblenden('txtcontent')", 'update'=>'txtcontent'))
     );
     echo $html->nestedList($list);
 ?>
@@ -62,7 +62,9 @@
 
 <!--BEGIN txtcontent-->
 <div id="maincontent" class="start">
-<?php echo $content_for_layout;?>
+    <div id="txtcontent" style="display:none">
+        <?php echo $content_for_layout;?>
+    </div>
 </div>
 <!--END txtcontent-->
 
@@ -96,6 +98,28 @@ $("*.showhelp").mouseleave(function(){
     var title = $(this).attr("title");
     $("#help_"+title).fadeOut("fast");
 });
+
+
+function einblenden(elementname)
+{
+ document.getElementById(elementname).style.display='block';
+}
+
+function ausblenden(elementname)
+{
+ document.getElementById('element').style.display='none';
+}
+
+function toggleMe(a){
+  var e=document.getElementById(a);
+  if(!e)return true;
+  if(e.style.display=="none"){
+    einblenden();
+  } else {
+    einblenden();
+  }
+  return true;
+}
 
 </script>
 
