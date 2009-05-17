@@ -17,6 +17,16 @@ class FlugzeugeController extends AppController
 	public $name = 'Flugzeug';
     public $uses = array('Flugzeug', 'Flugzeugtyp','Flugzeughersteller');
 
+
+    public function gui()
+    {
+    }
+
+    public function guiend()
+    {
+    }
+
+
 	/**Anzeigen einer Liste*/
     public function index()
 	{
@@ -24,6 +34,11 @@ class FlugzeugeController extends AppController
 		$this->set('flugzeuge',$alle);
 	}
 
+    public function indexAjax()
+    {
+        $alle = $this->Flugzeug->findAll();
+        $this->set('flugzeuge',$alle);
+    }
 
 	/**Anzeigen einer
      *
@@ -65,8 +80,10 @@ class FlugzeugeController extends AppController
 	{
 		if (!empty($id))
 		{
-            $this->Flugzeug->del($id);
+            //$this->Flugzeug->del($id);
 		}
+        $this->render('index','index');
+        //exit;
 	}
 
 

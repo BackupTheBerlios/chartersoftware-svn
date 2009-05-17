@@ -31,13 +31,15 @@
 <?php
     $list = array(
         '<span>Administration</span>',
-        $ajax->link('Flugzeughersteller','/flugzeughersteller',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
-        $ajax->link('Flugzeugtypen','/flugzeugtypen',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
-        $ajax->link('Flugzeuge','/flugzeuge',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
-        $ajax->link('Flugplätze','/flugplaetze',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
-        $ajax->link('Entfernungen','/entfernungen',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
-        $ajax->link('Mehrwertsteuersätze','/mehrwertsteuersaetze',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
-        $ajax->link('Vorgangstypen','/vorgangstypen',array('update'=>'txtcontent','class'=>'nav1 showhelp'))
+        $html->link('Flugzeughersteller','/flugzeughersteller',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
+        $html->link('Flugzeugtypen','/flugzeugtypen',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
+        $html->link('Flugzeuge','/flugzeuge',array('class'=>'nav1 showhelp')),
+        $html->link('Flugplätze','/flugplaetze',array('class'=>'nav1 showhelp')),
+        $html->link('Entfernungen','/entfernungen',array('class'=>'nav1 showhelp')),
+        $html->link('Mehrwertsteuersätze','/mehrwertsteuersaetze',array('class'=>'nav1 showhelp')),
+        $html->link('Vorgangstypen','/vorgangstypen',array('class'=>'nav1 showhelp')),
+        $html->link('Ajax','/ajaxtests',array('class'=>'nav1 showhelp')),
+        $html->link('Ajax Test','/ajaxtests',array('class'=>'nav1 showhelp'))
     );
     echo $html->nestedList($list);
 ?>
@@ -59,8 +61,8 @@
 </div>
 
 <!--BEGIN txtcontent-->
-<div id="txtcontent">
-<?php //$session->flash(); echo $content_for_layout; ?>
+<div id="maincontent" class="start">
+<?php echo $content_for_layout;?>
 </div>
 <!--END txtcontent-->
 

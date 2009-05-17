@@ -1,2 +1,1 @@
-<div id="txtcontent" class="start">
-</div>
+<!--Leere Seite, wird aber fuer Cake gebraucht-->
