@@ -21,6 +21,7 @@ DROP TABLE IF EXISTS `zeitzones`;
 DROP TABLE IF EXISTS `zeitzonen`;
 DROP TABLE IF EXISTS `mehrwertsteuersaetze`;
 DROP TABLE IF EXISTS `vorgangstypen`;
+DROP TABLE IF EXISTS `adressen`;
 #
 #
 #
@@ -191,3 +192,20 @@ VALUES
 	(19,'PI-2',6),
 	(20,'PI-3',6),
 	(21,'PI-4',6);
+#
+#
+#
+CREATE TABLE `adressen` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`firma` varchar(50) ,
+	`abteilung` varchar(50) ,
+	`ansprechpartner` varchar(50) NOT NULL,
+	`strasse` varchar(50)  NOT NULL,
+	`plz` varchar(5)  NOT NULL,
+	`ort` varchar(50) NOT NULL ,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+INSERT INTO `adressen` (`id`,`firma`,`abteilung`,`ansprechpartner`,`strasse`,`plz`,`ort`)
+VALUES
+	(1,'Reich und Schön','Geschäftsleitung','Ritschi Ritsch','Geldspeicherweg 300','30422','Entenhausen'),
+    (2,'Duck Imperium','Geschäftsleitung','Dagobert Duck','Geldspeicherweg 1','30422','Entenhausen');

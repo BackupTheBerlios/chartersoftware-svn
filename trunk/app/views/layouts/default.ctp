@@ -30,6 +30,11 @@
 
 <?php
     $list = array(
+        '<span>Workflows</span>',
+        $html->link('Adressen','/adressen',array('update'=>'txtcontent','class'=>'nav1 showhelp','title'=>'Verwaltung von Adressen'))
+    );
+    echo $html->nestedList($list);
+    $list = array(
         '<span>Administration</span>',
         $html->link('Flugzeughersteller','/flugzeughersteller',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
         $html->link('Flugzeugtypen','/flugzeugtypen',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
@@ -62,7 +67,8 @@
 
 <!--BEGIN txtcontent-->
 <div id="maincontent" class="start">
-    <div id="txtcontent" style="display:none">
+    <!--<div id="txtcontent" style="display:none">-->
+    <div id="txtcontent">
         <?php echo $content_for_layout;?>
     </div>
 </div>
@@ -80,10 +86,10 @@
 </div>
 
 
+<div id="help_adressen" class="help"><span>Über diesen Menupunkt können Adressen verwaltet (suchen, löschen, anlegen) werden</span></div>
 <div id="help_Kundenangebot" class="help"><span>Erstellen Sie ein neues Kundenangebot.</span></div>
 <div id="help_Vertrag" class="help"><span>Vertrag drucken und verschicken.</span></div>
 <div id="help_Rechnung" class="help"><span>Rechnung drucken und verschicken.</span></div>
-<div id="help_Kundenangebot" class="help"><span>Erstellen Sie ein neues Kundenangebot.</span></div>
 <div id="help_Kundenangebot" class="help"><span>Erstellen Sie ein neues Kundenangebot.</span></div>
 </div>
 

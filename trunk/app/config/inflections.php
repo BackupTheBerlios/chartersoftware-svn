@@ -46,7 +46,8 @@
  *  $irregularPlural = array('atlas' => 'atlases', 'beef' => 'beefs', 'brother' => 'brothers')
  */
 	$irregularPlural = array('vorgangstyp'=>'vorgangstypen','mehrwertsteuersatz'=>'mehrwertsteuersaetze','flugplatz'=>'flugplaetze',
-    'flugzeug'=>'flugzeuge','flugzeugtyp'=>'flugzeugtypen','flugzeughersteller'=>'flugzeughersteller','entfernung'=>'entfernungen'
+    'flugzeug'=>'flugzeuge','flugzeugtyp'=>'flugzeugtypen','flugzeughersteller'=>'flugzeughersteller','entfernung'=>'entfernungen',
+    'adresse' => 'adressen'
     );
 /**
  * This is a key => value array of regex used to match words.
