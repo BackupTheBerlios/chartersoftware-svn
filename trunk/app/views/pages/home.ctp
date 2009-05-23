@@ -1,1 +1,3 @@
-<!--Leere Seite, wird aber fuer Cake gebraucht-->
+<div id="txtcontent" class="start">
+	<?php //echo $content_for_layout;?>
+</div>
