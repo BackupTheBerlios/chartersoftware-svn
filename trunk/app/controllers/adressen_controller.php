@@ -17,13 +17,18 @@ class AdressenController extends AppController
 	public $name = 'Adresse';
     public $uses = array('Adresse');
 
-
-
 	/**Anzeigen einer Liste*/
     public function index()
 	{
 		$alle = $this->Adresse->find('all');
 		$this->set('adressen',$alle);
+	}
+
+	public function ajaxindex() 
+	{
+		$alle = $this->Adresse->find('all');
+		$this->set('adressen',$alle);
+		$this->layout='xml';
 	}
 
 
@@ -34,6 +39,15 @@ class AdressenController extends AppController
      * */
 	public function view($id = null)
 	{
+        if ($id != null)
+        {
+		  $this->Adresse->id = $id;
+		  $this->set('Adresse', $this->Adresse->read());
+        }
+	}
+	public function ajaxview($id = null)
+	{
+		$this->layout='xml';
         if ($id != null)
         {
 		  $this->Adresse->id = $id;

@@ -32,8 +32,9 @@
     $list = array(
         '<span>Workflows</span>',
         $html->link('Startseite','/',array('class'=>'nav1 showhelp','title'=>'Startseite')),
-        $html->link('Angebote erstellen','/pages/angebote',array('class'=>'nav1 showhelp','title'=>'Kundenangebot')),
+        $html->link('Angebote','/angebote',array('class'=>'nav1 showhelp','title'=>'Kundenangebot')),
         $html->link('Kundenadressen verwalten','/adressen',array('class'=>'nav1 showhelp','title'=>'Kundenadressen')),
+        $html->link('xml sample','/adressen/ajaxindex',array('class'=>'nav1 showhelp','title'=>'Kundenadressen')),
         $html->link('Impressum','/pages/impressum',array('class'=>'nav1 showhelp','title'=>'Impressum'))
     );
     echo $html->nestedList($list);
@@ -120,53 +121,7 @@ function toggleMe(a){
   return true;
 }
 
-	$(function() {
-		$("#datepicker").datepicker({ dateFormat: 'dd.mm.yy', dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'], dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'], monthNames: ['Januar','Februar','M�rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']});
-	});
-	
-	$(function() {
-		$("#datepicker2").datepicker({ dateFormat: 'dd.mm.yy', dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'], dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'], monthNames: ['Januar','Februar','M�rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']});
-	});
-	
-	$(document).ready(function () {
-		
-		$("#customer").change(function () {
-			var query= "controller=ajax_customerinfo&id="+$("#customer").val();
-			$.ajax({
-				type: "POST",
-				url: "data/index.php",
-				data: "controller=ajax_customerinfo&id="+$("#customer").val(),
-				dataType: "xml",
-				cache: false,
-				success:function(xml){
-					$(xml).find('contact').each(function(){  
-						$("#name").val($(this).find('name').text())
-						$("#vorname").val($(this).find('vorname').text())
-						$("#anrede").val($(this).find('anrede').text())
-						$("#firma").val($(this).find('firma').text())
-					});
-				}
-        
-			});	
-		});
-		
-		$("#customer2").change(function () {
-			$.ajax({
-				type: "GET",
-				url: "data/test.xml",
-				dataType: "xml",
-				cache: false,
-				success:function(xml){
-					$(xml).find('contact').each(function(){  
-						$("#firma").val($(this).find('firma').text())
-					});
-				}
-        
-			});	
-		});
-		
-		
-	});
+
 	
 
 
