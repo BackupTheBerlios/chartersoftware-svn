@@ -24,14 +24,6 @@ class AdressenController extends AppController
 		$this->set('adressen',$alle);
 	}
 
-	public function ajaxindex() 
-	{
-		$alle = $this->Adresse->find('all');
-		$this->set('adressen',$alle);
-		$this->layout='xml';
-	}
-
-
 	/**Anzeigen einer
      *
      * @param id ist optional, wenn gesetzt, wird eine einzelne Typ mit eben
@@ -41,8 +33,9 @@ class AdressenController extends AppController
 	{
         if ($id != null)
         {
-		  $this->Adresse->id = $id;
-		  $this->set('Adresse', $this->Adresse->read());
+        	$this->Adresse->id = $id;
+        	$this->data = $this->Adresse->read();
+        	$this->set('id',$id);
         }
 	}
 	public function ajaxview($id = null)
@@ -52,6 +45,8 @@ class AdressenController extends AppController
         {
 		  $this->Adresse->id = $id;
 		  $this->set('Adresse', $this->Adresse->read());
+		  $this->set('id',$id);
+		  
         }
 	}
 

@@ -34,7 +34,6 @@
         $html->link('Startseite','/',array('class'=>'nav1 showhelp','title'=>'Startseite')),
         $html->link('Angebote','/angebote',array('class'=>'nav1 showhelp','title'=>'Kundenangebot')),
         $html->link('Kundenadressen','/adressen',array('class'=>'nav1 showhelp','title'=>'Kundenadressen')),
-        $html->link('xml sample','/adressen/ajaxindex',array('class'=>'nav1 showhelp','title'=>'Kundenadressen')),
         $html->link('Impressum','/pages/impressum',array('class'=>'nav1 showhelp','title'=>'Impressum'))
     );
     echo $html->nestedList($list);
@@ -69,6 +68,7 @@
 </div>
 
 <!--BEGIN txtcontent-->
+<?php echo $cakeDebug; ?>
 <?php echo $content_for_layout;?>
 <!--END txtcontent-->
 
@@ -98,36 +98,8 @@ $("*.showhelp").mouseleave(function(){
     var title = $(this).attr("title");
 	$("#help_"+title).fadeOut("fast");
 }); 
-
-
-function einblenden(elementname)
-{
- document.getElementById(elementname).style.display='block';
-}
-
-function ausblenden(elementname)
-{
- document.getElementById('element').style.display='none';
-}
-
-function toggleMe(a){
-  var e=document.getElementById(a);
-  if(!e)return true;
-  if(e.style.display=="none"){
-    einblenden();
-  } else {
-    einblenden();
-  }
-  return true;
-}
-
-
-	
-
-
 </script>
 
 
-    <?php echo $cakeDebug; ?>
 </body>
 </html>
