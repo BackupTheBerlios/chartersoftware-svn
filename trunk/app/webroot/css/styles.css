@@ -1,3 +1,5 @@
+/*@import url(base.css);*/
+@import url(forms.css);
 
 * {
 text-align : left;
@@ -40,22 +42,11 @@ body {
 background:#FFEBDF;
 }
 
-#maincontent {
-width:555px;
-height:450px;
-position:absolute;
-top:90px;
-left:230px;
+hr {
+border:1px solid #EEE ;
+height:1px;
 background:#EEE;
 }
-
-#maincontent.start {
-background : url(img/start.jpg) no-repeat center center #EEE;
-left:5px;
-width:790px;
-z-index:10;
-}
-
 
 #content {
 width:800px;
@@ -70,14 +61,27 @@ background:#FFF;
 }
 
 #txtcontent {
-width:560px;
-height:450px;
 position:absolute;
-top:0px;
-left:230px;
-background:#EEE;
 }
 
+#txtcontent.start {
+background : url(img/start.jpg) no-repeat center center #EEE;
+left:5px;
+top:90px;
+width:790px;
+z-index:10;
+height:450px;
+}
+
+#txtcontent.normal {
+width:545px;
+height:430px;
+z-index:10;
+top:105px;
+left:240px;
+overflow:auto;
+padding-right:10px;
+}
 
 #banner_top {
 width:790px;
@@ -115,6 +119,7 @@ left:20px;
 z-index:11;
 background:#FFF;
 padding:2px;
+border:1px solid #AFAFAF;
 }
 
 #navigation li span{
@@ -192,4 +197,7 @@ font-weight:bold;
 font-size:14px;
 color:#FFF;
 }
+
+
+
 
