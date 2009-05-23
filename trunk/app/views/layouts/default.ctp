@@ -33,7 +33,7 @@
         '<span>Workflows</span>',
         $html->link('Startseite','/',array('class'=>'nav1 showhelp','title'=>'Startseite')),
         $html->link('Angebote','/angebote',array('class'=>'nav1 showhelp','title'=>'Kundenangebot')),
-        $html->link('Kundenadressen verwalten','/adressen',array('class'=>'nav1 showhelp','title'=>'Kundenadressen')),
+        $html->link('Kundenadressen','/adressen',array('class'=>'nav1 showhelp','title'=>'Kundenadressen')),
         $html->link('xml sample','/adressen/ajaxindex',array('class'=>'nav1 showhelp','title'=>'Kundenadressen')),
         $html->link('Impressum','/pages/impressum',array('class'=>'nav1 showhelp','title'=>'Impressum'))
     );

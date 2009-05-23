@@ -17,11 +17,11 @@
                   	foreach ($Adressen as $zeile):
                   		//name des Ansprechpartners
                   		$name = $zeile['Adresse']['ansprechpartner'];
-
                   		//ggf. Firma hinzu
                   		if (strlen($zeile['Adresse']['firma'])>0) {
                   			$name = $zeile['Adresse']['firma'] . ' (' . $name .')';
                   		}
+                  		//$name = $html->url('/adressen/ajaxview/');
                   		echo "<option value=\"".$zeile['Adresse']['id']."\">".$name."</option>";
                   	endforeach;
                   ?>
@@ -181,7 +181,7 @@
 			var query= "controller=ajax_customerinfo&id="+$("#customer").val();
 			$.ajax({
 				type: "POST",
-				url: "http://koriander/~tukaram/Rent-A-Jet/index.php/adressen/ajaxview/1",
+				url: "<?php echo $html->url('/adressen/ajaxview/');?>"+$("#customer").val(),
 				data: "controller=ajax_customerinfo&id="+$("#customer").val(),
 				dataType: "xml",
 				cache: false,
