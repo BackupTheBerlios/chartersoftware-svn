@@ -1,3 +1,4 @@
+<div id="txtcontent" class="normal">
 <h2>Flugzeugtyp zufuegen</h2>
 <?php
 	echo $form->create('Flugzeugtyp');
@@ -18,3 +19,4 @@
 
     echo $form->end('Speichern');
 ?>
+</div>

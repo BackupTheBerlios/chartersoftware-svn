@@ -1,3 +1,4 @@
+<div id="txtcontent" class="normal">
 <h3>Flugzeug zufügen</h3>
 <?php
     echo $ajax->form('edit','post',array('update'=>'divFlugzeuge','url' => array('controller' => 'flugzeuge','action' => 'add')));
@@ -7,3 +8,4 @@
 
     echo $form->end('Speichern');
 ?>
+</div>

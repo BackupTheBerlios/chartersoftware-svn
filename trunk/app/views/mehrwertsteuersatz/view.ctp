@@ -1,3 +1,4 @@
+<div id="txtcontent" class="normal">
 <h2>Mehrwertsteuersatz</h2>
 
 <h3>Informationen</h3>
@@ -8,3 +9,4 @@
 <dt>Steuersatz</dt><dd><?php echo $mehrwertsteuersatz['Mehrwertsteuersatz']['satz']?></dd>
 <dt>Skalierung</dt><dd><?php echo $mehrwertsteuersatz['Mehrwertsteuersatz']['scale']?></dd>
 </dl>
+</div>

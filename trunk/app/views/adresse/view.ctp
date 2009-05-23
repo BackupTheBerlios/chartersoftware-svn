@@ -1,3 +1,4 @@
+<div id="txtcontent" class="normal">
 <h2>Kundenadresse</h2>
 
 <h3>Informationen</h3>
@@ -12,3 +13,4 @@
 <dt>Ort</dt><dd><?php echo $Adresse['Adresse']['ort']?></dd>
 </dl>
 
+</div>

@@ -1,3 +1,4 @@
+<div id="txtcontent" class="normal">
 <h2>Flugplatz ändern</h2>
 <?php
     echo $form->create('Flugplatz', array('action' => 'edit'));
@@ -11,3 +12,4 @@
 
     echo $form->end('Speichern');
 ?>
+</div>

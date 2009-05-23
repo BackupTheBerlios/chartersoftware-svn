@@ -1,3 +1,4 @@
+<div id="txtcontent" class="normal">
 <h2>Vorgangstyp ändern</h2>
 <?php
     echo $form->create('Vorgangstyp', array('action' => 'edit'));
@@ -6,3 +7,4 @@
 
     echo $form->end('Speichern');
 ?>
+</div>

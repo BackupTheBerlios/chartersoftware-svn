@@ -1,3 +1,4 @@
+<div id="txtcontent" class="normal">
 <h2>Flugplatz zufügen</h2>
 <?php
 	echo $form->create('Flugplatz');
@@ -11,3 +12,4 @@
 
     echo $form->end('Speichern');
 ?>
+</div>

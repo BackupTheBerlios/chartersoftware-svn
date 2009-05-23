@@ -1,3 +1,4 @@
+<div id="txtcontent" class="normal">
 <h2>Flugzeug ändern</h2>
 <?php
 
@@ -11,3 +12,4 @@
     echo $form->submit('Speichern');
     echo $form->end();
 ?>
+</div>

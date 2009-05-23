@@ -1,14 +1,9 @@
-<div id="txtcontent">
-
-    <h2>index.ctp Administration Flugzeuge</h2>
-
-    <div id="divFlugzeuge">
-
+<div id="txtcontent" class="normal">
 <?php
     echo $html->tag('table');
     echo $html->tableHeaders(array('Id', 'Kennzeichen', 'Typ', 'Ändern','Löschen'));
 
-    var_dump($flugzeuge);
+    //var_dump($flugzeuge);
     foreach ($flugzeuge as $zeile):
 	    echo $html->tableCells( array(
 			$zeile['Flugzeug']['id'],
@@ -23,5 +18,4 @@
 
     echo $html->tag('/table');
 ?>
-</div>
 </div>

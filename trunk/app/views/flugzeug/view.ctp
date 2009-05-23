@@ -1,3 +1,4 @@
+<div id="txtcontent" class="normal">
 <h2>Flugzeug</h2>
 
 <h3>Informationen</h3>
@@ -29,3 +30,4 @@
 <dt>Link</dt><dd><a href="<?php echo $flugzeughersteller['Flugzeughersteller']['link']?>" target=_blank><?php echo $flugzeughersteller['Flugzeughersteller']['link']?></a></dd>
 <dt>Informatioen</dt><dd><?php echo $flugzeughersteller['Flugzeughersteller']['information']?></dd>
 </dl>
+</div>

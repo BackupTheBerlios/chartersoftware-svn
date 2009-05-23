@@ -1,3 +1,4 @@
+<div id="txtcontent" class="normal">
 <h2>Adresse ändern</h2>
 <?php
     echo $form->create('Adresse', array('action' => 'edit'));
@@ -10,3 +11,4 @@
     echo $form->input('Adresse.ort', array('error'=>array('required'=>'Bitte den Ort eingeben','length'=>'Das Feld darf nicht laenger als 49 Zeichen sein')));
     echo $form->end('Speichern');
 ?>
+</div>

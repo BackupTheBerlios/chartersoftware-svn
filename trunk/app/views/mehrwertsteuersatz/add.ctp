@@ -1,3 +1,4 @@
+<div id="txtcontent" class="normal">
 <h2>Mehrwertsteuersatz zufügen</h2>
 <?php
     echo $form->create('Mehrwertsteuersatz', array('action' => 'add'));
@@ -8,3 +9,4 @@
 
     echo $form->end('Speichern');
 ?>
+</div>

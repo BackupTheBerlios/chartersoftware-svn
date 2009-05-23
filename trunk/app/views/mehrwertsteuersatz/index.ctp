@@ -1,3 +1,4 @@
+<div id="txtcontent" class="normal">
 <h2>Mehrwertsteuersätze</h2>
 
 <?php 
@@ -18,3 +19,4 @@
 
     echo $html->tag('/table'); 
 ?>
+</div>

@@ -1,3 +1,4 @@
+<div id="txtcontent" class="normal">
 <h2>Vorgangstypen</h2>
 
 <?php 
@@ -16,3 +17,4 @@
 
     echo $html->tag('/table'); 
 ?>
+</div>

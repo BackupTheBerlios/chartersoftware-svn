@@ -1,3 +1,4 @@
+<div id="txtcontent" class="normal">
 <h2>Flugzeug Hersteller ändern</h2>
 <?php
 	echo $form->create('Flugzeughersteller', array('action' => 'edit'));
@@ -9,3 +10,4 @@
 
     echo $form->end('Speichern');
 ?>
+</div>

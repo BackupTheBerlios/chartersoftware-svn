@@ -1,3 +1,4 @@
+<div id="txtcontent" class="normal">
 <h2>Flugzeughersteller</h2>
 
 <h3>Informationen</h3>
@@ -28,3 +29,4 @@
     endforeach;
     echo $html->tag('/table'); 
 ?>
+</div>
