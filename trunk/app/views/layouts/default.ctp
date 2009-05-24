@@ -1,4 +1,3 @@
-<!--XML Header-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
 
@@ -7,22 +6,19 @@
     <meta http-equiv="Content-Type"       content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language"   content="de" />
     <?php
-        echo $javascript->link('jquery');
-        //echo $javascript->link('prototype');
-        //echo $javascript->link('scriptaculous');
-        echo $javascript->link('ui.datepicker');
-        echo $javascript->link('ui.core');
-        echo $javascript->link('jquery-ui-1.7.1.custom.min');
-        echo $html->meta('icon');
-        echo $html->css('styles');
-        echo $html->css('layout_building_forms');
-        echo $html->css('jquery-ui-1.7.1.custom');
+        echo $javascript->link('jquery') . "\n";
+        //echo $javascript->link('prototype') . "\n";
+        //echo $javascript->link('scriptaculous') . "\n";
+        echo $javascript->link('ui.datepicker') . "\n";
+        echo $javascript->link('ui.core') . "\n";
+        echo $javascript->link('jquery-ui-1.7.1.custom.min') . "\n";
+        echo $html->meta('icon') . "\n";
+        echo $html->css('styles') . "\n";
+        echo $html->css('layout_building_forms') . "\n";
+        echo $html->css('jquery-ui-1.7.1.custom') . "\n";
     ?>
 </head>
 <body>
-
-
-
 <div id="content">
 <div id="banner_top"></div>
 <div id="status">Startseite</div>
@@ -36,7 +32,7 @@
         $html->link('Kundenadressen','/adressen',array('class'=>'nav1 showhelp','title'=>'Kundenadressen')),
         $html->link('Impressum','/pages/impressum',array('class'=>'nav1 showhelp','title'=>'Impressum'))
     );
-    echo $html->nestedList($list);
+    echo $html->nestedList($list) . "\n";
     $list = array(
         '<span>Administration</span>',
         $html->link('Flugzeughersteller','/flugzeughersteller',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
@@ -46,10 +42,8 @@
         $html->link('Entfernungen','/entfernungen',array('class'=>'nav1 showhelp')),
         $html->link('Mehrwertsteuersätze','/mehrwertsteuersaetze',array('class'=>'nav1 showhelp')),
         $html->link('Vorgangstypen','/vorgangstypen',array('class'=>'nav1 showhelp')),
-        //$html->link('Ajax screen','/ajaxtests/index',array('class'=>'nav1 showhelp', 'onclick'=>"einblenden('txtcontent')")),
-        //$ajax->link('Ajax index','/ajaxtests/index',array('class'=>'nav1 showhelp', 'onclick'=>"einblenden('txtcontent')", 'update'=>'txtcontent'))
     );
-    echo $html->nestedList($list);
+    echo $html->nestedList($list) . "\n";
 ?>
 <!--
     <ul>
@@ -67,9 +61,20 @@
     -->
 </div>
 
-<!--BEGIN txtcontent-->
-<?php echo $cakeDebug; ?>
-<?php echo $content_for_layout;?>
+<!--BEGIN debug content-->
+
+<?php
+if (strlen($content_for_layout)>0 || strlen($cakeDebug)>0 ) {
+	echo '<div id="txtcontent" class="normal">' . "\n"; 
+	echo $cakeDebug . "\n";
+	echo $content_for_layout . "\n";
+	echo '</div>';
+} else {
+	echo '<div id="txtcontent" class="start">' . "\n"; 
+	echo '</div>' . "\n";
+}
+?>
+
 <!--END txtcontent-->
 
 <div id="footer">

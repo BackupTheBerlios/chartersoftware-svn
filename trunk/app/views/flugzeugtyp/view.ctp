@@ -1,6 +1,3 @@
-<div id="txtcontent" class="normal">
-<h2>Flugzeugtyp</h2>
-
 <h3>Informationen</h3>
 <dl>
 <dt>ID</dt>  <dd><?php echo $flugzeugtyp['Flugzeugtyp']['id']?></dd>
@@ -43,4 +40,3 @@
     endforeach;
     echo $html->tag('/table');
 ?>
-</div>

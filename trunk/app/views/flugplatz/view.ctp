@@ -1,4 +1,3 @@
-<div id="txtcontent" class="normal">
 <h2>Flugplatz</h2>
 
 <h3>Informationen</h3>
@@ -11,4 +10,3 @@
 <dt>Zeitzone</dt><dd><?php echo $zeitzonenliste[$flugplatz['Flugplatz']['zeitzone_id']]?></dd>
 </dl>
 
-</div>

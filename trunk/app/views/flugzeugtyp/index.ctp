@@ -1,6 +1,3 @@
-<div id="txtcontent" class="normal">
-<h2>Flugzeugtyp</h2>
-
 <?php 
 	echo $html->link('Neuen Flugzeugtyp anlegen','/flugzeugtypen/add');
     echo $html->tag('table'); 
@@ -23,4 +20,3 @@
     endforeach;
     echo $html->tag('/table'); 
 ?>
-</div>

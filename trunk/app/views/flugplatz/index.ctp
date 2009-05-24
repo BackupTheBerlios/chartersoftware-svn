@@ -1,4 +1,3 @@
-<div id="txtcontent" class="normal">
 <h2>Flugplätze</h2>
 
 <?php
@@ -21,4 +20,3 @@
     endforeach;
     echo $html->tag('/table');
 ?>
-</div>

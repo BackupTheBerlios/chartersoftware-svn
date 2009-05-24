@@ -1,10 +1,8 @@
-<div id="txtcontent" class="normal">
-<h2>Vorgangstyp zufügen</h2>
 <?php
-    echo $form->create('Vorgangstyp', array('action' => 'add'));
-    
-    echo $form->input('beschreibung', array('label'=>'Beschreibung','error'=>array('required'=>'Bitte das eindeutige Kennzeichen eingeben','length'=>'Das Feld darf nicht laenger als 24 Zeichen sein')));
+    echo $form->create('Vorgangstyp', array('class'=>'yform columnar'));
+    echo $form->input('id',array('type' => 'hidden'));
+    echo $form->input('Vorgangstyp.beschreibung', array('div'=>'type-text','label'=>'Beschreibung','error'=>array('required'=>'Bitte das eindeutige Kennzeichen eingeben','length'=>'Das Feld darf nicht laenger als 24 Zeichen sein')));
 
-    echo $form->end('Speichern');
+	//Form Abschluss mit Speicher-Button
+    echo $form->end(array('label'=>'Speichern','div'=>'type-button'));
 ?>
-</div>

@@ -1,4 +1,3 @@
-<div id="txtcontent" class="normal">
 	<form method="post" action="" class="yform columnar">
             <fieldset>
 			<div class="type-text">
@@ -161,7 +160,6 @@
             </div>
 
           </form>
-</div><!--txtcontent-->
 
 <script language="javascript" type="text/javascript">
 

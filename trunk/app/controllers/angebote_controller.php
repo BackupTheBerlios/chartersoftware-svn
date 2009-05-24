@@ -37,7 +37,7 @@ class AngeboteController extends AppController
         	}
         }else{
         	//Neu Anlegen eines Angebots
-			$this->set('Vorgangsnummer','FAKED ID');
+			$this->set('Vorgangsnummer','Wird automatisch vergeben...');
 			$this->set('Adressen',$this->Adresse->find('all'));
         }
 	}
