@@ -1,2 +1,5 @@
 <?php header('Content-type: text/xml');?>
-<?php echo $content_for_layout;?>
+<?php 
+echo $xml->header() . "\n";
+echo $content_for_layout . "\n";
+?>

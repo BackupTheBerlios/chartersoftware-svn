@@ -7,7 +7,7 @@
  */
 
 class AppController extends Controller {
-    public $helpers = array('Form','Html','Ajax','Javascript','Xml'); //Bedeutet: Fuer diesen Controller werden HTML-Formulare benoetigt.
+    public $helpers = array('Form','Html','Ajax','Javascript'); 
     public $components = array( 'RequestHandler' );
 }
 

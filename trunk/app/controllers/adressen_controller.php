@@ -1,5 +1,8 @@
 <?php
 
+App::import('Xml');
+
+
 /**
  * Controller für
  *
@@ -36,6 +39,13 @@ class AdressenController extends AppController
         	$this->Adresse->id = $id;
         	$this->data = $this->Adresse->read();
         	$this->set('id',$id);
+			if ($this->RequestHandler->isXml()){
+				Configure::write('debug',0); 
+           		$adresse = $this->Adresse->getForXML($id);
+			}
+    		else
+           		$adresse = $this->Adresse->getNormalViewData($id);
+    		$this->set(compact('adresse'));         	
         }
 	}
 	public function ajaxview($id = null)

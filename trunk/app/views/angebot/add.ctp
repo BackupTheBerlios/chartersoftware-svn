@@ -179,12 +179,12 @@
 			var query= "controller=ajax_customerinfo&id="+$("#customer").val();
 			$.ajax({
 				type: "POST",
-				url: "<?php echo $html->url('/adressen/ajaxview/');?>"+$("#customer").val(),
+				url: "<?php echo $html->url('/adressen/view/');?>"+$("#customer").val()+".xml",
 				data: "controller=ajax_customerinfo&id="+$("#customer").val(),
 				dataType: "xml",
 				cache: false,
 				success:function(xml){
-					$(xml).find('contact').each(function(){  
+					$(xml).find('adresse').each(function(){  
 						$("#firma").val($(this).find('firma').text())
 						$("#abteilung").val($(this).find('abteilung').text())
 						$("#ansprechpartner").val($(this).find('ansprechpartner').text())
