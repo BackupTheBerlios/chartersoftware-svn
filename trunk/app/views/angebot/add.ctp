@@ -73,24 +73,45 @@
                 <label for="startflughafen">Startflughafen</label>
                 <select name="startflughafen" id="startflughafen" size="1">
                   <option value="0" selected="selected" disabled="disabled">Bitte wählen</option>
-                  <option value="berlin">Berlin</option>
-				  <option value="münchen">München</option>
+                  <?php
+                  	foreach ($Flugplaetze as $zeile):
+                  		$name = $zeile['Flugplatz']['name'];
+                  		$iata = $zeile['Flugplatz']['iata'];
+                  		$id   = $zeile['Flugplatz']['id'];
+                  		$name = $name . ' (' . $iata . ')';
+                  		echo "<option value=\"".$id."\">".$name."</option>";
+                  	endforeach;
+                  ?>
                 </select>
               </div>
 			   <div class="type-select">
                 <label for="zielflughafen">Zielflughafen</label>
                 <select name="zielflughafen" id="zielflughafen" size="1">
                   <option value="0" selected="selected" disabled="disabled">Bitte wählen</option>
-                  <option value="Mr.">Ja</option>
-				  <option value="Mr.">Nein</option>
+                  <?php
+                  	foreach ($Flugplaetze as $zeile):
+                  		$name = $zeile['Flugplatz']['name'];
+                  		$iata = $zeile['Flugplatz']['iata'];
+                  		$id   = $zeile['Flugplatz']['id'];
+                  		$name = $name . ' (' . $iata . ')';
+                  		echo "<option value=\"".$id."\">".$name."</option>";
+                  	endforeach;
+                  ?>
                 </select>
               </div>
 			  <div class="type-select" id="div_zwischenstop">
                 <label for="zwischenstop">Zwischenstop</label>
                 <select name="zwischenstop" id="zwischenstop" size="1">
                   <option value="0" selected="selected" disabled="disabled">Bitte wählen</option>
-                  <option value="augsburg">Augsburg</option>
-				  <option value="berlin">Berlin</option>
+                  <?php
+                  	foreach ($Flugplaetze as $zeile):
+                  		$name = $zeile['Flugplatz']['name'];
+                  		$iata = $zeile['Flugplatz']['iata'];
+                  		$id   = $zeile['Flugplatz']['id'];
+                  		$name = $name . ' (' . $iata . ')';
+                  		echo "<option value=\"".$id."\">".$name."</option>";
+                  	endforeach;
+                  ?>
                 </select>
 				<input type="button" value="Hinzufügen" id="button1" name="button1" style="float:right"/>
               </div>
@@ -163,7 +184,7 @@
 		$("#customer").change(function () {
 			var query= "controller=ajax_customerinfo&id="+$("#customer").val();
 			$.ajax({
-				type: "POST",
+				type: "GET",
 				url: "<?php echo $html->url('/adressen/view/');?>"+$("#customer").val()+".xml",
 				data: "controller=ajax_customerinfo&id="+$("#customer").val(),
 				dataType: "xml",
@@ -196,12 +217,10 @@
 	});
 	
 	$("#startflughafen").change(function () {
-		
 		$('#loader').show();
-		
 		$.ajax({
 			type: "POST",
-			url: "data/index.php",
+			url: "<?php echo $html->url('/flugplatz/view/');?>"+$("#startflughafen").val()+".xml",
 			data: "controller=ajax_flugroute&action=add_start&id="+$("#startflughafen").val(),
 			dataType: "xml",
 			cache: false,

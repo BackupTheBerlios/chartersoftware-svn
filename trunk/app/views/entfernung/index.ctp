@@ -1,9 +1,16 @@
-<div id="txtcontent" class="normal">
 <h2>Entfernungsberechnungen</h2>
 
 <?php
-    echo $ajax->form('edit','post',array('update'=>'txtcontent','url' => array('controller' => 'entfernungen','action' => 'index')));
+    echo $form->create('Entfernung', array('action' => 'index', 'class'=>'yform columnar'));
+    echo $form->input('start_id', array('div'=>'type-select', 'options' => $Flugplaetze));
+    echo $form->input('ziel_id', array('div'=>'type-select', 'options' => $Flugplaetze));
+    echo $form->input('Entfernung.Entfernung', array('type'=>'text','value'=>$Entfernung,'div'=>'type-text','disabled'=>'disabled'));
+    
+    echo $form->end(array('label'=>'Berechnen','div'=>'type-button'));
 
+	echo var_dump($this->data);
+
+/*
     $modell = new Flugplatz(); //Modell fuer Flugzeugtyp erzeugen
     $list = $modell->find('list');
 
@@ -29,7 +36,7 @@
     }
 
     echo $form->submit('Berechnen');
-
     echo $form->end();
+    */
 ?>
-</div>
+

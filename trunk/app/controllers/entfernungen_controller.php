@@ -16,13 +16,48 @@ class EntfernungenController extends AppController
 {
     public $uses = array('Flugplatz');
     public $name = 'Entfernung';
-    public $helpers = array('Html','Ajax','Javascript','Form');
-    public $components = array( 'RequestHandler' );
 
     /**Anzeigen einer Liste*/
-    public function index($id = null)
+    public function index()
     {
-        //do nothing
+		$this->Flugplatz->order = 'Flugplatz.name ASC';
+		$this->set('Flugplaetze',$this->Flugplatz->find('list'));
+		$this->set('Entfernung',0);
+		$this->set('zeitzonenliste', timezone_identifiers_list());
+
+		if (empty($this->data))
+		{
+			//Noch keine Daten ausgewählt
+		}else{
+			//bereits Daten ausgewählt
+			$start_id = $this->data[Entfernung][start_id];
+			$ziel_id = $this->data[Entfernung][ziel_id];
+			$this->set('Entfernung',$this->CalcEntfernung($start_id, $ziel_id));
+		}
+    }
+    
+    
+    public function Bogenmass($x)
+    {
+    	echo $x;
+    	return (($x * pi)/180);    	
+    }
+    
+    /**
+     * start: ID des StartFlugplatzes
+     * ziel: ID des Zielflugplatzes
+     */
+    public function CalcEntfernung($start, $ziel)
+    {
+    	$this->Flugplatz->id=$start;
+    	$startFlugplatz = $this->Flugplatz->field('geoPosition');
+    	$bmStart = $this->Bogenmass($startFlugplatz);
+    	$this->Flugplatz->id=$ziel;
+    	$zielFlugplatz = $this->Flugplatz->field('geoPosition');
+    	
+    	
+    	srand((double)microtime()*1000000); 
+		return rand(0,100);
     }
 }
 ?>
