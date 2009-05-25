@@ -8,7 +8,7 @@
 
 class AppController extends Controller {
     public $helpers = array('Form','Html','Ajax','Javascript'); 
-    public $components = array( 'RequestHandler' );
+    public $components = array( 'RequestHandler','Kalkulationen' );
 }
 
 
