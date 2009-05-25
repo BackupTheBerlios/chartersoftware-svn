@@ -17,25 +17,29 @@ class EntfernungenController extends AppController
     public $uses = array('Flugplatz');
     public $name = 'Entfernung';
 
-    /**Anzeigen einer Liste*/
-    public function index()
+    public function berechnen($start, $ziel)
     {
 		$this->Flugplatz->order = 'Flugplatz.name ASC';
 		$this->set('Flugplaetze',$this->Flugplatz->find('list'));
 		$this->set('Entfernung',0);
 		$this->set('zeitzonenliste', timezone_identifiers_list());
-
-		if (empty($this->data))
+		$this->set('Entfernung',$this->CalcEntfernung($start, $ziel));
+		
+		if ($start!=null && $ziel != null)
 		{
 			//Noch keine Daten ausgewählt
+			$this->data[Entfernung][start_id] = $start;
+			$this->data[Entfernung][ziel_id] = $ziel;
+			$this->data[Entfernung][Entfernung] = $this->CalcEntfernung($start, $ziel);
 		}else{
 			//bereits Daten ausgewählt
-			$start_id = $this->data[Entfernung][start_id];
-			$ziel_id = $this->data[Entfernung][ziel_id];
-			$this->set('Entfernung',$this->CalcEntfernung($start_id, $ziel_id));
+			$start = $this->data[Entfernung][start_id];
+			$ziel = $this->data[Entfernung][ziel_id];
+			$this->data[Entfernung][Entfernung] = $this->CalcEntfernung($start, $ziel);
 		}
-    }
-    
+		
+		
+    }    
     
     /**
      * start: ID des StartFlugplatzes

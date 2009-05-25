@@ -39,7 +39,7 @@
         $html->link('Flugzeugtypen','/flugzeugtypen',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
         $html->link('Flugzeuge','/flugzeuge',array('class'=>'nav1 showhelp')),
         $html->link('Flugplätze','/flugplaetze',array('class'=>'nav1 showhelp')),
-        $html->link('Entfernungen','/entfernungen',array('class'=>'nav1 showhelp')),
+        $html->link('Entfernungen','/entfernungen/berechnen',array('class'=>'nav1 showhelp')),
         $html->link('Mehrwertsteuersätze','/mehrwertsteuersaetze',array('class'=>'nav1 showhelp')),
         $html->link('Vorgangstypen','/vorgangstypen',array('class'=>'nav1 showhelp')),
     );
