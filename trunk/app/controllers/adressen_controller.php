@@ -37,26 +37,8 @@ class AdressenController extends AppController
         if ($id != null)
         {
         	$this->Adresse->id = $id;
-        	$this->data = $this->Adresse->read();
         	$this->set('id',$id);
-			if ($this->RequestHandler->isXml()){
-				Configure::write('debug',0); 
-           		$adresse = $this->Adresse->getForXML($id);
-			}
-    		else
-           		$adresse = $this->Adresse->getNormalViewData($id);
-    		$this->set(compact('adresse'));         	
-        }
-	}
-	public function ajaxview($id = null)
-	{
-		$this->layout='xml';
-        if ($id != null)
-        {
-		  $this->Adresse->id = $id;
-		  $this->set('Adresse', $this->Adresse->read());
-		  $this->set('id',$id);
-		  
+        	$this->data=$this->Adresse->read();
         }
 	}
 

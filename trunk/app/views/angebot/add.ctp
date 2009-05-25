@@ -54,53 +54,14 @@
             <fieldset>
               <legend>Flugdaten</legend>
               <div class="type-select">
-                <label for="more">Zeitcharter</label>
-                <select name="salutation" id="salutation" size="1">
+                <label for="zeitcharter">Zeitcharter</label>
+                <select name="zeitcharter" id="zeitcharter" size="1">
                   <option value="0" selected="selected" disabled="disabled">Bitte wählen</option>
-                  <option value="Mr.">Ja</option>
-				  <option value="Mr.">Nein</option>
+                  <option value="ja">Ja</option>
+				  <option value="nein">Nein</option>
                 </select>
               </div>
-			  
-			  <div class="type-select">
-                <label for="more">Startflughafen</label>
-                <select name="salutation" id="salutation" size="1">
-                  <option value="0" selected="selected" disabled="disabled">Bitte wählen</option>
-                  <option value="Mr.">Ja</option>
-				  <option value="Mr.">Nein</option>
-                </select>
-              </div>
-			  
-			  <div class="type-select">
-                <label for="more">Zwischenstop</label>
-                <select name="salutation" id="salutation" size="1">
-                  <option value="0" selected="selected" disabled="disabled">Bitte wählen</option>
-                  <option value="Mr.">Ja</option>
-				  <option value="Mr.">Nein</option>
-                </select>
-              </div>
-			 <div class="type-button">
-				<input type="button" value="Hinzufügen" id="button1" name="button1" style="float:right"/>
-			</div>
-			<div id="liste_zwischenstop">
-				<br /><hr><br />
-				<div class="type-text_element">
-					<label for="firstname">Zwischenstop</label>
-					<input type="text" name="firstname" id="firstname" size="20" class="text" value="Paris" />
-					<input type="button" value="entfernen" id="button1" name="button1" class="button"/>
-				</div>
-				<br /><hr><br />
-			</div>
-			  <div class="type-select">
-                <label for="more">Zielflughafen</label>
-                <select name="salutation" id="salutation" size="1">
-                  <option value="0" selected="selected" disabled="disabled">Bitte wählen</option>
-                  <option value="Mr.">Ja</option>
-				  <option value="Mr.">Nein</option>
-                </select>
-              </div>
-			  
-               <div class="type-text">
+			  <div class="type-text">
 				<label for="firstname">Von Datum</label>
 				<input type="text" name="firstname" id="datepicker" size="20" />
 			</div>
@@ -108,6 +69,32 @@
 				<label for="firstname">Bis Datum</label>
                 <input type="text" name="firstname" id="datepicker2" size="20" />
 			</div>
+			  <div class="type-select">
+                <label for="startflughafen">Startflughafen</label>
+                <select name="startflughafen" id="startflughafen" size="1">
+                  <option value="0" selected="selected" disabled="disabled">Bitte wählen</option>
+                  <option value="berlin">Berlin</option>
+				  <option value="münchen">München</option>
+                </select>
+              </div>
+			   <div class="type-select">
+                <label for="zielflughafen">Zielflughafen</label>
+                <select name="zielflughafen" id="zielflughafen" size="1">
+                  <option value="0" selected="selected" disabled="disabled">Bitte wählen</option>
+                  <option value="Mr.">Ja</option>
+				  <option value="Mr.">Nein</option>
+                </select>
+              </div>
+			  <div class="type-select" id="div_zwischenstop">
+                <label for="zwischenstop">Zwischenstop</label>
+                <select name="zwischenstop" id="zwischenstop" size="1">
+                  <option value="0" selected="selected" disabled="disabled">Bitte wählen</option>
+                  <option value="augsburg">Augsburg</option>
+				  <option value="berlin">Berlin</option>
+                </select>
+				<input type="button" value="Hinzufügen" id="button1" name="button1" style="float:right"/>
+              </div>
+               
 			 <div class="type-text">
 				<label for="firstname">Anzahl Personen</label>
                 <input type="text" name="firstname" id="firstname" size="20" />
@@ -158,9 +145,7 @@
               <input type="button" value="Speichern" id="button1" name="button1" />
 			  <input type="button" value="Druckansicht" id="button1" name="button1" />
             </div>
-
-          </form>
-
+</form>
 <script language="javascript" type="text/javascript">
 
 
@@ -198,7 +183,7 @@
 		});
 	});
 	
-		$("#zeitcharter").change(function () {
+	$("#zeitcharter").change(function () {
 		if ($(this).val() == 'ja') {
 		 $("#div_zwischenstop").hide(500);
 		 $("#us_zeitcharter").html('ja');

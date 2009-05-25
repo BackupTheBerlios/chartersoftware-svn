@@ -38,8 +38,9 @@ class FlugplaetzeController extends AppController
         $this->set('zeitzonenliste', timezone_identifiers_list());
         if ($id != null)
         {
-		  $this->Flugplatz->id = $id;
-		  $this->set('flugplatz', $this->Flugplatz->read());
+        	$this->set('id',$id);
+        	$this->Flugplatz->id = $id;
+        	$this->data=$this->Flugplatz->read();
         }
 	}
 
