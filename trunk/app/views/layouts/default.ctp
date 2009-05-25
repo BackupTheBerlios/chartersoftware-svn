@@ -68,7 +68,36 @@ if (strlen($content_for_layout)>0 || strlen($cakeDebug)>0 ) {
 	echo '<div id="txtcontent" class="normal">' . "\n"; 
 	echo $cakeDebug . "\n";
 	echo $content_for_layout . "\n";
-	echo '</div>';
+	echo <<< HTMLTEXT
+</div>
+	<div id="txtcontent2" class="normal">
+<div id="txtcontent2_wrapper">
+<h2>Flugdaten</h2>
+
+<div id="us_content">
+<div class="type-text">
+	<label for="us_abflug">Von</label>
+	<input type="text" name="us_abflug" size="20" />
+</div>
+<div class="type-text">
+	<label for="us_ankunft">Nach</label>
+	<input type="text" name="us_ankunft" size="20" />
+</div>
+<div class="type-text">
+	<label for="us_ankunft">Distanz</label>
+	<input type="text" name="us_distanz" size="20" />
+</div>
+<input type="button" value="löschen" id="us_del_1" name="us_del_1" />
+<hr class="hr2">
+<div class="type-text">
+	<label for="us_distancesum">Distanz Gesamt</label>
+	<input type="text" name="us_distancesum" size="20" />
+</div>
+</div>
+</div>
+</div>
+HTMLTEXT;
+	
 } else {
 	echo '<div id="txtcontent" class="start">' . "\n"; 
 	echo '</div>' . "\n";

@@ -197,5 +197,115 @@
 			});	
 		});
 	});
+	
+		$("#zeitcharter").change(function () {
+		if ($(this).val() == 'ja') {
+		 $("#div_zwischenstop").hide(500);
+		 $("#us_zeitcharter").html('ja');
+		}
+		if ($(this).val() == 'nein') {
+		$("#div_zwischenstop").show(500);
+		$("#us_zeitcharter").html('nein');
+		}
+		
+	});
+	
+	$("#startflughafen").change(function () {
+		
+		$('#loader').show();
+		
+		$.ajax({
+			type: "POST",
+			url: "data/index.php",
+			data: "controller=ajax_flugroute&action=add_start&id="+$("#startflughafen").val(),
+			dataType: "xml",
+			cache: false,
+			success:function(xml){
+				
+				$("#us_content").html('');
+				$("#loader").hide();
+				$(xml).find('flugdaten').each(function(){  
+					if ($(this).find('streckesum').text() != '0') {
+						
+						$(this).find('route').each(function(){  
+							var add = "<div class=\"type-text\">\n";
+							add += "<label for=\"us_abflug\">Von<\/label>\n";
+							add += "<input type=\"text\" name=\"us_abflug\" size=\"20\" value=\""+$(this).find('start').text()+"\"\/>\n";
+							add += "<\/div>\n";
+							add += "<div class=\"type-text\">\n";
+							add += "<label for=\"us_ankunft\">Nach<\/label>\n";
+							add += "<input type=\"text\" name=\"us_ankunft\" size=\"20\" value=\""+$(this).find('ziel').text()+"\"\/>\n";
+							add += "<\/div>\n";
+							add += "<div class=\"type-text\">\n";
+							add += "<label for=\"us_ankunft\">Distanz<\/label>\n";
+							add += "<input type=\"text\" name=\"us_distanz\" size=\"20\" value=\""+$(this).find('strecke').text()+"\"\/>\n";
+							add += "<\/div>\n";
+							if ($(this).find('zwischenstop').text() == '1') {
+				
+								add += "<br \/><input type=\"button\" value=\"Zwischenstop löschen\" id=\"zwischenstop_"+$(this).find('id').text()+"\" name=\"zw_delete\" \/>\n";
+							}
+							add += "<hr class=\"hr2\">\n";
+						
+							$("#us_content").append(add);
+						});		
+						
+						add = "";
+						add += "<div class=\"type-text\">\n";
+						add += "<label for=\"us_distancesum\">Distanz Gesamt<\/label>\n";
+						add += "<input type=\"text\" name=\"us_distancesum\" size=\"20\" value=\""+$(this).find('distance').text()+"\"\/>\n";
+						add += "<\/div>\n";
+						
+						$("#us_content").append(add);
+					
+						if ($(this).find('kosten').text() != '0') {
+						add = "";
+						add += "<div class=\"type-text\">\n";
+						add += "<label for=\"us_distancesum\">Kosten<\/label>\n";
+						add += "<input type=\"text\" name=\"us_distancesum\" size=\"20\" value=\""+$(this).find('kosten').text()+"\"\/>\n";
+						add += "<\/div>\n";
+						
+						$("#us_content").append(add);
+						
+						}
+					}
+				});
+			}
+	
+		});
+		
+	});
+	
+	$("#zielflughafen").change(function () {
+		$.ajax({
+			type: "POST",
+			url: "data/index.php",
+			data: "controller=ajax_flugroute&action=add_ziel&id="+$("#Zielflughafen").val(),
+			dataType: "xml",
+			cache: false,
+			success:function(xml){
+				alert("test2");
+			}
+	
+		});	
+		
+	});
+	
+	$("#zwischenstop").change(function () {
+		$.ajax({
+			type: "POST",
+			url: "data/index.php",
+			data: "controller=ajax_flugroute&action=add_zwischenstop&id="+$("#zwischenstop").val(),
+			dataType: "xml",
+			cache: false,
+			success:function(xml){
+				alert("test2");
+			}
+	
+		});	
+		
+	});
+
+	
+	
 </script>
 	

@@ -48,19 +48,26 @@ height:1px;
 background:#EEE;
 }
 
+hr.hr2 {
+border:1px solid #BFBFBF ;
+height:1px;
+background:#BFBFBF;
+margin:10px 0;
+}
+
 #content {
-width:800px;
+width:1000px;
 position:absolute;
 top:50%;
 left:50%;
-margin-left:-400px;
-margin-top:-300px;
+margin-left:-500px;
+margin-top:-350px;
 border:1px solid #132A56;
-height:600px;
+height:700px;
 background:#FFF;
 }
 
-#txtcontent {
+#txtcontent, #txtcontent2 {
 position:absolute;
 }
 
@@ -74,8 +81,8 @@ height:450px;
 }
 
 #txtcontent.normal {
-width:545px;
-height:430px;
+width:535px;
+height:530px;
 z-index:10;
 top:105px;
 left:240px;
@@ -83,8 +90,28 @@ overflow:auto;
 padding-right:10px;
 }
 
+#txtcontent2.normal {
+width:200px;
+height:530px;
+z-index:10;
+top:105px;
+right:5px;
+overflow:auto;
+background:#EEE;
+}
+
+#txtcontent2_wrapper {
+padding:10px;
+}
+
+#txtcontent2 h2 {
+font-weight:bold;
+font-size:12px;
+margin: 0 0 10px 0;
+}
+
 #banner_top {
-width:790px;
+width:990px;
 height:95px;
 position:absolute;
 top:5px;
@@ -172,10 +199,10 @@ font-weight:bold;
 
 #footer {
 background:#EF5A00;
-width:790px;
+width:990px;
 height:50px;
 position:absolute;
-top:545px;
+top:645px;
 left:5px;
 }
 
@@ -185,7 +212,7 @@ background:url(img/icon_help.gif) no-repeat 10px center;
 width:790px;
 height:50px;
 position:absolute;
-top:545px;
+top:645px;
 left:5px;
 }
 
@@ -196,6 +223,17 @@ line-height:50px;
 font-weight:bold;
 font-size:14px;
 color:#FFF;
+}
+
+/*Angebot Flugdaten Übersicht Rechts*/
+
+#loader {
+display:none;
+width:128px;
+height:20px;
+margin:0 auto;
+height:50px;
+background:url(img/ajax-loader.gif) no-repeat center center;
 }
 
 
