@@ -24,6 +24,29 @@ class ReportsController extends AppController
 		$this->data=$this->Report->find('all');
 	}
 
+    public function dump($report_id)
+	{
+		$this->Report->id = $report_id;
+		$rep = $this->Report->read();
+		$command = $rep[Report][befehl];
+		$resultSet = $this->Report->query($command);
+		echo $command + count($resultSet); 
+	}
+
+
+	/**Anzeigen einer Liste*/
+    public function select($report_id)
+	{
+		$this->Report->order = 'Report.name ASC';
+		$this->set('Reportliste',$this->Report->find('list'));
+		if ($this->data[Report][report_id]!= null) $report_id = $this->data[Report][report_id];
+		if ($report_id!=null)
+		{
+			//nächste Zeile löschen und durch echte Ausgabe ersetzen.
+            $this->flash('dump ...','/reports/select');
+		}
+	}
+
 	/**Anzeigen einer
      *
      * @param id ist optional, wenn gesetzt, wird eine einzelne Typ mit eben

@@ -21,7 +21,6 @@ class EntfernungenController extends AppController
     {
 		$this->Flugplatz->order = 'Flugplatz.name ASC';
 		$this->set('Flugplaetze',$this->Flugplatz->find('list'));
-		$this->set('Entfernung',0);
 		$this->set('zeitzonenliste', timezone_identifiers_list());
 		$this->set('Entfernung',$this->CalcEntfernung($start, $ziel));
 		

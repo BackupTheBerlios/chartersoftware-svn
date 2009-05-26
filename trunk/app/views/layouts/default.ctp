@@ -30,6 +30,7 @@
         $html->link('Startseite','/',array('class'=>'nav1 showhelp','title'=>'Startseite')),
         $html->link('Angebote','/angebote',array('class'=>'nav1 showhelp','title'=>'Kundenangebot')),
         $html->link('Kundenadressen','/adressen',array('class'=>'nav1 showhelp','title'=>'Kundenadressen')),
+        $html->link('Statistiken','/reports/select',array('class'=>'nav1 showhelp','title'=>'Statistiken')),
         $html->link('Impressum','/pages/impressum',array('class'=>'nav1 showhelp','title'=>'Impressum'))
     );
     echo $html->nestedList($list) . "\n";
@@ -118,6 +119,9 @@ HTMLTEXT;
 <div id="help_Vertrag" class="help"><span>Vertrag drucken und verschicken.</span></div>
 <div id="help_Rechnung" class="help"><span>Rechnung drucken und verschicken.</span></div>
 <div id="help_Kundenangebot" class="help"><span>Erstellen Sie ein neues Kundenangebot.</span></div>
+<div id="help_Statistiken" class="help"><span>Erstellen Sie Statistiken ....</span></div>
+
+
 </div>
 
 <script language="javascript" type="text/javascript">
