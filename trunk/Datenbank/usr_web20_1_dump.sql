@@ -22,6 +22,7 @@ DROP TABLE IF EXISTS `zeitzonen`;
 DROP TABLE IF EXISTS `mehrwertsteuersaetze`;
 DROP TABLE IF EXISTS `vorgangstypen`;
 DROP TABLE IF EXISTS `adressen`;
+DROP TABLE IF EXISTS `reports`;
 #
 #
 #
@@ -42,6 +43,23 @@ VALUES
 	(1,'Voller Satz',1900,100),
 	(2,'Halber Satz',700,100),
 	(3,'Steuerfrei',0,100);
+#
+#-----------------------------------
+#-----------------------------------
+#-----------------------------------
+CREATE TABLE `reports` (
+	  `id` int(11) NOT NULL AUTO_INCREMENT,
+	  `name` varchar(50) NOT NULL,
+	  `befehl` blob NOT NULL,
+	  PRIMARY KEY (`id`),
+	  UNIQUE KEY `name` (`name`)
+	) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+	#
+INSERT INTO `reports` (`id`,`name`,`befehl`)
+VALUES
+	(1,'Liste aller Flugzeugtypen',' select * from flugzeugtypen'),
+	(2,'Liste aller Kunden',' select * from adressen; ');
+
 #
 #	
 #-----------------------------------

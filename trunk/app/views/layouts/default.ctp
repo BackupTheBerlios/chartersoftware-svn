@@ -42,6 +42,7 @@
         $html->link('Entfernungen','/entfernungen/berechnen',array('class'=>'nav1 showhelp')),
         $html->link('Mehrwertsteuersätze','/mehrwertsteuersaetze',array('class'=>'nav1 showhelp')),
         $html->link('Vorgangstypen','/vorgangstypen',array('class'=>'nav1 showhelp')),
+        $html->link('Reports','/reports',array('class'=>'nav1 showhelp')),
     );
     echo $html->nestedList($list) . "\n";
 ?>

@@ -13,16 +13,15 @@
  * Dabei kann es sein, dass ein Parameter �bergeben wird oder auch nicht.
  *
  */
-class AdressenController extends AppController
+class ReportsController extends AppController
 {
-	public $name = 'Adresse';
-    public $uses = array('Adresse');
+	public $name = 'Report';
+    public $uses = array('Report');
 
 	/**Anzeigen einer Liste*/
     public function index()
 	{
-		$alle = $this->Adresse->find('all');
-		$this->set('adressen',$alle);
+		$this->data=$this->Report->find('all');
 	}
 
 	/**Anzeigen einer
@@ -34,9 +33,8 @@ class AdressenController extends AppController
 	{
         if ($id != null)
         {
-        	$this->Adresse->id = $id;
-        	$this->set('id',$id);
-        	$this->data=$this->Adresse->read();
+        	$this->Report->id = $id;
+        	$this->data=$this->Report->read();
         }
 	}
 
@@ -45,11 +43,11 @@ class AdressenController extends AppController
 	{
 		if (!empty($this->data))
 		{
-        	if (!$this->Adresse->save($this->data))
+        	if (!$this->Report->save($this->data))
         	{
                 $this->Session->setFlash('Fehler beim Speichern');
         	}else{
-        		$this->flash('gespeichert', '/adressen');
+        		$this->flash('gespeichert', '/reports');
         	}
         }
         
@@ -61,7 +59,7 @@ class AdressenController extends AppController
 	{
 		if (!empty($id))
 		{
-            $this->Adresse->del($id);
+            $this->Report->del($id);
 		}
 	}
 
@@ -71,20 +69,19 @@ class AdressenController extends AppController
 	{
 		if (!empty($this->data))
 		{
-        	if (!$this->Adresse->save($this->data))
+        	if (!$this->Report->save($this->data))
             {
                 $this->Session->setFlash('Fehler beim Speichern');
             }
             else
             {
-            	$this->flash('gespeichert', '/adressen');
+            	$this->flash('gespeichert', '/reports');
             }
 		}
       	else
       	{
-        	$this->Adresse->id = $id;
+        	$this->Report->id = $id;
         	$this->data = $this->Adresse->read();
-        	$this->set('id',$id);
       	}
       	
       	

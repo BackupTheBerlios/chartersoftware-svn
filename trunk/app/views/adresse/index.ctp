@@ -1,5 +1,3 @@
-<h2>Flugplätze</h2>
-
 <?php
 	echo $html->link('Neue Adresse anlegen','/adressen/add');
     echo $html->tag('table');
