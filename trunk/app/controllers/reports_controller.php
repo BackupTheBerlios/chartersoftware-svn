@@ -60,6 +60,8 @@ class ReportsController extends AppController
 		if (!empty($id))
 		{
             $this->Report->del($id);
+            $this->flash('gespeichert', '/reports');
+            
 		}
 	}
 
@@ -81,7 +83,7 @@ class ReportsController extends AppController
       	else
       	{
         	$this->Report->id = $id;
-        	$this->data = $this->Adresse->read();
+        	$this->data = $this->Report->read();
       	}
       	
       	

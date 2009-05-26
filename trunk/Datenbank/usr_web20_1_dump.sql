@@ -1,11 +1,4 @@
-# Sequel Pro dump
-# Version 254
-# http://code.google.com/p/sequel-pro
-#
-# Host: localhost (MySQL 5.1.31)
-# Database: usr_web20_1
-# Generation Time: 2009-02-22 23:34:18 +0100
-# ************************************************************
+#************************************************************
 #
 # ------------------------------------------------------------
 DROP TABLE IF EXISTS `flugzeugs`;

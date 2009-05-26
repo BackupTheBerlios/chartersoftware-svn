@@ -3,8 +3,6 @@
     echo $html->tag('table');
     echo $html->tableHeaders(array('Report-Name','Ändern','Löschen'));
 
-    var_dump($this->data);
-
 	foreach ($this->data as $zeile):
 	    echo $html->tableCells( array(
 			$zeile['Report']['name'],
