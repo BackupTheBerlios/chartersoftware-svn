@@ -70,10 +70,9 @@ class ReportsController extends AppController
         	{
                 $this->Session->setFlash('Fehler beim Speichern');
         	}else{
-        		$this->flash('gespeichert', '/reports');
+        		$this->redirect(array('action' => 'index'));
         	}
         }
-        
 	}
 
 
@@ -83,8 +82,7 @@ class ReportsController extends AppController
 		if (!empty($id))
 		{
             $this->Report->del($id);
-            $this->flash('gespeichert', '/reports');
-            
+       		$this->redirect(array('action' => 'index'));
 		}
 	}
 
@@ -100,7 +98,7 @@ class ReportsController extends AppController
             }
             else
             {
-            	$this->flash('gespeichert', '/reports');
+       		$this->redirect(array('action' => 'index'));
             }
 		}
       	else

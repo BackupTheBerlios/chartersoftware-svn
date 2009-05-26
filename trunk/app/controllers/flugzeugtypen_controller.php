@@ -49,6 +49,8 @@ class FlugzeugtypenController extends AppController
 		{
         	if (!$this->Flugzeugtyp->save($this->data))
                 $this->Session->setFlash('Fehler beim Speichern');
+            else
+        		$this->redirect(array('action' => 'index'));
         }
 	}
 
@@ -56,11 +58,8 @@ class FlugzeugtypenController extends AppController
 	/**L�schen */
 	function delete($id)
 	{
-		if (!empty($id))
-		{
-            $this->Flugzeugtyp->del($id);
-            $this->flash('geloescht', '/flugzeugtyp');
-		}
+		if (!empty($id)) $this->Flugzeugtyp->del($id);
+		$this->redirect(array('action' => 'index'));
 	}
 
 
@@ -72,6 +71,8 @@ class FlugzeugtypenController extends AppController
 		{
         	if (!$this->Flugzeugtyp->save($this->data))
                 $this->Session->setFlash('Fehler beim Speichern');
+            else
+        		$this->redirect(array('action' => 'index'));
 		}
       	else
       	{

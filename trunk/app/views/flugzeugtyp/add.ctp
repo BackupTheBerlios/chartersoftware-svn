@@ -1,7 +1,7 @@
 
 
 <?php
-    echo $form->create('Flugzeugtyp', array('class'=>'yform columnar', 'url'=>'/flugzeugtypen'));
+    echo $form->create('Flugzeugtyp', array('class'=>'yform columnar'));
 
     echo $form->input('Flugzeugtyp.name', array('div'=>'type-text','error'=>array('required'=>'Bitte den Namen eingeben','length'=>'Das Feld darf nicht laenger als 49 Zeichen sein')));
 

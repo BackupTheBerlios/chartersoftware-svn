@@ -1,14 +1,10 @@
-<div id="txtcontent" class="normal">
-<h2>Mehrwertsteuersätze</h2>
-
 <?php 
 	echo $html->link('Neues Satz anlegen','/mehrwertsteuersaetze/add');
     echo $html->tag('table'); 
-    echo $html->tableHeaders(array('Id', 'Beschreibung', 'Satz', 'Skalierung', 'Ändern','Löschen'));
+    echo $html->tableHeaders(array('Beschreibung', 'Satz', 'Skalierung', 'Ändern','Löschen'));
 
-    foreach ($mehrwertsteuersaetze as $zeile):
+    foreach ($this->data as $zeile):
 	    echo $html->tableCells( array(
-			$zeile['Mehrwertsteuersatz']['id'],
 			$html->link($zeile['Mehrwertsteuersatz']['beschreibung'], "/mehrwertsteuersaetze/view/".$zeile['Mehrwertsteuersatz']['id']),
 			$zeile['Mehrwertsteuersatz']['satz'],
 			$zeile['Mehrwertsteuersatz']['scale'],
@@ -19,4 +15,3 @@
 
     echo $html->tag('/table'); 
 ?>
-</div>

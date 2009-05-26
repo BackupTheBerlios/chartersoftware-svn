@@ -41,7 +41,7 @@ class VorgangstypenController extends AppController
 		{
         	if ($this->Vorgangstyp->save($this->data))
         	{
-                $this->flash('gespeichert', '/vorgangstypen');
+        		$this->redirect(array('action' => 'index'));
         	}
         	else
         	{
@@ -57,7 +57,7 @@ class VorgangstypenController extends AppController
 		if (!empty($id))
 		{
             $this->Vorgangstyp->del($id);
-            $this->flash('geloescht', '/vorgangstypen');
+       		$this->redirect(array('action' => 'index'));
 		}
 	}
 
@@ -69,7 +69,7 @@ class VorgangstypenController extends AppController
 		{
         	if ($this->Vorgangstyp->save($this->data))
         	{
-                $this->flash('geaendert', '/vorgangstypen');
+        		$this->redirect(array('action' => 'index'));
         	}
             else
             {

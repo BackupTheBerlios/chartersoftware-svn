@@ -11,14 +11,11 @@
 class MehrwertsteuersaetzeController extends AppController
 {
 	public $name = 'Mehrwertsteuersatz';
-    public $helpers = array('Html','Ajax','Javascript','Form');
-    public $components = array( 'RequestHandler' );
 
 	/**Anzeigen einer Liste*/
     public function index()
 	{
-		$alle = $this->Mehrwertsteuersatz->find('all');
-		$this->set('mehrwertsteuersaetze',$alle);
+		$this->data = $this->Mehrwertsteuersatz->find('all');
 	}
 
 
@@ -43,7 +40,7 @@ class MehrwertsteuersaetzeController extends AppController
 		{
         	if ($this->Mehrwertsteuersatz->save($this->data))
         	{
-                $this->flash('gespeichert', '/mehrwertsteuersaetze');
+        		$this->redirect(array('action' => 'index'));
         	}
         	else
         	{
@@ -59,8 +56,8 @@ class MehrwertsteuersaetzeController extends AppController
 		if (!empty($id))
 		{
             $this->Mehrwertsteuersatz->del($id);
-            $this->flash('geloescht', '/mehrwertsteuersaetze');
 		}
+   		$this->redirect(array('action' => 'index'));
 	}
 
 
@@ -71,7 +68,7 @@ class MehrwertsteuersaetzeController extends AppController
 		{
         	if ($this->Mehrwertsteuersatz->save($this->data))
         	{
-                $this->flash('geändert', '/mehrwertsteuersaetze');
+        		$this->redirect(array('action' => 'index'));
         	}
             else
             {

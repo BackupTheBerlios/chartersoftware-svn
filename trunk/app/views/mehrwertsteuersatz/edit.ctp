@@ -1,13 +1,11 @@
-<div id="txtcontent" class="normal">
-<h2>Mehrwertsteuersatz ändern</h2>
 <?php
-    echo $form->create('Mehrwertsteuersatz', array('action' => 'add'));
+    echo $form->create('Mehrwertsteuersatz', array('action' => 'edit', 'class'=>'yform columnar'));
+
     echo $form->input('id',array('type' => 'hidden'));
+    echo $form->input('Mehrwertsteuersatz.beschreibung', array('div'=>'type-text','error'=>array('required'=>'Bitte die Beschreibung eingeben','length'=>'Das Feld darf nicht laenger als 49 Zeichen sein')));
+    echo $form->input('Mehrwertsteuersatz.satz', array('div'=>'type-text','label'=>'Satz'));
+    echo $form->input('Mehrwertsteuersatz.scale', array('div'=>'type-text','label'=>'Skalierung'));
 
-    echo $form->input('beschreibung', array('label'=>'Beschreibung','error'=>array('required'=>'Bitte das eindeutige Kennzeichen eingeben','length'=>'Das Feld darf nicht laenger als 24 Zeichen sein')));
-    echo $form->input('satz', array('label'=>'Steuersatz'));
-    echo $form->input('scale', array('label'=>'Skalierung'));
-
-    echo $form->end('Speichern');
+	//Form Abschluss mit Speicher-Button
+    echo $form->end(array('label'=>'Speichern','div'=>'type-button'));
 ?>
-</div>
