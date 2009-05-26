@@ -34,9 +34,9 @@ class FlugzeugtypenController extends AppController
 	{
         if ($id != null)
         {
-          $this->Flugzeugtyp->id = $id;
-          $flugzeugtyp = $this->Flugzeugtyp->read();
-          $this->set('flugzeugtyp', $flugzeugtyp);
+        	$this->Flugzeugtyp->id = $id;
+        	$this->set('id',$id);
+        	$this->data=$this->Flugzeugtyp->read();
         }
 	}
 
@@ -47,14 +47,8 @@ class FlugzeugtypenController extends AppController
 
 		if (!empty($this->data))
 		{
-        	if ($this->Flugzeugtyp->save($this->data))
-        	{
-                $this->flash('gespeichert', '/flugzeugtyp');
-        	}
-        	else
-        	{
+        	if (!$this->Flugzeugtyp->save($this->data))
                 $this->Session->setFlash('Fehler beim Speichern');
-        	}
         }
 	}
 
@@ -76,14 +70,8 @@ class FlugzeugtypenController extends AppController
         $this->set('herstellerliste', $this->Flugzeughersteller->find('list'));
 		if (!empty($this->data))
 		{
-        	if ($this->Flugzeugtyp->save($this->data))
-        	{
-                $this->flash('geaendert', '/flugzeugtyp');
-        	}
-            else
-            {
+        	if (!$this->Flugzeugtyp->save($this->data))
                 $this->Session->setFlash('Fehler beim Speichern');
-            }
 		}
       	else
       	{

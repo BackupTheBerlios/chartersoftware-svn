@@ -43,7 +43,7 @@ class ReportsController extends AppController
 		if ($report_id!=null)
 		{
 			//nächste Zeile löschen und durch echte Ausgabe ersetzen.
-            $this->flash('dump ...','/reports/select');
+            $this->flash('dump ...');
 		}
 	}
 

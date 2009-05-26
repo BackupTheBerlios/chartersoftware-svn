@@ -48,8 +48,6 @@ class AdressenController extends AppController
         	if (!$this->Adresse->save($this->data))
         	{
                 $this->Session->setFlash('Fehler beim Speichern');
-        	}else{
-        		$this->flash('gespeichert', '/adressen');
         	}
         }
         
@@ -75,10 +73,6 @@ class AdressenController extends AppController
             {
                 $this->Session->setFlash('Fehler beim Speichern');
             }
-            else
-            {
-            	$this->flash('gespeichert', '/adressen');
-            }
 		}
       	else
       	{
@@ -86,8 +80,6 @@ class AdressenController extends AppController
         	$this->data = $this->Adresse->read();
         	$this->set('id',$id);
       	}
-      	
-      	
 	}
 }
 ?>

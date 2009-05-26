@@ -1,18 +1,22 @@
-<h3>Informationen</h3>
-<dl>
-<dt>ID</dt>  <dd><?php echo $flugzeugtyp['Flugzeugtyp']['id']?></dd>
-<dt>Name</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['name']?></dd>
-<dt>Hersteller</dt><dd><?php echo $flugzeugtyp['Flugzeughersteller']['name']?></dd>
-<dt>Hersteller ID</dt><dd><?php echo $flugzeugtyp['Flugzeughersteller']['id']?></dd>
-<dt>Reichweite</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['reichweite']?></dd>
-<dt>Geschwindigkeit</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['vmax']?></dd>
-<dt>Jährliche Kosten</dt><dd><?php echo number_format($flugzeugtyp['Flugzeugtyp']['jahreskosten'] / 100,2 , ",", ".");?></dd>
-<dt>Stündliche Kosten</dt><dd><?php echo number_format($flugzeugtyp['Flugzeugtyp']['stundenkosten'] / 100,2 , ",", ".");?></dd>
-<dt>Crew Personal</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['crewPersonal']?></dd>
-<dt>Kabinen Personal</dt><dd><?php echo $flugzeugtyp['Flugzeugtyp']['cabinPersonal']?></dd>
-<dt>Link</dt><dd><a href="<?php echo $flugzeugtyp['Flugzeugtyp']['wikipedia']?>" target=_blank><?php echo $flugzeugtyp['Flugzeugtyp']['wikipedia']?></a></dd>
-<dt>Bild</dt><dd><?php echo $html->image($flugzeugtyp['Flugzeugtyp']['bild'],array('width'=>'300' ))?></dd>
-</dl>
+<?php
+	echo $html->image($this->data['Flugzeugtyp']['bild'],array('width'=>'300' ));
+	echo $html->link('Wikipedia', $this->data['Flugzeugtyp']['wikipedia']);
+    echo $form->create('Flugzeugtyp', array('action' => 'index', 'url'=>'/flugzeugtypen', 'class'=>'yform columnar'));
+    echo $form->input('Flugzeugtyp.id', array('div'=>'type-text','disabled'=>'disabled'));
+    echo $form->input('Flugzeugtyp.name', array('div'=>'type-text','disabled'=>'disabled'));
+
+    echo $form->input('Flugzeugtyp.reichweite', array('div'=>'type-text','disabled'=>'disabled'));
+    echo $form->input('Flugzeugtyp.vmax', array('div'=>'type-text', 'disabled'=>'disabled'));
+    echo $form->input('Flugzeugtyp.jahreskosten', array('div'=>'type-text','disabled'=>'disabled'));
+    echo $form->input('Flugzeugtyp.stundenkosten', array('div'=>'type-text','disabled'=>'disabled'));
+    echo $form->input('Flugzeugtyp.crewPersonal', array('div'=>'type-text','disabled'=>'disabled'));
+    echo $form->input('Flugzeugtyp.cabinPersonal', array('div'=>'type-text','disabled'=>'disabled'));
+    echo $form->input('Flugzeugtyp.seats', array('div'=>'type-text','disabled'=>'disabled'));
+    echo $form->input('Flugzeugtyp.wikipedia', array('div'=>'type-text','disabled'=>'disabled'));
+    echo $form->input('Flugzeugtyp.bild', array('div'=>'type-text','disabled'=>'disabled'));
+    echo $form->end(array('label'=>'Schließen','div'=>'type-button'));
+?>
+
 
 
 <h3>Informationen zum Hersteller</h3>
@@ -26,6 +30,7 @@
 
 <h3>Bestand an Flugzeugen</h3>
 <?php
+/*
     $model = new Flugzeug();
     $flugzeuge = $model->find('all');
     echo $html->tag('table');
@@ -39,4 +44,5 @@
         }
     endforeach;
     echo $html->tag('/table');
+    */
 ?>
