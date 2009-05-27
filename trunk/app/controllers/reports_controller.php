@@ -30,8 +30,17 @@ class ReportsController extends AppController
 			$this->Report->id = $report_id;
 			$rep = $this->Report->read();
 			$command = $rep['Report']['befehl'];
-			header('content-type: text/csv');
-			header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.csv"');
+			if ($this->RequestHandler->prefers('xml')) {
+				header('content-type: text/xml');
+				header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.xml"');
+			} else if ($this->RequestHandler->prefers('csv')) {
+				header('content-type: text/csv');
+				header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.csv"');
+			} else if ($this->RequestHandler->prefers('xls')) {
+				header('content-type: application/msexcel');
+				header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.xls"');
+			}
+			
 			$this->data->ReportSet = $this->Report->query($command);
 		} else {
        		$this->redirect(array('action' => 'index'));
@@ -44,13 +53,28 @@ class ReportsController extends AppController
 	{
 		$this->Report->order = 'Report.name ASC';
 		$this->set('Reportliste',$this->Report->find('list'));
+		$this->set('Reporttyp', array('Webseite','XML','CSV','Excel'));
 		if ($this->data['Report']['report_id']!= null) $report_id = $this->data['Report']['report_id'];
 		if ($report_id!=null)
 		{
 			//nächste Zeile löschen und durch echte Ausgabe ersetzen.
-            $this->redirect('/reports/dump/'.$report_id.'.csv');
-            
-            
+			switch($this->data['Report']['report_typ']){
+				case 0: //Webseite
+						$this->redirect('/reports/dump/'.$report_id);
+						break;
+				case 1: //XML
+						$this->redirect('/reports/dump/'.$report_id.'.xml');
+						break;
+				case 2: //csv
+						$this->redirect('/reports/dump/'.$report_id.'.csv');
+						break;
+				case 3: //excel
+						$this->redirect('/reports/dump/'.$report_id.'.xls');
+						break;
+				default:
+	            		$this->redirect('/reports/select/');
+	            		break;
+			}
 		}
 	}
 

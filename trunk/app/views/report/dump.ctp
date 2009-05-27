@@ -2,7 +2,7 @@
     echo $html->tag('table');
 //    echo $html->tableHeaders(array('Firma', 'Name', 'Straße','PLZ','Ort','Details','Ändern','Löschen'));
 
-	foreach ($this->data as $zeile):
+	foreach ($this->data->ReportSet as $zeile):
 		$col = array();
 		$count = 0;
 		foreach ($zeile as $value) {
