@@ -10,5 +10,5 @@
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
-	Router::parseExtensions('xml');
+	Router::parseExtensions('xml', 'csv');
 ?>
