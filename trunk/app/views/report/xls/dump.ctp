@@ -1,4 +1,10 @@
+hallooo
+
 <?php
+	//$content = $excel->header();
+	//$content += $excel->footer();
+	//echo $content;
+/*
 	foreach ($this->data->ReportSet as $zeile):
 		foreach ($zeile as $spalte):
 			foreach($spalte as $wert):
@@ -11,4 +17,5 @@
   		endforeach;
 	    echo "\n";
     endforeach;
+    */
 ?>

@@ -17,6 +17,7 @@ class ReportsController extends AppController
 {
 	public $name = 'Report';
     public $uses = array('Report');
+    public $helpers = array('Excel');
 
 	/**Anzeigen einer Liste*/
     public function index()
@@ -30,18 +31,20 @@ class ReportsController extends AppController
 			$this->Report->id = $report_id;
 			$rep = $this->Report->read();
 			$command = $rep['Report']['befehl'];
+			$this->data->ReportSet = $this->Report->query($command);
 			if ($this->RequestHandler->prefers('xml')) {
 				header('content-type: text/xml');
-				header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.xml"');
+				//header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.xml"');
 			} else if ($this->RequestHandler->prefers('csv')) {
 				header('content-type: text/csv');
-				header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.csv"');
+				//header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.csv"');
 			} else if ($this->RequestHandler->prefers('xls')) {
-				header('content-type: application/msexcel');
-				header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.xls"');
+				header('content-type: text/plain');
+				echo "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh";
+				//header('content-type: application/msexcel');
+				//header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.xls"');
 			}
 			
-			$this->data->ReportSet = $this->Report->query($command);
 		} else {
        		$this->redirect(array('action' => 'index'));
 		}
