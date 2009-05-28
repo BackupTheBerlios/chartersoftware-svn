@@ -69,35 +69,8 @@ if (strlen($content_for_layout)>0 || strlen($cakeDebug)>0 ) {
 	echo '<div id="txtcontent" class="normal">' . "\n"; 
 	echo $cakeDebug . "\n";
 	echo $content_for_layout . "\n";
-	echo <<< HTMLTEXT
-</div>
-	<div id="txtcontent2" class="normal">
-<div id="txtcontent2_wrapper">
-<h2>Flugdaten</h2>
-
-<div id="us_content">
-<div class="type-text">
-	<label for="us_abflug">Von</label>
-	<input type="text" name="us_abflug" size="20" />
-</div>
-<div class="type-text">
-	<label for="us_ankunft">Nach</label>
-	<input type="text" name="us_ankunft" size="20" />
-</div>
-<div class="type-text">
-	<label for="us_ankunft">Distanz</label>
-	<input type="text" name="us_distanz" size="20" />
-</div>
-<input type="button" value="löschen" id="us_del_1" name="us_del_1" />
-<hr class="hr2">
-<div class="type-text">
-	<label for="us_distancesum">Distanz Gesamt</label>
-	<input type="text" name="us_distancesum" size="20" />
-</div>
-</div>
-</div>
-</div>
-HTMLTEXT;
+	echo "</div>\n";
+	echo "<div id=\"txtcontent2\" class=\"normal\"><div id=\"txtcontent2_wrapper\"><div id=\"fluginfos\"></div></div></div>\n";
 	
 } else {
 	echo '<div id="txtcontent" class="start">' . "\n"; 
@@ -107,8 +80,7 @@ HTMLTEXT;
 
 <!--END txtcontent-->
 
-<div id="footer">
-</div>
+<div id="footer"><div id="loader"></div></div>
 
 
 <div id="help_Kundenadressen" class="help"><span>Über diesen Menupunkt können Adressen verwaltet (suchen, löschen, anlegen) werden</span></div>
@@ -119,13 +91,11 @@ HTMLTEXT;
 <div id="help_Rechnung" class="help"><span>Rechnung drucken und verschicken.</span></div>
 <div id="help_Kundenangebot" class="help"><span>Erstellen Sie ein neues Kundenangebot.</span></div>
 <div id="help_Statistiken" class="help"><span>Erstellen Sie Statistiken ....</span></div>
-
+<div id="help_delzwischenstop" class="help"><span>Zwischenstop entfernen</span></div>
 
 </div>
 
 <script language="javascript" type="text/javascript">
-
-
 
 $("*.showhelp").mouseenter(function(){   	
 	var title = $(this).attr("title");
@@ -136,8 +106,8 @@ $("*.showhelp").mouseleave(function(){
     var title = $(this).attr("title");
 	$("#help_"+title).fadeOut("fast");
 }); 
-</script>
 
+</script>
 
 </body>
 </html>
