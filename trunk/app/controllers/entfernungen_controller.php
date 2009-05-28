@@ -29,12 +29,12 @@ class EntfernungenController extends AppController
 			//Noch keine Daten ausgewählt
 			$this->data[Entfernung][start_id] = $start;
 			$this->data[Entfernung][ziel_id] = $ziel;
-			$this->data[Entfernung][Entfernung] = $this->CalcEntfernung($start, $ziel);
+			$this->data[Entfernung][distance] = $this->CalcEntfernung($start, $ziel);
 		}else{
 			//bereits Daten ausgewählt
 			$start = $this->data[Entfernung][start_id];
 			$ziel = $this->data[Entfernung][ziel_id];
-			$this->data[Entfernung][Entfernung] = $this->CalcEntfernung($start, $ziel);
+			$this->data[Entfernung][distance] = $this->CalcEntfernung($start, $ziel);
 		}
 		
 		
