@@ -236,6 +236,94 @@ height:50px;
 background:url(img/ajax-loader.gif) no-repeat center center;
 }
 
+.flugdaten_table {
+width:100%;
+margin-bottom:10px;
+}
+.flugdaten_table td.airport {
+padding:0 5px;
+background:#FFEDDF;
+border:1px solid #CCC;
+vertical-align:center;
+height:35px;
+}
 
+.flugdaten_table td.distance {
+padding:3px 0;
+}
+
+.flugdaten_table td.distancesum {
+padding:0 5px;
+background:#FFEDDF;
+border:1px solid #CCC;
+vertical-align:center;
+height:20px;
+font-weight:bold;
+}
+
+.flugdaten_table td.img {
+width:30px;
+
+}
+
+.flugdaten_table td.abflug {
+background:url(img/icon_airportstart.gif) no-repeat center center;
+}
+
+.flugdaten_table td.ankunft {
+background:url(img/icon_airportziel.gif) no-repeat center center;
+}
+
+.flugdaten_table td.zwischenstop {
+background:url(img/icon_airportzwischenstop.gif) no-repeat center center;
+}
+
+.flugdaten_table td.title_top {
+font-size:12px;
+font-weight:bold;
+color:#EF5A00;
+vertical-align:top;
+height:20px;
+}
+
+.flugdaten_table td.title {
+font-size:12px;
+font-weight:bold;
+color:#EF5A00;
+vertical-align:center;
+height:35px;
+}
+
+
+
+  /*------------------------------------------------------------------------------------------------------*/
+
+  /**
+   * (en) Fixes IE5.x and IE6 overflow behavior of textarea and input elements elements
+   * (de) Korrigiert das fehlerhafte overflow-Verhalten von textarea und input-Elementen
+   *
+   * @workaround
+   * @affected   IE 5.x/Win, IE6
+   * @css-for    IE 5.x/Win, IE6
+   * @valid      no
+   */
+
+  * html textarea { overflow:scroll; overflow-x: hidden; }
+  * html input { overflow: hidden; }
+
+
+  /**
+   * Form related bugfixes
+   *
+   * @bugfix
+   * @affected   IE 5.x/Win, IE6, IE7
+   * @css-for    IE 5.x/Win, IE6, IE7
+   * @valid      no
+   */
+  fieldset, legend { position:relative; }
+  /* global fixes for YAML's form construction set */ 
+  form.yform, 
+  form.yform div,
+  form.yform div * { zoom:1; }
 
 
