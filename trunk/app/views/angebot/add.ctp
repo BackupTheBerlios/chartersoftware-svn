@@ -127,8 +127,10 @@
                 <label for="more">Flugzeugtyp</label>
                 <select name="salutation" id="salutation" size="1">
                   <option value="0" selected="selected" disabled="disabled">Bitte wählen</option>
-                  <option value="Mr.">Ja</option>
-				  <option value="Mr.">Nein</option>
+                  <!--Benötigte Struktur-->
+				  <option title="[maxdistanz];[maxpersonen];[minflightattendants]" value="[id]">[Typname]</option>
+				  <!--Beipsiel-->
+				  <option title="1000;5;1;" value="2">Boing_de_biör</option>
                 </select>
               </div>
 			<div class="type-text">
