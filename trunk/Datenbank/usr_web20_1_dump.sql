@@ -51,7 +51,7 @@ CREATE TABLE `reports` (
 	#
 INSERT INTO `reports` (`id`,`name`,`befehl`)
 VALUES
-	(1,'Liste aller Flugzeugtypen',' select * from flugzeugtypen'),
+	(1,'Liste aller Flugzeugtypen',' select * from flugzeugtypen;'),
 	(2,'Liste aller Kunden',' select * from adressen; ');
 
 #

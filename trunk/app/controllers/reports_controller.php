@@ -27,61 +27,61 @@ class ReportsController extends AppController
 
     public function dump($report_id =null)
 	{
-		if ($report_id != null){
+		if ($report_id == null){
+			$this->flash('Fehler: Kein Ausgabeformat gewählt','select');
+			return;
+		}
 			
-			//execute the report
-			$this->Report->id = $report_id;
-			$rep = $this->Report->read();
-			$command = $rep['Report']['befehl'];
-			$this->data->ReportSet = $this->Report->query($command);
+		//SQL-Kommando aus DB auslesen
+		$this->Report->id = $report_id;
+		$Report = $this->Report->read();
+		$command = $Report['Report']['befehl'];
+		$name    = $Report['Report']['name'];
+
+		//Und ausführen
+		$this->data->ReportSet = $this->Report->query($command);
 			
-			
-			//hand over for specific handle
-			if ($this->RequestHandler->prefers('xml')) {
+		//Und ausgeben
+		if ($this->RequestHandler->prefers('xml')) {
 				header('content-type: text/xml');
-				header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.xml"');
-			} else if ($this->RequestHandler->prefers('xls')) {
-				$this->autoRender=false;
+				header('Content-Disposition: attachment; filename="' . $name .'.xml"');
+		} else if ($this->RequestHandler->prefers('xls')) {
+				//$this->autoRender=false;
 				header('content-type: application/excel');
-				//header('content-type: text/xml');
-				header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.xml"');
+				header('Content-Disposition: attachment; filename="' . $name  .'.xml"');
 				$this->render('dump','xls/default','xls/dump');
-			} else if ($this->RequestHandler->prefers('csv')) {
+		} else if ($this->RequestHandler->prefers('csv')) {
 				header('content-type: text/csv');
-				header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.csv"');
-			} else {
-				$this->flash('Fehler bei Abarbeitung von Requesttypen',null);
-			}
-			
+				header('Content-Disposition: attachment; filename="' . $name  .'.csv"');
 		} else {
-			//or deal with errors
-       		$this->redirect(array('action' => 'index'));
+			//Default: Ausgabe als normaler Content
+			//kein weiterer Code nötig
 		}
 	}
 
 
 	/**Anzeigen einer Liste*/
-    public function select($report_id=null)
+    public function select($Ausgabeformat=null)
 	{
 		$this->Report->order = 'Report.name ASC';
-		$this->set('Reportliste',$this->Report->find('list'));
-		$this->set('Reporttyp', array('Webseite','XML','CSV','Excel'));
-		if ($this->data['Report']['report_id']!= null) $report_id = $this->data['Report']['report_id'];
-		if ($report_id!=null)
+		$this->set('Ausgabeformat',$this->Report->find('list'));
+		$this->set('Ausgabezielliste', array('Webseite','Standard XML','CSV-Format','Excel (XML-Format)'));
+		if ($this->data['Report']['Ausgabeformat']!= null) $Ausgabeformat = $this->data['Report']['Ausgabeformat'];
+		
+		if ($Ausgabeformat!=null && $this->data['Report']['Ausgabeziel'] != null)
 		{
-			//nächste Zeile löschen und durch echte Ausgabe ersetzen.
-			switch($this->data['Report']['report_typ']){
+			switch($this->data['Report']['Ausgabeziel']){
 				case 0: //Webseite
-						$this->redirect('/reports/dump/'.$report_id);
+						$this->redirect('/reports/dump/'.$Ausgabeformat);
 						break;
 				case 1: //XML
-						$this->redirect('/reports/dump/'.$report_id.'.xml');
+						$this->redirect('/reports/dump/'.$Ausgabeformat.'.xml');
 						break;
 				case 2: //csv
-						$this->redirect('/reports/dump/'.$report_id.'.csv');
+						$this->redirect('/reports/dump/'.$Ausgabeformat.'.csv');
 						break;
 				case 3: //excel
-						$this->redirect('/reports/dump/'.$report_id.'.xls');
+						$this->redirect('/reports/dump/'.$Ausgabeformat.'.xls');
 						break;
 				default:
 	            		$this->redirect('/reports/select/');

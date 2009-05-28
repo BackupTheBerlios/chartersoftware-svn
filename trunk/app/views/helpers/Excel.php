@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * For more information: http://msdn.microsoft.com/en-us/library/aa140066.aspx
+ * 
+ */
+
 class ExcelHelper extends Helper {
 
 	public function header($author=null, $company=null)
@@ -9,7 +14,7 @@ class ExcelHelper extends Helper {
  		$datestr = date('Y-m-d').'T'.date('H:i:00');
 		
 		$header =
-		'<?xml version="1.0"?>' . "\n" .
+		'<?xml version="1.0" encoding="UTF-8"?>' . "\n" .
 		'<?mso-application progid="Excel.Sheet"?>' . "\n" .
 		'<Workbook' . "\n" .
 		'   xmlns="urn:schemas-microsoft-com:office:spreadsheet"' . "\n" .
@@ -49,16 +54,15 @@ class ExcelHelper extends Helper {
 		return $header;
 	}
 	
-	function tableHeader(){
-		return '  <Table ss:ExpandedColumnCount="2" ss:ExpandedRowCount="5" x:FullColumns="1" x:FullRows="1">'."\n";
-	}
-	
+
 	function worksheetHeader($name){
-		return '  <Worksheet ss:Name="'. $name . '">' ."\n";		
+		return	'  <Worksheet ss:Name="'. $name . '">' ."\n" .		
+				'    <Table ss:ExpandedColumnCount="2" ss:ExpandedRowCount="5" x:FullColumns="1" x:FullRows="1">'."\n";
 	}
 
 	function worksheetFooter(){
-		return '  </Worksheet>' ."\n";		
+		return	"    </Table>\n" .		
+				"  </Worksheet>\n";		
 	}
 	
 	function rowHeader(){
@@ -108,9 +112,6 @@ class ExcelHelper extends Helper {
 		return $result;
 	}
 
-	function tableFooter(){
-		return "  </Table>\n";		
-	}
 	
 	function footer()
 	{

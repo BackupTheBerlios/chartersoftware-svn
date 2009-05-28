@@ -1,14 +1,15 @@
 <?php
 	echo $excel->header( "ThinkLogic", "Rent-A-Jet"  );
 	echo $excel->worksheetHeader( "Worksheet 1" );
-	echo $excel->tableHeader();
 	
 	if (count($this->data->ReportSet) > 0){
-		$keys = array_keys($this->data->ReportSet[0]['flugzeugtypen']);
+		//Erstes Sub-Array holen
+		$temp = array_keys($this->data->ReportSet[0]);
+		$keys = $this->data->ReportSet[0][$temp[0]];
+
+		//Fette Kopfzeile
 		echo $excel->rowHeader();
-		foreach($keys as $elem){
-			echo $excel->cell($elem,true);
-		}
+		foreach($keys as $elem=>$value) echo $excel->cell($elem,true);
 		echo $excel->rowFooter();
 	}
 	
@@ -22,8 +23,6 @@
 		echo $excel->rowFooter();
 	endforeach;
 	
-	echo $excel->tableFooter();
-	echo $excel->worksheetOptions();
 	echo $excel->worksheetFooter(  );
 	echo $excel->footer(  );
 ?>
