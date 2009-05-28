@@ -1,21 +1,22 @@
-hallooo
-
 <?php
-	//$content = $excel->header();
-	//$content += $excel->footer();
-	//echo $content;
-/*
+	echo $excel->header( "ThinkLogic", "Rent-A-Jet"  );
+	echo $excel->worksheetHeader( "Worksheet 1" );
+	echo $excel->tableHeader();
+	
 	foreach ($this->data->ReportSet as $zeile):
-		foreach ($zeile as $spalte):
-			foreach($spalte as $wert):
-				if (is_numeric($wert)){
-					echo $wert . ', ';
-				} else {
-					echo '"'.$wert . '", ';
-				}
-			endforeach;
-  		endforeach;
-	    echo "\n";
-    endforeach;
-    */
+		echo $excel->rowHeader();
+		$lala = array();
+		$count = 0;
+		foreach ($zeile as $element){
+			echo $excel->cellHeader();
+			echo $excel->cellData($element);
+			echo $excel->cellFooter();
+		}
+		echo $excel->rowFooter();
+	endforeach;
+	
+	echo $excel->tableFooter();
+	echo $excel->worksheetFooter(  );
+	echo $excel->footer(  );
 ?>
+

@@ -17,7 +17,7 @@ class ReportsController extends AppController
 {
 	public $name = 'Report';
     public $uses = array('Report');
-    public $helpers = array('Excel');
+    public $helpers = array('Excel','Html');
 
 	/**Anzeigen einer Liste*/
     public function index()
@@ -28,24 +28,34 @@ class ReportsController extends AppController
     public function dump($report_id =null)
 	{
 		if ($report_id != null){
+			
+			//execute the report
 			$this->Report->id = $report_id;
 			$rep = $this->Report->read();
 			$command = $rep['Report']['befehl'];
 			$this->data->ReportSet = $this->Report->query($command);
+			
+			
+			//hand over for specific handle
 			if ($this->RequestHandler->prefers('xml')) {
 				header('content-type: text/xml');
 				//header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.xml"');
+			} else if ($this->RequestHandler->prefers('xls')) {
+				//header('content-type: text/plain');
+				//header('content-type: text/xml');
+				$this->autoRender=false;
+				$this->render('dump','xls/default','xls/dump');
+				header('content-type: application/msexcel');
+				header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.xml"');
 			} else if ($this->RequestHandler->prefers('csv')) {
 				header('content-type: text/csv');
 				//header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.csv"');
-			} else if ($this->RequestHandler->prefers('xls')) {
-				header('content-type: text/plain');
-				echo "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh";
-				//header('content-type: application/msexcel');
-				//header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.xls"');
+			} else {
+				$this->flash('Fehler bei Abarbeitung von Requesttypen',null);
 			}
 			
 		} else {
+			//or deal with errors
        		$this->redirect(array('action' => 'index'));
 		}
 	}
@@ -72,7 +82,7 @@ class ReportsController extends AppController
 						$this->redirect('/reports/dump/'.$report_id.'.csv');
 						break;
 				case 3: //excel
-						$this->redirect('/reports/dump/'.$report_id.'.xls');
+						$this->redirect('/reports/dump/'.$report_id.'.els');
 						break;
 				default:
 	            		$this->redirect('/reports/select/');
