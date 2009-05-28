@@ -39,17 +39,16 @@ class ReportsController extends AppController
 			//hand over for specific handle
 			if ($this->RequestHandler->prefers('xml')) {
 				header('content-type: text/xml');
-				//header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.xml"');
-			} else if ($this->RequestHandler->prefers('xls')) {
-				//header('content-type: text/plain');
-				//header('content-type: text/xml');
-				$this->autoRender=false;
-				$this->render('dump','xls/default','xls/dump');
-				header('content-type: application/msexcel');
 				header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.xml"');
+			} else if ($this->RequestHandler->prefers('xls')) {
+				$this->autoRender=false;
+				header('content-type: application/excel');
+				//header('content-type: text/xml');
+				header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.xml"');
+				$this->render('dump','xls/default','xls/dump');
 			} else if ($this->RequestHandler->prefers('csv')) {
 				header('content-type: text/csv');
-				//header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.csv"');
+				header('Content-Disposition: attachment; filename="' . $rep['Report']['name'] .'.csv"');
 			} else {
 				$this->flash('Fehler bei Abarbeitung von Requesttypen',null);
 			}
@@ -82,7 +81,7 @@ class ReportsController extends AppController
 						$this->redirect('/reports/dump/'.$report_id.'.csv');
 						break;
 				case 3: //excel
-						$this->redirect('/reports/dump/'.$report_id.'.els');
+						$this->redirect('/reports/dump/'.$report_id.'.xls');
 						break;
 				default:
 	            		$this->redirect('/reports/select/');
