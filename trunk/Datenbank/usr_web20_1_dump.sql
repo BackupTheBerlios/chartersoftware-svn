@@ -16,6 +16,7 @@ DROP TABLE IF EXISTS `zeitzonen`;
 DROP TABLE IF EXISTS `mehrwertsteuersaetze`;
 DROP TABLE IF EXISTS `vorgangstypen`;
 DROP TABLE IF EXISTS `leistungstypen`;
+DROP TABLE IF EXISTS `zufriedenheitstypen`;
 DROP TABLE IF EXISTS `adressen`;
 DROP TABLE IF EXISTS `reports`;
 #
@@ -53,6 +54,24 @@ INSERT INTO `leistungstypen` (`id`,`beschreibung`)
 		(1,'Zielflug'),
 		(2,'Zeitflug'),
 		(3,'Individualleistung');
+#
+#-----------------------------------
+#-----------------------------------
+#-----------------------------------
+CREATE TABLE `zufriedenheitstypen` (
+	  `id` int(11) NOT NULL AUTO_INCREMENT,
+	  `beschreibung` varchar(25) NOT NULL,
+ 	`istAblehnungsgrund` tinyint(1) NOT NULL,
+	  PRIMARY KEY (`id`),
+	  UNIQUE KEY `beschreibung` (`beschreibung`)
+	) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+#
+INSERT INTO `zufriedenheitstypen` (`id`,`beschreibung`,`istAblehnungsgrund`)
+	VALUES
+		(1,'Zufrieden',0),
+		(2,'Zu teuer',1),
+		(3,'Zeitlich nicht möglich',1),
+		(4,'Nicht Zufrieden',0);
 #
 #-----------------------------------
 #-----------------------------------

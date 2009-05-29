@@ -43,6 +43,7 @@
         $html->link('Mehrwertsteuersätze','/mehrwertsteuersaetze',array('class'=>'nav1 showhelp')),
         $html->link('Vorgangstypen','/vorgangstypen',array('class'=>'nav1 showhelp')),
         $html->link('Leistungstypen','/leistungstypen',array('class'=>'nav1 showhelp','title'=>'Leistungstypen')),
+        $html->link('Zufriedenheitstypen','/zufriedenheitstypen',array('class'=>'nav1 showhelp','title'=>'Zufriedenheitstypen')),
         $html->link('Statistikformate','/reports',array('class'=>'nav1 showhelp','title'=>'Statistikformate')),
     );
     echo $html->nestedList($list) . "\n";
@@ -95,6 +96,7 @@ if (strlen($content_for_layout)>0 || strlen($cakeDebug)>0 ) {
 <div id="help_Statistikformate" class="help"><span>Erstellen Sie neue Formate für Statistiken</span></div>
 <div id="help_delzwischenstop" class="help"><span>Zwischenstop entfernen</span></div>
 <div id="help_Leistungstypen" class="help"><span>Leistungstypen verwalten (ändern, löschen, neu anlegen)</span></div>
+<div id="help_Zufriedenheitstypen" class="help"><span>Zufriedenheitstypen verwalten (ändern, löschen, neu anlegen)</span></div>
 
 </div>
 
