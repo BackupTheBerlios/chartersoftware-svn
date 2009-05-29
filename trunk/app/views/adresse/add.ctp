@@ -1,5 +1,5 @@
 <?php
-    echo $form->create('Adresse', array('action' => 'edit', 'url'=>'/adressen','class'=>'yform columnar'));
+    echo $form->create('Adresse', array('action' => 'add','class'=>'yform columnar'));
     echo $form->input('Adresse.firma', array('div'=>'type-text', 'error'=>array('length'=>'Das Feld darf nicht laenger als 49 Zeichen sein')));
     echo $form->input('Adresse.abteilung', array('div'=>'type-text', 'error'=>array('length'=>'Das Feld darf nicht laenger als 49 Zeichen sein')));
     echo $form->input('Adresse.ansprechpartner', array('div'=>'type-text', 'error'=>array('required'=>'Bitte den Ansprechpartner eingeben','length'=>'Das Feld darf nicht laenger als 49 Zeichen sein')));

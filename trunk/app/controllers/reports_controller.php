@@ -145,8 +145,6 @@ class ReportsController extends AppController
         	$this->Report->id = $id;
         	$this->data = $this->Report->read();
       	}
-      	
-      	
 	}
 }
 ?>

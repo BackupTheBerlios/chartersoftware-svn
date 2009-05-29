@@ -15,6 +15,7 @@ DROP TABLE IF EXISTS `zeitzones`;
 DROP TABLE IF EXISTS `zeitzonen`;
 DROP TABLE IF EXISTS `mehrwertsteuersaetze`;
 DROP TABLE IF EXISTS `vorgangstypen`;
+DROP TABLE IF EXISTS `leistungstypen`;
 DROP TABLE IF EXISTS `adressen`;
 DROP TABLE IF EXISTS `reports`;
 #
@@ -37,6 +38,21 @@ VALUES
 	(1,'Voller Satz',1900,100),
 	(2,'Halber Satz',700,100),
 	(3,'Steuerfrei',0,100);
+#-----------------------------------
+#-----------------------------------
+#-----------------------------------
+CREATE TABLE `leistungstypen` (
+	  `id` int(11) NOT NULL AUTO_INCREMENT,
+	  `beschreibung` varchar(25) NOT NULL,
+	  PRIMARY KEY (`id`),
+	  UNIQUE KEY `beschreibung` (`beschreibung`)
+	) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+#
+INSERT INTO `leistungstypen` (`id`,`beschreibung`)
+	VALUES
+		(1,'Zielflug'),
+		(2,'Zeitflug'),
+		(3,'Individualleistung');
 #
 #-----------------------------------
 #-----------------------------------
