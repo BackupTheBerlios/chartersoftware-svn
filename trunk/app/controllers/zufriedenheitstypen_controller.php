@@ -51,16 +51,6 @@ class ZufriedenheitstypenController extends AppController
 	}
 
 
-	/**löschen */
-	function delete($id)
-	{
-		if (!empty($id))
-		{
-            $this->Zufriedenheitstyp->del($id);
-		}
-		$this->redirect(array('action' => 'index'));
-	}
-
 
 	/**Editieren*/
 	function edit($id = null)

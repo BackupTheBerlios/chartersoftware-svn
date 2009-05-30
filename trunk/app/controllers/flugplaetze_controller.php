@@ -61,17 +61,6 @@ class FlugplaetzeController extends AppController
 	}
 
 
-	/**löschen */
-	function delete($id)
-	{
-		if (!empty($id))
-		{
-            $this->Flugplatz->del($id);
-            $this->flash('geloescht', '/flugplaetze');
-		}
-	}
-
-
 	/**Editieren*/
 	function edit($id = null)
 	{

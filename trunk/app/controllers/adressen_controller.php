@@ -48,16 +48,6 @@ class AdressenController extends AppController
 	}
 
 
-	/**löschen */
-	function delete($id)
-	{
-		if (!empty($id))
-		{
-            $this->Adresse->del($id);
-		}
-	}
-
-
 	/**Editieren*/
 	function edit($id = null)
 	{

@@ -48,14 +48,6 @@ class FlugzeugtypenController extends AppController
 	}
 
 
-	/**L�schen */
-	function delete($id)
-	{
-		if (!empty($id)) $this->Flugzeugtyp->del($id);
-		$this->redirect(array('action' => 'index'));
-	}
-
-
 	/**Editieren*/
 	function edit($id = null)
 	{

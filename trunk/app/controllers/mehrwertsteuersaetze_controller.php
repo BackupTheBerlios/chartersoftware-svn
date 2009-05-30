@@ -44,16 +44,6 @@ class MehrwertsteuersaetzeController extends AppController
 	}
 
 
-	/**löschen */
-	function delete($id)
-	{
-		if (!empty($id))
-		{
-            $this->Mehrwertsteuersatz->del($id);
-		}
-   		$this->redirect(array('action' => 'index'));
-	}
-
 
 	/**Editieren*/
 	function edit($id = null)

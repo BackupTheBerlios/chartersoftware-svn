@@ -44,16 +44,6 @@ class VorgangstypenController extends AppController
 	}
 
 
-	/**löschen */
-	function delete($id)
-	{
-		if (!empty($id))
-		{
-            $this->Vorgangstyp->del($id);
-       		$this->redirect(array('action' => 'index'));
-		}
-	}
-
 
 	/**Editieren*/
 	function edit($id = null)

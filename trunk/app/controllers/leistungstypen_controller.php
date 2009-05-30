@@ -48,18 +48,6 @@ class LeistungstypenController extends AppController
         
 	}
 
-
-	/**löschen */
-	function delete($id)
-	{
-		if (!empty($id))
-		{
-            $this->Leistungstyp->del($id);
-		}
-		$this->redirect(array('action' => 'index'));
-	}
-
-
 	/**Editieren*/
 	function edit($id = null)
 	{

@@ -49,17 +49,6 @@ class FlugzeugherstellerController extends AppController
 	}
 
 
-	/**L�schen */
-	function delete($id)
-	{
-		if (!empty($id))
-		{
-            $this->Flugzeughersteller->del($id);
-            $this->flash('geloescht', '/flugzeughersteller');
-		}
-	}
-
-
 	/**Editieren*/
 	function edit($id = null)
 	{

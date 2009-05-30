@@ -17,6 +17,17 @@ class AppController extends Controller {
 		$this->data=$currentObject->find('all');
 	}
     
+    
+   	function delete($id)
+	{
+		if (!empty($id))
+		{
+			$currentObject =& ClassRegistry::getObject($this->modelClass);
+			$currentObject->del($id);
+			$this->redirect(array('action' => 'index'));
+		}
+	}
+    
 }
 
 

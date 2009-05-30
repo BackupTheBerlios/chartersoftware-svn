@@ -52,19 +52,6 @@ class FlugzeugeController extends AppController
         }
 	}
 
-
-	/**Löschen */
-	function delete($id)
-	{
-		if (!empty($id))
-		{
-            //$this->Flugzeug->del($id);
-		}
-        $this->render('index','index');
-        //exit;
-	}
-
-
 	/**Editieren*/
 	function edit($id = null)
 	{
