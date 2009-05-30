@@ -25,23 +25,13 @@ class AngeboteController extends AppController
 	/**Anzeigen einer Liste*/
     public function add()
 	{
-	
-		if (!empty($this->data))
-		{
-			//Speichern eines Angebots
-        	if (!$this->Adresse->save($this->data))
-        	{
-                $this->Session->setFlash('Fehler beim Speichern');
-        	}else{
-        		$this->flash('gespeichert', '/adressen');
-        	}
-        }else{
-        	//Neu Anlegen eines Angebots
-			$this->set('Vorgangsnummer','Wird automatisch vergeben...');
-			$this->set('Adressen',$this->Adresse->find('all'));
-			$this->Flugplatz->order = 'Flugplatz.name ASC';
-			$this->set('Flugplaetze',$this->Flugplatz->find('all'));
-        }
+		AppController::add();	
+        
+        //Neu Anlegen eines Angebots
+		$this->set('Vorgangsnummer','Wird automatisch vergeben...');
+		$this->set('Adressen',$this->Adresse->find('all'));
+		$this->Flugplatz->order = 'Flugplatz.name ASC';
+		$this->set('Flugplaetze',$this->Flugplatz->find('all'));
 	}
 }
 ?>

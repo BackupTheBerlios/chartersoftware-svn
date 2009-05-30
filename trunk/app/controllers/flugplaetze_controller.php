@@ -46,18 +46,8 @@ class FlugplaetzeController extends AppController
 	/**Aufruf der Zuf�genseite*/
 	public function add()
 	{
+		AppController::add();
         $this->set('zeitzonenliste', timezone_identifiers_list());
-		if (!empty($this->data))
-		{
-        	if ($this->Flugplatz->save($this->data))
-        	{
-                $this->flash('gespeichert', '/flugplaetze');
-        	}
-        	else
-        	{
-                $this->Session->setFlash('Fehler beim Speichern');
-        	}
-        }
 	}
 
 

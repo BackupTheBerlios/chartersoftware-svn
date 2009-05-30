@@ -27,6 +27,23 @@ class AppController extends Controller {
 			$this->redirect(array('action' => 'index'));
 		}
 	}
+	
+	/**Aufruf der Zuf�genseite*/
+	public function add()
+	{
+		if (!empty($this->data))
+		{
+			$currentObject =& ClassRegistry::getObject($this->modelClass);
+        	if (!$currentObject->save($this->data))
+        	{
+                $this->Session->setFlash('Fehler beim Speichern');
+        	} else {
+				$this->redirect(array('action' => 'index'));
+        	}
+        }
+	}
+
+	
     
 }
 

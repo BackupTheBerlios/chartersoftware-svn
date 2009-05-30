@@ -36,15 +36,8 @@ class FlugzeugtypenController extends AppController
 	/**Aufruf der Zuf�genseite*/
 	public function add()
 	{
+		AppController::add();
         $this->set('herstellerliste', $this->Flugzeughersteller->find('list'));
-
-		if (!empty($this->data))
-		{
-        	if (!$this->Flugzeugtyp->save($this->data))
-                $this->Session->setFlash('Fehler beim Speichern');
-            else
-        		$this->redirect(array('action' => 'index'));
-        }
 	}
 
 

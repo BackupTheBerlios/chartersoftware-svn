@@ -27,22 +27,6 @@ class MehrwertsteuersaetzeController extends AppController
         }
 	}
 
-	/**Aufruf der Zufügenseite*/
-	public function add()
-	{
-		if (!empty($this->data))
-		{
-        	if ($this->Mehrwertsteuersatz->save($this->data))
-        	{
-        		$this->redirect(array('action' => 'index'));
-        	}
-        	else
-        	{
-                $this->Session->setFlash('Fehler beim Speichern');
-        	}
-        }
-	}
-
 
 
 	/**Editieren*/

@@ -34,19 +34,6 @@ class AdressenController extends AppController
         }
 	}
 
-	/**Aufruf der Zuf�genseite*/
-	public function add()
-	{
-		if (!empty($this->data))
-		{
-        	if (!$this->Adresse->save($this->data))
-        	{
-                $this->Session->setFlash('Fehler beim Speichern');
-        	}
-        }
-        
-	}
-
 
 	/**Editieren*/
 	function edit($id = null)

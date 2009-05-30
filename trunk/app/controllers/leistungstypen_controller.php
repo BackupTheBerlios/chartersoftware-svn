@@ -34,20 +34,6 @@ class LeistungstypenController extends AppController
         }
 	}
 
-	/**Aufruf der Zuf�genseite*/
-	public function add()
-	{
-		if (!empty($this->data))
-		{
-        	if (!$this->Leistungstyp->save($this->data))
-        	{
-                $this->Session->setFlash('Fehler beim Speichern');
-        	}
-			$this->redirect(array('action' => 'index'));
-        }
-        
-	}
-
 	/**Editieren*/
 	function edit($id = null)
 	{

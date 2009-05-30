@@ -27,21 +27,6 @@ class VorgangstypenController extends AppController
         }
 	}
 
-	/**Aufruf der Zuf�genseite*/
-	public function add()
-	{
-		if (!empty($this->data))
-		{
-        	if ($this->Vorgangstyp->save($this->data))
-        	{
-        		$this->redirect(array('action' => 'index'));
-        	}
-        	else
-        	{
-                $this->Session->setFlash('Fehler beim Speichern');
-        	}
-        }
-	}
 
 
 

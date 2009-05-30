@@ -32,22 +32,6 @@ class FlugzeugherstellerController extends AppController
         //$this->render('layout file', 'ajax');
 	}
 
-	/**Aufruf der Zuf�genseite*/
-	public function add()
-	{
-		if (!empty($this->data))
-		{
-        	if ($this->Flugzeughersteller->save($this->data))
-        	{
-                $this->flash('gespeichert', '/flugzeughersteller');
-        	}
-        	else
-        	{
-                $this->Session->setFlash('Fehler beim Speichern');
-        	}
-        }
-	}
-
 
 	/**Editieren*/
 	function edit($id = null)
