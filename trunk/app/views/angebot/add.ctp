@@ -127,10 +127,16 @@
                 <label for="more">Flugzeugtyp</label>
                 <select name="salutation" id="salutation" size="1">
                   <option value="0" selected="selected" disabled="disabled">Bitte wählen</option>
-                  <!--Benötigte Struktur-->
-				  <option title="[maxdistanz];[maxpersonen];[minflightattendants]" value="[id]">[Typname]</option>
-				  <!--Beipsiel-->
-				  <option title="1000;5;1;" value="2">Boing_de_biör</option>
+                  <?php 
+                  foreach ($Flugzeugtypen as $zeile):
+                  		$id         = $zeile['Flugzeugtyp']['id'];
+                  		$maxdistanz = $zeile['Flugzeugtyp']['reichweite'];
+                  		$maxperson  = $zeile['Flugzeugtyp']['seats'];
+                  		$minattend  = $zeile['Flugzeugtyp']['cabinPersonal'];
+                  		$name	    = $zeile['Flugzeugtyp']['name'];
+						echo '<option title="'.$maxdistanz.';'.$maxperson.';'.$minattend.'" value="'.$id.'">'.$name.'</option>'."\n";
+                  	endforeach;
+                  ?>
                 </select>
               </div>
 			<div class="type-text">

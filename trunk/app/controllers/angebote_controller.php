@@ -15,7 +15,7 @@
 class AngeboteController extends AppController
 {
 	public $name = 'Angebot';
-    public $uses = array('Adresse','Flugplatz');
+    public $uses = array('Adresse','Flugplatz','Flugzeugtyp');
 
 	/**Anzeigen einer Liste*/
     public function index()
@@ -30,6 +30,7 @@ class AngeboteController extends AppController
         //Neu Anlegen eines Angebots
 		$this->set('Vorgangsnummer','Wird automatisch vergeben...');
 		$this->set('Adressen',$this->Adresse->find('all'));
+		$this->set('Flugzeugtypen',$this->Flugzeugtyp->find('all'));
 		$this->Flugplatz->order = 'Flugplatz.name ASC';
 		$this->set('Flugplaetze',$this->Flugplatz->find('all'));
 	}
