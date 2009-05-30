@@ -1,10 +1,10 @@
 	<form method="post" action="" class="yform columnar">
             <fieldset>
-			<div class="type-text">
+			<!--<div class="type-text">
                 <label for="vorgangsnummer">Vorgangsnummer</label>
                 <input type="text" name="vorgangsnummer" id="vorgangsnummer" size="20" class="readonly" readonly value=<?php echo '"'.$Vorgangsnummer . '"'?>/>
               </div>
-			</fieldset>
+			</fieldset>-->
 			
 			<fieldset>
               <legend>Kundendaten</legend>
@@ -115,17 +115,18 @@
                 </select>
               </div>
 			  
-			  <div class="type-button">
+			<div class="type-button" id="button_add_zwischenstop">
 			<input type="button" value="Hinzufügen" id="button_zwischenstop" name="button_zwischenstop" style="float:right"/>
 			</div>
                
 			 <div class="type-text">
-				<label for="firstname">Anzahl Personen</label>
-                <input type="text" name="firstname" id="firstname" size="20" />
+				<label for="personen">Anzahl Personen</label>
+                <input type="text" name="personen" id="personen" size="20" value="" />
 			</div>
+			
 			 <div class="type-select">
-                <label for="more">Flugzeugtyp</label>
-                <select name="salutation" id="salutation" size="1">
+                <label for="flugzeugtyp">Flugzeugtyp</label>
+                <select name="flugzeugtyp" id="flugzeugtyp" size="1">
                   <option value="0" selected="selected" disabled="disabled">Bitte wählen</option>
                   <?php 
                   foreach ($Flugzeugtypen as $zeile):
@@ -140,8 +141,10 @@
                 </select>
               </div>
 			<div class="type-text">
-				<label for="firstname">Flightattendants</label>
-                <input type="text" name="firstname" id="firstname" size="20" />
+				<label for="flightattendants">Flight Attendants</label>
+                <input type="text" name="flightattendants" id="flightattendants" size="20" />
+				<!--<input type="button" value="+" id="addattendant" name="addattendant" style="float:right"/>
+				<input type="button" value="-" id="delattendant" name="delattendant" style="float:right"/>-->
 			</div>
             </fieldset>
             <fieldset>
@@ -167,8 +170,7 @@
 </form>
 
 <script language="javascript" type="text/javascript">
-
-
+	
 	$(function() {
 		$("#datepicker").datepicker({ dateFormat: 'dd.mm.yy', dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'], dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'], monthNames: ['Januar','Februar','M�rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']});
 	});
@@ -201,10 +203,13 @@
 	
 		$("#zeitcharter").change(function () {
 			if ($(this).val() == 'ja') {
-				$("#div_zwischenstop").hide(500);
+				$("#button_add_zwischenstop").slideUp("normal");
+				$("#div_zwischenstop").slideUp("normal");
+				deleteZwischenstop('',1);
 			}
 			if ($(this).val() == 'nein') {
-				$("#div_zwischenstop").show(500);
+				$("#button_add_zwischenstop").slideDown("normal");
+				$("#div_zwischenstop").slideDown("normal");
 			}
 		});
 		
@@ -212,7 +217,7 @@
 			if ($("input[name^='start;']").size() > 0) {
 				$("input[name^='start;']").remove();
 			}
-			$("#txtcontent2_wrapper").append("<input type=\"hidden\" name=\"start;"+$("#startflughafen option:selected").val()+"\" value=\""+$("#startflughafen option:selected").text()+"\">");
+			$("#txtcontent2_wrapper").append("<input type=\"hidden\" name=\"start;"+$("#startflughafen option:selected").val()+"\" value=\""+$("#startflughafen option:selected").text()+"\">\n");
 			updateFlugdaten();	
 		});
 		
@@ -220,45 +225,66 @@
 			if ($("input[name^='ziel;']").size() > 0) {
 				$("input[name^='ziel;']").remove();
 			}
-			$("#txtcontent2_wrapper").append("<input type=\"hidden\" name=\"ziel;"+$("#zielflughafen option:selected").val()+"\" value=\""+$("#zielflughafen option:selected").text()+"\">");
+			$("#txtcontent2_wrapper").append("<input type=\"hidden\" name=\"ziel;"+$("#zielflughafen option:selected").val()+"\" value=\""+$("#zielflughafen option:selected").text()+"\">\n");
 			updateFlugdaten(); 	
 		});
 		
 		$("#button_zwischenstop").click(function () {
-			if ($("input[name^='zwischenstop;']").size() < 10) {
-				var count = "0"+$("input[name^='zwischenstop;']").size();
-			}
-			$("#txtcontent2_wrapper").append("<input type=\"hidden\" name=\"zwischenstop;"+count+";"+$("#zwischenstop option:selected").val()+"\" value=\""+$("#zwischenstop option:selected").text()+"\">");
+			$("#txtcontent2_wrapper").append("<input type=\"hidden\" name=\"zwischenstop;"+$("input[name^='zwischenstop;']").size()+";"+$("#zwischenstop option:selected").val()+"\" value=\""+$("#zwischenstop option:selected").text()+"\">\n");
 			$('#zwischenstop').find('option:first').attr('selected', 'selected').parent('select');
 			updateFlugdaten();	
 		});
 		
+		$("#personen").change(function () {
+			updateFlugzeuge();
+		});
 		
-		function deleteZwischenstop(id) {
-			
-			$("input[name^='zwischenstop;"+id+"']").remove();
-			var k ="";
-			var airport = "";
-			for (var i = 0; i < $("input[name^='zwischenstop;']").size(); i++){
-				airport = $("input[name^='zwischenstop;']:eq("+i+")").attr('name').slice(16);
-				if (i < 10) {
-				k= "0"+i;
-				$("input[name^='zwischenstop;']:eq("+i+")").attr("name", "zwischenstop;"+k+";"+airport);
-				} else {
-				$("input[name^='zwischenstop;']:eq("+i+")").attr("name", "zwischenstop;"+i+";"+airport);
-				}
-			}	
+		$("#flugzeugtyp").change(function () {
+			updateFlugzeuge();
+			$("#help_selectflugzeugtyp").fadeOut("fast");
+		});
+		
+		function deleteZwischenstop(id, all) {	
+			if (all == null) {
+				$("input[name^='zwischenstop;"+id+"']").remove();
+				for (var i = 0; i < $("input[name^='zwischenstop;']").size(); i++){
+					$("input[name^='zwischenstop;']:eq("+i+")").attr('name').search(/.*;.*;(.*)/g);
+					var airport = RegExp.$1;
+					$("input[name^='zwischenstop;']:eq("+i+")").attr("name", "zwischenstop;"+i+";"+airport);
+				}	
+			}
+			else {
+				$("input[name^='zwischenstop;"+id+"']").each(function() {
+					$(this).remove();
+				});
+			}
 			updateFlugdaten();
 		}
 		
 		function updateFlugdaten() {
-			$("#fluginfos").html('');
+			
 			var add = "";
-			add += "<table class=\"flugdaten_table\">\n";
-			add += "<tr><td class=\"title_top\" colspan=\"2\">Flufdaten<\/td><\/tr>\n";
 			var i=0;
+			
+			$("#fluginfos").html('');
+			
+			if ($("input[name^='zwischenstop;']").size() > 0 || $("input[name^='start;']").size() > 0 || $("input[name^='ziel;']").size() > 0) {
+				add += "<table class=\"flugdaten_table\">\n";
+				add += "<tr><td class=\"title_top\" colspan=\"2\">Flufdaten<\/td><\/tr>\n";
+			}
 
 			if ($("input[name^='start;']").size() > 0) {
+
+				$("input[name^='start;']").attr('name').search(/.*;(.*)/g);
+				var startid = RegExp.$1;
+				
+				if ( $("input[name^='ziel;']").size() > 0) {
+				$("input[name^='ziel;']").attr('name').search(/.*;(.*)/g);
+				var zielid = RegExp.$1;
+				}
+				
+				var zwischenstop = '';
+				var zwischenstop2 = '';
 				
 				add += "<tr>\n";
 				add += "<td class=\"img abflug\"><\/td><td class=\"airport\">"+$("input[name^='start;']").val()+"<\/td>\n";
@@ -266,11 +292,14 @@
 				add += "<tr>\n";
 				add += "<td colspan=\"2\" class=\"distance\">\n";
 				if ($("input[name^='zwischenstop;']").size() > 0) {
-					add += "Flugstrecke: <span title=\""+$("input[name^='start;']").attr('name').slice(6)+";"+$("input:first[name^='zwischenstop;']").attr('name').slice(16)+"\" id=\"distance_"+i+"\"><\/div>\n";
+					$("input:first[name^='zwischenstop;']").attr('name').search(/.*;.*;(.*)/g);
+					var zwischenstop = RegExp.$1;
+					add += "Flugstrecke: <span title=\""+startid+";"+zwischenstop+"\" id=\"distance_"+i+"\"><\/div>\n";
 					i++;
 				}
 				if ( $("input[name^='ziel;']").size() > 0 && $("input[name^='zwischenstop;']").size() == 0) {
-					add += "Flugstrecke: <span title=\""+$("input[name^='start;']").attr('name').slice(6)+";"+$("input[name^='ziel;']").attr('name').slice(5)+"\" id=\"distance_"+i+"\"><\/span>\n";
+				
+					add += "Flugstrecke: <span title=\""+startid+";"+zielid+"\" id=\"distance_"+i+"\"><\/span>\n";
 					i++;
 				}
 				add += "<\/td>\n";
@@ -281,17 +310,24 @@
 			
 			add += "<tr>\n";
 			$("input[name^='zwischenstop;']").each(function(){  
-				
-				add += "<td class=\"img zwischenstop\"><\/td><td title=\"delzwischenstop_"+$(this).attr('name').slice(13,15)+"\" class=\"airport\">"+$(this).val()+"<\/td>\n";
+				$(this).attr('name').search(/.*;(.*);.*/g);
+				zwischenstop = RegExp.$1;
+				add += "<td class=\"img zwischenstop\"><\/td><td title=\"delzwischenstop_"+zwischenstop+"\" class=\"airport\">"+$(this).val()+"<\/td>\n";
 				add += "<\/tr>\n";
 				add += "<tr>\n";
 				add += "<td colspan=\"2\" class=\"distance\">\n";
 				if ($("input:last[name^='zwischenstop;']").attr('name') == $(this).attr('name') && $("input[name^='ziel;']").size() > 0) {
-					add += "Flugstrecke: <span title=\""+$("input:last[name^='zwischenstop;']").attr('name').slice(16)+";"+$("input[name^='ziel;']").attr('name').slice(5)+"\" id=\"distance_"+i+"\"><\/span>\n";
+					$("input:last[name^='zwischenstop;']").attr('name').search(/.*;.*;(.*)/g);
+					zwischenstop = RegExp.$1;
+					add += "Flugstrecke: <span title=\""+zwischenstop+";"+zielid+"\" id=\"distance_"+i+"\"><\/span>\n";
 					i++;
 				}
 				if ($("input:last[name^='zwischenstop;']").attr('name') != $(this).attr('name')) {
-					add += "Flugstrecke: <span title=\""+$(this).attr('name').slice(16)+";"+$(this).next("input:last[name^='zwischenstop;']").attr('name').slice(16)+"\" id=\"distance_"+i+"\"><\/span>\n";
+					$(this).attr('name').search(/.*;.*;(.*)/g);
+					zwischenstop = RegExp.$1;
+					$(this).next("input:last[name^='zwischenstop;']").attr('name').search(/.*;.*;(.*)/g)
+					zwischenstop2 = RegExp.$1;
+					add += "Flugstrecke: <span title=\""+zwischenstop+";"+zwischenstop2+"\" id=\"distance_"+i+"\"><\/span>\n";
 					i++;
 				}
 				add += "<\/td>\n";
@@ -318,7 +354,9 @@
 			}
 			
 			$("td[title^='delzwischenstop_']").click(function () {
-				deleteZwischenstop($(this).attr('title').slice(16));
+				$(this).attr('title').search(/.*_(.*)/g);
+				var id = RegExp.$1;
+				deleteZwischenstop(id);
 				$("#help_delzwischenstop").fadeOut("fast");
 			});
 			
@@ -338,9 +376,14 @@
 			if (!spanid) {
 				$("#distancesum").text('0');
 				$("span[id^='distance_']").each(function(){ 
-					calcDitances($(this).attr("id").slice(9),$(this).attr("title").slice(0,1),$(this).attr("title").slice(2));
+					$(this).attr("id").search(/.*_(.*)/g);
+					var id = RegExp.$1;
+					$(this).attr("title").search(/(.*);(.*)/g);
+					var from = RegExp.$1;
+					var to = RegExp.$2;
+					calcDitances(id,from,to);
 				});
-				
+			
 			} else {
 				$.ajax({
 					type: "GET",
@@ -354,12 +397,77 @@
 							} else {						
 								$("#distance_"+spanid+"").text($(this).find('distance').text());
 								$("#distancesum").text(parseInt($("#distancesum").text())+parseInt($(this).find('distance').text()));
+								
+								updateFlugzeuge();
 							}
 						});
 					}
 				});	
 			}
 		}
+		
+		function updateFlugzeuge() {
+			
+			$("#flugzeugtyp option[value!=0]").each(function () {
+				$(this).attr("disabled","");
+			});
+			
+			if($("#personen").val() != '') {
+				var personen = parseInt($("#personen").val());
+				$("#flugzeugtyp option[value!=0]").each(function () {
+					$(this).attr("title").search(/(.*);(.*);(.*)/g);
+					var reichweite = parseInt(RegExp.$1);
+					var plaetze = parseInt(RegExp.$2);
+					var requiredAttendands = parseInt(RegExp.$3);
+					// Wenn ein bereits gewählter Flugzeugtype rausfällt
+					if (personen > (plaetze-requiredAttendands) && ($(this).val() == $("#flugzeugtyp option:selected").val())) {
+						$(this).attr("disabled","disabled");
+						$('#flugzeugtyp').find('option:first').attr('selected', 'selected').parent('select');	
+						$("#flightattendants").val('');
+						$("#help_selectflugzeugtyp").fadeIn("fast");
+					}
+					if (personen > (plaetze-requiredAttendands) && ($(this).val() != $("#flugzeugtyp option:selected").val())) {
+						$(this).attr("disabled","disabled");
+					}
+				
+				});
+			
+			}
+			
+			if ($("#flugzeugtyp").val() != 0) {
+				$("#flugzeugtyp option:selected").attr("title").search(/.*;.*;(.*)/g);
+				requiredAttendands = parseInt(RegExp.$1);
+				$("#flightattendants").val(requiredAttendands);
+			
+			}
+			
+			if ($("span[id^='distance_']").size() != 0) {
+				var distance = 0;
+				var maxdistance = 0;
+				$("span[id^='distance_']").each(function() {
+					distance = parseInt($(this).text());
+					$("#flugzeugtyp option[value!=0]").each(function () {
+						$(this).attr("title").search(/(.*);/g);
+						maxdistance = parseInt(RegExp.$1);
+						if (distance > maxdistance) {
+							if (distance > maxdistance && ($(this).val() == $("#flugzeugtyp option:selected").val())) {
+								$(this).attr("disabled","disabled");
+								$('#flugzeugtyp').find('option:first').attr('selected', 'selected').parent('select');	
+								$("#flightattendants").val('');
+								$("#help_selectflugzeugtyp").fadeIn("fast");
+							}
+							if (distance > maxdistance && ($(this).val() != $("#flugzeugtyp option:selected").val())) {
+								$(this).attr("disabled","disabled");
+							}
+						}
+					});
+				});
+			}
+			
+		
+		}
+		
+		// Bei Ajax Request zeige Loader (Global)
 		
 		$("#loader").ajaxStop(function(){
 			$(this).hide();

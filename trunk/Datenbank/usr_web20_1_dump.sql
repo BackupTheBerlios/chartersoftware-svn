@@ -134,7 +134,8 @@ VALUES
 	(4,'Engelsbach bei Frankfurt','QEF','49°57''39"N, 8°38''29" O',400),
 	(5,'Dresden Airport','DRS/EDDC','51°07''58"N, 013°46''02"O',400),
 	(6,'Erfurt Airport','ERF/EDDE','50°58''47"N, 010°57''29"E',400),
-	(7,'Augsburg Airport','AGB/EDMA','48°25''31"N, 010°55''54"E',400);
+	(7,'Augsburg Airport','AGB/EDMA','48°25''31"N, 010°55''54"E',400),
+	(8,'New York','AGB/EDMA','40°41''33"N, 074°10''07"E',400);
 #
 #
 #

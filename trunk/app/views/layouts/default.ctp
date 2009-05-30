@@ -97,12 +97,16 @@ if (strlen($content_for_layout)>0 || strlen($cakeDebug)>0 ) {
 <div id="help_delzwischenstop" class="help"><span>Zwischenstop entfernen</span></div>
 <div id="help_Leistungstypen" class="help"><span>Leistungstypen verwalten (ändern, löschen, neu anlegen)</span></div>
 <div id="help_Zufriedenheitstypen" class="help"><span>Zufriedenheitstypen verwalten (ändern, löschen, neu anlegen)</span></div>
+<div id="help_selectflugzeugtyp" class="help"><span>Der Flugzeugtyp ist auf Grund der neuen Einstellungen nicht mehr verfügbar. Bitte neu wählen.</span></div>
 
 </div>
 
 <script language="javascript" type="text/javascript">
 
 $("*.showhelp").mouseenter(function(){   	
+	$(".help").each(function(){
+		$(this).hide();
+	});
 	var title = $(this).attr("title");
 	$("#help_"+title).fadeIn("fast");
 }); 
