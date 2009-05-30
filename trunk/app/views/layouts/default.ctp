@@ -27,7 +27,7 @@
     $list = array(
         '<span>Workflows</span>',
         $html->link('Startseite','/',array('class'=>'nav1 showhelp','title'=>'Startseite')),
-        $html->link('Angebote','/angebote',array('class'=>'nav1 showhelp','title'=>'Kundenangebot')),
+        $html->link('Angebote','/vorgaenge',array('class'=>'nav1 showhelp','title'=>'Kundenangebot')),
         $html->link('Kundenadressen','/adressen',array('class'=>'nav1 showhelp','title'=>'Kundenadressen')),
         $html->link('Statistik/Mahnwesen','/reports/select',array('class'=>'nav1 showhelp','title'=>'Statistik')),
         $html->link('Impressum','/pages/impressum',array('class'=>'nav1 showhelp','title'=>'Impressum'))

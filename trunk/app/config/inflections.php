@@ -21,7 +21,7 @@
  */
 	$irregularPlural = array('vorgangstyp'=>'vorgangstypen','mehrwertsteuersatz'=>'mehrwertsteuersaetze','flugplatz'=>'flugplaetze',
     'flugzeug'=>'flugzeuge','flugzeugtyp'=>'flugzeugtypen','flugzeughersteller'=>'flugzeughersteller','entfernung'=>'entfernungen',
-    'adresse' => 'adressen', 'angebot'=>'angebote', 'leistungstyp'=>'leistungstypen','zufriedenheitstyp'=>'zufriedenheitstypen'
+    'adresse' => 'adressen', 'vorgang'=>'vorgaenge', 'leistungstyp'=>'leistungstypen','zufriedenheitstyp'=>'zufriedenheitstypen'
     );
 /**
  * This is a key => value array of regex used to match words.

@@ -12,15 +12,16 @@
  * Dabei kann es sein, dass ein Parameter �bergeben wird oder auch nicht.
  *
  */
-class AngeboteController extends AppController
+class VorgaengeController extends AppController
 {
-	public $name = 'Angebot';
-    public $uses = array('Adresse','Flugplatz','Flugzeugtyp');
+	public $name = 'Vorgang';
+    public $uses = array('Vorgang','Adresse','Flugplatz','Flugzeugtyp');
 
-	/**Anzeigen einer Liste*/
     public function index()
 	{
+		$this->data=$this->Vorgang->find('all');
 	}
+
 
 	/**Anzeigen einer Liste*/
     public function add()
