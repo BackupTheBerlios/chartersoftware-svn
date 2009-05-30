@@ -16,15 +16,6 @@ class FlugzeugherstellerController extends AppController
 {
 	public $name = 'Flugzeughersteller';
 
-	/**Anzeigen einer Liste*/
-    public function index()
-	{
-		$alle = $this->Flugzeughersteller->findAll();
-		$this->set('flugzeughersteller',$alle);
-        //$this->render('index','ajax');
-	}
-
-
 	/**Anzeigen einer
      *
      * @param id ist optional, wenn gesetzt, wird eine einzelne Typ mit eben

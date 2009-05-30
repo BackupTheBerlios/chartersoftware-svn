@@ -17,13 +17,6 @@ class FlugzeugtypenController extends AppController
 	public $name = 'Flugzeugtyp';
     public $uses = array('Flugzeugtyp','Flugzeug','Flugzeughersteller');
 
-	/**Anzeigen einer Liste*/
-    public function index()
-	{
-		$alle = $this->Flugzeugtyp->findAll();
-		$this->set('flugzeugtypen',$alle);
-	}
-
 
 	/**Anzeigen einer
      *

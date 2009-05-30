@@ -20,7 +20,7 @@
 <body>
 <div id="content">
 <div id="banner_top"></div>
-<div id="status">Startseite</div>
+<div id="status"><?php $title_for_layout?></div>
 <div id="logo"></div>
 <div id="navigation">
 <?php

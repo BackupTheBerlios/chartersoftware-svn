@@ -18,11 +18,6 @@ class LeistungstypenController extends AppController
 	public $name = 'Leistungstyp';
     public $uses = array('Leistungstyp');
 
-	/**Anzeigen einer Liste*/
-    public function index()
-	{
-		$this->data=$this->Leistungstyp->find('all');
-	}
 
 	/**Anzeigen einer
      *

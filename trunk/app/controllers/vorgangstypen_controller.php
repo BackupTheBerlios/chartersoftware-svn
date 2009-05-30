@@ -12,13 +12,6 @@ class VorgangstypenController extends AppController
 {
 	public $name = 'Vorgangstyp';
 
-	/**Anzeigen einer Liste*/
-    public function index()
-	{
-		$alle = $this->Vorgangstyp->find('all');
-		$this->set('vorgangstypen',$alle);
-	}
-
 
 	/**Anzeigen einer
      *

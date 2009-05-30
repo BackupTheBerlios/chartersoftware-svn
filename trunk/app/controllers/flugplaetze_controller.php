@@ -22,8 +22,7 @@ class FlugplaetzeController extends AppController
 	/**Anzeigen einer Liste*/
     public function index()
 	{
-		$alle = $this->Flugplatz->find('all');
-		$this->set('flugplaetze',$alle);
+		AppController::index();
         $this->set('zeitzonenliste', timezone_identifiers_list());
 	}
 

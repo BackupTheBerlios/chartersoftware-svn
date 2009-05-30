@@ -17,12 +17,8 @@ class ZufriedenheitstypenController extends AppController
 {
 	public $name = 'Zufriedenheitstyp';
     public $uses = array('Zufriedenheitstyp');
+    public $title_for_layout = "lala";
 
-	/**Anzeigen einer Liste*/
-    public function index()
-	{
-		$this->data=$this->Zufriedenheitstyp->find('all');
-	}
 
 	/**Anzeigen einer
      *

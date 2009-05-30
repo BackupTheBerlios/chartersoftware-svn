@@ -18,12 +18,6 @@ class AdressenController extends AppController
 	public $name = 'Adresse';
     public $uses = array('Adresse');
 
-	/**Anzeigen einer Liste*/
-    public function index()
-	{
-		$alle = $this->Adresse->find('all');
-		$this->set('adressen',$alle);
-	}
 
 	/**Anzeigen einer
      *

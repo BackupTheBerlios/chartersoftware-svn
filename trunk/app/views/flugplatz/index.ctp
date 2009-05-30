@@ -3,13 +3,12 @@
 <?php
 	echo $html->link('Neuen Flugplatz anlegen','/flugplaetze/add');
     echo $html->tag('table');
-    echo $html->tableHeaders(array('Id', 'Kürzel', 'Name', 'Position', 'Zeitzone','Ändern','Löschen'));
+    echo $html->tableHeaders(array('Kürzel', 'Name', 'Position', 'Zeitzone','Ändern','Löschen'));
 
     //var_dump($zeitzonen);
 
-	foreach ($flugplaetze as $zeile):
+	foreach ($this->data as $zeile):
 	    echo $html->tableCells( array(
-			$zeile['Flugplatz']['id'],
 			$html->link($zeile['Flugplatz']['iata'], "/flugplaetze/view/".$zeile['Flugplatz']['id']),
         	$html->link($zeile['Flugplatz']['name'], "/flugplaetze/view/".$zeile['Flugplatz']['id']),
 			$zeile['Flugplatz']['geoPosition'],

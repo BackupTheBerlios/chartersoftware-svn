@@ -3,7 +3,7 @@
     echo $html->tag('table'); 
     echo $html->tableHeaders(array('Beschreibung', 'Ändern','Löschen'));
 
-    foreach ($vorgangstypen as $zeile):
+    foreach ($this->data as $zeile):
 	    echo $html->tableCells( array(
 			$html->link($zeile['Vorgangstyp']['beschreibung'], "/vorgangstypen/view/".$zeile['Vorgangstyp']['id']),
         	$html->link('Ändern', "/vorgangstypen/edit/{$zeile['Vorgangstyp']['id']}"),

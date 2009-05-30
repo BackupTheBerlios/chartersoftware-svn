@@ -19,11 +19,6 @@ class ReportsController extends AppController
     public $uses = array('Report');
     public $helpers = array('Excel','Html');
 
-	/**Anzeigen einer Liste*/
-    public function index()
-	{
-		$this->data=$this->Report->find('all');
-	}
 
     public function dump($report_id =null)
 	{

@@ -9,6 +9,14 @@
 class AppController extends Controller {
     public $helpers = array('Form','Html','Ajax','Javascript'); 
     public $components = array( 'RequestHandler','Kalkulationen' );
+    
+    
+    public function index()
+	{
+		$currentObject =& ClassRegistry::getObject($this->modelClass);
+		$this->data=$currentObject->find('all');
+	}
+    
 }
 
 

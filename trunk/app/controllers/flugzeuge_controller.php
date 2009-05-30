@@ -18,28 +18,6 @@ class FlugzeugeController extends AppController
     public $uses = array('Flugzeug', 'Flugzeugtyp','Flugzeughersteller');
 
 
-    public function gui()
-    {
-    }
-
-    public function guiend()
-    {
-    }
-
-
-	/**Anzeigen einer Liste*/
-    public function index()
-	{
-		$alle = $this->Flugzeug->findAll();
-		$this->set('flugzeuge',$alle);
-	}
-
-    public function indexAjax()
-    {
-        $alle = $this->Flugzeug->findAll();
-        $this->set('flugzeuge',$alle);
-    }
-
 	/**Anzeigen einer
      *
      * @param id ist optional, wenn gesetzt, wird eine einzelne Typ mit eben

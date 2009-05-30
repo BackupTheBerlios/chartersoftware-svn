@@ -12,12 +12,6 @@ class MehrwertsteuersaetzeController extends AppController
 {
 	public $name = 'Mehrwertsteuersatz';
 
-	/**Anzeigen einer Liste*/
-    public function index()
-	{
-		$this->data = $this->Mehrwertsteuersatz->find('all');
-	}
-
 
 	/**Anzeigen einer
      *
