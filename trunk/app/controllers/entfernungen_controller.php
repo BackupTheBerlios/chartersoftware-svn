@@ -16,6 +16,8 @@ class EntfernungenController extends AppController
 {
     public $uses = array('Flugplatz');
     public $name = 'Entfernung';
+    public $helpers = array('Rentform');
+    
 
     public function berechnen($start =0, $ziel=0)
     {

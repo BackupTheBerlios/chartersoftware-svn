@@ -7,8 +7,8 @@
  */
 
 class AppController extends Controller {
-    public $helpers = array('Form','Html','Ajax','Javascript'); 
-    public $components = array( 'RequestHandler','Kalkulationen' );
+    public $helpers = array('Form','Html','Ajax','Javascript','Rentform'); 
+    public $components = array( 'RequestHandler','Kalkulationen');
     
     
     public function index()
