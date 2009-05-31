@@ -39,27 +39,6 @@
 	echo $rentform->end('Speichern')
 ?>
 <script language="javascript" type="text/javascript">
-	$(document).ready(function () {
-		$("#VorgangAdresseId").change(function () {
-			$.ajax({
-				type: "GET",
-				url: "<?php echo $html->url('/adressen/view/');?>"+$("#VorgangAdresseId").val()+".xml",
-				dataType: "xml",
-				cache: false,
-				success:function(xml){
-					$("#loader").hide();
-					$(xml).find('adresse').each(function(){  
-						$("#VorgangFirma").val($(this).find('firma').text())
-						$("#VorgangAbteilung").val($(this).find('abteilung').text())
-						$("#VorgangAnsprechpartner").val($(this).find('ansprechpartner').text())
-						$("#VorgangStrasse").val($(this).find('strasse').text())
-						$("#VorgangPlz").val($(this).find('plz').text())
-						$("#VorgangOrt").val($(this).find('ort').text())
-					});
-				}
-        
-			});	
-		});
-	}); // DOCUMENT READY END
+
 </script>
 	

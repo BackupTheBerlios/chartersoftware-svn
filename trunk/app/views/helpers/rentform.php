@@ -55,9 +55,9 @@ class RentformHelper extends Helper {
 	
 	public function select($name, $source, $label=null){
 		if ($label == null)
-			return $this->Form->input($name, array('div'=>'type-select', 'options' => $source));
+			return $this->Form->input($name, array('div'=>'type-select', 'options' => $source, 'empty' =>'Bitte wählen'));
 		else
-			return $this->Form->input($name, array('div'=>'type-select', 'options' => $source, 'label'=>$label));
+			return $this->Form->input($name, array('div'=>'type-select', 'options' => $source, 'label'=>$label, 'empty' => 'Bitte wählen'));
 	}
 	
 }
