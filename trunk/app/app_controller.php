@@ -13,9 +13,12 @@ class AppController extends Controller {
     
     public function index()
 	{
+		echo 'hier';
 		$currentObject =& ClassRegistry::getObject($this->modelClass);
 		$this->data=$currentObject->find('all');
 	}
+	
+	
     
     
    	function delete($id)

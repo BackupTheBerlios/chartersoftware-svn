@@ -14,7 +14,6 @@
  */
 class VorgaengeController extends AppController
 {
-	public $name = 'Vorgang';
     public $uses = array('Vorgang','Adresse','Flugplatz','Flugzeugtyp');
 
 

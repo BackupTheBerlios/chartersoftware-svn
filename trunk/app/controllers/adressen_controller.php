@@ -15,22 +15,5 @@
  */
 class AdressenController extends AppController
 {
-//	public $name = 'Adresse';
-
-
-	/**Anzeigen einer
-     *
-     * @param id ist optional, wenn gesetzt, wird eine einzelne Typ mit eben
-     * der id angezeigt
-     * */
-	public function view($id = null)
-	{
-        if ($id != null)
-        {
-        	$this->Adresse->id = $id;
-        	$this->set('id',$id);
-        	$this->data=$this->Adresse->read();
-        }
-	}
 }
 ?>

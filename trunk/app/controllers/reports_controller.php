@@ -15,8 +15,6 @@
  */
 class ReportsController extends AppController
 {
-	public $name = 'Report';
-    public $uses = array('Report');
     public $helpers = array('Excel','Html');
 
 

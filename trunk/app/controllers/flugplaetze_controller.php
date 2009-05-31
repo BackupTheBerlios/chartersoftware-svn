@@ -14,16 +14,12 @@
  */
 class FlugplaetzeController extends AppController
 {
-	public $name = 'Flugplatz';
-    public $uses = array('Flugplatz');
-
-
 
 	/**Anzeigen einer Liste*/
     public function index()
 	{
 		AppController::index();
-        $this->set('zeitzonenliste', timezone_identifiers_list());
+	    $this->set('zeitzonenliste', timezone_identifiers_list());
 	}
 
 
@@ -34,13 +30,8 @@ class FlugplaetzeController extends AppController
      * */
 	public function view($id = null)
 	{
+		AppController::view();
         $this->set('zeitzonenliste', timezone_identifiers_list());
-        if ($id != null)
-        {
-        	$this->set('id',$id);
-        	$this->Flugplatz->id = $id;
-        	$this->data=$this->Flugplatz->read();
-        }
 	}
 
 	/**Aufruf der Zuf�genseite*/

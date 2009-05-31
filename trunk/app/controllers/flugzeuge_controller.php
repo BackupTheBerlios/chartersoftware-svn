@@ -14,7 +14,6 @@
  */
 class FlugzeugeController extends AppController
 {
-	public $name = 'Flugzeug';
     public $uses = array('Flugzeug', 'Flugzeugtyp','Flugzeughersteller');
 
 
