@@ -13,7 +13,7 @@
 		$("#VorgangAdresseId").change(function () {
 			$.ajax({
 				type: "GET",
-				url: "<?php echo $html->url('/adressen/view/');?>"+$("#VorgangAdresseId").val()+".xml",
+				url: "../adressen/view/"+$("#VorgangAdresseId").val()+".xml",
 				dataType: "xml",
 				cache: false,
 				success:function(xml){
@@ -172,6 +172,35 @@
 			);
 		}
 		
+		
+		
+		
+		function calcDitances(spanid, ap1, ap2) {
+			if (!spanid) {
+				$("#distancesum").text('0');
+				$("span[id^='distance_']").each(function(){ 
+					calcDitances($(this).attr("id").slice(9),$(this).attr("title").slice(0,1),$(this).attr("title").slice(2));
+				});
+				
+			} else {
+				$.ajax({
+					type: "GET",
+					url: "../entfernungen/berechnen/"+ap1+"/"+ap2+".xml",
+					dataType: "xml",
+					cache: false,
+					success:function(xml){
+						$(xml).find('entfernung').each(function(){  
+							if($(this).find('distance').text() == '') {
+								$("#distance_"+spanid+"").text(0);
+							} else {						
+								$("#distance_"+spanid+"").text($(this).find('distance').text());
+								$("#distancesum").text(parseInt($("#distancesum").text())+parseInt($(this).find('distance').text()));
+							}
+						});
+					}
+				});	
+			}
+		}
 
 	//scheint zu funktionieren
 	$("#loader").ajaxStop(function(){
