@@ -1,5 +1,5 @@
 <?php
-	echo $html->link('Neues Angebot anlegen','/angebote/add');
+	echo $html->link('Neues Angebot anlegen','/vorgaenge/add');
     echo $html->tag('table');
     echo $html->tableHeaders(array('Nummer', 'Firma', 'Datum', 'Betrag', 'Drucken','Ändern','Löschen'));
 
