@@ -33,12 +33,12 @@ class VorgaengeController extends AppController
 
     public function add()
 	{
-		//AppController::add();	
+		AppController::add();	
 		if (!empty($this->data)) {
 			var_dump($this->data);
+			$this->redirect('index');
 		} else {
 			$this->set('zeitcharter', array('ja'=>'Ja', 'nein'=>'Nein'));
-	        //Neu Anlegen eines Angebots
 			$this->set('Vorgangsnummer','Wird automatisch vergeben...');
 			$this->set('adressenliste',$this->Adresse->find('list'));
 			$this->set('flugplatzliste',$this->Flugplatz->find('list'));
