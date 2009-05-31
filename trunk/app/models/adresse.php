@@ -9,12 +9,6 @@
  */
 
 class Adresse extends AppModel {
-    //Das ist der Name des Modells
-    //wird als Instanzvariable bei Datenzugriffen
-    //benutzt
-    public $name = 'Adresse';
-
-
     //Das ist ein Array mit Valididierungsrichtlinien
     public $validate = array(
         'firma' => array('length'=>array('rule'=>array("maxLength"=>49))),

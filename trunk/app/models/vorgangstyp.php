@@ -1,12 +1,6 @@
 <?php
 
 class Vorgangstyp extends AppModel {
-    //Das ist der Name des Modells
-    //wird als Instanzvariable bei Datenzugriffen
-    //benutzt
-    public $name = 'Vorgangstyp';
-
-
     //Das ist ein Array mit Valididierungsrichtilinien
     //ist optional. Wenn nicht vorhanden, wird nicht
     //validiert
