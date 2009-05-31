@@ -1,5 +1,5 @@
 <?php 
-	echo $html->link('Neuen Vorgang anlegen','/vorgangstypen/add');
+	echo $html->link('Neuen Vorgangstypen anlegen','/vorgangstypen/add');
     echo $html->tag('table'); 
     echo $html->tableHeaders(array('Beschreibung', 'Ändern','Löschen'));
 
