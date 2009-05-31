@@ -10,7 +10,7 @@
 		$("#VorgangAdresseId").change(function () {
 			$.ajax({
 				type: "GET",
-				url: "../adressen/view/"+$("#customer").val()+".xml",
+				url: "../adressen/view/"+$("#VorgangAdresseId").val()+".xml",
 				dataType: "xml",
 				cache: false,
 				success:function(xml){
@@ -240,7 +240,7 @@
 			});
 			
 			if($("#personen").val() != '') {
-				var personen = parseInt($("#personen").val());
+				var personen = parseInt($("#VorgangAnzahlPersonen").val());
 				$("#flugzeugtyp option[value!=0]").each(function () {
 					$(this).attr("title").search(/(.*);(.*);(.*)/g);
 					var reichweite = parseInt(RegExp.$1);
