@@ -6,10 +6,9 @@
     <meta http-equiv="Content-Language"   content="de" />
     <?php
         echo $javascript->link('jquery') . "\n";
-        //echo $javascript->link('prototype') . "\n";
-        //echo $javascript->link('scriptaculous') . "\n";
         echo $javascript->link('ui.datepicker') . "\n";
         echo $javascript->link('ui.core') . "\n";
+        echo $javascript->link('rentajet') . "\n";
         echo $javascript->link('jquery-ui-1.7.1.custom.min') . "\n";
         echo $html->meta('icon') . "\n";
         echo $html->css('styles') . "\n";
@@ -48,20 +47,6 @@
     );
     echo $html->nestedList($list) . "\n";
 ?>
-<!--
-    <ul>
-        <li><span>Navigation</span></li>
-        <li><a href="#" class="nav1 showhelp" title="Vertrag">Vertrag Drucken</a></li>
-        <li><a href="#" class="nav1 showhelp" title="Rechnung">Rechnung Drucken</a></li>
-        <li><a href="#" class="nav1 showhelp">Zahlung eingegangen</a></li>
-        <li><a href="#" class="nav1 showhelp">Zahlung verfolgen</a></li>
-        <li><a href="#" class="nav1 showhelp">Kundenzufriedenheit</a></li>
-        <li><a href="#" class="nav1 showhelp">Gründe für Ablehnung</a></li>
-        <li><a href="#" class="nav1 showhelp">Analyse Drucken</a></li>
-        <li><a href="#" class="nav2 showhelp">Kundenverwaltung</a></li>
-        <li><a href="#" class="nav2 showhelp">Administration</a></li>
-    </ul>
-    -->
 </div>
 
 <!--BEGIN debug content-->

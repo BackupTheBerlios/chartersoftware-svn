@@ -10,6 +10,7 @@
 
 class Adresse extends AppModel {
     //Das ist ein Array mit Valididierungsrichtlinien
+    public $displayField = 'firma';
     public $validate = array(
         'firma' => array('length'=>array('rule'=>array("maxLength"=>49))),
         'abteilung' => array('length'=>array('rule'=>array("maxLength"=>49))),

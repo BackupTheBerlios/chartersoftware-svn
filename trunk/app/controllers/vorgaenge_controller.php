@@ -22,16 +22,29 @@ class VorgaengeController extends AppController
 	}
 
 	/**Anzeigen einer Liste*/
+    public function edit($id=null)
+	{
+		AppController::edit($id);	
+		$this->set('adressenliste',$this->Adresse->find('list'));
+		$this->set('flugplatzliste',$this->Flugplatz->find('list'));
+		$this->set('Flugzeugtypen',$this->Flugzeugtyp->find('list'));
+		$this->Flugplatz->order = 'Flugplatz.name ASC';
+	}
+
     public function add()
 	{
-		AppController::add();	
-        
-        //Neu Anlegen eines Angebots
-		$this->set('Vorgangsnummer','Wird automatisch vergeben...');
-		$this->set('Adressen',$this->Adresse->find('all'));
-		$this->set('Flugzeugtypen',$this->Flugzeugtyp->find('all'));
-		$this->Flugplatz->order = 'Flugplatz.name ASC';
-		$this->set('Flugplaetze',$this->Flugplatz->find('all'));
+		//AppController::add();	
+		if (!empty($this->data)) {
+			var_dump($this->data);
+		} else {
+			$this->set('zeitcharter', array('ja'=>'Ja', 'nein'=>'Nein'));
+	        //Neu Anlegen eines Angebots
+			$this->set('Vorgangsnummer','Wird automatisch vergeben...');
+			$this->set('adressenliste',$this->Adresse->find('list'));
+			$this->set('flugplatzliste',$this->Flugplatz->find('list'));
+			$this->set('flugzeugtypenliste',$this->Flugzeugtyp->find('list'));
+			$this->Flugplatz->order = 'Flugplatz.name ASC';
+		}
 	}
 }
 ?>

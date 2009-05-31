@@ -6,7 +6,7 @@
  */
 
 class RentformHelper extends Helper {
-	public $helpers = array('Form');
+	public $helpers = array('Form','Html');
 	
 
 	public function create($name, $action=null){
@@ -14,16 +14,38 @@ class RentformHelper extends Helper {
 		return $this->Form->create($name, array('action' => $action, 'class'=>'yform columnar'));
 	}
 
+	public function begFieldset($legend){
+		return "<fieldset><legend>$legend</legend>\n";
+	}	
+
+	public function endFieldset(){
+		return "</fieldset>\n";
+	}	
+
 	public function hidden($name){
 		return $this->Form->input($name,array('type' => 'hidden'));
 	}
-	
-	public function disabledTextInput($name){
-		return $this->Form->input($name, array('type'=>'text','div'=>'type-text','disabled'=>'disabled'));
+
+	public function button($name, $option){
+		$result = 
+			'<div class="type-button">' . "\n" . 
+			$this->Form->button($name, $option)  . "\n" .
+			'</div>' . "\n"; 
+		return $result;
 	}
 	
-	public function textInput($name){
-		return $this->Form->input($name, array('type'=>'text','div'=>'type-text', 'error'=>array('required'=>'Bitte Eingabefeld ausfüllen','length'=>"Der eingegebene Text ist zu lang")));
+	public function disabledTextInput($name, $label=null){
+		if ($label == null)
+			return $this->Form->input($name, array('type'=>'text','div'=>'type-text','disabled'=>'disabled', 'class'=>'readonly'));
+		else
+			return $this->Form->input($name, array('type'=>'text','div'=>'type-text','disabled'=>'disabled', 'class'=>'readonly', 'label'=>$label));
+	}
+	
+	public function textInput($name, $label=null){
+		if ($label == null)
+			return $this->Form->input($name, array('type'=>'text','div'=>'type-text', 'error'=>array('required'=>'Bitte Eingabefeld ausfüllen','length'=>"Der eingegebene Text ist zu lang")));
+		else
+			return $this->Form->input($name, array('label'=>$label, 'type'=>'text','div'=>'type-text', 'error'=>array('required'=>'Bitte Eingabefeld ausfüllen','length'=>"Der eingegebene Text ist zu lang")));
 	}
 	
 	public function end($name){
@@ -31,8 +53,11 @@ class RentformHelper extends Helper {
 	}
 	
 	
-	public function select($name, $source){
-		return $this->Form->input($name, array('div'=>'type-select', 'options' => $source));
+	public function select($name, $source, $label=null){
+		if ($label == null)
+			return $this->Form->input($name, array('div'=>'type-select', 'options' => $source));
+		else
+			return $this->Form->input($name, array('div'=>'type-select', 'options' => $source, 'label'=>$label));
 	}
 	
 }

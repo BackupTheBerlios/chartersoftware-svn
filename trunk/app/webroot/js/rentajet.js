@@ -1,56 +1,12 @@
-<?php echo $rentform->create('Vorgang', 'add');
-	
-	//================================================
-	echo $rentform->begFieldset('Kundendaten');
-	echo $rentform->select('Vorgang.adresse_id',$adressenliste, 'Kunde<sup title="Pflichtfeld.">*</sup>');
-	echo $rentform->disabledTextInput('firma');
-	echo $rentform->disabledTextInput('abteilung');
-	echo $rentform->disabledTextInput('ansprechpartner');
-	echo $rentform->disabledTextInput('strasse');
-	echo $rentform->disabledTextInput('plz','PLZ');
-	echo $rentform->disabledTextInput('ort');
-	echo $rentform->endFieldset();
-	
 
-	//================================================
-	echo $rentform->begFieldset('Flugdaten');
-	echo $rentform->select('zeitcharter', $zeitcharter);
-	echo $rentform->textInput('datepicker', 'Von Datum');
-	echo $rentform->textInput('datepicker2', 'Bis Datum');
-	echo $rentform->select('startflughafen', $flugplatzliste);	
-	echo $rentform->select('zielflughafen', $flugplatzliste);
-	echo '<div id="DivZwischenstop">' . "\n";
-	echo $rentform->select('Zwischenstop', $flugplatzliste);
-	echo $rentform->button('Hinzufügen', array('id'=>'button_zwischenstop', 'name'=>"button_zwischenstop", 'style'=>"float:right"));	
-	echo '</div>' . "\n";
-	echo $rentform->textInput('AnzahlPersonen', 'Anzahl Personen');
-	echo $rentform->select('Flugzeugtyp', $flugzeugtypenliste);
-	echo $rentform->textInput('AnzahlFlugbegleiter', 'Anzahl Flugbegleiter');
-	echo $rentform->endFieldset();
-
-
-
-	//================================================
-	echo $rentform->begFieldset('Sonderwünsche');
-	echo $rentform->textInput('Sonderwunsch');
-	echo $rentform->textInput('Aufpreis');
-	echo $rentform->button('Hinzufügen', array('id'=>'button_sonderwunsch', 'name'=>"button_sonderwunsch", 'style'=>"float:right"));	
-		
-	echo $rentform->end('Speichern')
-?>
-<script language="javascript" type="text/javascript">
-
-	//scheint zu funktionieren
 	$(function() {
-		$("#VorgangDatepicker").datepicker({ dateFormat: 'dd.mm.yy', dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'], dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'], monthNames: ['Januar','Februar','M�rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']});
+		$("#datepicker").datepicker({ dateFormat: 'dd.mm.yy', dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'], dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'], monthNames: ['Januar','Februar','M�rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']});
 	});
 	
-	//scheint zu funktionieren
 	$(function() {
-		$("#VorgangDatepicker2").datepicker({ dateFormat: 'dd.mm.yy', dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'], dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'], monthNames: ['Januar','Februar','M�rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']});
+		$("#datepicker2").datepicker({ dateFormat: 'dd.mm.yy', dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'], dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'], monthNames: ['Januar','Februar','M�rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']});
 	});
 
-	//scheint zu funktionieren
 	$(document).ready(function () {
 		$("#VorgangAdresseId").change(function () {
 			$.ajax({
@@ -61,58 +17,55 @@
 				success:function(xml){
 					$("#loader").hide();
 					$(xml).find('adresse').each(function(){  
-						$("#VorgangFirma").val($(this).find('firma').text())
-						$("#VorgangAbteilung").val($(this).find('abteilung').text())
-						$("#VorgangAnsprechpartner").val($(this).find('ansprechpartner').text())
-						$("#VorgangStrasse").val($(this).find('strasse').text())
-						$("#VorgangPlz").val($(this).find('plz').text())
-						$("#VorgangOrt").val($(this).find('ort').text())
+						$("#firma").val($(this).find('firma').text())
+						$("#abteilung").val($(this).find('abteilung').text())
+						$("#ansprechpartner").val($(this).find('ansprechpartner').text())
+						$("#strasse").val($(this).find('strasse').text())
+						$("#plz").val($(this).find('plz').text())
+						$("#ort").val($(this).find('ort').text())
 					});
 				}
         
 			});	
 		});
 	
-
-	//scheint zu funktionieren
-	$("#VorgangZeitcharter").change(function () {
+		$("#zeitcharter").change(function () {
 			if ($(this).val() == 'ja') {
-				$("#DivZwischenstop").hide(500);
+				$("#div_zwischenstop").hide(500);
 			}
 			if ($(this).val() == 'nein') {
-				$("#DivZwischenstop").show(500);
+				$("#div_zwischenstop").show(500);
 			}
-	});
-	
-	
-	//scheint zu funktionieren
-	$("#VorgangStartflughafen").change(function () {
+		});
+		
+		$("#startflughafen").change(function () {
 			if ($("input[name^='start;']").size() > 0) {
 				$("input[name^='start;']").remove();
 			}
-			$("#txtcontent2_wrapper").append("<input type=\"hidden\" name=\"start;"+$("#VorgangStartflughafen option:selected").val()+"\" value=\""+$("#VorgangStartflughafen option:selected").text()+"\">");
+			$("#txtcontent2_wrapper").append("<input type=\"hidden\" name=\"start;"+$("#startflughafen option:selected").val()+"\" value=\""+$("#startflughafen option:selected").text()+"\">");
 			updateFlugdaten();	
-	});
+		});
 		
-	$("#VorgangZielflughafen").change(function () {
+		$("#zielflughafen").change(function () {
 			if ($("input[name^='ziel;']").size() > 0) {
 				$("input[name^='ziel;']").remove();
 			}
-			$("#txtcontent2_wrapper").append("<input type=\"hidden\" name=\"ziel;"+$("#VorgangZielflughafen option:selected").val()+"\" value=\""+$("#VorgangZielflughafen option:selected").text()+"\">");
+			$("#txtcontent2_wrapper").append("<input type=\"hidden\" name=\"ziel;"+$("#zielflughafen option:selected").val()+"\" value=\""+$("#zielflughafen option:selected").text()+"\">");
 			updateFlugdaten(); 	
-	});
+		});
 		
-	$("#button_zwischenstop").click(function () {
+		$("#button_zwischenstop").click(function () {
 			if ($("input[name^='zwischenstop;']").size() < 10) {
 				var count = "0"+$("input[name^='zwischenstop;']").size();
 			}
-			$("#txtcontent2_wrapper").append("<input type=\"hidden\" name=\"zwischenstop;"+count+";"+$("#VorgangZwischenstop option:selected").val()+"\" value=\""+$("#VorgangZwischenstop option:selected").text()+"\">");
-			$('#VorgangZwischenstop').find('option:first').attr('selected', 'selected').parent('select');
+			$("#txtcontent2_wrapper").append("<input type=\"hidden\" name=\"zwischenstop;"+count+";"+$("#zwischenstop option:selected").val()+"\" value=\""+$("#zwischenstop option:selected").text()+"\">");
+			$('#zwischenstop').find('option:first').attr('selected', 'selected').parent('select');
 			updateFlugdaten();	
-	});
+		});
 		
 		
-	function deleteZwischenstop(id) {
+		function deleteZwischenstop(id) {
+			
 			$("input[name^='zwischenstop;"+id+"']").remove();
 			var k ="";
 			var airport = "";
@@ -126,7 +79,7 @@
 				}
 			}	
 			updateFlugdaten();
-	}
+		}
 		
 		function updateFlugdaten() {
 			$("#fluginfos").html('');
@@ -249,6 +202,3 @@
 	
 	}); // DOCUMENT READY END
 
-
-</script>
-	

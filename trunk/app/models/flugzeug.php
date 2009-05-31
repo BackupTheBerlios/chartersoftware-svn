@@ -13,6 +13,7 @@ class Flugzeug extends AppModel {
 	//ist optional. Wenn nicht vorhanden, wird nicht
 	//validiert
     public $validate = array('kennzeichen' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>14))));
+    public $displayField = 'kennzeichen';
 
 	//public $hasOne = 'Flugzeugtyp'; 
 	//Datenbank-Assoziationen

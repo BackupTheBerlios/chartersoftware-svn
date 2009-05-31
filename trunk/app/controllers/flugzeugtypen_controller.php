@@ -14,7 +14,7 @@
  */
 class FlugzeugtypenController extends AppController
 {
-    public $uses = array('Flugzeugtyp','Flugzeug','Flugzeughersteller');
+    public $uses = array('Flugzeugtyp','Flugzeughersteller','Adresse');
 
 	/**Aufruf der Zuf�genseite*/
 	public function add()

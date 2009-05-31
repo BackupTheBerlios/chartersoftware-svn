@@ -18,6 +18,7 @@ class Flugzeugtyp extends AppModel {
     'crewPersonal' => VALID_NOT_EMPTY,
     'cabinPersonal' =>VALID_NOT_EMPTY
     );
+    public $displayField = 'name';
 
 	//Datenbank-Assoziationen
     public $hasMany = array('Flugzeug');

@@ -5,6 +5,7 @@ class Flugzeughersteller extends AppModel {
 	//wird als Instanzvariable bei Datenzugriffen
 	//benutzt
     public $name = 'Flugzeughersteller';
+    public $displayField = 'name';
 
 	//Das ist ein Array mit Valididierungsrichtilinien
 	//ist optional. Wenn nicht vorhanden, wird nicht

@@ -4,6 +4,7 @@ class Vorgangstyp extends AppModel {
     //Das ist ein Array mit Valididierungsrichtilinien
     //ist optional. Wenn nicht vorhanden, wird nicht
     //validiert
+    public $displayField = 'beschreibung';
     public $validate = array(
         'beschreibung' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>24)))
     );
