@@ -14,6 +14,10 @@ class Vorgang extends AppModel {
     //benutzt
     public $name = 'Vorgang';
 
+    public $belongsTo = array(
+		'Vorgangstyp' => array('className'    => 'Vorgangstyp','foreignKey'    => 'vorgangstyp_id'),
+    	'Adresse' => array('className'    => 'Adresse','foreignKey'    => 'adresse_id'),
+    );
 
 }
 

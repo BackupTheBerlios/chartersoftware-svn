@@ -17,11 +17,10 @@ class VorgaengeController extends AppController
 	public $name = 'Vorgang';
     public $uses = array('Vorgang','Adresse','Flugplatz','Flugzeugtyp');
 
-    public function index()
-	{
-		$this->data=$this->Vorgang->find('all');
-	}
 
+	public function drucken(){
+		
+	}
 
 	/**Anzeigen einer Liste*/
     public function add()

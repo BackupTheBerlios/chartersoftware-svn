@@ -43,6 +43,20 @@ class AppController extends Controller {
         }
 	}
 
+	/**Anzeigen einer
+     *
+     * @param id ist optional, wenn gesetzt, wird eine einzelne Typ mit eben
+     * der id angezeigt
+     * */
+	public function view($id = null)
+	{
+        if ($id != null)
+        {
+			$currentObject =& ClassRegistry::getObject($this->modelClass);
+        	$currentObject->id = $id;
+        	$this->data=$currentObject->read();
+        }
+	}
 	
     
 }

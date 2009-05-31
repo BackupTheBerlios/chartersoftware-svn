@@ -85,19 +85,6 @@ class ReportsController extends AppController
 		}
 	}
 
-	/**Anzeigen einer
-     *
-     * @param id ist optional, wenn gesetzt, wird eine einzelne Typ mit eben
-     * der id angezeigt
-     * */
-	public function view($id = null)
-	{
-        if ($id != null)
-        {
-        	$this->Report->id = $id;
-        	$this->data=$this->Report->read();
-        }
-	}
 
 	/**Editieren*/
 	function edit($id = null)

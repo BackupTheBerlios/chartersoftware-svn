@@ -80,7 +80,7 @@ INSERT INTO `zufriedenheitstypen` (`id`,`beschreibung`,`istAblehnungsgrund`)
 CREATE TABLE `reports` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `name` varchar(50) NOT NULL,
-	  `befehl` blob NOT NULL,
+	  `befehl` TEXT NOT NULL,
 	  PRIMARY KEY (`id`),
 	  UNIQUE KEY `name` (`name`)
 	) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
@@ -269,25 +269,24 @@ CREATE TABLE `vorgaenge` (
   `adresse_id` int(11) NOT NULL,
   `flugzeug_id` int(11) NOT NULL,
   `zufriedenheitstyp_id` int(11) NOT NULL,
-  `betrag_soll` int(11),
-  `betrag_ist` int(11),
-  `betrag_scale` int(4),
+  `betrag_soll` DOUBLE,
+  `betrag_ist` DOUBLE,
   PRIMARY KEY (`id`),
   KEY `adresse_id` (`adresse_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 #
-INSERT INTO `vorgaenge` (`id`,`datum`,`vorgangstyp_id`,`adresse_id`,`flugzeug_id`,`zufriedenheitstyp_id`,`betrag_soll`,`betrag_ist`,`betrag_scale`)
+INSERT INTO `vorgaenge` (`id`,`datum`,`vorgangstyp_id`,`adresse_id`,`flugzeug_id`,`zufriedenheitstyp_id`,`betrag_soll`,`betrag_ist`)
 VALUES
-	(1,'1970-10-21',1,1,1,1,2990,0,2),
-	(2,'2009-11-22',1,2,2,1,2990,0,2),
-	(3,'2008-12-19',1,1,3,1,13321,0,2),
-	(4,'2007-09-18',1,2,4,1,1234,0,2),
-	(5,'2006-08-18',1,2,5,1,21341123,0,2),
-	(6,'2005-07-17',1,1,6,1,3242423,0,2),
-	(7,'2004-07-16',1,2,7,1,4324324,0,2),
-	(8,'2003-06-15',1,1,8,1,324342,0,2),
-	(9,'2002-05-14',1,2,9,1,2342343,0,2),
-	(10,'2001-04-13',1,2,10,1,324343,0,2),
-	(11,'2000-02-12',1,1,11,1,342342,0,2),
-	(12,'2009-03-11',1,2,12,1,342342,0,2);
+	(1,'1970-10-21',1,1,1,1,2990,0),
+	(2,'2009-11-22',1,2,2,1,2990,0),
+	(3,'2008-12-19',1,1,3,1,13321,0),
+	(4,'2007-09-18',1,2,4,1,1234,0),
+	(5,'2006-08-18',1,2,5,1,21341123,0),
+	(6,'2005-07-17',1,1,6,1,3242423,0),
+	(7,'2004-07-16',1,2,7,1,4324324,0),
+	(8,'2003-06-15',1,1,8,1,324342,0),
+	(9,'2002-05-14',1,2,9,1,2342343,0),
+	(10,'2001-04-13',1,2,10,1,324343,0),
+	(11,'2000-02-12',1,1,11,1,342342,0),
+	(12,'2009-03-11',1,2,12,1,342342,0);
 #
