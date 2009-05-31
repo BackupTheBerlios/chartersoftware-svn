@@ -27,7 +27,7 @@ class FlugzeugtypenController extends AppController
 	/**Editieren*/
 	function edit($id = null)
 	{
-		AppController::add($id);
+		AppController::edit($id);
         $this->set('herstellerliste', $this->Flugzeughersteller->find('list'));
 	}
 }

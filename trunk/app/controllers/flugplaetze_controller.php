@@ -30,7 +30,7 @@ class FlugplaetzeController extends AppController
      * */
 	public function view($id = null)
 	{
-		AppController::view();
+		AppController::view($id);
         $this->set('zeitzonenliste', timezone_identifiers_list());
 	}
 

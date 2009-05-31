@@ -48,29 +48,8 @@ class FlugzeugeController extends AppController
 	/**Editieren*/
 	function edit($id = null)
 	{
-
-        if ($id == null) {
-            echo "ID == NULL";
-        } else {
-            echo "ID != NULL == ".$id;
-            $this->Flugzeug->id = $id;
-            $this->data = $this->Flugzeug->read();
-            $this->set('id',$id);
-        }
         $this->set('typenliste', $this->Flugzeugtyp->find('list'));
-		if (!empty($this->data))
-		{
-        	if (!$this->Flugzeug->save($this->data))
-            {
-                $this->Session->setFlash('Fehler beim Speichern');
-            }
-		}
-      	else
-      	{
-        	$this->Flugzeug->id = $id;
-        	$this->data = $this->Flugzeug->read();
-        	$this->set('id',$id);
-      	}
+		AppController::edit($id);
 	}
 }
 ?>

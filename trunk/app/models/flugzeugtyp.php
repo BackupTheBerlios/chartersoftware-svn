@@ -9,13 +9,6 @@
  */
 
 class Flugzeugtyp extends AppModel {
-	//Das ist der Name des Modells
-	//wird als Instanzvariable bei Datenzugriffen
-	//benutzt
-    public $name = 'Flugzeugtyp';
-    public $hersteller = 'Flugzeughersteller';
-
-
 	//Das ist ein Array mit Valididierungsrichtilinien
 	//ist optional. Wenn nicht vorhanden, wird nicht
 	//validiert
@@ -27,7 +20,7 @@ class Flugzeugtyp extends AppModel {
     );
 
 	//Datenbank-Assoziationen
-    //var $hasMany = array('Flugzeug');
+    public $hasMany = array('Flugzeug');
     public $belongsTo = array('Flugzeughersteller' => array(
         'className'    => 'Flugzeughersteller',
         'foreignKey'    => 'flugzeughersteller_id'));

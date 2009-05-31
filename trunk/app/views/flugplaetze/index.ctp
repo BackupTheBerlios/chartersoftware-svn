@@ -1,5 +1,3 @@
-<h2>Flugplätze</h2>
-
 <?php
 	echo $html->link('Neuen Flugplatz anlegen','/flugplaetze/add');
     echo $html->tag('table');
