@@ -1,4 +1,7 @@
-<?php echo $rentform->create('Vorgang', 'add');
+<?php 
+
+	//HTML-Formular öffnen
+	echo $rentform->create('Vorgang', 'add');
 	
 	//================================================
 	echo $rentform->begFieldset('Kundendaten');
@@ -36,9 +39,6 @@
 	echo $rentform->textInput('Aufpreis');
 	echo $rentform->button('Hinzufügen', array('id'=>'button_sonderwunsch', 'name'=>"button_sonderwunsch", 'style'=>"float:right"));	
 		
+	//HTML-Formular schließen
 	echo $rentform->end('Speichern')
 ?>
-<script language="javascript" type="text/javascript">
-
-</script>
-	
