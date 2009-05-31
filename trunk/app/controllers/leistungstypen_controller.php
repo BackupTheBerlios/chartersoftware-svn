@@ -33,22 +33,5 @@ class LeistungstypenController extends AppController
         	$this->data=$this->Leistungstyp->read();
         }
 	}
-
-	/**Editieren*/
-	function edit($id = null)
-	{
-		if (!empty($this->data))
-		{
-        	if (!$this->Leistungstyp->save($this->data))
-                $this->Session->setFlash('Fehler beim Speichern');
-            else
-	       		$this->redirect(array('action' => 'index'));
-		}
-      	else
-      	{
-        	$this->Leistungstyp->id = $id;
-        	$this->data = $this->Leistungstyp->read();
-      	}
-	}
 }
 ?>

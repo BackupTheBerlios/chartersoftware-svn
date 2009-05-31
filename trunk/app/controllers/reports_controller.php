@@ -85,22 +85,5 @@ class ReportsController extends AppController
 		}
 	}
 
-
-	/**Editieren*/
-	function edit($id = null)
-	{
-		if (!empty($this->data))
-		{
-        	if (!$this->Report->save($this->data))
-                $this->Session->setFlash('Fehler beim Speichern');
-            else
-	       		$this->redirect(array('action' => 'index'));
-		}
-      	else
-      	{
-        	$this->Report->id = $id;
-        	$this->data = $this->Report->read();
-      	}
-	}
 }
 ?>

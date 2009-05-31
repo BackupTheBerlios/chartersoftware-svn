@@ -31,28 +31,5 @@ class FlugzeugherstellerController extends AppController
         }
         //$this->render('layout file', 'ajax');
 	}
-
-
-	/**Editieren*/
-	function edit($id = null)
-	{
-		if (!empty($this->data))
-		{
-        	if ($this->Flugzeughersteller->save($this->data))
-        	{
-                $this->flash('geaendert', '/flugzeughersteller');
-        	}
-            else
-            {
-                $this->Session->setFlash('Fehler beim Speichern');
-            }
-		}
-      	else
-      	{
-        	$this->Flugzeughersteller->id = $id;
-        	$this->data = $this->Flugzeughersteller->read();
-        	$this->set('id',$id);
-      	}
-	}
 }
 ?>

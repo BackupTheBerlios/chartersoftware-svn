@@ -44,20 +44,8 @@ class FlugzeugtypenController extends AppController
 	/**Editieren*/
 	function edit($id = null)
 	{
+		AppController::add($id);
         $this->set('herstellerliste', $this->Flugzeughersteller->find('list'));
-		if (!empty($this->data))
-		{
-        	if (!$this->Flugzeugtyp->save($this->data))
-                $this->Session->setFlash('Fehler beim Speichern');
-            else
-        		$this->redirect(array('action' => 'index'));
-		}
-      	else
-      	{
-        	$this->Flugzeugtyp->id = $id;
-        	$this->data = $this->Flugzeugtyp->read();
-        	$this->set('id',$id);
-      	}
 	}
 }
 ?>

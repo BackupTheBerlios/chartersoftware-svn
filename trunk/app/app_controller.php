@@ -59,6 +59,25 @@ class AppController extends Controller {
 	}
 	
     
+    
+	/**Editieren*/
+	function edit($id = null)
+	{
+		$currentObject =& ClassRegistry::getObject($this->modelClass);
+		if (!empty($this->data))
+		{
+        	if (!$currentObject->save($this->data))
+                $this->Session->setFlash('Fehler beim Speichern');
+            else
+	       		$this->redirect(array('action' => 'index'));
+		}
+      	else
+      	{
+      		$currentObject->id = $id;
+        	$this->data = $currentObject->read();
+      	}
+	}
+    
 }
 
 

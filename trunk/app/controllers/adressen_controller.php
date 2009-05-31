@@ -15,8 +15,7 @@
  */
 class AdressenController extends AppController
 {
-	public $name = 'Adresse';
-    public $uses = array('Adresse');
+//	public $name = 'Adresse';
 
 
 	/**Anzeigen einer
@@ -32,25 +31,6 @@ class AdressenController extends AppController
         	$this->set('id',$id);
         	$this->data=$this->Adresse->read();
         }
-	}
-
-
-	/**Editieren*/
-	function edit($id = null)
-	{
-		if (!empty($this->data))
-		{
-        	if (!$this->Adresse->save($this->data))
-            {
-                $this->Session->setFlash('Fehler beim Speichern');
-            }
-		}
-      	else
-      	{
-        	$this->Adresse->id = $id;
-        	$this->data = $this->Adresse->read();
-        	$this->set('id',$id);
-      	}
 	}
 }
 ?>

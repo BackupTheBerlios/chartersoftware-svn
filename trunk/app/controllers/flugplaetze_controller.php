@@ -54,24 +54,8 @@ class FlugplaetzeController extends AppController
 	/**Editieren*/
 	function edit($id = null)
 	{
+		AppController::edit($id);
         $this->set('zeitzonenliste', timezone_identifiers_list());
-		if (!empty($this->data))
-		{
-        	if ($this->Flugplatz->save($this->data))
-        	{
-                $this->flash('geaendert', '/flugplaetze');
-        	}
-            else
-            {
-                $this->Session->setFlash('Fehler beim Speichern');
-            }
-		}
-      	else
-      	{
-        	$this->Flugplatz->id = $id;
-        	$this->data = $this->Flugplatz->read();
-        	$this->set('id',$id);
-      	}
 	}
 }
 ?>

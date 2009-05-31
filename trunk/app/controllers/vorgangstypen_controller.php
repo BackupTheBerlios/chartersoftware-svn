@@ -26,30 +26,5 @@ class VorgangstypenController extends AppController
 		  $this->set('vorgangstyp', $this->Vorgangstyp->read());
         }
 	}
-
-
-
-
-	/**Editieren*/
-	function edit($id = null)
-	{
-		if (!empty($this->data))
-		{
-        	if ($this->Vorgangstyp->save($this->data))
-        	{
-        		$this->redirect(array('action' => 'index'));
-        	}
-            else
-            {
-                $this->Session->setFlash('Fehler beim Speichern');
-            }
-		}
-      	else
-      	{
-        	$this->Vorgangstyp->id = $id;
-        	$this->data = $this->Vorgangstyp->read();
-        	$this->set('id',$id);
-      	}
-	}
 }
 ?>

@@ -47,19 +47,8 @@ class ZufriedenheitstypenController extends AppController
 	/**Editieren*/
 	function edit($id = null)
 	{
+		AppController::edit($id);
 		$this->set('Auswahlliste',array("Nein, ist kein Ablehnungsgrund", "Ja, ist Ablehnungsgrund" ));
-		if (!empty($this->data))
-		{
-        	if (!$this->Zufriedenheitstyp->save($this->data))
-                $this->Session->setFlash('Fehler beim Speichern');
-            else
-	       		$this->redirect(array('action' => 'index'));
-		}
-      	else
-      	{
-        	$this->Zufriedenheitstyp->id = $id;
-        	$this->data = $this->Zufriedenheitstyp->read();
-      	}
 	}
 }
 ?>
