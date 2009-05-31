@@ -7,6 +7,18 @@
  */
  
 class KalkulationenComponent extends Object {
+	
+	
+	public function PreisKalkulation()
+	{
+		$zwischenstopps = 0;
+		$entfernung = 0;
+		$flugzeugjahreskosten = 0;
+		$flugzeugstundenkosten = 0;
+		
+		
+	}
+	
 	    /**
      * 
      * param $x = Angabe einer geografischen Position im Format 7° 25' N, 10° 59' O
