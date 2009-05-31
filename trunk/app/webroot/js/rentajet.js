@@ -239,14 +239,13 @@
 		}
 		
 		function updateFlugzeuge() {
-			
-			$("#flugzeugtyp option[value!=0]").each(function () {
+			$("#VorgangFlugzeugtyp option[value!=0]").each(function () {
 				$(this).attr("disabled","");
 			});
 			
 			if($("#VorgangAnzahlPersonen").val() != '') {
 				var personen = parseInt($("#VorgangAnzahlPersonen").val());
-				$("#flugzeugtyp option[value!=0]").each(function () {
+				$("#VorgangFlugzeugtyp option[value!=0]").each(function () {
 					$(this).attr("title").search(/(.*);(.*);(.*)/g);
 					var reichweite = parseInt(RegExp.$1);
 					var plaetze = parseInt(RegExp.$2);
@@ -278,7 +277,7 @@
 				var maxdistance = 0;
 				$("span[id^='distance_']").each(function() {
 					distance = parseInt($(this).text());
-					$("#flugzeugtyp option[value!=0]").each(function () {
+					$("#VorgangFlugzeugtyp option[value!=0]").each(function () {
 						$(this).attr("title").search(/(.*);/g);
 						maxdistance = parseInt(RegExp.$1);
 						if (distance > maxdistance) {
