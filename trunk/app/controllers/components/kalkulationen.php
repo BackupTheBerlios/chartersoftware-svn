@@ -9,12 +9,58 @@
 class KalkulationenComponent extends Object {
 	
 	
-	public function PreisKalkulation()
+	public function vMaxFlugzeug($flugzeugtyp){
+		$flugzeugTypModell =& ClassRegistry::getObject('Flugzeugtyp');
+		$flugzeugTypModell->id = $flugzeugtyp;
+		$daten = $flugzeugTypModell->Read();
+		return $daten['Flugzeugtyp']['vmax'];	
+	}
+	
+	public function Flugzeit($entfernung, $geschwindigkeit){
+		return $entfernung / $geschwindigkeit;
+	}
+
+	public function minFlugbegleiter($flugzeugtyp){
+		$flugzeugTypModell =& ClassRegistry::getObject('Flugzeugtyp');
+		$flugzeugTypModell->id = $flugzeugtyp;
+		$daten = $flugzeugTypModell->Read();
+		return $daten['Flugzeugtyp']['cabinPersonal'];	
+	}
+
+	public function istFlugbegleiter($flugzeugtyp, $istBegleiter){
+		$result = 0;
+		if ($istBegleiter == null) $istBegleiter =0;
+		$min = $this->minFlugbegleiter($flugzeugtyp);
+		if ($istBegleiter > $min) return $istBegleiter;
+		return $min;
+	}
+
+	public function PersonalKosten($crew, $begleitung, $flugdauer){
+		$dauer = round($flugdauer);
+		if ($dauer < $flugdauer ) $dauer += +1;
+		return 1.2 * (43000 + ($crew - 1)*30000 + $begleitung*23000)/2000*($dauer);
+	}
+
+	public function Piloten($flugzeugtyp){
+		$flugzeugTypModell =& ClassRegistry::getObject('Flugzeugtyp');
+		$flugzeugTypModell->id = $flugzeugtyp;
+		$daten = $flugzeugTypModell->Read();
+		return $daten['Flugzeugtyp']['crewPersonal'];	
+	}
+
+	public function Reisezeit($entfernung, $geschwindigkeit, $landungen){
+		return $entfernung / $geschwindigkeit + $landungen *0.75;
+	}
+	
+	public function PreisKalkulation($flugzeugtyp)
 	{
 		$zwischenstopps = 0;
 		$entfernung = 0;
 		$flugzeugjahreskosten = 0;
 		$flugzeugstundenkosten = 0;
+		$flugzeugTypModell =& ClassRegistry::getObject('Flugzeugtyp');
+		$flugzeugTypModell->id = $flugzeugtyp;
+		var_dump($flugzeugTypModell->Read());
 		
 		
 	}
