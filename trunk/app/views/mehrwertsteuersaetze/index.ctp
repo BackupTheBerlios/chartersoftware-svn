@@ -1,6 +1,6 @@
 <?php 
-	echo $html->link('Neues Satz anlegen','/mehrwertsteuersaetze/add');
-    echo $html->tag('table'); 
+	echo $html->link('Neues Satz anlegen','/mehrwertsteuersaetze/add', array('class'=>'button1', 'style'=>'width:150px;'));
+    echo $html->tag('table', Null, array('class' => 'tbl1'));
     echo $html->tableHeaders(array('Beschreibung', 'Satz', 'Skalierung', 'Ändern','Löschen'));
 
     foreach ($this->data as $zeile):

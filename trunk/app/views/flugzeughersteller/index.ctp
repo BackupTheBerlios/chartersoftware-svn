@@ -1,6 +1,6 @@
 <?php
-	echo $html->link('Neuen Hersteller anlegen','/flugzeughersteller/add');
-	echo $html->tag('table');
+	echo $html->link('Neuen Hersteller anlegen','/flugzeughersteller/add', array('class'=>'button1', 'style'=>'width:150px;'));
+	echo $html->tag('table', Null, array('class' => 'tbl1'));
     echo $html->tableHeaders(array('Name', 'Ändern','Löschen'));
 
     foreach ($this->data as $zeile):

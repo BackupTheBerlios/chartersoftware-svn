@@ -1,6 +1,6 @@
 <?php
-	echo $html->link('Neuen Flugplatz anlegen','/flugplaetze/add');
-    echo $html->tag('table');
+	echo $html->link('Neuen Flugplatz anlegen','/flugplaetze/add', array('class'=>'button1', 'style'=>'width:150px;'));
+    echo $html->tag('table', Null, array('class' => 'tbl1'));
     echo $html->tableHeaders(array('Kürzel', 'Name', 'Position', 'Zeitzone','Ändern','Löschen'));
 
     //var_dump($zeitzonen);

@@ -1,6 +1,6 @@
 <?php
-	echo $html->link('Neuen Report anlegen','/reports/add');
-    echo $html->tag('table');
+	echo $html->link('Neuen Report anlegen','/reports/add', array('class'=>'button1', 'style'=>'width:150px;'));
+    echo $html->tag('table', Null, array('class' => 'tbl1'));
     echo $html->tableHeaders(array('Report-Name','Ändern','Löschen'));
 
 	foreach ($this->data as $zeile):

@@ -1,5 +1,7 @@
 /*@import url(base.css);*/
 @import url(forms.css);
+@import url(tables.css);
+@import url(links.css);
 
 * {
 text-align : left;
@@ -74,10 +76,10 @@ position:absolute;
 #txtcontent.start {
 background : url(img/start.jpg) no-repeat center center #EEE;
 left:5px;
-top:90px;
-width:790px;
+top:91px;
+width:990px;
 z-index:10;
-height:450px;
+height:550px;
 }
 
 #txtcontent.normal {

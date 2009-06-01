@@ -1,7 +1,7 @@
 <?php
-	echo $html->link('Neues Angebot anlegen','/vorgaenge/add');
-    echo $html->tag('table');
-    echo $html->tableHeaders(array('Nummer', 'Firma', 'Datum', 'Betrag', 'Drucken','Ändern','Löschen'));
+	echo $html->link('Neues Angebot anlegen','/vorgaenge/add', array('class'=>'button1', 'style'=>'width:150px;'));
+    echo $html->tag('table', Null, array('class' => 'tbl1'));
+    echo $html->tableHeaders(array('Nr', 'Firma', 'Datum', 'Betrag', 'Drucken','Ändern','Löschen'));
 
 	foreach ($this->data as $zeile):
 		if ($zeile['Vorgang']['vorgangstyp_id'] == 1){ //Nur Angebote!

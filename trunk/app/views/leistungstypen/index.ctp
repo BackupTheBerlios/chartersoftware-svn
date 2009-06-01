@@ -1,6 +1,6 @@
 <?php
-	echo $html->link('Neuen Leistungstypen anlegen','/leistungstypen/add');
-    echo $html->tag('table');
+	echo $html->link('Neuen Leistungstypen anlegen','/leistungstypen/add', array('class'=>'button1', 'style'=>'width:150px;'));
+    echo $html->tag('table', Null, array('class' => 'tbl1'));
     echo $html->tableHeaders(array('Beschreibung', 'Ändern','Löschen'));
 
 	foreach ($this->data as $zeile):

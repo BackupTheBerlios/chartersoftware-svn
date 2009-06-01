@@ -1,6 +1,6 @@
 <?php
-	echo $html->link('Neue Adresse anlegen','/adressen/add');
-    echo $html->tag('table');
+	echo $html->link('Neue Adresse anlegen','/adressen/add', array('class'=>'button1', 'style'=>'width:150px;'));
+    echo $html->tag('table', Null, array('class' => 'tbl1'));
     echo $html->tableHeaders(array('Firma', 'Name', 'Straße','PLZ','Ort','Ändern','Löschen'));
 
 	foreach ($this->data as $zeile):

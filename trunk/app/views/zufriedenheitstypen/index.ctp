@@ -1,6 +1,6 @@
 <?php
-	echo $html->link('Neuen Zufriedenheitstypen anlegen','/zufriedenheitstypen/add');
-    echo $html->tag('table');
+	echo $html->link('Neuen Zufriedenheitstypen anlegen','/zufriedenheitstypen/add', array('class'=>'button1', 'style'=>'width:180px;'));
+    echo $html->tag('table', Null, array('class' => 'tbl1'));
     echo $html->tableHeaders(array('Beschreibung','Ablehnungsgrund', 'Ändern','Löschen'));
 
 	foreach ($this->data as $zeile):
