@@ -72,7 +72,7 @@ class VorgaengeController extends AppController
 		$kostenZielflug = $this->Kalkulationen->KalkulationFlugkostenZielflug($flugzeugtyp, $entfernung, $landungen, $istBegleiter);
 		$kostenZeitflug = $this->Kalkulationen->KalkulationFlugkostenZeitflug($flugzeugtyp, $entfernung, $landungen, $istBegleiter);
 		$this->data['Vorgang']['entfernung'] = $entfernung;
-		$this->data['Vorgang']['anzlandungen'] = 1;
+		$this->data['Vorgang']['landungen'] = $landungen;
 		$this->data['Vorgang']['vmax'] = $vmax;
 		$this->data['Vorgang']['offiziere'] = $offiziere;
 		$this->data['Vorgang']['minBegleiter'] = $minBegleiter;

@@ -1,12 +1,9 @@
 <?php
     echo $rentform->create('Vorgang', 'berechnen');
-    echo $rentform->select('startflughafen', $flugplatzliste);
-    echo $rentform->select('zielflughafen', $flugplatzliste);
+    echo $rentform->textInput('entfernung', $entfernung);
     echo $rentform->select('flugzeugtyp', $flugzeugtypenliste);
     echo $rentform->textInput('AnzahlFlugbegleiter');
-    echo $rentform->textInput('AnzahlFlugbegleiter');
-    echo $rentform->disabledTextInput('Vorgang.entfernung');
-    echo $rentform->disabledTextInput('Vorgang.anzlandungen');
+    echo $rentform->disabledTextInput('Vorgang.landungen');
     echo $rentform->disabledTextInput('Vorgang.vmax');
     echo $rentform->disabledTextInput('Vorgang.offiziere');
     echo $rentform->disabledTextInput('Vorgang.minBegleiter');
