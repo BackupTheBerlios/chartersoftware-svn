@@ -25,6 +25,18 @@ class VorgaengeController extends AppController
 
 		$this->set('adressenliste',$this->Adresse->find('list'));
 		$this->set('flugplatzliste',$this->Flugplatz->find('list'));
+		$liste = $this->Flugzeugtyp->find('all');
+		$flugzeugtypenListeKomplett = array();
+		foreach ($liste as $entry){
+			$typ = $entry['Flugzeugtyp'];
+			$name = $typ['name'];
+			$reichweite = $typ['reichweite'];
+			$begleitung = $typ['cabinPersonal'];
+			$personen = $typ['seats'];
+			$name = $typ['name'];
+			$flugzeugtypenListeKomplett[$typ['id']]="$name (Reichweite $reichweite, Begleitung $begleitung, Passagiere $personen)";
+		}
+		$this->set('flugzeugtypenListeKomplett', $flugzeugtypenListeKomplett );
 		$this->set('flugzeugtypenliste',$this->Flugzeugtyp->find('list'));
 
 		$this->set('zeitcharter', array('ja'=>'Ja', 'nein'=>'Nein'));
@@ -32,33 +44,29 @@ class VorgaengeController extends AppController
 
 
 
-    public function berechnen($start=null, $ziel=null, $flugzeug=null, $begleiter=null){
+    public function berechnen($entfernung=null, $landungen= null, $flugzeug=null, $begleiter=null){
 		$this->setDefaultData();
-		if ($start!=null && $ziel != null && $flugzeug != null)
+		if ($entfernung!=null && $flugzeug!= null && $begleiter != null && $landungen!=null)
 		{
 			//Noch keine Daten ausgewählt
-			$this->data['Vorgang']['startflughafen'] = $start;
-			$this->data['Vorgang']['zielflughafen'] = $ziel;
+			$this->data['Vorgang']['entfernung'] = $entfernung;
 			$this->data['Vorgang']['flugzeugtyp'] = $flugzeug;
+			$this->data['Vorgang']['landungen'] = $landungen;
 			$this->data['Vorgang']['AnzahlFlugbegleiter'] = $begleiter;
 		}else{
-			var_dump($this->data);
-			//bereits Daten ausgewählt
-			$start = $this->data['Vorgang']['startflughafen'];
-			$ziel = $this->data['Vorgang']['zielflughafen'];
+			$entfernung = $this->data['Vorgang']['entfernung'];
 			$flugzeug = $this->data['Vorgang']['flugzeugtyp'];
+			$landungen = $this->data['Vorgang']['landungen'];
 			$begleiter = $this->data['Vorgang']['AnzahlFlugbegleiter'];
 		}
 		
 		
 		$flugzeugtyp = $this->data['Vorgang']['flugzeugtyp'];
-		$entfernung = $this->CalcEntfernung($start, $ziel);
 		$offiziere = $this->Kalkulationen->Piloten($flugzeugtyp);
 		$vmax = $this->Kalkulationen->vMaxFlugzeug($flugzeugtyp);
 		$minBegleiter = $this->Kalkulationen->minFlugbegleiter($flugzeugtyp);
 		$istBegleiter = $this->Kalkulationen->istFlugbegleiter($flugzeugtyp, $this->data['Vorgang']['AnzahlFlugbegleiter'] );
 		$flugzeit = $this->Kalkulationen->Flugzeit($entfernung, $vmax);
-		$landungen = 1;
 		$reisezeit = $this->Kalkulationen->Reisezeit($entfernung, $vmax, $landungen);
 		$personalkosten = $this->Kalkulationen->PersonalKosten($offiziere, $istBegleiter, $reisezeit);
 		$kostenZielflug = $this->Kalkulationen->KalkulationFlugkostenZielflug($flugzeugtyp, $entfernung, $landungen, $istBegleiter);

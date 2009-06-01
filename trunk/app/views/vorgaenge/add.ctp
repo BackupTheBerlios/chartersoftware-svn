@@ -26,7 +26,8 @@
 	echo $rentform->button('Hinzufügen', array('id'=>'button_zwischenstop', 'name'=>"button_zwischenstop", 'style'=>"float:right"));	
 	echo '</div>' . "\n";
 	echo $rentform->textInput('AnzahlPersonen', 'Anzahl Personen');
-	echo $rentform->select('flugzeugtyp', $flugzeugtypenliste);
+	
+	echo $rentform->select('flugzeugtyp', $flugzeugtypenListeKomplett);
 	echo $rentform->textInput('AnzahlFlugbegleiter', 'Anzahl Flugbegleiter');
 	echo $rentform->endFieldset();
 
