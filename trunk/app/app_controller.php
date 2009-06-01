@@ -33,6 +33,9 @@ class AppController extends Controller {
 	/**Aufruf der Zuf�genseite*/
 	public function add()
 	{
+		
+		$this->pageTitle = 'Angebot erstellen';
+		
 		if (!empty($this->data))
 		{
 			$currentObject =& ClassRegistry::getObject($this->modelClass);

@@ -19,7 +19,7 @@
 <body>
 <div id="content">
 <div id="banner_top"></div>
-<div id="status"><?php $title_for_layout?></div>
+<div id="status"><?php echo $title_for_layout?></div>
 <div id="logo"></div>
 <div id="navigation">
 <?php
@@ -53,11 +53,20 @@
 
 <?php
 if (strlen($content_for_layout)>0 || strlen($cakeDebug)>0 ) {
-	echo '<div id="txtcontent" class="normal">' . "\n"; 
+	
+	if ($title_for_layout == 'Angebot erstellen') {
+	
+	echo '<div id="txtcontent" class="angebot">' . "\n"; 
 	echo $cakeDebug . "\n";
 	echo $content_for_layout . "\n";
 	echo "</div>\n";
 	echo "<div id=\"txtcontent2\" class=\"normal\"><div id=\"txtcontent2_wrapper\"><div id=\"fluginfos\"></div></div></div>\n";
+	} else {
+	echo '<div id="txtcontent" class="normal">' . "\n"; 
+	echo $cakeDebug . "\n";
+	echo $content_for_layout . "\n";
+	echo "</div>\n";
+	}
 	
 } else {
 	echo '<div id="txtcontent" class="start">' . "\n"; 

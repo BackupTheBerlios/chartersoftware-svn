@@ -39,5 +39,6 @@
 	echo $rentform->button('Hinzufügen', array('id'=>'button_sonderwunsch', 'name'=>"button_sonderwunsch", 'style'=>"float:right"));	
 		
 	//HTML-Formular schließen
-	echo $rentform->end('Speichern')
+	echo $rentform->end('Speichern');
+	
 ?>

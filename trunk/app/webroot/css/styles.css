@@ -83,6 +83,16 @@ height:550px;
 }
 
 #txtcontent.normal {
+width:730px;
+height:530px;
+z-index:10;
+top:105px;
+left:240px;
+overflow:auto;
+padding-right:10px;
+}
+
+#txtcontent.angebot {
 width:535px;
 height:530px;
 z-index:10;
