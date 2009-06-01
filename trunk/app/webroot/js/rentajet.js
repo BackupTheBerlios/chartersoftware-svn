@@ -1,16 +1,20 @@
-	//Funktioniert
-	$(function() {
-		$("#VorgangDatepicker").datepicker({ dateFormat: 'dd.mm.yy', dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'], dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'], monthNames: ['Januar','Februar','M�rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']});
-	});
-	
-	//Funktioniert
-	$(function() {
-		$("#VorgangDatepicker2").datepicker({ dateFormat: 'dd.mm.yy', dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'], dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'], monthNames: ['Januar','Februar','M�rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']});
-	});
+/**
+ * GUI Interactions
+ *
+ * @author F. Geist
+ *
+ * Stellt alle Funktionen für das Arbeiten mit dem Frontend zur Verfügung.
+ * z.B. Tooltips, Nachladen von Daten (Ajax / XML), automatische Aktualisierung von Auswahlmenues, Berechnungen von Gesamtstrecken usw. 
+ * Siehe auch genutztes Framework für weitere Informationen : http://jquery.com/
+ * 
+ * Letzte Änderung: 01.06.2009
+ *
+ */
 
-	$(document).ready(function () {
 
-		//Funktioniert
+$(document).ready(function () {
+
+	//Funktioniert
 		$("#VorgangAdresseId").change(function () {
 			$.ajax({
 				type: "GET",
@@ -245,11 +249,13 @@
 			
 			if($("#VorgangAnzahlPersonen").val() != '') {
 				var personen = parseInt($("#VorgangAnzahlPersonen").val());
-				$("#VorgangFlugzeugtyp option[value!=0]").each(function () {
-					$(this).attr("title").search(/(.*);(.*);(.*)/g);
+				$("#VorgangFlugzeugtyp option[value!='']").each(function () {
+					$(this).text().search(/.*\(Reichweite (.*), Begleitung (.*), Passagiere (.*)\)/g);
+					
 					var reichweite = parseInt(RegExp.$1);
-					var plaetze = parseInt(RegExp.$2);
-					var requiredAttendands = parseInt(RegExp.$3);
+					var requiredAttendands = parseInt(RegExp.$2);
+					var plaetze = parseInt(RegExp.$3);
+
 					// Wenn ein bereits gewählter Flugzeugtype rausfällt
 					if (personen > (plaetze-requiredAttendands) && ($(this).val() == $("#VorgangFlugzeugtyp option:selected").val())) {
 						$(this).attr("disabled","disabled");
@@ -266,8 +272,8 @@
 			}
 			
 			if ($("#VorgangFlugzeugtyp").val() != 0) {
-				$("#VorgangFlugzeugtyp option:selected").attr("title").search(/.*;.*;(.*)/g);
-				requiredAttendands = parseInt(RegExp.$1);
+				$("#VorgangFlugzeugtyp option:selected").text().search(/.*\(Reichweite (.*), Begleitung (.*), Passagiere (.*)\)/g);
+				requiredAttendands = parseInt(RegExp.$2);
 				$("#VorgangAnzahlFlugbegleiter").val(requiredAttendands);
 			
 			}
@@ -278,7 +284,7 @@
 				$("span[id^='distance_']").each(function() {
 					distance = parseInt($(this).text());
 					$("#VorgangFlugzeugtyp option[value!=0]").each(function () {
-						$(this).attr("title").search(/(.*);/g);
+						$(this).text().search(/.*\(Reichweite (.*), Begleitung (.*), Passagiere (.*)\)/g);
 						maxdistance = parseInt(RegExp.$1);
 						if (distance > maxdistance) {
 							if (distance > maxdistance && ($(this).val() == $("#VorgangFlugzeugtyp option:selected").val())) {
@@ -309,4 +315,27 @@
 		});
 	
 	
-	}); // DOCUMENT READY END
+		$("*.showhelp").mouseenter(function(){   	
+			$(".help").each(function(){
+				$(this).hide();
+			});
+			var title = $(this).attr("title");
+			$("#help_"+title).fadeIn("fast");
+		}); 
+
+		$("*.showhelp").mouseleave(function(){   
+			var title = $(this).attr("title");
+			$("#help_"+title).fadeOut("fast");
+		}); 
+
+	//Funktioniert
+	$(function() {
+		$("#VorgangDatepicker").datepicker({ dateFormat: 'dd.mm.yy', dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'], dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'], monthNames: ['Januar','Februar','M�rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']});
+	});
+	
+	//Funktioniert
+	$(function() {
+		$("#VorgangDatepicker2").datepicker({ dateFormat: 'dd.mm.yy', dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'], dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'], monthNames: ['Januar','Februar','M�rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']});
+	});
+
+}); // DOCUMENT READY END

@@ -94,23 +94,5 @@ if (strlen($content_for_layout)>0 || strlen($cakeDebug)>0 ) {
 <div id="help_selectflugzeugtyp" class="help"><span>Der Flugzeugtyp ist auf Grund der neuen Einstellungen nicht mehr verfügbar. Bitte neu wählen.</span></div>
 
 </div>
-
-<script language="javascript" type="text/javascript">
-
-$("*.showhelp").mouseenter(function(){   	
-	$(".help").each(function(){
-		$(this).hide();
-	});
-	var title = $(this).attr("title");
-	$("#help_"+title).fadeIn("fast");
-}); 
-
-$("*.showhelp").mouseleave(function(){   
-    var title = $(this).attr("title");
-	$("#help_"+title).fadeOut("fast");
-}); 
-
-</script>
-
 </body>
 </html>
