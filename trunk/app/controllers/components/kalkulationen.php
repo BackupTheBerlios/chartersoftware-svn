@@ -8,6 +8,13 @@
  
 class KalkulationenComponent extends Object {
 	
+	public function KalkulationFlugkostenZielflug($flugzeugtyp, $strecke, $anzahlLandungen, $begleiter){
+		return 123456;		
+	}
+
+	public function KalkulationFlugkostenZeitflug($flugzeugtyp, $strecke, $anzahlLandungen, $begleiter){
+		return 654321;		
+	}
 	
 	public function vMaxFlugzeug($flugzeugtyp){
 		$flugzeugTypModell =& ClassRegistry::getObject('Flugzeugtyp');

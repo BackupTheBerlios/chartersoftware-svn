@@ -16,6 +16,8 @@ class VorgaengeController extends AppController
 {
     public $uses = array('Vorgang','Adresse','Flugplatz','Flugzeugtyp');
 
+
+
 	private function setDefaultData(){
 		$this->Flugplatz->order = 'Flugplatz.name ASC';
 		$this->Adresse->order = 'Adresse.firma ASC';
@@ -27,6 +29,8 @@ class VorgaengeController extends AppController
 
 		$this->set('zeitcharter', array('ja'=>'Ja', 'nein'=>'Nein'));
 	}
+
+
 
     public function berechnen($start=null, $ziel=null, $flugzeug=null, $begleiter=null){
 		$this->setDefaultData();
@@ -57,8 +61,8 @@ class VorgaengeController extends AppController
 		$landungen = 1;
 		$reisezeit = $this->Kalkulationen->Reisezeit($entfernung, $vmax, $landungen);
 		$personalkosten = $this->Kalkulationen->PersonalKosten($offiziere, $istBegleiter, $reisezeit);
-		
-		
+		$kostenZielflug = $this->Kalkulationen->KalkulationFlugkostenZielflug($flugzeugtyp, $entfernung, $landungen, $istBegleiter);
+		$kostenZeitflug = $this->Kalkulationen->KalkulationFlugkostenZeitflug($flugzeugtyp, $entfernung, $landungen, $istBegleiter);
 		$this->data['Vorgang']['entfernung'] = $entfernung;
 		$this->data['Vorgang']['anzlandungen'] = 1;
 		$this->data['Vorgang']['vmax'] = $vmax;
@@ -68,6 +72,8 @@ class VorgaengeController extends AppController
 		$this->data['Vorgang']['flugzeit'] = $flugzeit;
 		$this->data['Vorgang']['reisezeit'] = $reisezeit;
 		$this->data['Vorgang']['personalkosten'] = $personalkosten;
+		$this->data['Vorgang']['kostenZielflug'] = $kostenZielflug;
+		$this->data['Vorgang']['kostenZeitflug'] = $kostenZeitflug;
 	}
 	
     /**
@@ -103,7 +109,6 @@ class VorgaengeController extends AppController
 		
 		if (!empty($this->data)) {
 			var_dump($this->data);
-			//$this->redirect('index');
 			
 			/*
 			array(1) { ["Vorgang"]=>  
