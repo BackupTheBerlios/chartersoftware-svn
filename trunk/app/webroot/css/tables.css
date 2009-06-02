@@ -1,0 +1,16 @@
+.tbl1 {
+margin:0 0 15px 0;
+width:100%;
+}
+
+.tbl1 th {
+padding:5px;
+background:#EEE;
+text-align:center;
+}
+
+.tbl1 td {
+padding:5px;
+border-bottom:1px solid #EEE;
+vertical-align:top;
+}
