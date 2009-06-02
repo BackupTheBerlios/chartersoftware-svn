@@ -17,8 +17,6 @@ class VorgaengeController extends AppController
     public $uses = array('Vorgang','Adresse','Flugplatz','Flugzeugtyp');
 
 
-
-
 	private function setDefaultData(){
 		$this->Flugplatz->order = 'Flugplatz.name ASC';
 		$this->Adresse->order = 'Adresse.firma ASC';
@@ -124,6 +122,7 @@ class VorgaengeController extends AppController
 	{
 		AppController::edit($id);	
 		$this->setDefaultData();
+		$this->data['Vorgang']['datum']=date("d.m.Y",time()); //heutiges Datum
 	}
 
     public function add()
@@ -133,9 +132,9 @@ class VorgaengeController extends AppController
 		if (!empty($this->data))
 		{
 			$this->data['Vorgang']['vorgangstyp_id']=1; //Typ ist angebot
+			$this->data['Vorgang']['datum']=date("d.m.Y",time()); //heutiges Datum
 			//var_dump($this->data['Vorgang']);
-			$currentObject =& ClassRegistry::getObject($this->modelClass);
-			if (!$currentObject->save($this->data)) {
+			if (!$this->Vorgang->save($this->data)) {
 				//echo "nicht gespeichert";
                 $this->Session->setFlash('Fehler beim Speichern');
 			} else {
@@ -144,7 +143,6 @@ class VorgaengeController extends AppController
 			}
         } else {
 			$this->data['Vorgang']['flugstrecke']='1;2;3';
-			$this_data['Vorgang']['vorgangstyp_id']=1;
         }		
 	}
 	
@@ -157,6 +155,33 @@ class VorgaengeController extends AppController
         	$currentObject->id = $id;
         	$this->data=$this->Vorgang->read();
         }
+	}
+
+	public function vertraege(){
+		$this->setDefaultData();
+		$this->data=$this->Vorgang->find('all');
+	}
+
+	public function vertragadd(){
+		if ($this->data == null){
+			//Seite wird neu aufgerufen
+			
+		} else {
+			//var_dump($this->data['Vorgang']['Angebot']);
+			$this->Vorgang->id = $this->data['Vorgang']['Angebot'];
+			$record = $this->Vorgang->read();
+			$record['Vorgang']['vorgangstyp_id']=2;//Vertrag;
+			if (!$this->Vorgang->save($record)) {
+				//echo "nicht gespeichert";
+                $this->Session->setFlash('Fehler beim Speichern');
+			} else {
+				//echo "gespeichert";
+				$this->redirect(array('action' => 'vertraege'));
+			}
+			
+		}
+		$this->setDefaultData();
+		$this->data=$this->Vorgang->find('all');
 	}
 	
 }

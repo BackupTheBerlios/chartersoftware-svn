@@ -264,7 +264,7 @@ VALUES
 #----------------------------------------------
 CREATE TABLE `vorgaenge` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `datum` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  `datum` DATE,
   `zeitcharter` int(1) NOT NULL,
   `vonDatum` DATE,
   `bisDatum` DATE,
@@ -285,18 +285,13 @@ CREATE TABLE `vorgaenge` (
   KEY `adresse_id` (`adresse_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 #
-INSERT INTO `vorgaenge` (`id`,`datum`,`vorgangstyp_id`,`adresse_id`,`flugzeugtyp_id`,`zufriedenheitstyp_id`,`flugstrecke`,`flugentfernung`,`begleiter`,`netto`,`mwstSatz`,`mwst`,`brutto_soll`,`brutto_ist`)
+INSERT INTO `vorgaenge` (`datum`,`zeitcharter`,`vonDatum`,`bisDatum`,`vorgangstyp_id`,`adresse_id`,`AnzahlPersonen`,`AnzahlFlugbegleiter`,`flugzeugtyp_id`,`zufriedenheitstyp_id`,`flugstrecke`,`flugentfernung`,`netto`,`mwstSatz`,`mwst`,`brutto_soll`,`brutto_ist`)
 VALUES
-	(1,'1970-10-21',1,1,1,1,1,'1;2;3',1000,3,2990,1900,1234,56789,0),
-	(2,'2009-11-22',1,1,2,2,1,'1;2;3',1000,3,2990,1900,1234,56789,0),
-	(3,'2008-12-19',1,1,1,3,1,'1;2;3',1000,3,13321,1900,1234,56789,0),
-	(4,'2007-09-18',1,1,2,4,1,'1;2;3',1000,3,1234,1900,1234,56789,0),
-	(5,'2006-08-18',1,1,2,5,1,'1;2;3',1000,3,21341123,1900,1234,56789,0),
-	(6,'2005-07-17',1,1,1,6,1,'1;2;3',1000,3,3242423,1900,1234,56789,0),
-	(7,'2004-07-16',1,1,2,7,1,'1;2;3',1000,3,4324324,1900,1234,56789,0),
-	(8,'2003-06-15',1,1,1,8,1,'1;2;3',1000,3,324342,1900,1234,56789,0),
-	(9,'2002-05-14',1,1,2,9,1,'1;2;3',1000,3,2342343,1900,1234,56789,0),
-	(10,'2001-04-13',1,1,2,10,1,'1;2;3',1000,3,324343,1900,1234,56789,0),
-	(11,'2000-02-12',1,1,1,11,1,'1;2;3',1000,3,342342,1900,1234,56789,0),
-	(12,'2009-03-11',1,1,2,12,1,'1;2;3',1000,3,342342,1900,1234,56789,0);
+	('2009-06-02',0,'2009-06-02','2009-06-04',1,2,1,3,6,NULL,'1;2;3',NULL,NULL,NULL,NULL,NULL,NULL),
+('2009-06-02',0,'2009-06-02','2009-06-04',1,2,1,3,6,NULL,'1;2;3',NULL,NULL,NULL,NULL,NULL,NULL),
+('2009-06-02',0,'2009-06-02','2009-06-04',1,2,1,3,6,NULL,'1;2;3',NULL,NULL,NULL,NULL,NULL,NULL),
+('2009-06-02',0,'2009-06-02','2009-06-04',1,2,1,3,6,NULL,'1;2;3',NULL,NULL,NULL,NULL,NULL,NULL),
+('2009-06-02',0,'2009-06-02','2009-06-04',1,2,1,3,6,NULL,'1;2;3',NULL,NULL,NULL,NULL,NULL,NULL),
+('2009-06-02',0,'2009-06-02','2009-06-04',1,2,1,3,6,NULL,'1;2;3',NULL,NULL,NULL,NULL,NULL,NULL),
+('2009-06-02',0,'2009-06-02','2009-06-04',1,2,1,3,6,NULL,'1;2;3',NULL,NULL,NULL,NULL,NULL,NULL);
 #

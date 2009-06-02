@@ -18,6 +18,12 @@ class RentformHelper extends Helper {
 		return "<fieldset><legend>$legend</legend>\n";
 	}	
 
+
+	public function label($fieldname=null, $text=null, $attributes=null){
+		return $this->Form->label($fieldname, $text, $attributes);
+	}	
+
+
 	public function endFieldset(){
 		return "</fieldset>\n";
 	}	
