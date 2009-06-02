@@ -33,7 +33,7 @@
 				$zeile['Vorgang']['datum'],
 				$zeile['Vorgang']['brutto_soll'],
 				$html->link('Drucken', "/vorgaenge/drucken/{$zeile['Vorgang']['id']}"),
-				$link,
+				$html->link('Ändern', "/vorgaenge/edit/".$vorgangstyp."/{$zeile['Vorgang']['id']}"),
 				$html->link('Löschen', "/vorgaenge/delete/{$zeile['Vorgang']['id']}", null, 'Sind Sie sich sicher?' ),
     		));
 		}

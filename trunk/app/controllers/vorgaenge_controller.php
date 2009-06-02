@@ -118,11 +118,29 @@ class VorgaengeController extends AppController
     
     
 	/**Anzeigen einer Liste*/
-    public function edit($id=null)
-	{
-		AppController::edit($id);	
-		$this->setDefaultData();
-		$this->data['Vorgang']['datum']=date("d.m.Y",time()); //heutiges Datum
+    public function edit($vorgangstyp, $id=null)
+	{	
+		$this->set('vorgangstyp',$vorgangstyp);
+
+		$currentObject =& ClassRegistry::getObject($this->modelClass);
+		if (!empty($this->data))
+		{
+        	if (!$currentObject->save($this->data))
+                $this->Session->setFlash('Fehler beim Speichern');
+            else
+	       		$this->redirect(array('action' => 'vorgaenge/'.$vorgangstyp));
+		}
+      	else
+      	{
+      		$currentObject->id = $id;
+        	$this->data = $currentObject->read();
+			$this->setDefaultData();
+			$this->data['Vorgang']['datum']=date("d.m.Y",time()); //heutiges Datum
+			$strecke =split('[;]', $this->data['Vorgang']['flugstrecke']);
+			if ($strecke != null) $this->data['Vorgang']['zielflughafen']=array_pop($strecke); 
+			if ($strecke != null) $this->data['Vorgang']['startflughafen']=array_shift($strecke);
+      	}
+		
 	}
 
     public function add()
@@ -139,7 +157,7 @@ class VorgaengeController extends AppController
                 $this->Session->setFlash('Fehler beim Speichern');
 			} else {
 				//echo "gespeichert";
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'vorgaenge/1'));
 			}
         } else {
 			$this->data['Vorgang']['flugstrecke']='1;2;3';
@@ -158,29 +176,28 @@ class VorgaengeController extends AppController
 	}
 
 	public function vorgangwandeln($vorgangstyp=null){
+		//Test auf Fehler
 		if ($this->data == null && $vorgangstyp == null){
 			$this->redirect('/');
 			exit;
 		}
 		
 		if ($vorgangstyp != null && $this->data == null){
+			//Formular soll aufgerufen werden
 			$this->setDefaultData();
 			$this->data=$this->Vorgang->find('all');
 			$this->set('vorgangstyp',$vorgangstyp);
 		} else {
+			//Formular wurde abgeschickt
 			$this->set('vorgangstyp',$vorgangstyp);
-			//var_dump($this->data);
 			$this->Vorgang->id = $this->data['Vorgang']['RECORD'];
 			$record = $this->Vorgang->read();
-			//var_dump($record);
-			$record['Vorgang']['vorgangstyp_id']=$vorgangstyp;//Rechnung;
-			//var_dump($record);
+			$record['Vorgang']['vorgangstyp_id']=$vorgangstyp;
+			
+			//Vorgang ist gewandelt, nun wird die nächste Seite aufgerufen
 			if (!$this->Vorgang->save($record)) {
-				//echo "nicht gespeichert";
                 $this->Session->setFlash('Fehler beim Speichern');
 			} else {
-				//echo "gespeichert";
-			//echo '<'.$vorgangstyp .'>';
 				$this->redirect(array('action' => 'vorgaenge/'.$vorgangstyp));
 			}
 		}

@@ -1,7 +1,7 @@
 <?php 
 
 	//HTML-Formular öffnen
-	echo $rentform->create('Vorgang', 'edit');
+	echo $rentform->create('Vorgang', 'edit/'.$vorgangstyp);
 
 	//================================================
 	echo $rentform->begFieldset('Kundendaten');
