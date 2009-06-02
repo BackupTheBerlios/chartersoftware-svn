@@ -101,6 +101,7 @@ $(document).ready(function () {
 		function updateFlugdaten() {
 			
 			var add = "";
+			var route = "";
 			var i=0;
 			
 			$("#fluginfos").html('');
@@ -141,6 +142,10 @@ $(document).ready(function () {
 				}
 				add += "<\/td>\n";
 				add += "<\/tr>\n";
+			
+				// Update Routeninfo für Übergabe an Cake
+				route += startid;
+				
 			}
 			
 			if ($("input[name^='zwischenstop;']").size() > 0) {
@@ -170,13 +175,18 @@ $(document).ready(function () {
 				add += "<\/td>\n";
 				add += "<\/tr>\n";
 				
+				route += ";"+zwischenstop;
+				
 			});
 			}
 			
 			if ($("input[name^='ziel;']").size() > 0) {
+				
 				add += "<tr>\n";
 				add += "<td class=\"img ankunft\"><\/td><td class=\"airport\">"+$("input[name^='ziel;']").val()+"<\/td>\n";
 				add += "<\/tr>\n";
+				
+				route += ";"+zielid;
 			}
 			
 			if ($("input[name^='ziel;']").size() == 0 && $("input[name^='zwischenstop;']").size() == 0) {
@@ -207,6 +217,9 @@ $(document).ready(function () {
 				$("#help_delzwischenstop").fadeOut("fast");
 				}
 			);
+			
+			$("#VorgangFlugstrecke").val(route);
+			
 		}
 		
 		function calcDitances(spanid, ap1, ap2) {
