@@ -19,9 +19,9 @@
 	//echo $rentform->hidden('flugstrecke', '$flugstrecke');
 	echo $rentform->hidden('Vorgang.flugstrecke');
 	
-	echo $rentform->select('zeitcharter', $zeitcharter);
-	echo $rentform->textInput('datepicker', 'Von Datum');
-	echo $rentform->textInput('datepicker2', 'Bis Datum');
+	echo $rentform->select('Vorgang.zeitcharter', $zeitcharter);
+	echo $rentform->textInput('vonDatum', 'Von Datum');
+	echo $rentform->textInput('bisDatum', 'Bis Datum');
 	echo $rentform->select('startflughafen', $flugplatzliste);	
 	echo $rentform->select('zielflughafen', $flugplatzliste);
 	echo '<div id="DivZwischenstop">' . "\n";

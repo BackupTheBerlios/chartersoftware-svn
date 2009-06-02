@@ -132,7 +132,7 @@ class VorgaengeController extends AppController
 		if (!empty($this->data))
 		{
 			$this->data['Vorgang']['vorgangstyp_id']=1; //Typ ist angebot
-			var_dump($this->data['Vorgang']);
+			//var_dump($this->data['Vorgang']);
 			$currentObject =& ClassRegistry::getObject($this->modelClass);
 			if (!$currentObject->save($this->data)) {
 				//echo "nicht gespeichert";
