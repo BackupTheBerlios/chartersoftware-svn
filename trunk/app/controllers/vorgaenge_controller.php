@@ -82,6 +82,11 @@ class VorgaengeController extends AppController
 		$this->data['Vorgang']['personalkosten'] = $personalkosten;
 		$this->data['Vorgang']['kostenZielflug'] = $kostenZielflug;
 		$this->data['Vorgang']['kostenZeitflug'] = $kostenZeitflug;
+		$this->data['Vorgang']['mwstsatz'] = 1900;
+		$this->data['Vorgang']['mwstZielflug'] = 1900;
+		$this->data['Vorgang']['mwstZeitflug'] = 1900;
+		$this->data['Vorgang']['bruttoZielflug'] = 1900;
+		$this->data['Vorgang']['bruttoZeitflug'] = 1900;
 	}
 	
     /**

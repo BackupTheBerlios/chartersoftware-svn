@@ -12,6 +12,12 @@
     echo $rentform->disabledTextInput('Vorgang.reisezeit');
     echo $rentform->disabledTextInput('Vorgang.personalkosten');
     echo $rentform->disabledTextInput('Vorgang.kostenZielflug');
+    echo $rentform->disabledTextInput('Vorgang.kostenZeitflug');
+    echo $rentform->disabledTextInput('Vorgang.mwstsatz');
+    echo $rentform->disabledTextInput('Vorgang.mwstZielflug');
+    echo $rentform->disabledTextInput('Vorgang.mwstZeitflug');
+    echo $rentform->disabledTextInput('Vorgang.bruttoZielflug');
+    echo $rentform->disabledTextInput('Vorgang.bruttoZeitflug');
     echo $rentform->end('Berechnen');
 ?>
 
