@@ -45,7 +45,10 @@ class VorgaengeController extends AppController
 
 
     public function berechnen($entfernung=null, $landungen= null, $flugzeug=null, $begleiter=null){
+    	//Sammeln von Standarddaten (Liste von Flugzeugtypen und so)
 		$this->setDefaultData();
+		
+		//Parameter und $this->data (von Webrequesten) zusammenführen
 		if ($entfernung!=null && $flugzeug!= null && $begleiter != null && $landungen!=null)
 		{
 			//Noch keine Daten ausgewählt
@@ -60,7 +63,7 @@ class VorgaengeController extends AppController
 			$begleiter = $this->data['Vorgang']['AnzahlFlugbegleiter'];
 		}
 		
-		
+		//Eigentliche Berechnung, Ablage in lokalen Variablen
 		$flugzeugtyp = $this->data['Vorgang']['flugzeugtyp'];
 		$offiziere = $this->Kalkulationen->Piloten($flugzeugtyp);
 		$vmax = $this->Kalkulationen->vMaxFlugzeug($flugzeugtyp);
@@ -71,6 +74,13 @@ class VorgaengeController extends AppController
 		$personalkosten = $this->Kalkulationen->PersonalKosten($offiziere, $istBegleiter, $reisezeit);
 		$kostenZielflug = $this->Kalkulationen->KalkulationFlugkostenZielflug($flugzeugtyp, $entfernung, $landungen, $istBegleiter);
 		$kostenZeitflug = $this->Kalkulationen->KalkulationFlugkostenZeitflug($flugzeugtyp, $entfernung, $landungen, $istBegleiter);
+		$mwstSatz = $this->Kalkulationen->GetMwstSatz();
+		$mwstZielflug = $kostenZielflug * $mwstSatz / 10000;
+		$mwstZeitflug = $kostenZeitflug * $mwstSatz / 10000;
+		$bruttoZielflug = $mwstZielflug + $kostenZielflug;
+		$bruttoZeitflug = $mwstZeitflug + $kostenZeitflug;
+		
+		//Aufbereitung der lokalen Daten für Ausgabe in View
 		$this->data['Vorgang']['entfernung'] = $entfernung;
 		$this->data['Vorgang']['landungen'] = $landungen;
 		$this->data['Vorgang']['vmax'] = $vmax;
@@ -82,11 +92,11 @@ class VorgaengeController extends AppController
 		$this->data['Vorgang']['personalkosten'] = $personalkosten;
 		$this->data['Vorgang']['kostenZielflug'] = $kostenZielflug;
 		$this->data['Vorgang']['kostenZeitflug'] = $kostenZeitflug;
-		$this->data['Vorgang']['mwstsatz'] = 1900;
-		$this->data['Vorgang']['mwstZielflug'] = 1900;
-		$this->data['Vorgang']['mwstZeitflug'] = 1900;
-		$this->data['Vorgang']['bruttoZielflug'] = 1900;
-		$this->data['Vorgang']['bruttoZeitflug'] = 1900;
+		$this->data['Vorgang']['mwstsatz'] = $mwstSatz;
+		$this->data['Vorgang']['mwstZielflug'] = $mwstZielflug;
+		$this->data['Vorgang']['mwstZeitflug'] = $mwstZeitflug;
+		$this->data['Vorgang']['bruttoZielflug'] = $bruttoZielflug;
+		$this->data['Vorgang']['bruttoZeitflug'] = $bruttoZeitflug;
 	}
 	
     /**

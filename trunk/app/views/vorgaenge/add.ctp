@@ -16,6 +16,7 @@
 
 	//================================================
 	echo $rentform->begFieldset('Flugdaten');
+	echo $rentform->hidden('flugstrecke', $flugstrecke);
 	echo $rentform->select('zeitcharter', $zeitcharter);
 	echo $rentform->textInput('datepicker', 'Von Datum');
 	echo $rentform->textInput('datepicker2', 'Bis Datum');

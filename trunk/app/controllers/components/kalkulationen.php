@@ -7,6 +7,11 @@
  */
  
 class KalkulationenComponent extends Object {
+
+	public function GetMwstSatz(){
+		return 1900;		
+	}
+
 	
 	public function KalkulationFlugkostenZielflug($flugzeugtyp, $strecke, $anzahlLandungen, $begleiter){
 		return 123456;		

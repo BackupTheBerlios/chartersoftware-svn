@@ -264,24 +264,24 @@ VALUES
 #----------------------------------------------
 CREATE TABLE `vorgaenge` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `datum` date  NOT NULL,
-  `vorgangstyp_id` int(11) NOT NULL,
-  `adresse_id` int(11) NOT NULL,
-  `flugzeug_id` int(11) NOT NULL,
-  `zufriedenheitstyp_id` int(11) NOT NULL,
-  `strecke` varchar(200) NOT NULL,
-  `entfernung` int(11) NOT NULL,
-  `begleiter` int(11) NOT NULL,
-  `netto` DOUBLE NOT NULL,
-  `mwstSatz` int(11) NOT NULL,
-  `mwst` DOUBLE NOT NULL,
-  `brutto_soll` DOUBLE  NOT NULL,
-  `brutto_ist` DOUBLE NOT NULL,
+  `datum` date,
+  `vorgangstyp_id` int(11) ,
+  `adresse_id` int(11) ,
+  `flugzeug_id` int(11) ,
+  `zufriedenheitstyp_id` int(11) ,
+  `flugstrecke` varchar(200),
+  `flugentfernung` int(11),
+  `begleiter` int(11),
+  `netto` DOUBLE,
+  `mwstSatz` int(11),
+  `mwst` DOUBLE,
+  `brutto_soll` DOUBLE,
+  `brutto_ist` DOUBLE ,
   PRIMARY KEY (`id`),
   KEY `adresse_id` (`adresse_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 #
-INSERT INTO `vorgaenge` (`id`,`datum`,`vorgangstyp_id`,`adresse_id`,`flugzeug_id`,`zufriedenheitstyp_id`,`strecke`,`entfernung`,`begleiter`,`netto`,`mwstSatz`,`mwst`,`brutto_soll`,`brutto_ist`)
+INSERT INTO `vorgaenge` (`id`,`datum`,`vorgangstyp_id`,`adresse_id`,`flugzeug_id`,`zufriedenheitstyp_id`,`flugstrecke`,`flugentfernung`,`begleiter`,`netto`,`mwstSatz`,`mwst`,`brutto_soll`,`brutto_ist`)
 VALUES
 	(1,'1970-10-21',1,1,1,1,'1;2;3',1000,3,2990,1900,1234,56789,0),
 	(2,'2009-11-22',1,2,2,1,'1;2;3',1000,3,2990,1900,1234,56789,0),
