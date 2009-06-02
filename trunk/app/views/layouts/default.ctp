@@ -26,8 +26,9 @@
     $list = array(
         '<span>Workflows</span>',
         $html->link('Startseite','/',array('class'=>'nav1 showhelp','title'=>'Startseite')),
-        $html->link('Angebote','/vorgaenge',array('class'=>'nav1 showhelp','title'=>'Kundenangebot')),
-        $html->link('Verträge','/vorgaenge/vertraege',array('class'=>'nav1 showhelp','title'=>'Vertraege')),
+        $html->link('Angebote','/vorgaenge/vorgaenge/1',array('class'=>'nav1 showhelp','title'=>'Kundenangebot')),
+        $html->link('Verträge','/vorgaenge/vorgaenge/2',array('class'=>'nav1 showhelp','title'=>'Vertraege')),
+        $html->link('Rechnungen','/vorgaenge/vorgaenge/3',array('class'=>'nav1 showhelp','title'=>'Rechnungen')),
         $html->link('Kundenadressen','/adressen',array('class'=>'nav1 showhelp','title'=>'Kundenadressen')),
         $html->link('Statistik/Mahnwesen','/reports/select',array('class'=>'nav1 showhelp','title'=>'Statistik')),
         $html->link('Impressum','/pages/impressum',array('class'=>'nav1 showhelp','title'=>'Impressum'))
@@ -88,6 +89,7 @@ if (strlen($content_for_layout)>0 || strlen($cakeDebug)>0 ) {
 <div id="help_Rechnung" class="help"><span>Rechnung drucken und verschicken.</span></div>
 <div id="help_Kundenangebot" class="help"><span>Erstellen Sie ein neues Kundenangebot.</span></div>
 <div id="help_Vertraege" class="help"><span>Erstellen und Verwalten Sie Verträge.</span></div>
+<div id="help_Rechnungen" class="help"><span>Erstellen und Verwalten Sie Rechnungen.</span></div>
 <div id="help_Statistik" class="help"><span>Erstellen Sie Statistiken (z.B. Listen für Mahnungen)...</span></div>
 <div id="help_Statistikformate" class="help"><span>Erstellen Sie neue Formate für Statistiken</span></div>
 <div id="help_delzwischenstop" class="help"><span>Zwischenstop entfernen</span></div>

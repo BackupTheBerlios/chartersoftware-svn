@@ -157,32 +157,40 @@ class VorgaengeController extends AppController
         }
 	}
 
-	public function vertraege(){
-		$this->setDefaultData();
-		$this->data=$this->Vorgang->find('all');
-	}
-
-	public function vertragadd(){
-		if ($this->data == null){
-			//Seite wird neu aufgerufen
-			
+	public function vorgangwandeln($vorgangstyp=null){
+		if ($this->data == null && $vorgangstyp == null){
+			$this->redirect('/');
+			exit;
+		}
+		
+		if ($vorgangstyp != null && $this->data == null){
+			$this->setDefaultData();
+			$this->data=$this->Vorgang->find('all');
+			$this->set('vorgangstyp',$vorgangstyp);
 		} else {
-			//var_dump($this->data['Vorgang']['Angebot']);
-			$this->Vorgang->id = $this->data['Vorgang']['Angebot'];
+			$this->set('vorgangstyp',$vorgangstyp);
+			//var_dump($this->data);
+			$this->Vorgang->id = $this->data['Vorgang']['RECORD'];
 			$record = $this->Vorgang->read();
-			$record['Vorgang']['vorgangstyp_id']=2;//Vertrag;
+			//var_dump($record);
+			$record['Vorgang']['vorgangstyp_id']=$vorgangstyp;//Rechnung;
+			//var_dump($record);
 			if (!$this->Vorgang->save($record)) {
 				//echo "nicht gespeichert";
                 $this->Session->setFlash('Fehler beim Speichern');
 			} else {
 				//echo "gespeichert";
-				$this->redirect(array('action' => 'vertraege'));
+			//echo '<'.$vorgangstyp .'>';
+				$this->redirect(array('action' => 'vorgaenge/'.$vorgangstyp));
 			}
-			
 		}
+	}
+
+	public function vorgaenge($vorgangstyp){
 		$this->setDefaultData();
 		$this->data=$this->Vorgang->find('all');
+		$this->set('vorgangstyp',$vorgangstyp);
 	}
-	
+
 }
 ?>
