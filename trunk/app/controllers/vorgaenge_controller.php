@@ -18,6 +18,7 @@ class VorgaengeController extends AppController
 
 
 
+
 	private function setDefaultData(){
 		$this->Flugplatz->order = 'Flugplatz.name ASC';
 		$this->Adresse->order = 'Adresse.firma ASC';
@@ -146,5 +147,17 @@ class VorgaengeController extends AppController
 			$this_data['Vorgang']['vorgangstyp_id']=1;
         }		
 	}
+	
+	public function angebot($id = null){
+		header('content-type: text/plain');
+		$this->setDefaultData();
+		var_dump($this->data);
+		if ($id != null)
+        {
+        	$currentObject->id = $id;
+        	$this->data=$this->Vorgang->read();
+        }
+	}
+	
 }
 ?>
