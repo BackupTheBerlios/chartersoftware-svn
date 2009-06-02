@@ -34,7 +34,7 @@ class AppController extends Controller {
 	public function add()
 	{
 		
-		$this->pageTitle = 'Angebot erstellen';
+//		$this->pageTitle = 'Angebot erstellen';
 		
 		if (!empty($this->data))
 		{

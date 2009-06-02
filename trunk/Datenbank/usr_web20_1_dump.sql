@@ -264,14 +264,14 @@ VALUES
 #----------------------------------------------
 CREATE TABLE `vorgaenge` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `datum` date,
+  `datum` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   `vorgangstyp_id` int(11) ,
   `adresse_id` int(11) ,
-  `flugzeug_id` int(11) ,
+  `flugzeugtyp_id` int(11) NOT NULL,
   `zufriedenheitstyp_id` int(11) ,
   `flugstrecke` varchar(200),
   `flugentfernung` int(11),
-  `begleiter` int(11),
+  `begleiter` int(11) DEFAULT 0,
   `netto` DOUBLE,
   `mwstSatz` int(11),
   `mwst` DOUBLE,
@@ -281,7 +281,7 @@ CREATE TABLE `vorgaenge` (
   KEY `adresse_id` (`adresse_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 #
-INSERT INTO `vorgaenge` (`id`,`datum`,`vorgangstyp_id`,`adresse_id`,`flugzeug_id`,`zufriedenheitstyp_id`,`flugstrecke`,`flugentfernung`,`begleiter`,`netto`,`mwstSatz`,`mwst`,`brutto_soll`,`brutto_ist`)
+INSERT INTO `vorgaenge` (`id`,`datum`,`vorgangstyp_id`,`adresse_id`,`flugzeugtyp_id`,`zufriedenheitstyp_id`,`flugstrecke`,`flugentfernung`,`begleiter`,`netto`,`mwstSatz`,`mwst`,`brutto_soll`,`brutto_ist`)
 VALUES
 	(1,'1970-10-21',1,1,1,1,'1;2;3',1000,3,2990,1900,1234,56789,0),
 	(2,'2009-11-22',1,2,2,1,'1;2;3',1000,3,2990,1900,1234,56789,0),

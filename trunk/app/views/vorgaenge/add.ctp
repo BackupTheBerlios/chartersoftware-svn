@@ -2,7 +2,7 @@
 
 	//HTML-Formular öffnen
 	echo $rentform->create('Vorgang', 'add');
-	
+
 	//================================================
 	echo $rentform->begFieldset('Kundendaten');
 	echo $rentform->select('Vorgang.adresse_id',$adressenliste, 'Kunde<sup title="Pflichtfeld.">*</sup>');
@@ -16,7 +16,9 @@
 
 	//================================================
 	echo $rentform->begFieldset('Flugdaten');
-	echo $rentform->hidden('flugstrecke', $flugstrecke);
+	//echo $rentform->hidden('flugstrecke', '$flugstrecke');
+	echo $rentform->hidden('Vorgang.flugstrecke');
+	
 	echo $rentform->select('zeitcharter', $zeitcharter);
 	echo $rentform->textInput('datepicker', 'Von Datum');
 	echo $rentform->textInput('datepicker2', 'Bis Datum');
@@ -28,8 +30,8 @@
 	echo '</div>' . "\n";
 	echo $rentform->textInput('AnzahlPersonen', 'Anzahl Personen');
 	
-	echo $rentform->select('flugzeugtyp', $flugzeugtypenListeKomplett);
-	echo $rentform->textInput('AnzahlFlugbegleiter', 'Anzahl Flugbegleiter');
+	echo $rentform->select('flugzeugtyp_id', $flugzeugtypenListeKomplett);
+	echo $rentform->textInput('AnzahlFlugbegleiter', 'Weitere Flugbegleiter');
 	echo $rentform->endFieldset();
 
 

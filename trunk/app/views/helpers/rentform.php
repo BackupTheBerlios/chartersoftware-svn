@@ -22,8 +22,11 @@ class RentformHelper extends Helper {
 		return "</fieldset>\n";
 	}	
 
-	public function hidden($name){
-		return $this->Form->input($name,array('type' => 'hidden'));
+	public function hidden($name, $value=null){
+		if ($value == null)
+			return $this->Form->input($name,array('type' => 'hidden'));
+		else
+			return $this->Form->input($name,array('type' => 'hidden', 'value'=>$value));
 	}
 
 	public function button($name, $option){

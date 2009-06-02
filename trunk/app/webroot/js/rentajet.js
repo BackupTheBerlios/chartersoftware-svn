@@ -76,9 +76,9 @@ $(document).ready(function () {
 			updateFlugzeuge();
 		});
 		
-		$("#VorgangFlugzeugtyp").change(function () {
+		$("#VorgangFlugzeugtypId").change(function () {
 			updateFlugzeuge();
-			$("#help_selectflugzeugtyp").fadeOut("fast");
+			$("#help_selectflugzeugtyp_id").fadeOut("fast");
 		});
 		
 		function deleteZwischenstop(id, all) {	
@@ -243,13 +243,13 @@ $(document).ready(function () {
 		}
 		
 		function updateFlugzeuge() {
-			$("#VorgangFlugzeugtyp option[value!=0]").each(function () {
+			$("#VorgangFlugzeugtypId option[value!=0]").each(function () {
 				$(this).attr("disabled","");
 			});
 			
 			if($("#VorgangAnzahlPersonen").val() != '') {
 				var personen = parseInt($("#VorgangAnzahlPersonen").val());
-				$("#VorgangFlugzeugtyp option[value!='']").each(function () {
+				$("#VorgangFlugzeugtypId option[value!='']").each(function () {
 					$(this).text().search(/.*\(Reichweite (.*), Begleitung (.*), Passagiere (.*)\)/g);
 					
 					var reichweite = parseInt(RegExp.$1);
@@ -257,13 +257,13 @@ $(document).ready(function () {
 					var plaetze = parseInt(RegExp.$3);
 
 					// Wenn ein bereits gewählter Flugzeugtype rausfällt
-					if (personen > (plaetze-requiredAttendands) && ($(this).val() == $("#VorgangFlugzeugtyp option:selected").val())) {
+					if (personen > (plaetze-requiredAttendands) && ($(this).val() == $("#VorgangFlugzeugtypId option:selected").val())) {
 						$(this).attr("disabled","disabled");
-						$('#VorgangFlugzeugtyp').find('option:first').attr('selected', 'selected').parent('select');	
+						$('#VorgangFlugzeugtypId').find('option:first').attr('selected', 'selected').parent('select');	
 						$("#VorgangAnzahlFlugbegleiter").val('');
-						$("#help_selectflugzeugtyp").fadeIn("fast");
+						$("#help_selectflugzeugtyp_id").fadeIn("fast");
 					}
-					if (personen > (plaetze-requiredAttendands) && ($(this).val() != $("#VorgangFlugzeugtyp option:selected").val())) {
+					if (personen > (plaetze-requiredAttendands) && ($(this).val() != $("#VorgangFlugzeugtypId option:selected").val())) {
 						$(this).attr("disabled","disabled");
 					}
 				
@@ -271,8 +271,8 @@ $(document).ready(function () {
 			
 			}
 			
-			if ($("#VorgangFlugzeugtyp").val() != 0) {
-				$("#VorgangFlugzeugtyp option:selected").text().search(/.*\(Reichweite (.*), Begleitung (.*), Passagiere (.*)\)/g);
+			if ($("#VorgangFlugzeugtypId").val() != 0) {
+				$("#VorgangFlugzeugtypId option:selected").text().search(/.*\(Reichweite (.*), Begleitung (.*), Passagiere (.*)\)/g);
 				requiredAttendands = parseInt(RegExp.$2);
 				$("#VorgangAnzahlFlugbegleiter").val(requiredAttendands);
 			
@@ -283,17 +283,17 @@ $(document).ready(function () {
 				var maxdistance = 0;
 				$("span[id^='distance_']").each(function() {
 					distance = parseInt($(this).text());
-					$("#VorgangFlugzeugtyp option[value!=0]").each(function () {
+					$("#VorgangFlugzeugtypId option[value!=0]").each(function () {
 						$(this).text().search(/.*\(Reichweite (.*), Begleitung (.*), Passagiere (.*)\)/g);
 						maxdistance = parseInt(RegExp.$1);
 						if (distance > maxdistance) {
-							if (distance > maxdistance && ($(this).val() == $("#VorgangFlugzeugtyp option:selected").val())) {
+							if (distance > maxdistance && ($(this).val() == $("#VorgangFlugzeugtypId option:selected").val())) {
 								$(this).attr("disabled","disabled");
-								$('#VorgangFlugzeugtyp').find('option:first').attr('selected', 'selected').parent('select');	
+								$('#VorgangFlugzeugtypId').find('option:first').attr('selected', 'selected').parent('select');	
 								$("#VorgangAnzahlFlugbegleiter").val('');
-								$("#help_selectflugzeugtyp").fadeIn("fast");
+								$("#help_selectflugzeugtyp_id").fadeIn("fast");
 							}
-							if (distance > maxdistance && ($(this).val() != $("#VorgangFlugzeugtyp option:selected").val())) {
+							if (distance > maxdistance && ($(this).val() != $("#VorgangFlugzeugtypId option:selected").val())) {
 								$(this).attr("disabled","disabled");
 							}
 						}
