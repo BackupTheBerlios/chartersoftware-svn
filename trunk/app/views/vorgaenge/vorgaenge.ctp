@@ -15,7 +15,7 @@
 				break;
 	}
     echo $html->tag('table', Null, array('class' => 'tbl1'));
-    echo $html->tableHeaders(array('Nr', 'Firma', 'Datum', 'Betrag/Soll', 'Betrag/Ist', 'Drucken','Zahlung'));
+    echo $html->tableHeaders(array('Nr', 'Firma', 'Datum',  'Drucken','Zahlung'));
 
 	foreach ($this->data as $zeile):
 		if ($zeile['Vorgang']['vorgangstyp_id'] == $vorgangstyp){ //Nur Rechnungen oder verträge oder angebote
@@ -30,8 +30,8 @@
 				$pre . $zeile['Vorgang']['id'],
 				$adresse,
 				$zeile['Vorgang']['datum'],
-				$zeile['Vorgang']['brutto_soll'],
-				$zeile['Vorgang']['brutto_ist'],
+				//$zeile['Vorgang']['brutto_soll'],
+				//$zeile['Vorgang']['brutto_ist'],
 				$html->link('Drucken', "/vorgaenge/drucken/{$zeile['Vorgang']['id']}"),
 				$html->link('Zahlung', "/vorgaenge/bezahlen/{$zeile['Vorgang']['id']}"),
     		));

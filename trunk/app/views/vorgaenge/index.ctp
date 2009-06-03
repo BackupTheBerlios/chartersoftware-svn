@@ -1,7 +1,7 @@
 <?php
 	echo $html->link('Neues Angebot anlegen','/vorgaenge/add/', array('class'=>'button1', 'style'=>'width:150px;'));
     echo $html->tag('table', Null, array('class' => 'tbl1'));
-    echo $html->tableHeaders(array('Nr', 'Firma', 'Datum', 'Betrag', 'Drucken','Ändern','Löschen'));
+    echo $html->tableHeaders(array('Nr', 'Firma', 'Datum', 'Drucken','Löschen'));
 
 	foreach ($this->data as $zeile):
 		if ($zeile['Vorgang']['vorgangstyp_id'] == 1){ //Nur Angebote
@@ -16,9 +16,9 @@
 				'ANG-'. $zeile['Vorgang']['id'],
 				$adresse,
 				$zeile['Vorgang']['datum'],
-				$zeile['Vorgang']['brutto_soll'],
+				//$zeile['Vorgang']['brutto_soll'],
 				$html->link('Drucken', "/vorgaenge/drucken/{$zeile['Vorgang']['id']}"),
-				$html->link('Ändern', "/vorgaenge/edit/1/{$zeile['Vorgang']['id']}"),
+				//$html->link('Ändern', "/vorgaenge/edit/1/{$zeile['Vorgang']['id']}"),
 				$html->link('Löschen', "/vorgaenge/delete/{$zeile['Vorgang']['id']}", null, 'Sind Sie sich sicher?' ),
     		));
 		}

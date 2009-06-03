@@ -280,3 +280,11 @@ CREATE TABLE `vorgaenge` (
   KEY `adresse_id` (`adresse_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 #
+INSERT INTO `vorgaenge` (`datum`,`zeitcharter`,`vonDatum`,`bisDatum`,`vorgangstyp_id`,`adresse_id`,`AnzahlPersonen`,`AnzahlFlugbegleiter`,`flugzeugtyp_id`,`zufriedenheitstyp_id`,`flugstrecke`,`brutto_ist`)
+VALUES
+('2009-06-03',1,'2009-06-01','2009-06-03',1,2,2,1,3,NULL,'7;4',0),
+('2009-06-03',0,'2009-06-05','2009-06-02',1,1,2,1,4,NULL,'8;5;1',0),
+('2009-06-03',1,'2009-06-01','2009-06-03',2,2,2,1,3,NULL,'7;4',0),
+('2009-06-03',0,'2009-06-05','2009-06-02',2,1,2,1,4,NULL,'8;5;1',0),
+('2009-06-03',1,'2009-06-01','2009-06-03',3,2,2,1,3,NULL,'7;4',0),
+('2009-06-03',0,'2009-06-05','2009-06-02',3,1,2,1,4,NULL,'8;5;1',0);
