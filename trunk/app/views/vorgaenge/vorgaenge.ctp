@@ -1,7 +1,6 @@
 <?php
 	$pre = "";
 	$text = '';
-	$link = $html->link('Ändern', "/vorgaenge/edit/{$zeile['Vorgang']['id']}");
 	switch($vorgangstyp){
 		case 1: echo $html->link('Neues Angebot anlegen','/vorgaenge/add/', array('class'=>'button1', 'style'=>'width:150px;'));
 				$pre = 'ANG-'; 
@@ -16,7 +15,7 @@
 				break;
 	}
     echo $html->tag('table', Null, array('class' => 'tbl1'));
-    echo $html->tableHeaders(array('Nr', 'Firma', 'Datum', 'Betrag', 'Drucken','Ändern','Löschen'));
+    echo $html->tableHeaders(array('Nr', 'Firma', 'Datum', 'Betrag/Soll', 'Betrag/Ist', 'Drucken','Zahlung'));
 
 	foreach ($this->data as $zeile):
 		if ($zeile['Vorgang']['vorgangstyp_id'] == $vorgangstyp){ //Nur Rechnungen oder verträge oder angebote
@@ -32,9 +31,9 @@
 				$adresse,
 				$zeile['Vorgang']['datum'],
 				$zeile['Vorgang']['brutto_soll'],
+				$zeile['Vorgang']['brutto_ist'],
 				$html->link('Drucken', "/vorgaenge/drucken/{$zeile['Vorgang']['id']}"),
-				$html->link('Ändern', "/vorgaenge/edit/".$vorgangstyp."/{$zeile['Vorgang']['id']}"),
-				$html->link('Löschen', "/vorgaenge/delete/{$zeile['Vorgang']['id']}", null, 'Sind Sie sich sicher?' ),
+				$html->link('Zahlung', "/vorgaenge/bezahlen/{$zeile['Vorgang']['id']}"),
     		));
 		}
     endforeach;

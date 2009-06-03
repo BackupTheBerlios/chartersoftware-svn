@@ -209,5 +209,24 @@ class VorgaengeController extends AppController
 		$this->set('vorgangstyp',$vorgangstyp);
 	}
 
+
+	public function bezahlen($id){
+		if ($id == null) $this->Session->setFlash('Fehlerhafter Aufruf der Funktion','index');
+		if (!empty($this->data))
+		{
+        	if (!$this->Vorgang->save($this->data))
+                $this->Session->setFlash('Fehler beim Speichern');
+            else
+	       		$this->redirect(array('action' => 'vorgaenge/3'));
+		}
+      	else
+      	{
+      		$this->Vorgang->id = $id;
+        	$this->data = $this->Vorgang->Read();
+			$this->setDefaultData();
+      	}
+		
+	}
+
 }
 ?>
