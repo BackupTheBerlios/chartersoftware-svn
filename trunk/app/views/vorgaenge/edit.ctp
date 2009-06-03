@@ -7,10 +7,10 @@
 	echo $rentform->begFieldset('Kundendaten');
 	echo $rentform->hidden('Vorgang.id');
 	echo $rentform->select('Vorgang.adresse_id',$adressenliste, 'Kunde<sup title="Pflichtfeld.">*</sup>');
-	echo $rentform->disabledTextInput('abteilung');
+	echo $rentform->disabledTextInput('Adresse.abteilung');
 	echo $rentform->disabledTextInput('ansprechpartner');
-	echo $rentform->disabledTextInput('strasse');
-	echo $rentform->disabledTextInput('plz','PLZ');
+	echo $rentform->disabledTextInput('Adresse.strasse');
+	echo $rentform->disabledTextInput('Adresse.plz','PLZ');
 	echo $rentform->disabledTextInput('ort');
 	echo $rentform->endFieldset();
 	

@@ -120,6 +120,7 @@ class VorgaengeController extends AppController
 	/**Anzeigen einer Liste*/
     public function edit($vorgangstyp, $id=null)
 	{	
+		$this->pageTitle = 'Angebot erstellen';
 		$this->set('vorgangstyp',$vorgangstyp);
 
 		$currentObject =& ClassRegistry::getObject($this->modelClass);
@@ -128,7 +129,7 @@ class VorgaengeController extends AppController
         	if (!$currentObject->save($this->data))
                 $this->Session->setFlash('Fehler beim Speichern');
             else
-	       		$this->redirect(array('action' => 'vorgaenge/'.$vorgangstyp));
+	       		$this->redirect(array('action' => 'index'));
 		}
       	else
       	{
