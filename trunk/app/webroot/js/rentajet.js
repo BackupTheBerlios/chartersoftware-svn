@@ -38,12 +38,12 @@ $(document).ready(function () {
 	
 		//Funktioniert
 		$("#VorgangZeitcharter").change(function () {
-			if ($(this).val() == 'ja') {
+			if ($(this).val() == '0') {
 				$("#button_add_zwischenstop").slideUp("normal");
 				$("#DivZwischenstop").slideUp("normal");
 				deleteZwischenstop('',1);
 			}
-			if ($(this).val() == 'nein') {
+			if ($(this).val() == '1') {
 				$("#button_add_zwischenstop").slideDown("normal");
 				$("#DivZwischenstop").slideDown("normal");
 			}

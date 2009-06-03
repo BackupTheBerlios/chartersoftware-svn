@@ -40,9 +40,11 @@
 	echo $rentform->begFieldset('Sonderwünsche');
 	echo $rentform->textInput('Sonderwunsch');
 	echo $rentform->textInput('Aufpreis');
-	echo $rentform->button('Hinzufügen', array('id'=>'button_sonderwunsch', 'name'=>"button_sonderwunsch", 'style'=>"float:right"));	
+	//echo $rentform->button('Hinzufügen', array('id'=>'button_sonderwunsch', 'name'=>"button_sonderwunsch", 'style'=>"float:right"));	
+	echo $rentform->endFieldset();
 		
+	//================================================
 	//HTML-Formular schließen
-	echo $rentform->end('Speichern');
+	echo $rentform->end('Angebot Speichern');
 	
 ?>

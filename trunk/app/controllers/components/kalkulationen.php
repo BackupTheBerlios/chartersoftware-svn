@@ -8,34 +8,171 @@
  
 class KalkulationenComponent extends Object {
 
-	public function GetMwstSatz(){
-		return 1900;		
+	private function getData($id, $modell){
+		$Modell =& ClassRegistry::getObject($modell);
+    	$Modell->id=$id;
+    	return $Modell->Read();
+	}
+
+	private function getFlugplatz($id){
+		return $this->getData($id, 'Flugplatz');
+	}
+
+	private function getFlugzeugtyp($id){
+		return $this->getData($id, 'Flugzeugtyp');
+	}
+
+	private function getAdresse($id){
+		return $this->getData($id, 'Adresse');
+	}
+
+	private function GetMwstSatz($id){
+		return 1900;
 	}
 
 	
-	public function KalkulationFlugkostenZielflug($flugzeugtyp, $strecke, $anzahlLandungen, $begleiter){
-		return 123456;		
+	private function floatToTime($time){
+		$time = abs($time) * 60;
+		if ($time <= 60) {
+			return  sprintf('%02d:%02d:00',0, $time);
+		}
+
+		$time=intval($time);
+		$h = intval($time / 60);
+		$m = $time - ($h*60);
+		
+		return sprintf('%02d:%02d:00',$h, $m);
 	}
 
-	public function KalkulationFlugkostenZeitflug($flugzeugtyp, $strecke, $anzahlLandungen, $begleiter){
-		return 654321;		
+	private function calcStrecke($strecke, $flugzeugtyp){
+		$result = array();
+		$teile = split('[;]', $strecke);
+		$result['landungen']=count($teile)-1;
+		
+		//Start- und Landeflugplatz
+		if (count($teile)>0){
+			$result['startflugplatz']=$this->getFlugplatz($teile[0]);
+			$result['zielflugplatz']=$this->getFlugplatz($teile[count($teile)-1]);
+		}
+		$teilstrecken=array();
+		$gesamtstrecke = 0;
+		$gesamtflugzeit = 0;
+		$gesamtreisezeit = 0;
+		for($i = 0; $i<count($teile)-1;$i++){
+			$teil = array();
+			$teil['entfernung']= $this->CalcEntfernung($teile[$i],$teile[$i+1]);
+			$teil['flugzeit']= $this->calcFlugzeit($teil['entfernung'], $this->vMaxFlugzeug($flugzeugtyp) );
+			$teil['reisezeit']= $this->calcReisezeit($teil['entfernung'],$this->vMaxFlugzeug($flugzeugtyp) ,1);
+			$teil['flugzeitStr']=$this->floatToTime($teil['flugzeit']);
+			$teil['reisezeitStr']=$this->floatToTime($teil['reisezeit']);
+			$teil['von']= $this->getFlugplatz($teile[$i]);
+			$teil['nach']= $this->getFlugplatz($teile[$i+1]);
+			$gesamtstrecke+=$teil['entfernung'];
+			$gesamtreisezeit+=$teil['reisezeit'];
+			$gesamtflugzeit+=$teil['flugzeit'];
+			$teilstrecken[]=$teil;
+		}
+		$result['gesamtstrecke']=$gesamtstrecke;
+		$result['gesamtreisezeit']=$gesamtreisezeit;
+		$result['gesamtflugzeit']=$gesamtflugzeit;
+		$result['gesamtreisezeitStr']=$this->floatToTime($gesamtreisezeit);
+		$result['gesamtflugzeitStr']=$this->floatToTime($gesamtflugzeit);
+		$result['flugstrecke']=$teilstrecken;
+		
+		return $result;
+	}
+
+
+	public function KalkuliereVorgang($vorgang){
+		$result = $vorgang;
+		$result['Adresse']=$this->getAdresse($vorgang['adresse_id']);
+		$result['Flugstrecke']=$this->calcStrecke($vorgang['flugstrecke'], $vorgang['flugzeugtyp_id']);
+		$result['Flugzeug']=$this->getFlugzeugtyp($vorgang['flugzeugtyp_id']);
+		$result['KalkulationZeitflug']=$this->KalkulationFlugkostenZeitflug($result);
+		$result['KalkulationZielflug']=$this->KalkulationFlugkostenZielflug($result);
+		return $result;
+	} 
+
+
+	
+	public function KalkulationFlugkostenZielflug($vorgang){
+		$result = array();
+		$flugzeugtyp =$vorgang['flugzeugtyp_id']; 
+		
+		//Personalkosten
+		$begleiter = $this->istFlugbegleiter($flugzeugtyp, $vorgang['AnzahlFlugbegleiter']);
+		$crew = $vorgang['Flugzeug']['Flugzeugtyp']['crewPersonal'];
+		$reisezeit = $vorgang['Flugstrecke']['gesamtreisezeit'];
+		$personalkosten = $this->PersonalKosten($crew, $begleiter, $reisezeit);
+		
+		//Flugzeugkosten
+		$flugzeugkostenStunde = $this->FlugzeugkostenStunde($flugzeugtyp);
+		$flugzeugkostenZeit = $this->FlugzeugkostenZeit($flugzeugtyp, $reisezeit);
+		
+		//Gesamtkosten
+		$gesamtnetto = $flugzeugkostenZeit + $personalkosten;
+		$mwstsatz = 1900 ;
+		$mwst = round($gesamtnetto * $mwstsatz/10000,2);
+		$gesamtbrutto = $gesamtnetto + $mwst;
+
+		
+		//Ergebnis zusammen bauen
+		$result['personalkosten']=$personalkosten;
+		$result['flugzeugkosten']=$flugzeugkostenZeit;
+		$result['gesamtnetto']=$gesamtnetto;
+		$result['mwstsatz']=$mwstsatz;
+		$result['mwst']=$mwst;
+		$result['gesamtbrutto']=$gesamtbrutto;
+		return $result;		
+	}
+
+	public function KalkulationFlugkostenZeitflug($vorgang){
+		$result = array();
+		$flugzeugtyp =$vorgang['flugzeugtyp_id']; 
+		
+		//Personalkosten
+		$begleiter = $this->istFlugbegleiter($flugzeugtyp, $vorgang['AnzahlFlugbegleiter']);
+		$crew = $vorgang['Flugzeug']['Flugzeugtyp']['crewPersonal'];
+		$reisezeit = 1;
+		$personalkosten = $this->PersonalKosten($crew, $begleiter, $reisezeit);
+		
+		//Flugzeugkosten
+		$flugzeugkostenStunde = $this->FlugzeugkostenStunde($flugzeugtyp);
+		$flugzeugkostenZeit = $this->FlugzeugkostenZeit($flugzeugtyp, $reisezeit);
+		
+		//Gesamtkosten
+		$gesamtnetto = $flugzeugkostenZeit + $personalkosten;
+		$mwstsatz = 1900 ;
+		$mwst = round($gesamtnetto * $mwstsatz/10000,2);
+		$gesamtbrutto = $gesamtnetto + $mwst;
+
+		
+		//Ergebnis zusammen bauen
+		$result['personalkosten']=$personalkosten;
+		$result['flugzeugkosten']=$flugzeugkostenZeit;
+		$result['gesamtnetto']=$gesamtnetto;
+		$result['mwstsatz']=$mwstsatz;
+		$result['mwst']=$mwst;
+		$result['gesamtbrutto']=$gesamtbrutto;
+		return $result;		
 	}
 	
 	public function vMaxFlugzeug($flugzeugtyp){
-		$flugzeugTypModell =& ClassRegistry::getObject('Flugzeugtyp');
-		$flugzeugTypModell->id = $flugzeugtyp;
-		$daten = $flugzeugTypModell->Read();
+		$daten = $this->getFlugzeugtyp($flugzeugtyp);
 		return $daten['Flugzeugtyp']['vmax'];	
 	}
 	
-	public function Flugzeit($entfernung, $geschwindigkeit){
+	
+	public function CalcReisezeit($entfernung, $geschwindigkeit, $landungen){
+		return $entfernung / $geschwindigkeit + $landungen *0.75;
+	}
+	
+	public function CalcFlugzeit($entfernung, $geschwindigkeit){
 		return $entfernung / $geschwindigkeit;
 	}
 
 	public function minFlugbegleiter($flugzeugtyp){
-		$flugzeugTypModell =& ClassRegistry::getObject('Flugzeugtyp');
-		$flugzeugTypModell->id = $flugzeugtyp;
-		$daten = $flugzeugTypModell->Read();
+		$daten = $this->getFlugzeugtyp($flugzeugtyp);
 		return $daten['Flugzeugtyp']['cabinPersonal'];	
 	}
 
@@ -47,10 +184,22 @@ class KalkulationenComponent extends Object {
 		return $min;
 	}
 
+	public function FlugzeugkostenStunde($flugzeugtyp){
+		$result = 0;
+		$daten = $this->getFlugzeugtyp($flugzeugtyp);
+		$grundkosten = $daten['Flugzeugtyp']['jahreskosten']/2000;
+		$stundenkosten = $daten['Flugzeugtyp']['stundenkosten'];
+		return round(($grundkosten + $stundenkosten)*1.2,2);
+	}
+	
+	public function FlugzeugkostenZeit($flugzeugtyp, $reisezeit){
+		return round($this->FlugzeugkostenStunde($flugzeugtyp)*$reisezeit, 2);
+	}
+
 	public function PersonalKosten($crew, $begleitung, $flugdauer){
 		$dauer = round($flugdauer);
 		if ($dauer < $flugdauer ) $dauer += +1;
-		return 1.2 * (43000 + ($crew - 1)*30000 + $begleitung*23000)/2000*($dauer);
+		return round(1.2 * (43000 + ($crew - 1)*30000 + $begleitung*23000)/2000*($dauer),2);
 	}
 
 	public function Piloten($flugzeugtyp){
@@ -60,22 +209,7 @@ class KalkulationenComponent extends Object {
 		return $daten['Flugzeugtyp']['crewPersonal'];	
 	}
 
-	public function Reisezeit($entfernung, $geschwindigkeit, $landungen){
-		return $entfernung / $geschwindigkeit + $landungen *0.75;
-	}
 	
-	public function PreisKalkulation($flugzeugtyp)
-	{
-		$zwischenstopps = 0;
-		$entfernung = 0;
-		$flugzeugjahreskosten = 0;
-		$flugzeugstundenkosten = 0;
-		$flugzeugTypModell =& ClassRegistry::getObject('Flugzeugtyp');
-		$flugzeugTypModell->id = $flugzeugtyp;
-		var_dump($flugzeugTypModell->Read());
-		
-		
-	}
 	
 	    /**
      * 
@@ -118,6 +252,24 @@ class KalkulationenComponent extends Object {
    			}
     	endforeach;
     	return array($lat*pi()/180, $lng*pi()/180);
+    }
+
+    /**
+     * start: ID des StartFlugplatzes
+     * ziel: ID des Zielflugplatzes
+     */
+    public function CalcEntfernung($start, $ziel)
+    {
+		$Modell =& ClassRegistry::getObject('Flugplatz');
+    	$Modell->id=$start;
+    	$startFlugplatz = $Modell->field('geoPosition');
+    	$bmStart = $this->GeografischeGradzuBogenmass($startFlugplatz);
+    	
+    	$Modell->id=$ziel;
+    	$zielFlugplatz = $Modell->field('geoPosition');
+    	$bmZiel = $this->GeografischeGradzuBogenmass($zielFlugplatz);
+    	
+    	return $this->CalcKugelDistanz($bmZiel,$bmStart);
     }
 
 

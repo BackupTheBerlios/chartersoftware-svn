@@ -266,32 +266,17 @@ CREATE TABLE `vorgaenge` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `datum` DATE,
   `zeitcharter` int(1) NOT NULL,
-  `vonDatum` DATE,
-  `bisDatum` DATE,
-  `vorgangstyp_id` int(11) ,
-  `adresse_id` int(11) ,
-  `AnzahlPersonen` int(11) ,
-  `AnzahlFlugbegleiter` int(11) DEFAULT 0,
+  `vonDatum` DATE NOT NULL,
+  `bisDatum` DATE NOT NULL,
+  `vorgangstyp_id` int(11) NOT NULL,
+  `adresse_id` int(11) NOT NULL,
+  `AnzahlPersonen` int(11) NOT NULL,
+  `AnzahlFlugbegleiter` int(11) NOT NULL DEFAULT 0,
   `flugzeugtyp_id` int(11) NOT NULL,
-  `zufriedenheitstyp_id` int(11) ,
-  `flugstrecke` varchar(200),
-  `flugentfernung` int(11),
-  `netto` DOUBLE,
-  `mwstSatz` int(11),
-  `mwst` DOUBLE,
-  `brutto_soll` DOUBLE,
-  `brutto_ist` DOUBLE ,
+  `zufriedenheitstyp_id` int(11) DEFAULT NULL,
+  `flugstrecke` varchar(200) NOT NULL,
+  `brutto_ist` DOUBLE NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `adresse_id` (`adresse_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
-#
-INSERT INTO `vorgaenge` (`datum`,`zeitcharter`,`vonDatum`,`bisDatum`,`vorgangstyp_id`,`adresse_id`,`AnzahlPersonen`,`AnzahlFlugbegleiter`,`flugzeugtyp_id`,`zufriedenheitstyp_id`,`flugstrecke`,`flugentfernung`,`netto`,`mwstSatz`,`mwst`,`brutto_soll`,`brutto_ist`)
-VALUES
-	('2009-06-02',0,'2009-06-02','2009-06-04',1,2,1,3,6,NULL,'1;2;3',NULL,NULL,NULL,NULL,NULL,NULL),
-('2009-06-02',0,'2009-06-02','2009-06-04',1,2,1,3,6,NULL,'1;2;3',NULL,NULL,NULL,NULL,NULL,NULL),
-('2009-06-02',0,'2009-06-02','2009-06-04',1,2,1,3,6,NULL,'1;2;3',NULL,NULL,NULL,NULL,NULL,NULL),
-('2009-06-02',0,'2009-06-02','2009-06-04',1,2,1,3,6,NULL,'1;2;3',NULL,NULL,NULL,NULL,NULL,NULL),
-('2009-06-02',0,'2009-06-02','2009-06-04',1,2,1,3,6,NULL,'1;2;3',NULL,NULL,NULL,NULL,NULL,NULL),
-('2009-06-02',0,'2009-06-02','2009-06-04',1,2,1,3,6,NULL,'1;2;3',NULL,NULL,NULL,NULL,NULL,NULL),
-('2009-06-02',0,'2009-06-02','2009-06-04',1,2,1,3,6,NULL,'1;2;3',NULL,NULL,NULL,NULL,NULL,NULL);
 #

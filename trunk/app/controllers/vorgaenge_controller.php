@@ -16,7 +16,6 @@ class VorgaengeController extends AppController
 {
     public $uses = array('Vorgang','Adresse','Flugplatz','Flugzeugtyp');
 
-
 	private function setDefaultData(){
 		$this->Flugplatz->order = 'Flugplatz.name ASC';
 		$this->Adresse->order = 'Adresse.firma ASC';
@@ -38,9 +37,21 @@ class VorgaengeController extends AppController
 		$this->set('flugzeugtypenListeKomplett', $flugzeugtypenListeKomplett );
 		$this->set('flugzeugtypenliste',$this->Flugzeugtyp->find('list'));
 
-		$this->set('zeitcharter', array('ja'=>'Ja', 'nein'=>'Nein'));
+		$this->set('zeitcharter', array('0'=>'Ja', '1'=>'Nein'));
 	}
 
+
+	public function view($id){
+		if ($id != null)
+        {
+			$currentObject =& ClassRegistry::getObject($this->modelClass);
+        	$currentObject->id = $id;
+        	$this->data=$currentObject->read();
+        	$this->data['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($this->data['Vorgang']);
+        	
+        }
+		
+	}
 
 
     public function berechnen($entfernung=null, $landungen= null, $flugzeug=null, $begleiter=null){
@@ -150,9 +161,13 @@ class VorgaengeController extends AppController
 		$this->setDefaultData();
 		if (!empty($this->data))
 		{
+			//Standard-Daten setzen.
 			$this->data['Vorgang']['vorgangstyp_id']=1; //Typ ist angebot
 			$this->data['Vorgang']['datum']=date("d.m.Y",time()); //heutiges Datum
-			//var_dump($this->data['Vorgang']);
+			$this->data['Vorgang']['zeitcharter']=1; //Typ ist angebot
+			$this->data['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($this->data['Vorgang']);
+			
+			//Speichern des Angebots
 			if (!$this->Vorgang->save($this->data)) {
 				//echo "nicht gespeichert";
                 $this->Session->setFlash('Fehler beim Speichern');
@@ -160,8 +175,6 @@ class VorgaengeController extends AppController
 				//echo "gespeichert";
 				$this->redirect(array('action' => 'vorgaenge/1'));
 			}
-        } else {
-			$this->data['Vorgang']['flugstrecke']='1;2;3';
         }		
 	}
 	
@@ -226,8 +239,6 @@ class VorgaengeController extends AppController
         	$this->data = $this->Vorgang->Read();
 			$this->setDefaultData();
       	}
-		
 	}
-
 }
 ?>
