@@ -1,5 +1,5 @@
 <?php
-	echo $html->link('Neues Angebot anlegen','/vorgaenge/add/', array('class'=>'button1', 'style'=>'width:150px;'));
+	echo $html->link('Neues Angebot anlegen','/vorgaenge/addAngebot/', array('class'=>'button1', 'style'=>'width:150px;'));
     echo $html->tag('table', Null, array('class' => 'tbl1'));
     echo $html->tableHeaders(array('Nr', 'Firma', 'Datum', 'Drucken','Löschen'));
 

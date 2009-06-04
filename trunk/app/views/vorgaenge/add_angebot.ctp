@@ -1,11 +1,11 @@
 <?php 
 
 	//HTML-Formular öffnen
-	echo $rentform->create('Vorgang', 'add');
+	echo $rentform->create('Vorgang', 'addAngebot');
 
 	//================================================
 	echo $rentform->begFieldset('Kundendaten');
-	echo $rentform->select('Vorgang.adresse_id',$adressenliste, 'Kunde<sup title="Pflichtfeld.">*</sup>');
+	echo $rentform->select('adresse_id',$adressenliste, 'Kunde<sup title="Pflichtfeld.">*</sup>');
 	echo $rentform->disabledTextInput('abteilung');
 	echo $rentform->disabledTextInput('ansprechpartner');
 	echo $rentform->disabledTextInput('strasse');
@@ -16,10 +16,9 @@
 
 	//================================================
 	echo $rentform->begFieldset('Flugdaten');
-	//echo $rentform->hidden('flugstrecke', '$flugstrecke');
 	echo $rentform->hidden('Vorgang.flugstrecke');
 	
-	echo $rentform->select('Vorgang.zeitcharter', $zeitcharter);
+	echo $rentform->select('zeitcharter', $zeitcharter);
 	echo $rentform->textInput('vonDatum', 'Von Datum');
 	echo $rentform->textInput('bisDatum', 'Bis Datum');
 	echo $rentform->select('startflughafen', $flugplatzliste);	
@@ -38,8 +37,8 @@
 
 	//================================================
 	echo $rentform->begFieldset('Sonderwünsche');
-	echo $rentform->textInput('Sonderwunsch');
-	echo $rentform->textInput('Aufpreis');
+	echo $rentform->textInput('sonderwunsch');
+	echo $rentform->textInput('sonderwunsch_netto');
 	//echo $rentform->button('Hinzufügen', array('id'=>'button_sonderwunsch', 'name'=>"button_sonderwunsch", 'style'=>"float:right"));	
 	echo $rentform->endFieldset();
 		

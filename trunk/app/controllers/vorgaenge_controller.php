@@ -41,6 +41,13 @@ class VorgaengeController extends AppController
 	}
 
 
+    public function indexAngebote()
+	{
+		$currentObject =& ClassRegistry::getObject($this->modelClass);
+		$this->data=$currentObject->find('all');
+	}
+
+
 	public function view($id){
 		if ($id != null)
         {
@@ -155,7 +162,7 @@ class VorgaengeController extends AppController
 		
 	}
 
-    public function add()
+    public function addAngebot()
 	{
 		$this->pageTitle = 'Angebot erstellen';
 		$this->setDefaultData();
@@ -173,7 +180,8 @@ class VorgaengeController extends AppController
                 $this->Session->setFlash('Fehler beim Speichern');
 			} else {
 				//echo "gespeichert";
-				$this->redirect(array('action' => 'vorgaenge/1'));
+				var_dump($this->data);
+				$this->redirect(array('action' => 'indexAngebote'));
 			}
         }		
 	}

@@ -26,7 +26,7 @@
     $list = array(
         '<span>Workflows</span>',
         $html->link('Startseite','/',array('class'=>'nav1 showhelp','title'=>'Startseite')),
-        $html->link('Angebote','/vorgaenge/index',array('class'=>'nav1 showhelp','title'=>'Kundenangebot')),
+        $html->link('Angebote','/vorgaenge/indexAngebote',array('class'=>'nav1 showhelp','title'=>'Kundenangebot')),
         $html->link('Verträge','/vorgaenge/vorgaenge/2',array('class'=>'nav1 showhelp','title'=>'Vertraege')),
         $html->link('Rechnungen','/vorgaenge/vorgaenge/3',array('class'=>'nav1 showhelp','title'=>'Rechnungen')),
         $html->link('Kundenadressen','/adressen',array('class'=>'nav1 showhelp','title'=>'Kundenadressen')),

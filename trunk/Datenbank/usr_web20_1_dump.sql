@@ -257,8 +257,11 @@ CREATE TABLE `adressen` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 INSERT INTO `adressen` (`id`,`firma`,`abteilung`,`ansprechpartner`,`strasse`,`plz`,`ort`)
 VALUES
-	(1,'Reich und Schön','Geschäftsleitung','Ritschi Ritsch','Geldspeicherweg 300','30422','Entenhausen'),
-    (2,'Duck Imperium','Geschäftsleitung','Dagobert Duck','Geldspeicherweg 1','30422','Entenhausen');
+	(1,'Turbo Soft Gmbh','Geschäftsleitung','Heinrich Müller','Feldweg 20','12345','Berlin'),
+    (2,'Stone Rich AG','Marketing','Peter Lustig','Karrierestraße 129','30422','Entenhausen'),
+	(3,'ThinkLogics','Architekturleitung','A. Behrens','Hauptstr. 1','23423','Mochingen'),
+	(4,'ThinkLogics','Projektleitung','F. Geist','Hauptstr. 13','23423','Mochingen'),
+	(5,'Baby Welt GmbH','Endkundenbetreuung','Martin Schmidt','Obere Straße','23422','München');
 #
 #
 #----------------------------------------------
@@ -275,6 +278,11 @@ CREATE TABLE `vorgaenge` (
   `flugzeugtyp_id` int(11) NOT NULL,
   `zufriedenheitstyp_id` int(11) DEFAULT NULL,
   `flugstrecke` varchar(200) NOT NULL,
+  `sonderwunsch` varchar(250) DEFAULT '',
+  `sonderwunsch_netto` DOUBLE DEFAULT 0,
+  `netto` DOUBLE NOT NULL DEFAULT 0,
+  `mwst` DOUBLE NOT NULL DEFAULT 0,
+  `brutto_soll` DOUBLE NOT NULL DEFAULT 0,
   `brutto_ist` DOUBLE NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `adresse_id` (`adresse_id`)

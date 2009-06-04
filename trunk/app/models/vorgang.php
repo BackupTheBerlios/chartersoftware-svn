@@ -18,9 +18,12 @@ class Vorgang extends AppModel {
 
     public $validate = array(
 		'adresse_id' => VALID_NOT_EMPTY,
-        'datepicker' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>2))),
-        'datepicker2' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>2))),
-        'flugzeugtyp_id' => VALID_NOT_EMPTY
+        'datepicker' => VALID_NOT_EMPTY,
+        'datepicker2' => VALID_NOT_EMPTY,
+        'flugzeugtyp_id' => VALID_NOT_EMPTY,
+        'AnzahlPersonen' => VALID_NOT_EMPTY,
+        'AnzahlFlugbegleiter' => VALID_NOT_EMPTY,
+        'zeitcharter' => VALID_NOT_EMPTY
     );
 
     public $validate2 = array(
