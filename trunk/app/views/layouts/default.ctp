@@ -96,7 +96,8 @@ if (strlen($content_for_layout)>0 || strlen($cakeDebug)>0 ) {
 <div id="help_Leistungstypen" class="help"><span>Leistungstypen verwalten (ändern, löschen, neu anlegen)</span></div>
 <div id="help_Zufriedenheitstypen" class="help"><span>Zufriedenheitstypen verwalten (ändern, löschen, neu anlegen)</span></div>
 <div id="help_selectflugzeugtyp" class="help"><span>Der Flugzeugtyp ist auf Grund der neuen Einstellungen nicht mehr verfügbar. Bitte neu wählen.</span></div>
-
+<div id="help_maxpersonen" class="help"><span>Die maximale Personenanzahl des Flugzeugs ist bereits erreicht.</span></div>
+<div id="help_minattendands" class="help"><span>Die für den Flugzeugtyp benötigtet Attendandszahl kann nicht unterschritten werden.</span></div>
 </div>
 </body>
 </html>

@@ -25,12 +25,14 @@
 	echo $rentform->select('zielflughafen', $flugplatzliste);
 	echo '<div id="DivZwischenstop">' . "\n";
 	echo $rentform->select('Zwischenstop', $flugplatzliste);
-	echo $rentform->button('Hinzufügen', array('id'=>'button_zwischenstop', 'name'=>"button_zwischenstop", 'style'=>"float:right"));	
+	echo $rentform->button('Hinzufügen', array('id'=>'button_zwischenstop', 'name'=>"button_zwischenstop", 'style'=>"width:120px; float:right"));	
 	echo '</div>' . "\n";
 	echo $rentform->textInput('AnzahlPersonen', 'Anzahl Personen');
+	echo $rentform->button('Aktualisieren', array('id'=>'personen_update', 'name'=>"personen_update", 'style'=>"width:120px; float:right"));	
 	
 	echo $rentform->select('flugzeugtyp_id', $flugzeugtypenListeKomplett);
-	echo $rentform->textInput('AnzahlFlugbegleiter', 'Weitere Flugbegleiter');
+	echo $rentform->textInput('AnzahlFlugbegleiter', 'Flugbegleiter');
+	echo $rentform->buttonadddel('-', array('id'=>'attendands_del', 'name'=>"attendands_del", 'style'=>"float:right; width:20px;"),'+', array('id'=>'attendands_add', 'name'=>"attendands_add", 'style'=>"float:right; width:20px; margin-right:10px;"));	
 	echo $rentform->endFieldset();
 
 
@@ -39,7 +41,7 @@
 	echo $rentform->begFieldset('Sonderwünsche');
 	echo $rentform->textInput('sonderwunsch');
 	echo $rentform->textInput('sonderwunsch_netto');
-	//echo $rentform->button('Hinzufügen', array('id'=>'button_sonderwunsch', 'name'=>"button_sonderwunsch", 'style'=>"float:right"));	
+	echo $rentform->button('Aktualisieren', array('id'=>'button_sonderwunsch', 'name'=>"button_sonderwunsch", 'style'=>"float:right"));	
 	echo $rentform->endFieldset();
 		
 	//================================================

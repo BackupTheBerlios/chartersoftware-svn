@@ -14,8 +14,8 @@
 
 $(document).ready(function () {
 
-	//Funktioniert
 		$("#VorgangAdresseId").change(function () {
+			hidetooltip();
 			$.ajax({
 				type: "GET",
 				url: "../../adressen/view/"+$("#VorgangAdresseId").val()+".xml",
@@ -37,8 +37,9 @@ $(document).ready(function () {
 			});	
 		});
 	
-		//Funktioniert
+
 		$("#VorgangZeitcharter").change(function () {
+			hidetooltip();
 			if ($(this).val() == '0') {
 				$("#button_add_zwischenstop").slideUp("normal");
 				$("#DivZwischenstop").slideUp("normal");
@@ -50,8 +51,9 @@ $(document).ready(function () {
 			}
 		});
 		
-		//Funktioniert
+
 		$("#VorgangStartflughafen").change(function () {
+			hidetooltip();
 			if ($("input[name^='start;']").size() > 0) {
 				$("input[name^='start;']").remove();
 			}
@@ -60,6 +62,7 @@ $(document).ready(function () {
 		});
 		
 		$("#VorgangZielflughafen").change(function () {
+			hidetooltip();
 			if ($("input[name^='ziel;']").size() > 0) {
 				$("input[name^='ziel;']").remove();
 			}
@@ -68,16 +71,21 @@ $(document).ready(function () {
 		});
 		
 		$("#button_zwischenstop").click(function () {
-			$("#txtcontent2_wrapper").append("<input type=\"hidden\" name=\"zwischenstop;"+$("input[name^='zwischenstop;']").size()+";"+$("#VorgangZwischenstop option:selected").val()+"\" value=\""+$("#VorgangZwischenstop option:selected").text()+"\">\n");
-			$('#VorgangZwischenstop').find('option:first').attr('selected', 'selected').parent('select');
-			updateFlugdaten();	
+			hidetooltip();
+			if ($("#VorgangZwischenstop option:selected").val() != '') {
+				$("#txtcontent2_wrapper").append("<input type=\"hidden\" name=\"zwischenstop;"+$("input[name^='zwischenstop;']").size()+";"+$("#VorgangZwischenstop option:selected").val()+"\" value=\""+$("#VorgangZwischenstop option:selected").text()+"\">\n");
+				$('#VorgangZwischenstop').find('option:first').attr('selected', 'selected').parent('select');
+				updateFlugdaten();	
+			}
 		});
 		
-		$("#VorgangAnzahlPersonen").change(function () {
+		$("#personen_update").click(function () {
+			hidetooltip();
 			updateFlugzeuge();
 		});
 		
 		$("#VorgangFlugzeugtypId").change(function () {
+			hidetooltip();
 			updateFlugzeuge();
 			$("#help_selectflugzeugtyp_id").fadeOut("fast");
 		});
@@ -100,7 +108,6 @@ $(document).ready(function () {
 		}
 		
 		function updateFlugdaten() {
-			
 			var add = "";
 			var route = "";
 			var i=0;
@@ -275,7 +282,7 @@ $(document).ready(function () {
 						$(this).attr("disabled","disabled");
 						$('#VorgangFlugzeugtypId').find('option:first').attr('selected', 'selected').parent('select');	
 						$("#VorgangAnzahlFlugbegleiter").val('');
-						$("#help_selectflugzeugtyp_id").fadeIn("fast");
+						$("#help_selectflugzeugtyp").fadeIn("fast");
 					}
 					if (personen > (plaetze-requiredAttendands) && ($(this).val() != $("#VorgangFlugzeugtypId option:selected").val())) {
 						$(this).attr("disabled","disabled");
@@ -305,7 +312,7 @@ $(document).ready(function () {
 								$(this).attr("disabled","disabled");
 								$('#VorgangFlugzeugtypId').find('option:first').attr('selected', 'selected').parent('select');	
 								$("#VorgangAnzahlFlugbegleiter").val('');
-								$("#help_selectflugzeugtyp_id").fadeIn("fast");
+								$("#help_selectflugzeugtyp").fadeIn("fast");
 							}
 							if (distance > maxdistance && ($(this).val() != $("#VorgangFlugzeugtypId option:selected").val())) {
 								$(this).attr("disabled","disabled");
@@ -317,6 +324,35 @@ $(document).ready(function () {
 			
 		
 		}
+		
+		$("#attendands_add").click(function() {
+			$("#VorgangFlugzeugtypId option:selected").text().search(/.*\(Reichweite (.*), Begleitung (.*), Passagiere (.*)\)/g);
+			var maxpersonen = parseInt(RegExp.$3);
+			var personen = parseInt($("#VorgangAnzahlPersonen").val());
+			var attendands = parseInt($("#VorgangAnzahlFlugbegleiter").val());
+			if (maxpersonen > (personen+attendands)) {
+				$("#VorgangAnzahlFlugbegleiter").val(attendands+1);
+			}
+			if (maxpersonen == (personen+attendands)) {
+				$("#help_maxpersonen").fadeIn("fast");
+			}
+			
+		});
+		
+		$("#attendands_del").click(function() {
+			$("#VorgangFlugzeugtypId option:selected").text().search(/.*\(Reichweite (.*), Begleitung (.*), Passagiere (.*)\)/g);
+			var minattendands = parseInt(RegExp.$2);
+			var personen = parseInt($("#VorgangAnzahlPersonen").val());
+			var attendands = parseInt($("#VorgangAnzahlFlugbegleiter").val());
+			if (attendands > minattendands) {
+				$("#VorgangAnzahlFlugbegleiter").val(attendands-1);
+			}
+			if (attendands == minattendands) {
+				$("#help_minattendands").fadeIn("fast");
+			}
+			
+		});
+		
 		
 		// Bei Ajax Request zeige Loader (Global)
 		
@@ -341,13 +377,18 @@ $(document).ready(function () {
 			var title = $(this).attr("title");
 			$("#help_"+title).fadeOut("fast");
 		}); 
+		
+		function hidetooltip() {
+			$(".help").each(function(){
+				$(this).hide();
+			});
+		}
 
-	//Funktioniert
 	$(function() {
 		$("#VorgangVonDatum").datepicker({ dateFormat: 'dd.mm.yy', dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'], dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'], monthNames: ['Januar','Februar','M�rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']});
 	});
 	
-	//Funktioniert
+
 	$(function() {
 		$("#VorgangBisDatum").datepicker({ dateFormat: 'dd.mm.yy', dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'], dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'], monthNames: ['Januar','Februar','M�rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']});
 	});

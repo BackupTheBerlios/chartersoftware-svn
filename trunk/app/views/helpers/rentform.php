@@ -43,6 +43,15 @@ class RentformHelper extends Helper {
 		return $result;
 	}
 	
+	public function buttonadddel($name, $option, $name2, $option2){
+		$result = 
+			'<div class="type-button">' . "\n" . 
+			$this->Form->button($name, $option)  . "\n" .
+			$this->Form->button($name2, $option2)  . "\n" .
+			'</div>' . "\n"; 
+		return $result;
+	}
+	
 	public function disabledTextInput($name, $label=null){
 		if ($label == null)
 			return $this->Form->input($name, array('type'=>'text','div'=>'type-text','disabled'=>'disabled', 'class'=>'readonly'));

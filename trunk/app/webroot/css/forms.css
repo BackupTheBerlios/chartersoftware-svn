@@ -27,19 +27,31 @@ form.yform .type-text input.readonly {
 background:#FFEDDF;
 }
 
-form.yform div input:focus, form.yform div select:focus, form.yform div textarea:focus, form.yform div input:hover, form.yform div select:hover, form.yform div textarea:hover, form.yform div input:active, form.yform div select:active, form.yform div textarea:active {
+form.yform div.type-text input:focus, 
+form.yform div.type-select select:focus, 
+form.yform div.type-text textarea:focus,
+ 
+form.yform div.type-text input:hover, 
+form.yform div.type-select select:hover, 
+form.yform div.type-text textarea:hover, 
+
+form.yform div.type-text input:active, 
+form.yform div.type-select select:active, 
+form.yform div.type-text textarea:active {
 border : 1px solid #a66;
 background : #fff;
 }
-form.yform .type-button input , form.yform .type-text_element input.button{
-border-top : 1px solid #ddd;
-border-left : 1px solid #ddd;
-border-right : 1px solid #444;
-border-bottom : 1px solid #444;
-color : #000;
-background : #eee;
-padding : 0.5em 1.2em;
+
+form.yform div.type-button input{
+background:#EF5A00;
+padding:5px;
+display:block;
+color:#FFF;
+text-align:center;
+margin-bottom:10px;
 }
+
+
 form.yform .type-button input#reset {
 color : #300;
 background : #661717 url(img/button_red.png) repeat-x top left;
@@ -48,22 +60,7 @@ form.yform .type-button input#submit {
 color : #330;
 background : #5e5607 url(img/button_yellow.png) repeat-x top left;
 }
-form.yform div.type-button input:focus, form.yform div.type-button input:hover, form.yform div.type-button input:active, form.yform .type-text_element input.button:focus, form.yform .type-text_element input.button:hover, form.yform .type-text_element input.button:active{
-border-top : 1px solid #444;
-border-left : 1px solid #444;
-border-right : 1px solid #ddd;
-border-bottom : 1px solid #ddd;
-color : #000;
-background : #cfcfcf;
-}
-form.yform div.type-button input#reset:focus, form.yform div.type-button input#reset:hover, form.yform div.type-button input#reset:active {
-background : #800;
-color : #fff;
-}
-form.yform div.type-button input#submit:focus, form.yform div.type-button input#submit:hover, form.yform div.type-button input#submit:active {
-background : #880;
-color : #fff;
-}
+
 form.yform {
 overflow : hidden;
 }
