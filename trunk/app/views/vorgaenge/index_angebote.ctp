@@ -1,7 +1,7 @@
 <?php
 	echo $html->link('Neues Angebot anlegen','/vorgaenge/addAngebot/', array('class'=>'button1', 'style'=>'width:150px;'));
     echo $html->tag('table', Null, array('class' => 'tbl1'));
-    echo $html->tableHeaders(array('Nr', 'Firma', 'Datum', 'Drucken','Ablage'));
+    echo $html->tableHeaders(array('Nr', 'Vom', 'Firma', 'Reiseziel','Betrag',  'Drucken','Ablage'));
 
 	foreach ($this->data as $zeile):
 		$firma = $zeile['Adresse']['firma'];
@@ -17,9 +17,10 @@
 
     	echo $html->tableCells( array(
 			'ANG-'. $zeile['Vorgang']['id'],
-			$adresse,
 			$zeile['Vorgang']['datum'],
-			//$zeile['Vorgang']['brutto_soll'],
+			$adresse,
+			$zeile['Vorgang']['Flugstrecke']['zielflugplatz']['Flugplatz']['name'],
+			$zeile['Vorgang']['brutto_soll'],
 			$html->link('Drucken', "/vorgaenge/drucken/{$zeile['Vorgang']['id']}"),
 			//$html->link('Ändern', "/vorgaenge/editAngebot/1/{$zeile['Vorgang']['id']}"),
 			$ablage

@@ -46,15 +46,23 @@ class VorgaengeController extends AppController
 
     public function indexAngebote($alle)
 	{
-		
-		$currentObject =& ClassRegistry::getObject($this->modelClass);
+		//Liste von Vorgängen aufbauen
 		if (empty($alle)){
-			$this->data=$currentObject->find('all', array('conditions'=>array('vorgangstyp_id'=>'1','zufriedenheitstyp_id'=>null)));
+			$this->data=$this->Vorgang->find('all', array('conditions'=>array('vorgangstyp_id'=>'1','zufriedenheitstyp_id'=>null)));
 			$this->set('zeigtAlle','nein');
 		}else{
-			$this->data=$currentObject->find('all', array('conditions'=>array('vorgangstyp_id'=>'1')));
+			$this->data=$this->Vorgang->find('all', array('conditions'=>array('vorgangstyp_id'=>'1')));
 			$this->set('zeigtAlle','ja');
 		}
+
+		//Alle Vorgänge um Kalkulationen anreichern		
+		for($count=0;$count<count($this->data);$count++){
+			$vorgang= $this->data[$count];
+			$vorgang['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($vorgang['Vorgang']);
+			$this->data[$count]=$vorgang;
+		}
+
+		//Ein paar Default-Sachen übergeben
 		$this->setDefaultData();
 	}
 
