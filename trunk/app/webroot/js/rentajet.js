@@ -65,7 +65,7 @@ $(document).ready(function () {
 			$("input[name^='ziel;']").remove();
 		}
 		$("#txtcontent2_wrapper").append("<input type=\"hidden\" name=\"ziel;"+$("#VorgangZielflughafen option:selected").val()+"\" value=\""+$("#VorgangZielflughafen option:selected").text()+"\">\n");
-		updateFlugdaten(); 	
+		updateFlugdaten();	
 	});
 	
 	$("#button_zwischenstop").click(function () {
@@ -85,7 +85,6 @@ $(document).ready(function () {
 	$("#VorgangFlugzeugtypId").change(function () {
 		hidetooltip();
 		updateFlugzeuge();
-		$("#help_selectflugzeugtyp_id").fadeOut("fast");
 	});
 	
 	$("#attendands_add").click(function() {
@@ -100,7 +99,7 @@ $(document).ready(function () {
 		if (maxpersonen == (personen+attendands)) {
 			$("#help_maxpersonen").fadeIn("fast");
 		}
-		
+		calcCosts();
 	});
 	
 	$("#attendands_del").click(function() {
@@ -285,7 +284,23 @@ function updateFlugdaten() {
 	
 }
 
+
+
+
+
 function calcCosts() {
+//SimpleCalc($flugzeugtyp, $entfernung, $sonderwunsch_netto, $zeitflug, $begleiter, $landungen)
+	if ($("#VorgangFlugzeugtypId option:selected").val() != '' && $("#distancesum").text() != '' && $("#VorgangZeitcharter option:selected").val() != '') {
+		$.ajax({
+			type: "GET",
+			url: "../../vorgaenge/SimpleCalc/"+$("#VorgangFlugzeugtypId option:selected").val()+"/"+$("#distancesum").text()+"/0/"+$("#VorgangZeitcharter option:selected").val()+"/"+$("#VorgangAnzahlFlugbegleiter").val()+"/2.xml",
+			dataType: "html",
+			cache: false,
+			success:function(xml){
+				alert(xml);
+			}
+		});	
+	}
 	
 }
 	
@@ -304,6 +319,7 @@ function calcDitances(spanid, ap1, ap2) {
 		} else {
 			$.ajax({
 				type: "GET",
+				async: "false",
 				url: "../../entfernungen/berechnen/"+ap1+"/"+ap2+".xml",
 				dataType: "xml",
 				cache: false,
@@ -317,7 +333,9 @@ function calcDitances(spanid, ap1, ap2) {
 							updateFlugzeuge();
 						}
 					});
-				}
+				},
+				
+
 			});	
 		}
 	}
