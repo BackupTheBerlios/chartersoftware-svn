@@ -23,9 +23,7 @@ font-family : Arial, Helvetica, sans-serif;
 border : 1px solid #ddd;
 }
 
-form.yform .type-text input.readonly {
-background:#FFEDDF;
-}
+
 
 form.yform div.type-text input:focus, 
 form.yform div.type-select select:focus, 
@@ -40,6 +38,11 @@ form.yform div.type-select select:active,
 form.yform div.type-text textarea:active {
 border : 1px solid #a66;
 background : #fff;
+}
+
+form.yform .type-text input.readonly, form.yform .type-text input.readonly:active, form.yform .type-text input.readonly:focus,  form.yform .type-text input.readonly:hover{
+background:#FFEDDF;
+border:1px solid #DDD;
 }
 
 form.yform div.type-button input{
