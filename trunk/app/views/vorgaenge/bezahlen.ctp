@@ -1,13 +1,13 @@
 <?php
 
-//	var_dump($this->data['Vorgangstyp']);
+	//var_dump($this->data['Vorgang']);
 	echo $rentform->create('Vorgang', 'bezahlen');
 	echo $rentform->hidden('Vorgang.id');
 
 	//================================================
 	echo $rentform->begFieldset('Vorgang');
 	echo $rentform->disabledTextInput('Vorgangstyp.beschreibung','Vorgangstyp');
-	echo $rentform->disabledTextInput('Vorgang.id','Vorgangsnummer');
+	echo $rentform->disabledTextInput('id','Vorgangsnummer');
 	echo $rentform->endFieldset();
 
 	//================================================
@@ -22,7 +22,7 @@
 
 	//================================================
 	echo $rentform->begFieldset('Geldbetrag');
-	echo $rentform->disabledTextInput('brutto_soll');
+	echo $rentform->disabledTextInput('Vorgang.brutto_soll');
 	echo $rentform->textInput('brutto_ist');
 	echo $rentform->endFieldset();
 

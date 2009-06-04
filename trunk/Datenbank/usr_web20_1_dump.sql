@@ -20,6 +20,46 @@ DROP TABLE IF EXISTS `leistungstypen`;
 DROP TABLE IF EXISTS `zufriedenheitstypen`;
 DROP TABLE IF EXISTS `adressen`;
 DROP TABLE IF EXISTS `reports`;
+
+
+#
+#
+#----------------------------------------------
+CREATE TABLE `vorgaenge` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `datum` DATE,
+  `zeitcharter` int(1) NOT NULL,
+  `vonDatum` DATE NOT NULL,
+  `bisDatum` DATE NOT NULL,
+  `vorgangstyp_id` int(11) NOT NULL,
+  `adresse_id` int(11) NOT NULL,
+  `AnzahlPersonen` int(11) NOT NULL,
+  `AnzahlFlugbegleiter` int(11) NOT NULL DEFAULT 0,
+  `flugzeugtyp_id` int(11) NOT NULL,
+  `zufriedenheitstyp_id` int(11) DEFAULT NULL,
+  `flugstrecke` varchar(200) NOT NULL,
+  `sonderwunsch` varchar(250) DEFAULT '',
+  `sonderwunsch_netto` DOUBLE DEFAULT 0,
+  `netto` DOUBLE NOT NULL DEFAULT 0,
+  `mwst` DOUBLE NOT NULL DEFAULT 0,
+  `brutto_soll` DOUBLE NOT NULL DEFAULT 0,
+  `brutto_ist` DOUBLE NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+  KEY `adresse_id` (`adresse_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+#
+INSERT INTO `vorgaenge` (`datum`,`zeitcharter`,`vonDatum`,`bisDatum`,`vorgangstyp_id`,`adresse_id`,`AnzahlPersonen`,`AnzahlFlugbegleiter`,`flugzeugtyp_id`,`zufriedenheitstyp_id`,`flugstrecke`,`brutto_ist`)
+VALUES
+('2009-06-03',1,'2009-06-01','2009-06-03',1,2,2,1,3,NULL,'7;4',0),
+('2009-06-03',0,'2009-06-05','2009-06-02',1,1,2,1,4,NULL,'8;5;1',0),
+('2009-06-03',1,'2009-06-01','2009-06-03',2,2,2,1,3,NULL,'7;4',0),
+('2009-06-03',0,'2009-06-05','2009-06-02',2,1,2,1,4,NULL,'8;5;1',0),
+('2009-06-03',1,'2009-06-01','2009-06-03',3,2,2,1,3,NULL,'7;4',0),
+('2009-06-03',0,'2009-06-05','2009-06-02',3,1,2,1,4,NULL,'8;5;1',0);
+#
+#
+#
+#
 #
 #
 #
@@ -73,7 +113,9 @@ INSERT INTO `zufriedenheitstypen` (`id`,`beschreibung`,`istAblehnungsgrund`)
 		(2,'Zu teuer',1),
 		(3,'Zeitlich nicht möglich',1),
 		(4,'Nicht Zufrieden',0),
-  	    (5,'Unbekannter Grund',1);
+  	    (5,'Unbekannter Grund',1),
+		(6,'Sehr Zufrieden',0),
+		(7,'Unbekannt',0);
 #
 #-----------------------------------
 #-----------------------------------
@@ -183,8 +225,8 @@ CREATE TABLE `flugzeugtypen` (
   `wikipedia` varchar(255) DEFAULT NULL,
   `reichweite` int(11) NOT NULL DEFAULT '0',
   `vmax` int(11) NOT NULL DEFAULT '0',
-  `jahreskosten` bigint(20) NOT NULL DEFAULT '0',
-  `stundenkosten` bigint(20) NOT NULL DEFAULT '0',
+  `jahreskosten` DOUBLE NOT NULL DEFAULT '0',
+  `stundenkosten` DOUBLE  NOT NULL DEFAULT '0',
   `crewPersonal` tinyint(4) NOT NULL DEFAULT '1',
   `cabinPersonal` tinyint(4) NOT NULL DEFAULT '0',
   `seats` tinyint(4) NOT NULL DEFAULT '1',
@@ -196,12 +238,12 @@ CREATE TABLE `flugzeugtypen` (
 #
 INSERT INTO `flugzeugtypen` (`id`,`name`,`flugzeughersteller_id`,`bild`,`wikipedia`,`reichweite`,`vmax`,`jahreskosten`,`stundenkosten`,`crewPersonal`,`cabinPersonal`,`seats`)
 VALUES
-	(1,'Citation CJ1',8,'cj1.jpg','http://de.wikipedia.org/wiki/Cessna_CitationJet',2408,720,21800000,72700,1,0,3),
-	(2,'Citation Mustang',8,'mustang.jpg','http://de.wikipedia.org/wiki/Cessna_Citation_Mustang',2366,620,10700000,42000,1,0,4),
-	(3,'Citation CXLR',8,'cxlr.jpg','html://nowhere.de',4009,795,24240000,68000,2,1,5),
-	(4,'GIV SP',9,'givsp.jpg','http://www.aerokurier.de/de/gulfstream-giv-sp.5595.htm',7820,851,45330000,278000,2,1,6),
-	(5,'Global Express',10,'globalexpress.jpg','html://nowhere.de',12038,935,51300000,310000,2,2,7),
-	(6,'Malibu Mirage',11,'mirage.jpg','html://nowhere.de',2491,394,6000000,20000,1,0,8);
+	(1,'Citation CJ1',8,'cj1.jpg','http://de.wikipedia.org/wiki/Cessna_CitationJet',2408,720,218000,727,1,0,6),
+	(2,'Citation Mustang',8,'mustang.jpg','http://de.wikipedia.org/wiki/Cessna_Citation_Mustang',2366,620,107000,420,1,0,4),
+	(3,'Citation CXLR',8,'cxlr.jpg','html://nowhere.de',4009,795,242400,680,2,1,4),
+	(4,'GIV SP',9,'givsp.jpg','http://www.aerokurier.de/de/gulfstream-giv-sp.5595.htm',7820,851,453300,2780,2,1,8),
+	(5,'Global Express',10,'globalexpress.jpg','html://nowhere.de',12038,935,513000,3100,2,2,8),
+	(6,'Malibu Mirage',11,'mirage.jpg','html://nowhere.de',2491,394,60000,200,1,0,5);
 #
 #
 #
@@ -263,37 +305,4 @@ VALUES
 	(3,'ThinkLogics','Architekturleitung','A. Behrens','Hauptstr. 1','23423','Mochingen'),
 	(4,'ThinkLogics','Projektleitung','F. Geist','Hauptstr. 13','23423','Mochingen'),
 	(5,'Baby Welt GmbH','Endkundenbetreuung','Martin Schmidt','Obere Straße','23422','München');
-#
-#
-#----------------------------------------------
-CREATE TABLE `vorgaenge` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `datum` DATE,
-  `zeitcharter` int(1) NOT NULL,
-  `vonDatum` DATE NOT NULL,
-  `bisDatum` DATE NOT NULL,
-  `vorgangstyp_id` int(11) NOT NULL,
-  `adresse_id` int(11) NOT NULL,
-  `AnzahlPersonen` int(11) NOT NULL,
-  `AnzahlFlugbegleiter` int(11) NOT NULL DEFAULT 0,
-  `flugzeugtyp_id` int(11) NOT NULL,
-  `zufriedenheitstyp_id` int(11) DEFAULT NULL,
-  `flugstrecke` varchar(200) NOT NULL,
-  `sonderwunsch` varchar(250) DEFAULT '',
-  `sonderwunsch_netto` DOUBLE DEFAULT 0,
-  `netto` DOUBLE NOT NULL DEFAULT 0,
-  `mwst` DOUBLE NOT NULL DEFAULT 0,
-  `brutto_soll` DOUBLE NOT NULL DEFAULT 0,
-  `brutto_ist` DOUBLE NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`),
-  KEY `adresse_id` (`adresse_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
-#
-INSERT INTO `vorgaenge` (`datum`,`zeitcharter`,`vonDatum`,`bisDatum`,`vorgangstyp_id`,`adresse_id`,`AnzahlPersonen`,`AnzahlFlugbegleiter`,`flugzeugtyp_id`,`zufriedenheitstyp_id`,`flugstrecke`,`brutto_ist`)
-VALUES
-('2009-06-03',1,'2009-06-01','2009-06-03',1,2,2,1,3,NULL,'7;4',0),
-('2009-06-03',0,'2009-06-05','2009-06-02',1,1,2,1,4,NULL,'8;5;1',0),
-('2009-06-03',1,'2009-06-01','2009-06-03',2,2,2,1,3,NULL,'7;4',0),
-('2009-06-03',0,'2009-06-05','2009-06-02',2,1,2,1,4,NULL,'8;5;1',0),
-('2009-06-03',1,'2009-06-01','2009-06-03',3,2,2,1,3,NULL,'7;4',0),
-('2009-06-03',0,'2009-06-05','2009-06-02',3,1,2,1,4,NULL,'8;5;1',0);
+

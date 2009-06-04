@@ -88,7 +88,8 @@ class VorgaengeController extends AppController
 	}
 	
 	// Fred
-	public function indexRechnung($alle=null){
+	public function indexRechnungen($alle=null)
+	{
 		//Liste von Vorgängen aufbauen
 		if (empty($alle)){
 			$this->data=$this->Vorgang->find('all', array('conditions'=>array('vorgangstyp_id'=>'3','zufriedenheitstyp_id'=>null)));
@@ -156,6 +157,25 @@ class VorgaengeController extends AppController
                 $this->Session->setFlash('Fehler beim Speichern');
             else
 	       		$this->redirect(array('action' => 'indexAngebote'));
+		}
+      	else
+      	{
+      		$this->Vorgang->id = $id;
+        	$this->data = $this->Vorgang->read();
+			$this->setDefaultData();
+      	}
+	}	
+
+    public function ablegenRechnung($id=null)
+	{
+		if ($id == null) exit;
+		$this->setDefaultData();
+		if (!empty($this->data))
+		{
+        	if (!$this->Vorgang->save($this->data))
+                $this->Session->setFlash('Fehler beim Speichern');
+            else
+	       		$this->redirect(array('action' => 'indexRechnungen'));
 		}
       	else
       	{
@@ -274,14 +294,18 @@ class VorgaengeController extends AppController
 			}
 			$this->set('vertragsliste', $liste);
 		} else {
+			//Neuen Vorgangstypen setzen
 			$this->Vorgang->id = $this->data['Vorgang']['RECORD'];
 			$record = $this->Vorgang->read();
 			$record['Vorgang']['vorgangstyp_id']=3;
-			//Vorgang ist gewandelt, nun wird die nächste Seite aufgerufen
+	
+			//Speichern
 			if (!$this->Vorgang->save($record)) {
+				//Speichern hat nicht geklappt
                 $this->Session->setFlash('Fehler beim Speichern');
 			} else {
-				$this->redirect(array('action' => 'indexRechnung'));
+				//Vorgang ist gewandelt, nun wird die nächste Seite aufgerufen
+				$this->redirect(array('action' => 'indexRechnungen'));
 			}
 		}
 	}
@@ -337,49 +361,17 @@ class VorgaengeController extends AppController
 		}
 	}
 
-	public function vorgangwandeln($vorgangstyp=null){
-		//Test auf Fehler
-		if ($this->data == null && $vorgangstyp == null){
-			$this->redirect('/');
-			exit;
-		}
-		
-		if ($vorgangstyp != null && $this->data == null){
-			//Formular soll aufgerufen werden
-			$this->setDefaultData();
-			$this->data=$this->Vorgang->find('all');
-			$this->set('vorgangstyp',$vorgangstyp);
-		} else {
-			//Formular wurde abgeschickt
-			$this->set('vorgangstyp',$vorgangstyp);
-			$this->Vorgang->id = $this->data['Vorgang']['RECORD'];
-			$record = $this->Vorgang->read();
-			$record['Vorgang']['vorgangstyp_id']=$vorgangstyp;
-			
-			//Vorgang ist gewandelt, nun wird die nächste Seite aufgerufen
-			if (!$this->Vorgang->save($record)) {
-                $this->Session->setFlash('Fehler beim Speichern');
-			} else {
-				$this->redirect(array('action' => 'vorgaenge/'.$vorgangstyp));
-			}
-		}
-	}
-
-	public function vorgaenge($vorgangstyp){
-		$this->setDefaultData();
-		$this->data=$this->Vorgang->find('all');
-		$this->set('vorgangstyp',$vorgangstyp);
-	}
-
 
 	public function bezahlen($id){
 		if ($id == null) $this->Session->setFlash('Fehlerhafter Aufruf der Funktion','index');
 		if (!empty($this->data))
 		{
+			$this->data['Vorgang']['brutto_ist']=str_replace(',','.',$this->data['Vorgang']['brutto_ist']);
+			
         	if (!$this->Vorgang->save($this->data))
                 $this->Session->setFlash('Fehler beim Speichern');
             else
-	       		$this->redirect(array('action' => 'vorgaenge/3'));
+	       		$this->redirect(array('action' => 'indexRechnungen'));
 		}
       	else
       	{
