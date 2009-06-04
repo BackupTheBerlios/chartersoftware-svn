@@ -14,12 +14,13 @@
  */
 class VorgaengeController extends AppController
 {
-    public $uses = array('Vorgang','Adresse','Flugplatz','Flugzeugtyp');
+    public $uses = array('Vorgang','Adresse','Flugplatz','Flugzeugtyp','Zufriedenheitstyp','Vorgangstyp');
 
 	private function setDefaultData(){
 		$this->Flugplatz->order = 'Flugplatz.name ASC';
 		$this->Adresse->order = 'Adresse.firma ASC';
 		$this->Flugzeugtyp->order = 'Flugzeugtyp.name ASC';
+//		$this->Zufriedenheitstyp->order = 'Zufriedenheitstyp.beschreibung ASC';
 
 		$this->set('adressenliste',$this->Adresse->find('list'));
 		$this->set('flugplatzliste',$this->Flugplatz->find('list'));
@@ -36,15 +37,25 @@ class VorgaengeController extends AppController
 		}
 		$this->set('flugzeugtypenListeKomplett', $flugzeugtypenListeKomplett );
 		$this->set('flugzeugtypenliste',$this->Flugzeugtyp->find('list'));
+		$this->set('ablehnungsgrundliste',$this->Zufriedenheitstyp->find('list', array('conditions'=>array('istAblehnungsgrund'=>'1'))));
+		$this->set('zufriedenheitsgrundliste',$this->Zufriedenheitstyp->find('list', array('conditions'=>array('istAblehnungsgrund'=>'0'))));
 
 		$this->set('zeitcharter', array('0'=>'Ja', '1'=>'Nein'));
 	}
 
 
-    public function indexAngebote()
+    public function indexAngebote($alle)
 	{
+		
 		$currentObject =& ClassRegistry::getObject($this->modelClass);
-		$this->data=$currentObject->find('all');
+		if (empty($alle)){
+			$this->data=$currentObject->find('all', array('conditions'=>array('vorgangstyp_id'=>'1','zufriedenheitstyp_id'=>null)));
+			$this->set('zeigtAlle','nein');
+		}else{
+			$this->data=$currentObject->find('all', array('conditions'=>array('vorgangstyp_id'=>'1')));
+			$this->set('zeigtAlle','ja');
+		}
+		$this->setDefaultData();
 	}
 
 
@@ -133,10 +144,29 @@ class VorgaengeController extends AppController
     	return $this->Kalkulationen->CalcKugelDistanz($bmZiel,$bmStart);
     }
     
+
+    public function ablegenAngebot($id=null)
+	{
+		if ($id == null) exit;
+		$this->setDefaultData();
+		if (!empty($this->data))
+		{
+        	if (!$this->Vorgang->save($this->data))
+                $this->Session->setFlash('Fehler beim Speichern');
+            else
+	       		$this->redirect(array('action' => 'indexAngebote'));
+		}
+      	else
+      	{
+      		$this->Vorgang->id = $id;
+        	$this->data = $this->Vorgang->read();
+			$this->setDefaultData();
+      	}
+	}	
     
     
 	/**Anzeigen einer Liste*/
-    public function edit($vorgangstyp, $id=null)
+    public function editAngebot($vorgangstyp, $id=null)
 	{	
 		$this->pageTitle = 'Angebot erstellen';
 		$this->set('vorgangstyp',$vorgangstyp);
@@ -147,7 +177,7 @@ class VorgaengeController extends AppController
         	if (!$currentObject->save($this->data))
                 $this->Session->setFlash('Fehler beim Speichern');
             else
-	       		$this->redirect(array('action' => 'index'));
+	       		$this->redirect(array('action' => 'indexAngebote'));
 		}
       	else
       	{
@@ -171,7 +201,8 @@ class VorgaengeController extends AppController
 			//Standard-Daten setzen.
 			$this->data['Vorgang']['vorgangstyp_id']=1; //Typ ist angebot
 			$this->data['Vorgang']['datum']=date("d.m.Y",time()); //heutiges Datum
-			$this->data['Vorgang']['zeitcharter']=1; //Typ ist angebot
+			$this->data['Vorgang']['sonderwunsch_netto']=str_replace(',','.',$this->data['Vorgang']['sonderwunsch_netto']);
+			$this->data['Vorgang']['vorgangstyp_id']=1; //Typ ist angebot
 			$this->data['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($this->data['Vorgang']);
 			
 			//Speichern des Angebots
@@ -180,7 +211,6 @@ class VorgaengeController extends AppController
                 $this->Session->setFlash('Fehler beim Speichern');
 			} else {
 				//echo "gespeichert";
-				var_dump($this->data);
 				$this->redirect(array('action' => 'indexAngebote'));
 			}
         }		

@@ -72,7 +72,8 @@ INSERT INTO `zufriedenheitstypen` (`id`,`beschreibung`,`istAblehnungsgrund`)
 		(1,'Zufrieden',0),
 		(2,'Zu teuer',1),
 		(3,'Zeitlich nicht möglich',1),
-		(4,'Nicht Zufrieden',0);
+		(4,'Nicht Zufrieden',0),
+  	    (5,'Unbekannter Grund',1);
 #
 #-----------------------------------
 #-----------------------------------

@@ -1,28 +1,35 @@
 <?php
 	echo $html->link('Neues Angebot anlegen','/vorgaenge/addAngebot/', array('class'=>'button1', 'style'=>'width:150px;'));
     echo $html->tag('table', Null, array('class' => 'tbl1'));
-    echo $html->tableHeaders(array('Nr', 'Firma', 'Datum', 'Drucken','Löschen'));
+    echo $html->tableHeaders(array('Nr', 'Firma', 'Datum', 'Drucken','Ablage'));
 
 	foreach ($this->data as $zeile):
-		if ($zeile['Vorgang']['vorgangstyp_id'] == 1){ //Nur Angebote
-			$firma = $zeile['Adresse']['firma'];
-			$abteilung = $zeile['Adresse']['abteilung'];
-			$person = $zeile['Adresse']['ansprechpartner'];
-			$adresse = "$firma";
-			//$adresse = "$firma ($person)";
-			 
-	    	echo $html->tableCells( array(
-				//$zeile['Vorgangstyp']['beschreibung'].'-'. $zeile['Vorgang']['id'],
-				'ANG-'. $zeile['Vorgang']['id'],
-				$adresse,
-				$zeile['Vorgang']['datum'],
-				//$zeile['Vorgang']['brutto_soll'],
-				$html->link('Drucken', "/vorgaenge/drucken/{$zeile['Vorgang']['id']}"),
-				//$html->link('Ändern', "/vorgaenge/edit/1/{$zeile['Vorgang']['id']}"),
-				$html->link('Löschen', "/vorgaenge/delete/{$zeile['Vorgang']['id']}", null, 'Sind Sie sich sicher?' ),
-    		));
-		}
+		$firma = $zeile['Adresse']['firma'];
+		$abteilung = $zeile['Adresse']['abteilung'];
+		$person = $zeile['Adresse']['ansprechpartner'];
+		$adresse = "$firma";
+		$ablage = "";			 
+		if (empty($zeile['Vorgang']['zufriedenheitstyp_id'])){
+			$ablage = $html->link('Ablegen', "/vorgaenge/ablegenAngebot/{$zeile['Vorgang']['id']}", null, 'Sind Sie sich sicher?' );
+    	} else {
+			$ablage = $zeile['Zufriedenheitstyp']['beschreibung'];
+    	}
+
+    	echo $html->tableCells( array(
+			'ANG-'. $zeile['Vorgang']['id'],
+			$adresse,
+			$zeile['Vorgang']['datum'],
+			//$zeile['Vorgang']['brutto_soll'],
+			$html->link('Drucken', "/vorgaenge/drucken/{$zeile['Vorgang']['id']}"),
+			//$html->link('Ändern', "/vorgaenge/editAngebot/1/{$zeile['Vorgang']['id']}"),
+			$ablage
+   		));
     endforeach;
 
     echo $html->tag('/table');
+    if ($zeigtAlle == 'ja'){
+		echo $html->link('Nur aktuelle Angebote anzeigen','/vorgaenge/indexAngebote', array('class'=>'button1', 'style'=>'width:150px;'));
+    } else {
+		echo $html->link('Alle Angebote anzeigen','/vorgaenge/indexAngebote/1', array('class'=>'button1', 'style'=>'width:150px;'));
+    }
 ?>
