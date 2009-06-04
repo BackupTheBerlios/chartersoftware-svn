@@ -20,7 +20,7 @@ class VorgaengeController extends AppController
 		$this->Flugplatz->order = 'Flugplatz.name ASC';
 		$this->Adresse->order = 'Adresse.firma ASC';
 		$this->Flugzeugtyp->order = 'Flugzeugtyp.name ASC';
-//		$this->Zufriedenheitstyp->order = 'Zufriedenheitstyp.beschreibung ASC';
+		$this->Zufriedenheitstyp->order = 'Zufriedenheitstyp.beschreibung ASC';
 
 		$this->set('adressenliste',$this->Adresse->find('list'));
 		$this->set('flugplatzliste',$this->Flugplatz->find('list'));
@@ -65,6 +65,28 @@ class VorgaengeController extends AppController
 		//Ein paar Default-Sachen übergeben
 		$this->setDefaultData();
 	}
+	
+	public function indexVertraege($alle=null){
+		//Liste von Vorgängen aufbauen
+		if (empty($alle)){
+			$this->data=$this->Vorgang->find('all', array('conditions'=>array('vorgangstyp_id'=>'2','zufriedenheitstyp_id'=>null)));
+			$this->set('zeigtAlle','nein');
+		}else{
+			$this->data=$this->Vorgang->find('all', array('conditions'=>array('vorgangstyp_id'=>'2')));
+			$this->set('zeigtAlle','ja');
+		}
+
+		//Alle Vorgänge um Kalkulationen anreichern		
+		for($count=0;$count<count($this->data);$count++){
+			$vorgang= $this->data[$count];
+			$vorgang['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($vorgang['Vorgang']);
+			$this->data[$count]=$vorgang;
+		}
+
+		//Ein paar Default-Sachen übergeben
+		$this->setDefaultData();
+	}
+	
 
 
 	public function view($id){
@@ -172,6 +194,40 @@ class VorgaengeController extends AppController
         }		
 	}
 	
+	public function addVertrag(){
+		if (empty($this->data)){
+			$this->setDefaultData();
+			$this->data=$this->Vorgang->find('all', array('conditions'=>array('vorgangstyp_id'=>'1','zufriedenheitstyp_id'=>null)));
+
+			//Alle Vorgänge um Kalkulationen anreichern		
+			for($count=0;$count<count($this->data);$count++){
+				$vorgang= $this->data[$count];
+				$vorgang['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($vorgang['Vorgang']);
+				$this->data[$count]=$vorgang;
+			}
+			
+			$liste = array();
+			foreach($this->data as $angebot){
+				$firma = $angebot['Vorgang']['Adresse']['Adresse']['firma'];
+				$datum = $angebot['Vorgang']['datum'];
+				$id = $angebot['Vorgang']['id'];
+				$liste[$id]='ANG-'.$id.' vom '.$datum . ' für ' . $firma;
+			}
+			$this->set('angebotsliste', $liste);
+		} else {
+			$this->Vorgang->id = $this->data['Vorgang']['RECORD'];
+			$record = $this->Vorgang->read();
+			$record['Vorgang']['vorgangstyp_id']=2;
+			//Vorgang ist gewandelt, nun wird die nächste Seite aufgerufen
+			if (!$this->Vorgang->save($record)) {
+                $this->Session->setFlash('Fehler beim Speichern');
+			} else {
+				$this->redirect(array('action' => 'indexVertraege'));
+			}
+		}
+	}
+	
+	
 	public function angebot($id = null){
 		$this->setDefaultData();
 		if ($id != null)
@@ -184,16 +240,27 @@ class VorgaengeController extends AppController
 		if ($this->RequestHandler->prefers('xml')) {
 				header('content-type: text/xml');
 		} else if ($this->RequestHandler->prefers('pdf')) {
-				//$this->autoRender=false;
 				header('content-type: text/plain');
-				//header('Content-Disposition: attachment; filename="' . $name  .'.xml"');
-				//$this->render('dump','xls/default','xls/dump');
-		} else {
-			//Default: Ausgabe als normaler Content
-			//kein weiterer Code nötig
 		}
         
 	}
+
+	public function vertrag($id = null){
+		$this->setDefaultData();
+		if ($id != null)
+        {
+        	$this->Vorgang->id = $id;
+        	$this->data=$this->Vorgang->read();
+			$this->data['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($this->data['Vorgang']);
+        }
+        
+		if ($this->RequestHandler->prefers('xml')) {
+				header('content-type: text/xml');
+		} else if ($this->RequestHandler->prefers('pdf')) {
+				header('content-type: text/plain');
+		}
+	}
+
 
 	public function vorgangwandeln($vorgangstyp=null){
 		//Test auf Fehler
