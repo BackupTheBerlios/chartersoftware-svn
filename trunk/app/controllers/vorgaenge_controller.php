@@ -87,6 +87,28 @@ class VorgaengeController extends AppController
 		$this->setDefaultData();
 	}
 	
+	// Fred
+	public function indexRechnung($alle=null){
+		//Liste von Vorgängen aufbauen
+		if (empty($alle)){
+			$this->data=$this->Vorgang->find('all', array('conditions'=>array('vorgangstyp_id'=>'3','zufriedenheitstyp_id'=>null)));
+			$this->set('zeigtAlle','nein');
+		}else{
+			$this->data=$this->Vorgang->find('all', array('conditions'=>array('vorgangstyp_id'=>'3')));
+			$this->set('zeigtAlle','ja');
+		}
+
+		//Alle Vorgänge um Kalkulationen anreichern		
+		for($count=0;$count<count($this->data);$count++){
+			$vorgang= $this->data[$count];
+			$vorgang['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($vorgang['Vorgang']);
+			$this->data[$count]=$vorgang;
+		}
+
+		//Ein paar Default-Sachen übergeben
+		$this->setDefaultData();
+	}
+	
 
 
 	public function view($id){
@@ -227,6 +249,40 @@ class VorgaengeController extends AppController
 		}
 	}
 	
+	//Fred 04.06.09
+	public function addRechnung(){
+		if (empty($this->data)){
+			$this->setDefaultData();
+			$this->data=$this->Vorgang->find('all', array('conditions'=>array('vorgangstyp_id'=>'2','zufriedenheitstyp_id'=>null)));
+
+			//Alle Vorgänge um Kalkulationen anreichern		
+			for($count=0;$count<count($this->data);$count++){
+				$vorgang= $this->data[$count];
+				$vorgang['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($vorgang['Vorgang']);
+				$this->data[$count]=$vorgang;
+			}
+			
+			$liste = array();
+			foreach($this->data as $vertrag){
+				$firma = $vertrag['Vorgang']['Adresse']['Adresse']['firma'];
+				$datum = $vertrag['Vorgang']['datum'];
+				$id = $vertrag['Vorgang']['id'];
+				$liste[$id]='VER-'.$id.' vom '.$datum . ' für ' . $firma;
+			}
+			$this->set('vertragsliste', $liste);
+		} else {
+			$this->Vorgang->id = $this->data['Vorgang']['RECORD'];
+			$record = $this->Vorgang->read();
+			$record['Vorgang']['vorgangstyp_id']=3;
+			//Vorgang ist gewandelt, nun wird die nächste Seite aufgerufen
+			if (!$this->Vorgang->save($record)) {
+                $this->Session->setFlash('Fehler beim Speichern');
+			} else {
+				$this->redirect(array('action' => 'indexRechnung'));
+			}
+		}
+	}
+	
 	
 	public function angebot($id = null){
 		$this->setDefaultData();
@@ -261,6 +317,22 @@ class VorgaengeController extends AppController
 		}
 	}
 
+	// Fred 04.05.09
+	public function rechnung($id = null){
+		$this->setDefaultData();
+		if ($id != null)
+        {
+        	$this->Vorgang->id = $id;
+        	$this->data=$this->Vorgang->read();
+			$this->data['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($this->data['Vorgang']);
+        }
+        
+		if ($this->RequestHandler->prefers('xml')) {
+				header('content-type: text/xml');
+		} else if ($this->RequestHandler->prefers('pdf')) {
+				header('content-type: text/plain');
+		}
+	}
 
 	public function vorgangwandeln($vorgangstyp=null){
 		//Test auf Fehler
