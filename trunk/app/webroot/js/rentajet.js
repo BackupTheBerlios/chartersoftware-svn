@@ -7,7 +7,7 @@
  * z.B. Tooltips, Nachladen von Daten (Ajax / XML), automatische Aktualisierung von Auswahlmenues, Berechnungen von Gesamtstrecken usw. 
  * Siehe auch genutztes Framework für weitere Informationen : http://jquery.com/
  * 
- * Letzte Änderung: 01.06.2009
+ * Letzte Änderung: 04.06.2009
  *
  */
 
@@ -18,10 +18,11 @@ $(document).ready(function () {
 		$("#VorgangAdresseId").change(function () {
 			$.ajax({
 				type: "GET",
-				url: "../adressen/view/"+$("#VorgangAdresseId").val()+".xml",
+				url: "../../adressen/view/"+$("#VorgangAdresseId").val()+".xml",
 				dataType: "xml",
 				cache: false,
 				success:function(xml){
+					
 					$("#loader").hide();
 					$(xml).find('adresse').each(function(){  
 						$("#VorgangFirma").val($(this).find('firma').text())
@@ -237,7 +238,7 @@ $(document).ready(function () {
 			} else {
 				$.ajax({
 					type: "GET",
-					url: "../entfernungen/berechnen/"+ap1+"/"+ap2+".xml",
+					url: "../../entfernungen/berechnen/"+ap1+"/"+ap2+".xml",
 					dataType: "xml",
 					cache: false,
 					success:function(xml){
