@@ -88,8 +88,15 @@ class KalkulationenComponent extends Object {
 		$result['Adresse']=$this->getAdresse($vorgang['adresse_id']);
 		$result['Flugstrecke']=$this->calcStrecke($vorgang['flugstrecke'], $vorgang['flugzeugtyp_id']);
 		$result['Flugzeug']=$this->getFlugzeugtyp($vorgang['flugzeugtyp_id']);
-		$result['KalkulationZeitflug']=$this->KalkulationFlugkostenZeitflug($result);
-		$result['KalkulationZielflug']=$this->KalkulationFlugkostenZielflug($result);
+		if ($vorgang['zeitcharter']==1){
+			$result['Kalkulation']=$this->KalkulationFlugkostenZielflug($result);
+		} else {
+			$result['Kalkulation']=$this->KalkulationFlugkostenZeitflug($result);
+		}
+		$result['netto']=$result['Kalkulation']['gesamtnetto'];
+		$result['mwst']=$result['Kalkulation']['mwst'];
+		$result['brutto_soll']=$result['Kalkulation']['gesamtbrutto'];
+
 		return $result;
 	} 
 
@@ -108,9 +115,12 @@ class KalkulationenComponent extends Object {
 		//Flugzeugkosten
 		$flugzeugkostenStunde = $this->FlugzeugkostenStunde($flugzeugtyp);
 		$flugzeugkostenZeit = $this->FlugzeugkostenZeit($flugzeugtyp, $reisezeit);
+
+		//Sonderwünsche
+		$sonderwünsche = $vorgang['sonderwunsch_netto'];
 		
 		//Gesamtkosten
-		$gesamtnetto = $flugzeugkostenZeit + $personalkosten;
+		$gesamtnetto = $flugzeugkostenZeit + $personalkosten + $sonderwünsche;
 		$mwstsatz = 1900 ;
 		$mwst = round($gesamtnetto * $mwstsatz/10000,2);
 		$gesamtbrutto = $gesamtnetto + $mwst;
@@ -140,8 +150,11 @@ class KalkulationenComponent extends Object {
 		$flugzeugkostenStunde = $this->FlugzeugkostenStunde($flugzeugtyp);
 		$flugzeugkostenZeit = $this->FlugzeugkostenZeit($flugzeugtyp, $reisezeit);
 		
+		//Sonderwünsche
+		$sonderwünsche = $vorgang['sonderwunsch_netto'];
+		
 		//Gesamtkosten
-		$gesamtnetto = $flugzeugkostenZeit + $personalkosten;
+		$gesamtnetto = $flugzeugkostenZeit + $personalkosten + $sonderwünsche;
 		$mwstsatz = 1900 ;
 		$mwst = round($gesamtnetto * $mwstsatz/10000,2);
 		$gesamtbrutto = $gesamtnetto + $mwst;
