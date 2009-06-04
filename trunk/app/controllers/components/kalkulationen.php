@@ -100,6 +100,33 @@ class KalkulationenComponent extends Object {
 		return $result;
 	} 
 
+	public function SimpleCalc($flugzeugtyp, $entfernung, $sonderwunsch_netto, $zeitflug, $begleiter, $landungen){
+		if ($flugzeugtyp == null || $entfernung == null || $sonderwunsch_netto == null || $zeitflug == null || $begleiter == null || $landungen == null) return null;
+
+		$result = array();
+		$vmax = $this->vMaxFlugzeug($flugzeugtyp);
+		$reisezeit = $this->CalcReisezeit($entfernung, $vmax, $landungen);
+		$flugzeit = $this->CalcReisezeit($entfernung, $vmax);
+		$begleiter = $this->istFlugbegleiter($flugzeugtyp, $begleiter);
+		$flugzeugkostenStunde = $this->FlugzeugkostenStunde($flugzeugtyp);
+		$flugzeugkostenZeit = $this->FlugzeugkostenZeit($flugzeugtyp, $reisezeit);
+		$crew = $this->Piloten($flugzeugtyp);
+		$personalkosten = $this->PersonalKosten($crew, $begleiter, $reisezeit);
+
+		if ($zeitflug==1){
+			//zielflug
+			$result['netto']=round($flugzeugkostenZeit + $personalkosten + $sonderwunsch_netto, 2);
+			$result['mwst']=round($result['netto'] * 19/100,2);
+			$result['brutto']=$result['netto']+$result['mwst'];
+		} else {
+			//zeitflug
+			$result['netto']=round($flugzeugkostenStunde + $personalkosten + $sonderwunsch_netto, 2);
+			$result['mwst']=round($result['netto'] * 19/100,2);
+			$result['brutto']=$result['netto']+$result['mwst'];
+		}
+		
+		return $result;	
+	}		
 
 	
 	public function KalkulationFlugkostenZielflug($vorgang){
@@ -299,6 +326,8 @@ class KalkulationenComponent extends Object {
  		$km = acos(sin($lat1) * sin($lat2) + cos($lat1) * cos($lat2) * cos($long1- $long2) ) * 6378;
  		return round($km);
     }
+	
+	
 	
 }
  

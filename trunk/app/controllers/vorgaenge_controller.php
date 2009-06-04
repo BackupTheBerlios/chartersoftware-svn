@@ -123,6 +123,9 @@ class VorgaengeController extends AppController
 		
 	}
 
+	public function SimpleCalc($flugzeugtyp, $entfernung, $sonderwunsch_netto, $zeitflug, $begleiter, $landungen){
+		$this->data['Kalkulation']=$this->Kalkulationen->SimpleCalc($flugzeugtyp, $entfernung, $sonderwunsch_netto, $zeitflug, $begleiter,$landungen);		
+	}
 
 	
     /**
