@@ -263,6 +263,8 @@ class VorgaengeController extends AppController
 			$this->Vorgang->id = $this->data['Vorgang']['RECORD'];
 			$record = $this->Vorgang->read();
 			$record['Vorgang']['vorgangstyp_id']=2;
+			$record['Vorgang']['datum']=date("d.m.Y",time()); //heutiges Datum
+			
 			//Vorgang ist gewandelt, nun wird die nächste Seite aufgerufen
 			if (!$this->Vorgang->save($record)) {
                 $this->Session->setFlash('Fehler beim Speichern');
@@ -298,6 +300,7 @@ class VorgaengeController extends AppController
 			$this->Vorgang->id = $this->data['Vorgang']['RECORD'];
 			$record = $this->Vorgang->read();
 			$record['Vorgang']['vorgangstyp_id']=3;
+			$record['Vorgang']['datum']=date("d.m.Y",time()); //heutiges Datum
 	
 			//Speichern
 			if (!$this->Vorgang->save($record)) {

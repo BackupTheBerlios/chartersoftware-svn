@@ -42,6 +42,8 @@ CREATE TABLE `vorgaenge` (
   `sonderwunsch_netto` DOUBLE DEFAULT 0,
   `netto` DOUBLE NOT NULL DEFAULT 0,
   `mwst` DOUBLE NOT NULL DEFAULT 0,
+  `brutto_stunde` DOUBLE NOT NULL DEFAULT 0,
+  `reisezeit` DOUBLE NOT NULL DEFAULT 0,
   `brutto_soll` DOUBLE NOT NULL DEFAULT 0,
   `brutto_ist` DOUBLE NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
