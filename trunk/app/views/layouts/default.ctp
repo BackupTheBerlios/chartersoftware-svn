@@ -61,7 +61,7 @@ if (strlen($content_for_layout)>0 || strlen($cakeDebug)>0 ) {
 	echo $cakeDebug . "\n";
 	echo $content_for_layout . "\n";
 	echo "</div>\n";
-	echo "<div id=\"txtcontent2\" class=\"normal\"><div id=\"txtcontent2_wrapper\"><div id=\"fluginfos\"></div></div></div>\n";
+	echo "<div id=\"txtcontent2\" class=\"normal\"><div id=\"txtcontent2_wrapper\"><div id=\"fluginfos\"></div><div id=\"flugkosten\"></div></div></div>\n";
 	} else {
 	echo '<div id="txtcontent" class="normal">' . "\n"; 
 	echo $cakeDebug . "\n";
@@ -77,7 +77,11 @@ if (strlen($content_for_layout)>0 || strlen($cakeDebug)>0 ) {
 
 <!--END txtcontent-->
 
-<div id="footer"><div id="loader"></div></div>
+<div id="footer">
+<div id="loader_dist" class="loader">Berechne Entfernungen</div>
+<div id="loader_adresse" class="loader">Lade Adresse</div>
+<div id="loader_costs" class="loader">Berechne Kosten</div>
+</div>
 
 
 <div id="help_Kundenadressen" class="help"><span>Über diesen Menupunkt können Adressen verwaltet (suchen, löschen, anlegen) werden</span></div>

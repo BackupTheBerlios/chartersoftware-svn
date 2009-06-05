@@ -13,8 +13,11 @@
 
 $(document).ready(function () {
 
+	reqcounter = 0;
+	reqsum = 0;
+	
 	$("#VorgangAdresseId").change(function () {
-		hidetooltip();
+		$("#loader_adresse").show();
 		$.ajax({
 			type: "GET",
 			url: "../../adressen/view/"+$("#VorgangAdresseId").val()+".xml",
@@ -30,6 +33,7 @@ $(document).ready(function () {
 					$("#VorgangPlz").val($(this).find('plz').text())
 					$("#VorgangOrt").val($(this).find('ort').text())
 				});
+				$("#loader_adresse").hide();
 			}
 	
 		});	
@@ -46,6 +50,7 @@ $(document).ready(function () {
 		if ($(this).val() == '1') {
 			$("#button_add_zwischenstop").slideDown("normal");
 			$("#DivZwischenstop").slideDown("normal");
+			updateFlugdaten();	
 		}
 	});
 	
@@ -80,11 +85,18 @@ $(document).ready(function () {
 	$("#personen_update").click(function () {
 		hidetooltip();
 		updateFlugzeuge();
+		calcCosts();	
+	});
+	
+	$("#button_sonderwunsch").click(function () {
+		hidetooltip();
+		calcCosts();	
 	});
 	
 	$("#VorgangFlugzeugtypId").change(function () {
 		hidetooltip();
 		updateFlugzeuge();
+		calcCosts();	
 	});
 	
 	$("#attendands_add").click(function() {
@@ -114,7 +126,7 @@ $(document).ready(function () {
 		if (attendands == minattendands) {
 			$("#help_minattendands").fadeIn("fast");
 		}
-		
+		calcCosts();
 	});
 	
 	$("*.showhelp").mouseenter(function(){   	
@@ -130,15 +142,13 @@ $(document).ready(function () {
 		$("#help_"+title).fadeOut("fast");
 	}); 
 	
-	// Bei Ajax Request zeige Loader (Global)
-	
-	$("#loader").ajaxStop(function(){
+	/* $("#loader").ajaxStop(function(){
 		$(this).hide();
 	});
 	
 	$("#loader").ajaxStart(function(){
 		$(this).show();
-	});
+	}); */
 	
 }); // DOCUMENT READY END
 
@@ -165,26 +175,28 @@ function updateFlugdaten() {
 	var add = "";
 	var route = "";
 	var i=0;
+	var k=0;
+	var startid = "";
+	var zielid = "";
+	var zwischenstop1 = "";
+	var zwischenstop2 = "";
 	
 	$("#fluginfos").html('');
 	
 	if ($("input[name^='zwischenstop;']").size() > 0 || $("input[name^='start;']").size() > 0 || $("input[name^='ziel;']").size() > 0) {
 		add += "<table class=\"flugdaten_table\">\n";
-		add += "<tr><td class=\"title_top\" colspan=\"2\">Flufdaten<\/td><\/tr>\n";
+		add += "<tr><td class=\"title_top\" colspan=\"2\">Flugdaten<\/td><\/tr>\n";
 	}
 
 	if ($("input[name^='start;']").size() > 0) {
 
 		$("input[name^='start;']").attr('name').search(/.*;(.*)/g);
-		var startid = RegExp.$1;
+		startid = RegExp.$1;
 		
 		if ( $("input[name^='ziel;']").size() > 0) {
 		$("input[name^='ziel;']").attr('name').search(/.*;(.*)/g);
-		var zielid = RegExp.$1;
+		zielid = RegExp.$1;
 		}
-		
-		var zwischenstop = '';
-		var zwischenstop2 = '';
 		
 		add += "<tr>\n";
 		add += "<td class=\"img abflug\"><\/td><td class=\"airport\">"+$("input[name^='start;']").val()+"<\/td>\n";
@@ -192,15 +204,13 @@ function updateFlugdaten() {
 		add += "<tr>\n";
 		add += "<td colspan=\"2\" class=\"distance\">\n";
 		if ($("input[name^='zwischenstop;']").size() > 0) {
-			$("input:first[name^='zwischenstop;']").attr('name').search(/.*;.*;(.*)/g);
-			var zwischenstop = RegExp.$1;
-			add += "Flugstrecke: <span title=\""+startid+";"+zwischenstop+"\" id=\"distance_"+i+"\"><\/div>\n";
+			$("input[name^='zwischenstop;0;']").attr('name').search(/.*;.*;(.*)/g);
+			zwischenstop1 = RegExp.$1;
+			add += "Flugstrecke: <span title=\""+startid+";"+zwischenstop1+"\" id=\"distance_"+i+"\"><\/div>\n";
 			i++;
 		}
 		if ( $("input[name^='ziel;']").size() > 0 && $("input[name^='zwischenstop;']").size() == 0) {
-		
 			add += "Flugstrecke: <span title=\""+startid+";"+zielid+"\" id=\"distance_"+i+"\"><\/span>\n";
-			i++;
 		}
 		add += "<\/td>\n";
 		add += "<\/tr>\n";
@@ -211,35 +221,43 @@ function updateFlugdaten() {
 	}
 	
 	if ($("input[name^='zwischenstop;']").size() > 0) {
-	
-	add += "<tr>\n";
-	$("input[name^='zwischenstop;']").each(function(){  
-		$(this).attr('name').search(/.*;(.*);.*/g);
-		zwischenstop = RegExp.$1;
-		add += "<td class=\"img zwischenstop\"><\/td><td title=\"delzwischenstop_"+zwischenstop+"\" class=\"airport\">"+$(this).val()+"<\/td>\n";
-		add += "<\/tr>\n";
-		add += "<tr>\n";
-		add += "<td colspan=\"2\" class=\"distance\">\n";
-		if ($("input:last[name^='zwischenstop;']").attr('name') == $(this).attr('name') && $("input[name^='ziel;']").size() > 0) {
-			$("input:last[name^='zwischenstop;']").attr('name').search(/.*;.*;(.*)/g);
-			zwischenstop = RegExp.$1;
-			add += "Flugstrecke: <span title=\""+zwischenstop+";"+zielid+"\" id=\"distance_"+i+"\"><\/span>\n";
-			i++;
-		}
-		if ($("input:last[name^='zwischenstop;']").attr('name') != $(this).attr('name')) {
-			$(this).attr('name').search(/.*;.*;(.*)/g);
-			zwischenstop = RegExp.$1;
-			$(this).next("input:last[name^='zwischenstop;']").attr('name').search(/.*;.*;(.*)/g)
-			zwischenstop2 = RegExp.$1;
-			add += "Flugstrecke: <span title=\""+zwischenstop+";"+zwischenstop2+"\" id=\"distance_"+i+"\"><\/span>\n";
-			i++;
-		}
-		add += "<\/td>\n";
-		add += "<\/tr>\n";
 		
-		route += ";"+zwischenstop;
-		
-	});
+		$("input[name^='zwischenstop;']").each(function(){  
+			
+			$("input[name^='zwischenstop;"+k+";']").attr('name').search(/.*;.*;(.*)/g);
+			zwischenstop1 = parseInt(RegExp.$1);
+			
+			add += "<tr>\n";
+			add += "<td class=\"img zwischenstop\"><\/td><td title=\"delzwischenstop_"+k+"\" class=\"airport\">"+$("input[name^='zwischenstop;"+k+";']").val()+"<\/td>\n";
+			add += "<\/tr>\n";
+			
+			if ($("input[name^='zwischenstop;"+(k+1)+";']").size() != 0) {
+			
+				$("input[name^='zwischenstop;"+(k+1)+";']").attr('name').search(/.*;.*;(.*)/g);
+				zwischenstop2 = parseInt(RegExp.$1);
+				
+				add += "<tr>\n";
+				add += "<td colspan=\"2\" class=\"distance\">\n";
+				add += "Flugstrecke: <span title=\""+zwischenstop1+";"+zwischenstop2+"\" id=\"distance_"+i+"\"><\/span>\n";
+				add += "<\/td>\n";
+				add += "<\/tr>\n";
+			}
+			
+			if ($("input[name^='zwischenstop;"+(k+1)+";']").size() == 0 && $("input[name^='ziel;']").size() != 0) {
+			
+				add += "<tr>\n";
+				add += "<td colspan=\"2\" class=\"distance\">\n";
+				add += "Flugstrecke: <span title=\""+zwischenstop1+";"+zielid+"\" id=\"distance_"+i+"\"><\/span>\n";
+				add += "<\/td>\n";
+				add += "<\/tr>\n";
+			
+			}
+			
+			route += ";"+zwischenstop1;
+			k++;
+			i++;
+			
+		});
 	}
 	
 	if ($("input[name^='ziel;']").size() > 0) {
@@ -251,7 +269,7 @@ function updateFlugdaten() {
 		route += ";"+zielid;
 	}
 	
-	if ($("input[name^='ziel;']").size() == 0 && $("input[name^='zwischenstop;']").size() == 0) {
+	if (($("input[name^='ziel;']").size() == 0 && $("input[name^='zwischenstop;']").size() == 0) || ($("input[name^='start;']").size() == 0 && $("input[name^='zwischenstop;']").size() == 0) || ($("input[name^='start;']").size() == 0 && $("input[name^='ziel;']").size() == 0)) {
 		add += "<\/table>\n";
 		$("#fluginfos").append(add);
 	} else {
@@ -259,8 +277,9 @@ function updateFlugdaten() {
 		add += "<tr><td colspan=\"2\" id=\"distancesum\" class=\"distancesum\"><\/td><\/tr>\n";
 		add += "<\/table>\n";
 		$("#fluginfos").append(add);
-		calcDitances();
 	}
+	
+	calcDitances();
 	
 	$("td[title^='delzwischenstop_']").click(function () {
 		$(this).attr('title').search(/.*_(.*)/g);
@@ -284,20 +303,47 @@ function updateFlugdaten() {
 	
 }
 
-
-
-
-
 function calcCosts() {
-//SimpleCalc($flugzeugtyp, $entfernung, $sonderwunsch_netto, $zeitflug, $begleiter, $landungen)
-	if ($("#VorgangFlugzeugtypId option:selected").val() != '' && $("#distancesum").text() != '' && $("#VorgangZeitcharter option:selected").val() != '') {
+	
+	var sonderwunsch = '';
+	var html = "";
+	
+	$("#flugkosten").html('');
+	
+	if ($("#VorgangZeitcharter option:selected").val() == 0) {
+		html += "<table class=\"flugkosten_table\">\n";
+		html += "<tr><td class=\"title\" colspan=\"2\">Flugkosten<\/td><\/tr>\n";
+		html += "<tr><td>Berechnen sich nach Triebwerkslaufzeit<\/td><\/tr>\n";
+		html += "<\/table>\n";
+		$("#flugkosten").html(html)
+	}
+	
+	if ($("#VorgangFlugzeugtypId option:selected").val() != '' && $("#distancesum").text() != '' && $("#VorgangZeitcharter option:selected").val() == 1) {
+		
+		if ($("#VorgangSonderwunschNetto").val() == '') {
+		sonderwunsch = '0';
+		} else {
+		sonderwunsch = $("#VorgangSonderwunschNetto").val();
+		}
+		
+		//alert("../../vorgaenge/SimpleCalc/"+$("#VorgangFlugzeugtypId option:selected").val()+"/"+$("#distancesum").text()+"/"+sonderwunsch+"/"+$("#VorgangZeitcharter option:selected").val()+"/"+$("#VorgangAnzahlFlugbegleiter").val()+"/"+$("input[name^='zwischenstop;']").size()+".xml");
+		$("#loader_costs").show();
 		$.ajax({
 			type: "GET",
-			url: "../../vorgaenge/SimpleCalc/"+$("#VorgangFlugzeugtypId option:selected").val()+"/"+$("#distancesum").text()+"/0/"+$("#VorgangZeitcharter option:selected").val()+"/"+$("#VorgangAnzahlFlugbegleiter").val()+"/2.xml",
-			dataType: "html",
+			url: "../../vorgaenge/SimpleCalc/"+$("#VorgangFlugzeugtypId option:selected").val()+"/"+$("#distancesum").text()+"/"+sonderwunsch+"/"+$("#VorgangZeitcharter option:selected").val()+"/"+$("#VorgangAnzahlFlugbegleiter").val()+"/"+$("input[name^='zwischenstop;']").size()+".xml",
+			dataType: "xml",
 			cache: false,
 			success:function(xml){
-				alert(xml);
+				$(xml).find('kalkulation').each(function(){  
+					html += "<table class=\"flugkosten_table\">\n";
+					html += "<tr><td class=\"title\" colspan=\"2\">Flugkosten<\/td><\/tr>\n";
+					html += "<tr><td class=\"kostentyp\">Netto<\/td><td id=\"kosten_nettosum\" class=\"kosten\">"+$(this).find('netto').text()+"<\/td><\/tr>\n";
+					html += "<tr><td class=\"kostentyp\">Mwst.<\/td><td id=\"kosten_mwst\" class=\"kosten\">"+$(this).find('mwst').text()+"<\/td><\/tr>\n";
+					html += "<tr><td class=\"kostentyp\">Brutto<\/td><td id=\"kosten_bruttosum\" class=\"kosten\">"+$(this).find('brutto').text()+"<\/td><\/tr>\n";
+					html += "<\/table>\n";
+				});
+				$("#flugkosten").html(html)
+				$("#loader_costs").hide();
 			}
 		});	
 	}
@@ -305,40 +351,51 @@ function calcCosts() {
 }
 	
 function calcDitances(spanid, ap1, ap2) {
-		if (!spanid) {
-			$("#distancesum").text('0');
-			$("span[id^='distance_']").each(function(){ 
-				$(this).attr("id").search(/.*_(.*)/g);
-				var id = RegExp.$1;
-				$(this).attr("title").search(/(.*);(.*)/g);
-				var from = RegExp.$1;
-				var to = RegExp.$2;
-				calcDitances(id,from,to);
-			});
-		
-		} else {
-			$.ajax({
-				type: "GET",
-				async: "false",
-				url: "../../entfernungen/berechnen/"+ap1+"/"+ap2+".xml",
-				dataType: "xml",
-				cache: false,
-				success:function(xml){
-					$(xml).find('entfernung').each(function(){  
-						if($(this).find('distance').text() == '') {
-							$("#distance_"+spanid+"").text(0);
-						} else {						
-							$("#distance_"+spanid+"").text($(this).find('distance').text());
-							$("#distancesum").text(parseInt($("#distancesum").text())+parseInt($(this).find('distance').text()));
-							updateFlugzeuge();
+	if (!spanid && (($("input[name^='zwischenstop;']").size() > 0 && $("input[name^='start;']").size() > 0) || ($("input[name^='ziel;']").size() > 0 && $("input[name^='start;']").size() > 0))) {
+		reqcounter = 0;
+		reqsum = $("span[id^='distance_']").size();
+		$("#loader_dist").show();
+		$("#distancesum").text('0');
+		$("span[id^='distance_']").each(function(){ 
+			$(this).attr("id").search(/.*_(.*)/g);
+			var id = RegExp.$1;
+			$(this).attr("title").search(/(.*);(.*)/g);
+			var from = RegExp.$1;
+			var to = RegExp.$2;
+			calcDitances(id,from,to);
+		});
+	
+	} else {
+		$.ajax({
+			type: "GET",
+			async: "false",
+			url: "../../entfernungen/berechnen/"+ap1+"/"+ap2+".xml",
+			dataType: "xml",
+			cache: false,
+			success:function(xml){
+				reqcounter++;
+				$(xml).find('entfernung').each(function(){  
+					if($(this).find('distance').text() == '') {
+						$("#distance_"+spanid+"").text(0);
+					} else {						
+						$("#distance_"+spanid+"").text($(this).find('distance').text());
+						if ($("#VorgangZeitcharter option:selected").val() == 1) {
+						$("#distancesum").text(parseInt($("#distancesum").text())+parseInt($(this).find('distance').text()));
+						} else {
+						$("#distancesum").text("Triebwerkslaufzeit");
 						}
-					});
-				},
-				
-
-			});	
-		}
+					}
+					
+				if (reqcounter == reqsum) {
+				$("#loader_dist").hide();
+				updateFlugzeuge();
+				calcCosts();
+				}
+				});
+			}
+		});	
 	}
+}
 
 function updateFlugzeuge() {
 	$("#VorgangFlugzeugtypId option[value!=0]").each(function () {
@@ -398,7 +455,6 @@ function updateFlugzeuge() {
 			});
 		});
 	}
-	
 
 }
 

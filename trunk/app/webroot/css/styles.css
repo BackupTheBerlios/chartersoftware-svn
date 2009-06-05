@@ -109,7 +109,7 @@ z-index:10;
 top:105px;
 right:5px;
 overflow:auto;
-background:#EEE;
+
 }
 
 #txtcontent2_wrapper {
@@ -239,13 +239,14 @@ color:#FFF;
 
 /*Angebot Flugdaten Übersicht Rechts*/
 
-#loader {
+.loader {
 display:none;
 width:128px;
-height:20px;
-margin:0 auto;
-height:50px;
-background:url(img/ajax-loader.gif) no-repeat center center;
+margin:5px auto 0 auto;
+height:35px;
+color:#FFF;
+text-align:center;
+background:url(img/ajax-loader.gif) no-repeat center bottom;
 }
 
 .flugdaten_table {
@@ -306,6 +307,29 @@ vertical-align:center;
 height:35px;
 }
 
+.flugkosten_table {
+width:100%;
+margin-bottom:10px;
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+.flugkosten_table td.title{
+font-size:12px;
+font-weight:bold;
+color:#EF5A00;
+vertical-align:top;
+height:20px;
+}
+
+.flugkosten_table td.kostentyp, .flugkosten_table td.kosten{
+padding: 5px 0;
+border-bottom:1px solid #CCC;
+}
+
+.flugkosten_table td.kosten{
+text-align:right;
+}
 
 
   /*------------------------------------------------------------------------------------------------------*/
