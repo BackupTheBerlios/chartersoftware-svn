@@ -380,6 +380,7 @@ class VorgaengeController extends AppController
       	{
       		$this->Vorgang->id = $id;
         	$this->data = $this->Vorgang->Read();
+			$this->data['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($this->data['Vorgang']);
 			$this->setDefaultData();
       	}
 	}
