@@ -324,9 +324,11 @@ class VorgaengeController extends AppController
         }
         
 		if ($this->RequestHandler->prefers('xml')) {
-				header('content-type: text/xml');
+			header('content-type: text/xml');
 		} else if ($this->RequestHandler->prefers('pdf')) {
-				header('content-type: text/plain');
+			header('content-type: text/html');
+			//header("Content-type: application/pdf");
+
 		}
         
 	}

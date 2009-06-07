@@ -1,8 +1,4 @@
-
-ANFANG=====layouts/pdf/default.ctp=====Default Layout für zukünftige PDFs
 <?php 
-	echo $cakeDebug . "\n";
-	echo $content_for_layout . "\n";
+Configure::write('debug',1); 
+echo $content_for_layout; 
 ?>
-ENDE=====layouts/pdf/default.ctp=====Default Layout für zukünftige PDFs 
-	
