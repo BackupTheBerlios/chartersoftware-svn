@@ -44,7 +44,7 @@ class VorgaengeController extends AppController
 	}
 
 
-    public function indexAngebote($alle)
+    public function indexAngebote($alle=null)
 	{
 		//Liste von Vorgängen aufbauen
 		if (empty($alle)){
