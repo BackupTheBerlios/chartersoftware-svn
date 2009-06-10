@@ -133,8 +133,9 @@ class VorgaengeController extends AppController
      * start: ID des StartFlugplatzes
      * ziel: ID des Zielflugplatzes
      */
-    public function CalcEntfernung($start, $ziel)
+    public function CalcEntfernung($start = null, $ziel = null)
     {
+    	if ($start == null || $ziel == null) return 0;
     	$this->Flugplatz->id=$start;
     	$startFlugplatz = $this->Flugplatz->field('geoPosition');
     	$bmStart = $this->Kalkulationen->GeografischeGradzuBogenmass($startFlugplatz);
@@ -185,34 +186,6 @@ class VorgaengeController extends AppController
       	}
 	}	
     
-    
-	/**Anzeigen einer Liste*/
-    public function editAngebot($vorgangstyp, $id=null)
-	{	
-		$this->pageTitle = 'Angebot erstellen';
-		$this->set('vorgangstyp',$vorgangstyp);
-
-		$currentObject =& ClassRegistry::getObject($this->modelClass);
-		if (!empty($this->data))
-		{
-        	if (!$currentObject->save($this->data))
-                $this->Session->setFlash('Fehler beim Speichern');
-            else
-	       		$this->redirect(array('action' => 'indexAngebote'));
-		}
-      	else
-      	{
-      		$currentObject->id = $id;
-        	$this->data = $currentObject->read();
-			$this->setDefaultData();
-			$this->data['Vorgang']['datum']=date("d.m.Y",time()); //heutiges Datum
-			$strecke =split('[;]', $this->data['Vorgang']['flugstrecke']);
-			if ($strecke != null) $this->data['Vorgang']['zielflughafen']=array_pop($strecke); 
-			if ($strecke != null) $this->data['Vorgang']['startflughafen']=array_shift($strecke);
-      	}
-		
-	}
-
     public function addAngebot()
 	{
 		$this->pageTitle = 'Angebot erstellen';
@@ -367,7 +340,7 @@ class VorgaengeController extends AppController
   	}
 
 
-	public function bezahlen($id){
+	public function bezahlen($id = null){
 		if ($id == null) $this->Session->setFlash('Fehlerhafter Aufruf der Funktion','index');
 		if (!empty($this->data))
 		{
