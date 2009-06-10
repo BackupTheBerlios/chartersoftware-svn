@@ -321,16 +321,14 @@ class VorgaengeController extends AppController
         	$this->Vorgang->id = $id;
         	$this->data=$this->Vorgang->read();
 			$this->data['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($this->data['Vorgang']);
+			if ($this->RequestHandler->prefers('xml')) {
+				header('Content-Disposition: attachment; filename="Angebot-' . $id .'.xml"');
+				header('content-type: text/xml');
+			} else if ($this->RequestHandler->prefers('pdf')) {
+				header('Content-Disposition: attachment; filename="Angebot-' . $id .'.pdf"');
+				header("Content-type: application/pdf");
+			}
         }
-        
-		if ($this->RequestHandler->prefers('xml')) {
-			header('content-type: text/xml');
-		} else if ($this->RequestHandler->prefers('pdf')) {
-			header('content-type: text/html');
-			//header("Content-type: application/pdf");
-
-		}
-        
 	}
 
 	public function vertrag($id = null){
@@ -340,14 +338,15 @@ class VorgaengeController extends AppController
         	$this->Vorgang->id = $id;
         	$this->data=$this->Vorgang->read();
 			$this->data['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($this->data['Vorgang']);
-        }
-        
-		if ($this->RequestHandler->prefers('xml')) {
+			if ($this->RequestHandler->prefers('xml')) {
+				header('Content-Disposition: attachment; filename="Vertrag-' . $id .'.xml"');
 				header('content-type: text/xml');
-		} else if ($this->RequestHandler->prefers('pdf')) {
-				header('content-type: text/plain');
-		}
-	}
+			} else if ($this->RequestHandler->prefers('pdf')) {
+				header('Content-Disposition: attachment; filename="Vertrag-' . $id .'.pdf"');
+				header("Content-type: application/pdf");
+			}
+        }
+   	}
 
 	// Fred 04.05.09
 	public function rechnung($id = null){
@@ -357,14 +356,15 @@ class VorgaengeController extends AppController
         	$this->Vorgang->id = $id;
         	$this->data=$this->Vorgang->read();
 			$this->data['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($this->data['Vorgang']);
-        }
-        
-		if ($this->RequestHandler->prefers('xml')) {
+			if ($this->RequestHandler->prefers('xml')) {
+				header('Content-Disposition: attachment; filename="Rechnung-' . $id .'.xml"');
 				header('content-type: text/xml');
-		} else if ($this->RequestHandler->prefers('pdf')) {
-				header('content-type: text/plain');
-		}
-	}
+			} else if ($this->RequestHandler->prefers('pdf')) {
+				header('Content-Disposition: attachment; filename="Rechnung-' . $id .'.pdf"');
+				header("Content-type: application/pdf");
+			}
+        }
+  	}
 
 
 	public function bezahlen($id){

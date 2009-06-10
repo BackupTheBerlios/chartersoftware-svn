@@ -37,7 +37,7 @@ $l = Array();
 
 // set some language dependent data:
 $lg = Array();
-$lg['a_meta_charset'] = 'ISO-8859-1';
+$lg['a_meta_charset'] = 'UTF-8';
 $lg['a_meta_dir'] = 'ltr';
 $lg['a_meta_language'] = 'en';
 $lg['w_page'] = 'page'; 

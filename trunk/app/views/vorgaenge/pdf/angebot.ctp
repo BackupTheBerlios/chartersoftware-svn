@@ -18,7 +18,7 @@ print "
 App::import('Vendor','tcpdf/config/lang/eng');
 App::import('Vendor','tcpdf/tcpdf');
 
-$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'ISO-8859-1', false);  
+$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT);  
 
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
@@ -54,7 +54,7 @@ $pdf->setLanguageArray($l);
 // Font Typ setzten
 $pdf->SetFont('helvetica', '', 12); 
 
-// Seite hinzufügen
+// Seite hinzufï¿½gen
 $pdf->AddPage(); 
 
 // Wenn Zeitcharter
@@ -84,7 +84,7 @@ $htmlcontent = "
 </tr>
 </table>
 <br>
-<h1>Angebot für Charterflug</h1>
+<h1>Angebot fÃ¼r Charterflug</h1>
 <br>
 <table border=\"1\" cellpadding=\"5\">
 <tr>
@@ -165,7 +165,7 @@ $htmlcontent = "
 </tr>
 </table>
 <br>
-<h1>Angebot für Charterflug [Zeitcharter]</h1>
+<h1>Angebot fï¿½r Charterflug [Zeitcharter]</h1>
 <br>
 <table>
 <tr>
@@ -173,7 +173,7 @@ $htmlcontent = "
 <td><b>Rent-a-Jet</b></td>
 </tr>
 <tr>
-<td align=\"left\" width=\"50\">Für: </td>
+<td align=\"left\" width=\"50\">Fï¿½r: </td>
 <td><b>".$this->data['Adresse']['firma']."</b></td>
 </tr>
 <tr>
@@ -193,7 +193,7 @@ $htmlcontent = "
 $pdf->writeHTML($htmlcontent, true, 0, true, 0);
 
 //Close and output PDF document
-$pdf->Output('Angebot.pdf', 'I');
+echo $pdf->Output(null, 'S');
 
 //============================================================+
 // END OF FILE                                                 
