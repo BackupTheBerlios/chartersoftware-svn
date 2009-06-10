@@ -40,7 +40,7 @@ class VorgaengeController extends AppController
 		$this->set('ablehnungsgrundliste',$this->Zufriedenheitstyp->find('list', array('conditions'=>array('istAblehnungsgrund'=>'1'))));
 		$this->set('zufriedenheitsgrundliste',$this->Zufriedenheitstyp->find('list', array('conditions'=>array('istAblehnungsgrund'=>'0'))));
 
-		$this->set('zeitcharter', array('0'=>'Ja', '1'=>'Nein'));
+		$this->set('zeitcharter', array('1'=>'Ja', '0'=>'Nein'));
 	}
 
 
@@ -194,12 +194,14 @@ class VorgaengeController extends AppController
 		{
 			//Standard-Daten setzen.
 			$this->data['Vorgang']['vorgangstyp_id']=1; //Typ ist angebot
+			$this->data['Vorgang']['reisezeit']=1.0; //Typ ist angebot
 			$this->data['Vorgang']['datum']=date("d.m.Y",time()); //heutiges Datum
 			$this->data['Vorgang']['sonderwunsch_netto']=str_replace(',','.',$this->data['Vorgang']['sonderwunsch_netto']);
 			$this->data['Vorgang']['vorgangstyp_id']=1; //Typ ist angebot
 			
 			//Kalkulation durchführen
 			$this->data['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($this->data['Vorgang']);
+			$this->data['Vorgang']['reisezeit'] = $this->data['Vorgang']['Kalkulation']['reisezeit'];
 
 			//Speichern des Angebots
 			if (!$this->Vorgang->save($this->data)) {

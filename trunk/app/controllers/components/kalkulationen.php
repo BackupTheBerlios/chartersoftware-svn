@@ -85,14 +85,11 @@ class KalkulationenComponent extends Object {
 
 	public function KalkuliereVorgang($vorgang){
 		$result = $vorgang;
+		
 		$result['Adresse']=$this->getAdresse($vorgang['adresse_id']);
 		$result['Flugstrecke']=$this->calcStrecke($vorgang['flugstrecke'], $vorgang['flugzeugtyp_id']);
 		$result['Flugzeug']=$this->getFlugzeugtyp($vorgang['flugzeugtyp_id']);
-		if ($vorgang['zeitcharter']==1){
-			$result['Kalkulation']=$this->KalkulationFlugkostenZielflug($result);
-		} else {
-			$result['Kalkulation']=$this->KalkulationFlugkostenZeitflug($result);
-		}
+		$result['Kalkulation']=$this->KalkulationKosten($result, $vorgang['zeitcharter']==1);
 		$result['netto']=$result['Kalkulation']['gesamtnetto'];
 		$result['mwst']=$result['Kalkulation']['mwst'];
 		$result['brutto_soll']=$result['Kalkulation']['gesamtbrutto'];
@@ -106,37 +103,35 @@ class KalkulationenComponent extends Object {
 		$result = array();
 		$vmax = $this->vMaxFlugzeug($flugzeugtyp);
 		$reisezeit = $this->CalcReisezeit($entfernung, $vmax, $landungen);
-		$flugzeit = $this->CalcReisezeit($entfernung, $vmax);
+		if ($zeitflug == 0) $reisezeit = 1;
+		
 		$begleiter = $this->istFlugbegleiter($flugzeugtyp, $begleiter);
-		$flugzeugkostenStunde = $this->FlugzeugkostenStunde($flugzeugtyp);
-		$flugzeugkostenZeit = $this->FlugzeugkostenZeit($flugzeugtyp, $reisezeit);
+		$flugzeugkosten = $this->FlugzeugkostenZeit($flugzeugtyp, $reisezeit);
 		$crew = $this->Piloten($flugzeugtyp);
 		$personalkosten = $this->PersonalKosten($crew, $begleiter, $reisezeit);
 
-		if ($zeitflug==1){
-			//zielflug
-			$result['netto']=round($flugzeugkostenZeit + $personalkosten + $sonderwunsch_netto, 2);
-			$result['mwst']=round($result['netto'] * 19/100,2);
-			$result['brutto']=$result['netto']+$result['mwst'];
-		} else {
-			//zeitflug
-			$result['netto']=round($flugzeugkostenStunde + $personalkosten + $sonderwunsch_netto, 2);
-			$result['mwst']=round($result['netto'] * 19/100,2);
-			$result['brutto']=$result['netto']+$result['mwst'];
-		}
+		$result['netto']=round($flugzeugkosten + $personalkosten + $sonderwunsch_netto, 2);
+		$result['mwst']=round($result['netto'] * 19/100,2);
+		$result['brutto']=$result['netto']+$result['mwst'];
 		
 		return $result;	
 	}		
 
 	
-	public function KalkulationFlugkostenZielflug($vorgang){
+	public function KalkulationKosten($vorgang, $zeitflug){
 		$result = array();
 		$flugzeugtyp =$vorgang['flugzeugtyp_id']; 
 		
 		//Personalkosten
 		$begleiter = $this->istFlugbegleiter($flugzeugtyp, $vorgang['AnzahlFlugbegleiter']);
 		$crew = $vorgang['Flugzeug']['Flugzeugtyp']['crewPersonal'];
-		$reisezeit = $vorgang['Flugstrecke']['gesamtreisezeit'];
+		$reisezeit =0;
+		if ($zeitflug==true) {
+			$reisezeit = $vorgang['reisezeit']; 
+		}
+		else {
+			$reisezeit = $vorgang['Flugstrecke']['gesamtreisezeit'];	
+		}
 		$personalkosten = $this->PersonalKosten($crew, $begleiter, $reisezeit);
 		
 		//Flugzeugkosten
@@ -154,8 +149,10 @@ class KalkulationenComponent extends Object {
 
 		
 		//Ergebnis zusammen bauen
-		$result['personalkosten']=$personalkosten;
-		$result['flugzeugkosten']=$flugzeugkostenZeit;
+		$result['reisezeit']=$reisezeit;
+		$result['sonderwunschNetto']=$sonderwünsche;
+		$result['personalkostenNetto']=$personalkosten;
+		$result['flugzeugkostenNetto']=$flugzeugkostenZeit;
 		$result['gesamtnetto']=$gesamtnetto;
 		$result['mwstsatz']=$mwstsatz;
 		$result['mwst']=$mwst;
@@ -163,40 +160,6 @@ class KalkulationenComponent extends Object {
 		return $result;		
 	}
 
-	public function KalkulationFlugkostenZeitflug($vorgang){
-		$result = array();
-		$flugzeugtyp =$vorgang['flugzeugtyp_id']; 
-		
-		//Personalkosten
-		$begleiter = $this->istFlugbegleiter($flugzeugtyp, $vorgang['AnzahlFlugbegleiter']);
-		$crew = $vorgang['Flugzeug']['Flugzeugtyp']['crewPersonal'];
-		$reisezeit = 1;
-		$personalkosten = $this->PersonalKosten($crew, $begleiter, $reisezeit);
-		
-		//Flugzeugkosten
-		$flugzeugkostenStunde = $this->FlugzeugkostenStunde($flugzeugtyp);
-		$flugzeugkostenZeit = $this->FlugzeugkostenZeit($flugzeugtyp, $reisezeit);
-		
-		//Sonderwünsche
-		$sonderwünsche = $vorgang['sonderwunsch_netto'];
-		
-		//Gesamtkosten
-		$gesamtnetto = $flugzeugkostenZeit + $personalkosten + $sonderwünsche;
-		$mwstsatz = 1900 ;
-		$mwst = round($gesamtnetto * $mwstsatz/10000,2);
-		$gesamtbrutto = $gesamtnetto + $mwst;
-
-		
-		//Ergebnis zusammen bauen
-		$result['personalkosten']=$personalkosten;
-		$result['flugzeugkosten']=$flugzeugkostenZeit;
-		$result['gesamtnetto']=$gesamtnetto;
-		$result['mwstsatz']=$mwstsatz;
-		$result['mwst']=$mwst;
-		$result['gesamtbrutto']=$gesamtbrutto;
-		return $result;		
-	}
-	
 	public function vMaxFlugzeug($flugzeugtyp){
 		$daten = $this->getFlugzeugtyp($flugzeugtyp);
 		return $daten['Flugzeugtyp']['vmax'];	

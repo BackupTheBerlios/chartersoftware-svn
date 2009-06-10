@@ -42,12 +42,12 @@ $(document).ready(function () {
 
 	$("#VorgangZeitcharter").change(function () {
 		hidetooltip();
-		if ($(this).val() == '0') {
+		if ($(this).val() == '1') {
 			$("#button_add_zwischenstop").slideUp("normal");
 			$("#DivZwischenstop").slideUp("normal");
 			deleteZwischenstop('',1);
 		}
-		if ($(this).val() == '1') {
+		if ($(this).val() == '0') {
 			$("#button_add_zwischenstop").slideDown("normal");
 			$("#DivZwischenstop").slideDown("normal");
 			updateFlugdaten();	
@@ -310,7 +310,7 @@ function calcCosts() {
 	
 	$("#flugkosten").html('');
 	
-	if ($("#VorgangZeitcharter option:selected").val() == 0) {
+	if ($("#VorgangZeitcharter option:selected").val() == 1) {
 		html += "<table class=\"flugkosten_table\">\n";
 		html += "<tr><td class=\"title\" colspan=\"2\">Flugkosten<\/td><\/tr>\n";
 		html += "<tr><td>Berechnen sich nach Triebwerkslaufzeit<\/td><\/tr>\n";
@@ -318,7 +318,7 @@ function calcCosts() {
 		$("#flugkosten").html(html)
 	}
 	
-	if ($("#VorgangFlugzeugtypId option:selected").val() != '' && $("#distancesum").text() != '' && $("#VorgangZeitcharter option:selected").val() == 1) {
+	if ($("#VorgangFlugzeugtypId option:selected").val() != '' && $("#distancesum").text() != '' && $("#VorgangZeitcharter option:selected").val() == 0) {
 		
 		if ($("#VorgangSonderwunschNetto").val() == '') {
 		sonderwunsch = '0';
@@ -379,7 +379,7 @@ function calcDitances(spanid, ap1, ap2) {
 						$("#distance_"+spanid+"").text(0);
 					} else {						
 						$("#distance_"+spanid+"").text($(this).find('distance').text());
-						if ($("#VorgangZeitcharter option:selected").val() == 1) {
+						if ($("#VorgangZeitcharter option:selected").val() == 0) {
 						$("#distancesum").text(parseInt($("#distancesum").text())+parseInt($(this).find('distance').text()));
 						} else {
 						$("#distancesum").text("Triebwerkslaufzeit");
