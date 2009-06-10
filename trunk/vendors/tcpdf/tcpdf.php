@@ -2159,7 +2159,8 @@ if (!class_exists('TCPDF', false)) {
 			}
 			$this->InFooter = true;
 			// print page footer
-			$this->setFooter();
+			// Fgeist
+			//$this->setFooter();
 			// close page
 			$this->_endpage();
 			// mark page as closed
@@ -2200,7 +2201,8 @@ if (!class_exists('TCPDF', false)) {
 			// mark this point
 			$this->setPageMark();
 			// print page header
-			$this->setHeader();
+			//F.geist
+			//$this->setHeader();
 			// restore graphic settings
 			$this->setGraphicVars($gvars);
 			// mark this point
@@ -2365,7 +2367,7 @@ if (!class_exists('TCPDF', false)) {
 			} else {
 				$this->SetX($ormargins['left']);
 			}
-			$this->Cell(0, 0, '', 'T', 0, 'C');
+			$this->Cell(0, 0, '', 'T', 0, 'C'); 
 		}
 		
 		/**
