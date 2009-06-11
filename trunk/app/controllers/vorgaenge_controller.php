@@ -343,6 +343,26 @@ class VorgaengeController extends AppController
   	}
 
 
+	public function reisezeitSpeichern($id = null){
+		if (!empty($this->data))
+		{
+			$this->data['Vorgang']['reisezeit']=str_replace(',','.',$this->data['Vorgang']['reisezeit']);
+			
+        	if (!$this->Vorgang->save($this->data))
+                $this->Session->setFlash('Fehler beim Speichern');
+            else
+	       		$this->redirect(array('action' => 'indexRechnungen'));
+		}
+      	else
+      	{
+      		$this->Vorgang->id = $id;
+        	$this->data = $this->Vorgang->Read();
+			$this->data['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($this->data['Vorgang']);
+			$this->setDefaultData();
+      	}
+	}
+
+
 	public function bezahlen($id = null){
 		if ($id == null) $this->Session->setFlash('Fehlerhafter Aufruf der Funktion','index');
 		if (!empty($this->data))
