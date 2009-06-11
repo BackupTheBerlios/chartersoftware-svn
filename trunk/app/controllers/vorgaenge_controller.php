@@ -302,6 +302,7 @@ class VorgaengeController extends AppController
 			} else if ($this->RequestHandler->prefers('pdf')) {
 				header('Content-Disposition: attachment; filename="Angebot-' . $id .'.pdf"');
 				header("Content-type: application/pdf");
+				//header('content-type: text/html');
 			}
         }
 	}
@@ -323,7 +324,7 @@ class VorgaengeController extends AppController
         }
    	}
 
-	// Fred 04.05.09
+	// Fred 04.06.09
 	public function rechnung($id = null){
 		$this->setDefaultData();
 		if ($id != null)

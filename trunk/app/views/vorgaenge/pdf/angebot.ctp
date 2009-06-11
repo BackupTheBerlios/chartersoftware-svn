@@ -57,8 +57,8 @@ $pdf->SetFont('helvetica', '', 12);
 // Seite hinzuf�gen
 $pdf->AddPage(); 
 
-// Wenn Zeitcharter
-//if ($this->data['Vorgang']['zeitcharter'] == 1) {
+// Inhalt PDF
+
 $htmlcontent = "
 <table><tr><td align=\"right\"><img src=\"vendors/tcpdf/images/logo_rentajet.gif\" border=\"0\" height=\"41\" align=\"top\" /></td></tr></table>
 <br><br>
@@ -91,32 +91,106 @@ $htmlcontent = "
 <td align=\"left\" width=\"180\">Chartertyp: </td>";
 
 if ($this->data['Vorgang']['zeitcharter'] == 1) 
-{$htmlcontent .= "<td width=\"300\"><b>Zeitcharter</b></td>";} 
+{$htmlcontent .= "<td width=\"310\"><b>Zeitcharter</b></td>";} 
 else 
-{$htmlcontent .= "<td width=\"300\"><b>Routenflug</b></td>";}
+{$htmlcontent .= "<td width=\"310\"><b>Routenflug</b></td>";}
 
 $htmlcontent .= "</tr>
 <tr>
 <td align=\"left\" width=\"180\">Charterdauer: </td>
-<td width=\"300\"><b>".$this->data['Vorgang']['vonDatum']." - ".$this->data['Vorgang']['bisDatum']."</b></td>
-</tr>
+<td width=\"310\"><b>".$this->data['Vorgang']['vonDatum']." - ".$this->data['Vorgang']['bisDatum']."</b></td>
+</tr>";
+
+if ($this->data['Vorgang']['zeitcharter'] == 1) {
+$htmlcontent .= "
 <tr>
 <td align=\"left\" width=\"180\">Startflughafen: </td>
-<td width=\"300\"><b>".$this->data['Vorgang']['Flugstrecke']['startflugplatz']['Flugplatz']['name']."</b></td>
+<td width=\"310\"><b>".$this->data['Vorgang']['Flugstrecke']['startflugplatz']['Flugplatz']['name']."</b></td>
 </tr>
 <tr>
 <td align=\"left\" width=\"180\">Zielflughafen: </td>
-<td width=\"300\"><b>".$this->data['Vorgang']['Flugstrecke']['zielflugplatz']['Flugplatz']['name']."</b></td>
-</tr>
-<tr>
-<td align=\"left\" width=\"180\">Flugzeugtyp: </td>
-<td width=\"300\"><b>".$this->data['Vorgang']['Flugzeug']['Flugzeugtyp']['name']."</b></td>
-</tr>
-</table>
-<br><br>";
+<td width=\"310\"><b>".$this->data['Vorgang']['Flugstrecke']['zielflugplatz']['Flugplatz']['name']."</b></td>
+</tr>";
+}
 
-if ($this->data['Vorgang']['zeitcharter'] == 1) 
-{$htmlcontent .= "Der Charterpreis setzt sich aus einem Fixpreisanteil und einem Flugpreisanteil
+$htmlcontent .= "<tr>
+<td align=\"left\" width=\"180\">Flugzeugtyp: </td>
+<td width=\"310\"><b>".$this->data['Vorgang']['Flugzeug']['Flugzeughersteller']['name']." - ".$this->data['Vorgang']['Flugzeug']['Flugzeugtyp']['name']."</b></td>
+</tr>
+</table>";
+if ($this->data['Vorgang']['zeitcharter'] == 0) 
+{
+	$htmlcontent .= "
+	<br>
+	<h1>Flugroute</h1>
+	<table border=\"1\" cellpadding=\"5\">
+	<tr>
+	<td width=\"30\">ID</td>
+	<td width=\"150\">Von</td>
+	<td width=\"150\">Nach</td>
+	<td width=\"80\">Entfernung</td>
+	<td width=\"80\">Flugzeit</td>
+	</tr>";
+
+	for($i = 0; $i < count($this->data['Vorgang']['Flugstrecke']['flugstrecke']); $i++) {
+		$k = $i+1;
+		$htmlcontent .= "
+		<tr>
+		<td width=\"30\">".$k."</td>
+		<td width=\"150\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['von']['Flugplatz']['name']."</td>
+		<td width=\"150\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['nach']['Flugplatz']['name']."</td>
+		<td width=\"80\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['entfernung']."</td>
+		<td width=\"80\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['flugzeitStr']."</td>
+		</tr>";
+	}
+	
+	$htmlcontent .= "
+	<tr>
+	<td colspan=\"3\" width=\"330\">Gesamt</td>
+	<td width=\"80\">".$this->data['Vorgang']['Flugstrecke']['gesamtstrecke']. "</td>
+	<td width=\"80\">".$this->data['Vorgang']['Flugstrecke']['gesamtflugzeitStr']."</td>
+	</tr>
+	</table>";
+	
+	if ($this->data['Vorgang']['sonderwunsch_netto'] != 0) {
+	
+	$htmlcontent .= "
+	<br>
+	<h1>Sonderwunsch (Netto)</h1>
+	<table border=\"1\" cellpadding=\"5\">
+	<tr>
+	<td width=\"310\">".$this->data['Vorgang']['sonderwunsch']."</td>
+	<td align=\"right\" width=\"180\">EUR ".number_format($this->data['Vorgang']['sonderwunsch_netto'], 2, ',', '.')."</td>
+	</tr>
+	</table>";
+	}
+	
+	
+	
+	
+	$htmlcontent .= "
+	<br>
+	<h1>Gesamt</h1>
+	<table border=\"1\" cellpadding=\"5\">
+	<tr>
+	<td width=\"310\">Netto</td>
+	<td align=\"right\" width=\"180\">EUR ".number_format($this->data['Vorgang']['netto'], 2, ',', '.')."</td>
+	</tr>
+	<tr>
+	<td width=\"310\">Mwst. (19%)</td>
+	<td align=\"right\" width=\"180\">EUR ".number_format($this->data['Vorgang']['mwst'], 2, ',', '.')."</td>
+	</tr>
+	<tr>
+	<td width=\"310\">Brutto</td>
+	<td align=\"right\" width=\"180\">EUR ".number_format($this->data['Vorgang']['brutto_soll'], 2, ',', '.')."</td>
+	</tr>
+	</table>";
+	
+	
+} else {
+$htmlcontent .= "
+<br><br>
+Der Charterpreis setzt sich aus einem Fixpreisanteil und einem Flugpreisanteil
 zusammen. Der Flugpreisanteil basiert auf den verflogenen Flugstunden und
 entspricht der Triebwerkslaufzeit. Sie ist aus der Anzeige der Triebwerkslaufzeit im
 Cockpit ersichtlich.
@@ -133,61 +207,6 @@ Flugpreis pro Stunde (netto): <b>".$this->data['Vorgang']['Flugzeug']['Flugzeugt
 <br>
 Flugpreis pro Stunde (brutto): <b>".$this->data['Vorgang']['Flugzeug']['Flugzeugtyp']['stundenkosten']." EUR</b>
 ";} 
-else 
-{$htmlcontent .= "123";}
-
-//}
-
-// Wenn kein Zeitcharter
-/* if ($this->data['Vorgang']['zeitcharter'] == 0) {
-$htmlcontent = "
-<table><tr><td align=\"right\"><img src=\"http://localhost/rentajet/vendors/tcpdf/images/logo_rentajet.gif\" border=\"0\" height=\"41\" align=\"top\" /></td></tr></table>
-<br><br>
-<table>
-<tr>
-<td>".$this->data['Adresse']['firma']."</td>
-</tr>
-<tr>
-<td>".$this->data['Adresse']['ansprechpartner']."</td>
-</tr>
-<tr>
-<td>".$this->data['Adresse']['strasse']."</td>
-</tr>
-<tr>
-<td>".$this->data['Adresse']['plz']." ".$this->data['Adresse']['ort']."</td>
-</tr>
-</table>
-<br>
-<table>
-<tr>
-<td align=\"right\">Wismar, ".$this->data['Vorgang']['datum']."
-</td>
-</tr>
-</table>
-<br>
-<h1>Angebot f�r Charterflug [Zeitcharter]</h1>
-<br>
-<table>
-<tr>
-<td align=\"left\" width=\"50\">Von: </td>
-<td><b>Rent-a-Jet</b></td>
-</tr>
-<tr>
-<td align=\"left\" width=\"50\">F�r: </td>
-<td><b>".$this->data['Adresse']['firma']."</b></td>
-</tr>
-<tr>
-<td align=\"left\" width=\"50\">Startflughafen: </td>
-<td><b>".$this->data['Adresse']['firma']."</b></td>
-</tr>
-<tr>
-<td align=\"left\" width=\"50\">Zielflughafen: </td>
-<td><b>".$this->data['Vorgang']['Flugstrecke']['startflugplatz']."</b></td>
-</tr>
-</table>
-<br>
-";
-} */
 
 // HTML in PDF Format wandeln
 $pdf->writeHTML($htmlcontent, true, 0, true, 0);
