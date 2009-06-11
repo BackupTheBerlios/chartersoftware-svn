@@ -283,7 +283,11 @@ class VorgaengeController extends AppController
                 $this->Session->setFlash('Fehler beim Speichern');
 			} else {
 				//Vorgang ist gewandelt, nun wird die nächste Seite aufgerufen
-				$this->redirect(array('action' => 'indexRechnungen'));
+				if ($record['Vorgang']['zeitcharter']==1){
+					$this->redirect(array('action' => 'reisezeitSpeichern/'.$this->data['Vorgang']['RECORD']));
+				} else {
+					$this->redirect(array('action' => 'indexRechnungen'));
+				}
 			}
 		}
 	}
@@ -347,6 +351,7 @@ class VorgaengeController extends AppController
 		if (!empty($this->data))
 		{
 			$this->data['Vorgang']['reisezeit']=str_replace(',','.',$this->data['Vorgang']['reisezeit']);
+			$this->data['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($this->data['Vorgang']);
 			
         	if (!$this->Vorgang->save($this->data))
                 $this->Session->setFlash('Fehler beim Speichern');
