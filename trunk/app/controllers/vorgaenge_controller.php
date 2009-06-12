@@ -342,6 +342,7 @@ class VorgaengeController extends AppController
 			} else if ($this->RequestHandler->prefers('pdf')) {
 				header('Content-Disposition: attachment; filename="Rechnung-' . $id .'.pdf"');
 				header("Content-type: application/pdf");
+				//header('content-type: text/html');
 			}
         }
   	}

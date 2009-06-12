@@ -79,12 +79,15 @@ $htmlcontent = "
 <br>
 <table>
 <tr>
-<td align=\"right\">Wismar, ".$this->data['Vorgang']['datum']."
+<td align=\"right\">
+Wismar, ".date('d.m.Y')."
 </td>
 </tr>
 </table>
-<h1>Angebot für Charterflug</h1>
 <br>
+<h1>Vertrag für Charterflug</h1>
+Zwischen Rent-A-Jet und ".$this->data['Adresse']['firma']." kommt der Chartervertrag mit folgend genannten Konditionen zustanden.
+<br><br>
 <table border=\"1\" cellpadding=\"5\">
 <tr>
 <td align=\"left\" width=\"180\">Chartertyp: </td>";
@@ -117,19 +120,17 @@ $htmlcontent .= "<tr>
 <td width=\"310\"><b>".$this->data['Vorgang']['Flugzeug']['Flugzeughersteller']['name']." - ".$this->data['Vorgang']['Flugzeug']['Flugzeugtyp']['name']."</b></td>
 </tr>
 </table>";
-if ($this->data['Vorgang']['zeitcharter'] == 0) 
-{
+
+if ($this->data['Vorgang']['zeitcharter'] == 0) {
 	$htmlcontent .= "
-	<br>
 	<h1>Flugroute</h1>
 	<table border=\"1\" cellpadding=\"5\">
 	<tr>
 	<td width=\"30\">ID</td>
-	<td width=\"125\">Von</td>
-	<td width=\"125\">Nach</td>
-	<td width=\"70\">Entfernung</td>
-	<td width=\"70\">Flugzeit</td>
-	<td width=\"70\">Reisezeit</td>
+	<td width=\"150\">Von</td>
+	<td width=\"150\">Nach</td>
+	<td width=\"80\">Entfernung</td>
+	<td width=\"80\">Flugzeit</td>
 	</tr>";
 
 	for($i = 0; $i < count($this->data['Vorgang']['Flugstrecke']['flugstrecke']); $i++) {
@@ -137,20 +138,18 @@ if ($this->data['Vorgang']['zeitcharter'] == 0)
 		$htmlcontent .= "
 		<tr>
 		<td width=\"30\">".$k."</td>
-		<td width=\"125\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['von']['Flugplatz']['name']."</td>
-		<td width=\"125\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['nach']['Flugplatz']['name']."</td>
-		<td width=\"70\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['entfernung']."</td>
-		<td width=\"70\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['flugzeitStr']."</td>
-		<td width=\"70\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['reisezeitStr']."</td>
+		<td width=\"150\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['von']['Flugplatz']['name']."</td>
+		<td width=\"150\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['nach']['Flugplatz']['name']."</td>
+		<td width=\"80\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['entfernung']."</td>
+		<td width=\"80\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['flugzeitStr']."</td>
 		</tr>";
 	}
 	
 	$htmlcontent .= "
 	<tr>
-	<td colspan=\"3\" width=\"280\">Gesamt</td>
-	<td width=\"70\">".$this->data['Vorgang']['Flugstrecke']['gesamtstrecke']. "</td>
-	<td width=\"70\">".$this->data['Vorgang']['Flugstrecke']['gesamtflugzeitStr']."</td>
-	<td width=\"70\">".$this->data['Vorgang']['Flugstrecke']['gesamtreisezeitStr']."</td>
+	<td colspan=\"3\" width=\"330\">Gesamt</td>
+	<td width=\"80\">".$this->data['Vorgang']['Flugstrecke']['gesamtstrecke']. "</td>
+	<td width=\"80\">".$this->data['Vorgang']['Flugstrecke']['gesamtflugzeitStr']."</td>
 	</tr>
 	</table>";
 	
@@ -205,6 +204,26 @@ Flugpreis pro Stunde (netto): <b>".$this->data['Vorgang']['Flugzeug']['Flugzeugt
 <br>
 Flugpreis pro Stunde (brutto): <b>".$this->data['Vorgang']['Flugzeug']['Flugzeugtyp']['stundenkosten']." EUR</b>
 ";} 
+
+$htmlcontent .= "
+<br><br>
+<table>
+<tr>
+<td>Ort, Datum</td>
+<td>Ort, Datum</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>_____________________</td>
+<td>_____________________</td>
+</tr>
+<tr>
+<td>Rent-A-Jet</td>
+<td>Auftraggeber</td>
+</tr>";
 
 // HTML in PDF Format wandeln
 $pdf->writeHTML($htmlcontent, true, 0, true, 0);

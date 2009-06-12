@@ -19,7 +19,7 @@
 			$adresse,
 			$zeile['Vorgang']['Flugstrecke']['zielflugplatz']['Flugplatz']['name'],
 			$zeile['Vorgang']['brutto_soll'],
-			$html->link('Drucken', "/vorgaenge/vertrag/{$zeile['Vorgang']['id']}.xml"),
+			$html->link('Drucken', "/vorgaenge/vertrag/{$zeile['Vorgang']['id']}.pdf"),
 			$ablage
    		));
     endforeach;

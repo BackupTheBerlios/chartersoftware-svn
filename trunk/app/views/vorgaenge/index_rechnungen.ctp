@@ -26,7 +26,7 @@
 			$zeile['Vorgang']['Flugstrecke']['zielflugplatz']['Flugplatz']['name'],
 			$zeile['Vorgang']['brutto_soll'],
 			$zeile['Vorgang']['brutto_ist'],
-			$html->link('Drucken', "/vorgaenge/rechnung/{$zeile['Vorgang']['id']}.xml"),
+			$html->link('Drucken', "/vorgaenge/rechnung/{$zeile['Vorgang']['id']}.pdf"),
 			$html->link('Zahlung', "/vorgaenge/bezahlen/{$zeile['Vorgang']['id']}"),
 			$ablage
    		));

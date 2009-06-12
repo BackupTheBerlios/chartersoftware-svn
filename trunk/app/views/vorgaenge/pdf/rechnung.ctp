@@ -79,11 +79,17 @@ $htmlcontent = "
 <br>
 <table>
 <tr>
-<td align=\"right\">Wismar, ".$this->data['Vorgang']['datum']."
+<td align=\"right\">
+Wismar, ".date('d.m.Y')."
+</td>
+</tr>
+<tr>
+<td align=\"right\">
+Rechnungsnr. RE-".$this->data['Vorgang']['id']."
 </td>
 </tr>
 </table>
-<h1>Angebot für Charterflug</h1>
+<h1>Rechnung für Charterflug</h1>
 <br>
 <table border=\"1\" cellpadding=\"5\">
 <tr>
@@ -125,11 +131,10 @@ if ($this->data['Vorgang']['zeitcharter'] == 0)
 	<table border=\"1\" cellpadding=\"5\">
 	<tr>
 	<td width=\"30\">ID</td>
-	<td width=\"125\">Von</td>
-	<td width=\"125\">Nach</td>
-	<td width=\"70\">Entfernung</td>
-	<td width=\"70\">Flugzeit</td>
-	<td width=\"70\">Reisezeit</td>
+	<td width=\"150\">Von</td>
+	<td width=\"150\">Nach</td>
+	<td width=\"80\">Entfernung</td>
+	<td width=\"80\">Flugzeit</td>
 	</tr>";
 
 	for($i = 0; $i < count($this->data['Vorgang']['Flugstrecke']['flugstrecke']); $i++) {
@@ -137,20 +142,18 @@ if ($this->data['Vorgang']['zeitcharter'] == 0)
 		$htmlcontent .= "
 		<tr>
 		<td width=\"30\">".$k."</td>
-		<td width=\"125\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['von']['Flugplatz']['name']."</td>
-		<td width=\"125\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['nach']['Flugplatz']['name']."</td>
-		<td width=\"70\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['entfernung']."</td>
-		<td width=\"70\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['flugzeitStr']."</td>
-		<td width=\"70\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['reisezeitStr']."</td>
+		<td width=\"150\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['von']['Flugplatz']['name']."</td>
+		<td width=\"150\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['nach']['Flugplatz']['name']."</td>
+		<td width=\"80\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['entfernung']."</td>
+		<td width=\"80\">".$this->data['Vorgang']['Flugstrecke']['flugstrecke'][$i]['flugzeitStr']."</td>
 		</tr>";
 	}
 	
 	$htmlcontent .= "
 	<tr>
-	<td colspan=\"3\" width=\"280\">Gesamt</td>
-	<td width=\"70\">".$this->data['Vorgang']['Flugstrecke']['gesamtstrecke']. "</td>
-	<td width=\"70\">".$this->data['Vorgang']['Flugstrecke']['gesamtflugzeitStr']."</td>
-	<td width=\"70\">".$this->data['Vorgang']['Flugstrecke']['gesamtreisezeitStr']."</td>
+	<td colspan=\"3\" width=\"330\">Gesamt</td>
+	<td width=\"80\">".$this->data['Vorgang']['Flugstrecke']['gesamtstrecke']. "</td>
+	<td width=\"80\">".$this->data['Vorgang']['Flugstrecke']['gesamtflugzeitStr']."</td>
 	</tr>
 	</table>";
 	
@@ -186,25 +189,33 @@ if ($this->data['Vorgang']['zeitcharter'] == 0)
 	</table>";
 	
 } else {
-$htmlcontent .= "
-<br><br>
-Der Charterpreis setzt sich aus einem Fixpreisanteil und einem Flugpreisanteil
-zusammen. Der Flugpreisanteil basiert auf den verflogenen Flugstunden und
-entspricht der Triebwerkslaufzeit. Sie ist aus der Anzeige der Triebwerkslaufzeit im
-Cockpit ersichtlich.
-<br><br><br>
-Grundpreis (netto):
-<br>
-19% MwSt:
-<br>
-Grundpreis (brutto):
-<br><br>
-Flugpreis pro Stunde (netto): <b>".$this->data['Vorgang']['Flugzeug']['Flugzeugtyp']['stundenkosten']." EUR</b>
-<br>
-19% MwSt: ??
-<br>
-Flugpreis pro Stunde (brutto): <b>".$this->data['Vorgang']['Flugzeug']['Flugzeugtyp']['stundenkosten']." EUR</b>
-";} 
+	$htmlcontent .= "
+	<br><br>
+	Der Charterpreis setzt sich aus einem Fixpreisanteil und einem Flugpreisanteil
+	zusammen. Der Flugpreisanteil basiert auf den verflogenen Flugstunden und
+	entspricht der Triebwerkslaufzeit. Sie ist aus der Anzeige der Triebwerkslaufzeit im
+	Cockpit ersichtlich.
+	<br>
+	<h1>Gesamt</h1>
+	<table border=\"1\" cellpadding=\"5\">
+	<tr>
+	<td width=\"310\">Triebwerkslaufzeit</td>
+	<td align=\"right\" width=\"180\">".$this->data['Vorgang']['reisezeit']."</td>
+	</tr>
+	<tr>
+	<td width=\"310\">Netto</td>
+	<td align=\"right\" width=\"180\">EUR ".number_format($this->data['Vorgang']['netto'], 2, ',', '.')."</td>
+	</tr>
+	<tr>
+	<td width=\"310\">Mwst. (19%)</td>
+	<td align=\"right\" width=\"180\">EUR ".number_format($this->data['Vorgang']['mwst'], 2, ',', '.')."</td>
+	</tr>
+	<tr>
+	<td width=\"310\">Brutto</td>
+	<td align=\"right\" width=\"180\">EUR ".number_format($this->data['Vorgang']['brutto_soll'], 2, ',', '.')."</td>
+	</tr>
+	</table>";
+} 
 
 // HTML in PDF Format wandeln
 $pdf->writeHTML($htmlcontent, true, 0, true, 0);
