@@ -194,7 +194,7 @@ class VorgaengeController extends AppController
 		{
 			//Standard-Daten setzen.
 			$this->data['Vorgang']['vorgangstyp_id']=1; //Typ ist angebot
-			$this->data['Vorgang']['reisezeit']=1.0; //Typ ist angebot
+			$this->data['Vorgang']['reisezeit']=1.0;
 			$this->data['Vorgang']['datum']=date("d.m.Y",time()); //heutiges Datum
 			$this->data['Vorgang']['sonderwunsch_netto']=str_replace(',','.',$this->data['Vorgang']['sonderwunsch_netto']);
 			$this->data['Vorgang']['vorgangstyp_id']=1; //Typ ist angebot
@@ -351,10 +351,13 @@ class VorgaengeController extends AppController
 	public function reisezeitSpeichern($id = null){
 		if (!empty($this->data))
 		{
-			$this->data['Vorgang']['reisezeit']=str_replace(',','.',$this->data['Vorgang']['reisezeit']);
-			$this->data['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($this->data['Vorgang']);
+      		$this->Vorgang->id = $this->data['Vorgang']['id'];
+        	$vorgang = $this->Vorgang->Read();
+        	///var_dump($vorgang);
+        	$vorgang['Vorgang']['reisezeit']=str_replace(',','.',$this->data['Vorgang']['reisezeit']);
+			$vorgang['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($vorgang['Vorgang']);
 			
-        	if (!$this->Vorgang->save($this->data))
+        	if (!$this->Vorgang->save($vorgang))
                 $this->Session->setFlash('Fehler beim Speichern');
             else
 	       		$this->redirect(array('action' => 'indexRechnungen'));
@@ -363,7 +366,6 @@ class VorgaengeController extends AppController
       	{
       		$this->Vorgang->id = $id;
         	$this->data = $this->Vorgang->Read();
-			$this->data['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($this->data['Vorgang']);
 			$this->setDefaultData();
       	}
 	}
