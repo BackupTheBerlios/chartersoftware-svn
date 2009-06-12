@@ -12,13 +12,19 @@
 		$adresse = "$firma";
 		$ablage = "";			 
 
+		$betrag = "";
+		if ($zeile['Vorgang']['zeitcharter']==1){
+			$betrag = "Nach Zeit";
+		} else {
+			$betrag = number_format($zeile['Vorgang']['brutto_soll'], 2, ',', '.');
+		}
 
     	echo $html->tableCells( array(
 			'VER-'. $zeile['Vorgang']['id'],
 			$zeile['Vorgang']['datum'],
 			$adresse,
 			$zeile['Vorgang']['Flugstrecke']['zielflugplatz']['Flugplatz']['name'],
-			$zeile['Vorgang']['brutto_soll'],
+			$betrag,
 			$html->link('Drucken', "/vorgaenge/vertrag/{$zeile['Vorgang']['id']}.pdf"),
 			$ablage
    		));

@@ -24,8 +24,8 @@
 			$zeile['Vorgang']['datum'],
 			$adresse,
 			$zeile['Vorgang']['Flugstrecke']['zielflugplatz']['Flugplatz']['name'],
-			$zeile['Vorgang']['brutto_soll'],
-			$zeile['Vorgang']['brutto_ist'],
+			number_format($zeile['Vorgang']['brutto_soll'], 2, ',', '.'),
+			number_format($zeile['Vorgang']['brutto_ist'], 2, ',', '.'),
 			$html->link('Drucken', "/vorgaenge/rechnung/{$zeile['Vorgang']['id']}.pdf"),
 			$html->link('Zahlung', "/vorgaenge/bezahlen/{$zeile['Vorgang']['id']}"),
 			$ablage
