@@ -1,9 +1,10 @@
 <?php
-    echo $rentform->create('Mehrwertsteuersatz', 'add');
+    echo $rentform->create('Mehrwertsteuersatz', 'edit');
 
-	echo $rentform->hidden('Mehrwertsteuersatz.id');
-    echo $form->inputs(array('legend'=>'Beschreibung','beschreibung'));
-    echo $form->inputs(array('legend'=>'Daten','satz','scale'));
+	echo $rentform->hidden('id');
+	echo $rentform->textInput('beschreibung');
+	echo $rentform->textInput('satz');
+	echo $rentform->textInput('scale');
 
 	//Form Abschluss mit Speicher-Button
     echo $form->end('Speichern');
