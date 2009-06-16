@@ -17,6 +17,7 @@
 	//================================================
 	echo $rentform->begFieldset('Flugdaten');
 	echo $rentform->hidden('Vorgang.flugstrecke');
+	echo $rentform->hidden('Vorgang.AnzahlFlugbegleiter');
 	
 	echo $rentform->select('zeitcharter', $zeitcharter);
 	echo $rentform->textInput('vonDatum', 'Von Datum');
@@ -31,7 +32,7 @@
 	echo $rentform->button('Aktualisieren', array('id'=>'personen_update', 'name'=>"personen_update", 'style'=>"width:120px; float:right"));	
 	
 	echo $rentform->select('flugzeugtyp_id', $flugzeugtypenListeKomplett);
-	echo $rentform->disabledTextInput('AnzahlFlugbegleiter', 'Flugbegleiter');
+	echo $rentform->disabledTextInput('Flugbegleiter', 'Flugbegleiter');
 	echo $rentform->buttonadddel('-', array('id'=>'attendands_del', 'name'=>"attendands_del", 'style'=>"float:right; width:20px;"),'+', array('id'=>'attendands_add', 'name'=>"attendands_add", 'style'=>"float:right; width:20px; margin-right:10px;"));	
 	echo $rentform->endFieldset();
 

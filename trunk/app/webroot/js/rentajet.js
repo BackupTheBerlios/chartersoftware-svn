@@ -105,8 +105,9 @@ $(document).ready(function () {
 		$("#VorgangFlugzeugtypId option:selected").text().search(/.*\(Reichweite (.*), Begleitung (.*), Passagiere (.*)\)/g);
 		var maxpersonen = parseInt(RegExp.$3);
 		var personen = parseInt($("#VorgangAnzahlPersonen").val());
-		var attendands = parseInt($("#VorgangAnzahlFlugbegleiter").val());
+		var attendands = parseInt($("#VorgangFlugbegleiter").val());
 		if (maxpersonen > (personen+attendands)) {
+			$("#VorgangFlugbegleiter").val(attendands+1);
 			$("#VorgangAnzahlFlugbegleiter").val(attendands+1);
 		}
 		if (maxpersonen == (personen+attendands)) {
@@ -120,8 +121,9 @@ $(document).ready(function () {
 		$("#VorgangFlugzeugtypId option:selected").text().search(/.*\(Reichweite (.*), Begleitung (.*), Passagiere (.*)\)/g);
 		var minattendands = parseInt(RegExp.$2);
 		var personen = parseInt($("#VorgangAnzahlPersonen").val());
-		var attendands = parseInt($("#VorgangAnzahlFlugbegleiter").val());
+		var attendands = parseInt($("#VorgangFlugbegleiter").val());
 		if (attendands > minattendands) {
+			$("#VorgangFlugbegleiter").val(attendands-1);
 			$("#VorgangAnzahlFlugbegleiter").val(attendands-1);
 		}
 		if (attendands == minattendands) {
@@ -327,11 +329,11 @@ function calcCosts() {
 		sonderwunsch = $("#VorgangSonderwunschNetto").val();
 		}
 		
-		//alert("../../vorgaenge/SimpleCalc/"+$("#VorgangFlugzeugtypId option:selected").val()+"/"+$("#distancesum").text()+"/"+sonderwunsch+"/"+$("#VorgangZeitcharter option:selected").val()+"/"+$("#VorgangAnzahlFlugbegleiter").val()+"/"+$("input[name^='zwischenstop;']").size()+".xml");
+		//alert("../../vorgaenge/SimpleCalc/"+$("#VorgangFlugzeugtypId option:selected").val()+"/"+$("#distancesum").text()+"/"+sonderwunsch+"/"+$("#VorgangZeitcharter option:selected").val()+"/"+$("#VorgangFlugbegleiter").val()+"/"+$("input[name^='zwischenstop;']").size()+".xml");
 		$("#loader_costs").show();
 		$.ajax({
 			type: "GET",
-			url: "../../vorgaenge/SimpleCalc/"+$("#VorgangFlugzeugtypId option:selected").val()+"/"+$("#distancesum").text()+"/"+sonderwunsch+"/"+$("#VorgangZeitcharter option:selected").val()+"/"+$("#VorgangAnzahlFlugbegleiter").val()+"/"+$("input[name^='zwischenstop;']").size()+".xml",
+			url: "../../vorgaenge/SimpleCalc/"+$("#VorgangFlugzeugtypId option:selected").val()+"/"+$("#distancesum").text()+"/"+sonderwunsch+"/"+$("#VorgangZeitcharter option:selected").val()+"/"+$("#VorgangFlugbegleiter").val()+"/"+$("input[name^='zwischenstop;']").size()+".xml",
 			dataType: "xml",
 			cache: false,
 			success:function(xml){
@@ -416,7 +418,7 @@ function updateFlugzeuge() {
 			if (personen > (plaetze-requiredAttendands) && ($(this).val() == $("#VorgangFlugzeugtypId option:selected").val())) {
 				$(this).attr("disabled","disabled");
 				$('#VorgangFlugzeugtypId').find('option:first').attr('selected', 'selected').parent('select');	
-				$("#VorgangAnzahlFlugbegleiter").val('');
+				$("#VorgangFlugbegleiter").val('');
 				$("#help_selectflugzeugtyp").fadeIn("fast");
 			}
 			if (personen > (plaetze-requiredAttendands) && ($(this).val() != $("#VorgangFlugzeugtypId option:selected").val())) {
@@ -430,7 +432,7 @@ function updateFlugzeuge() {
 	if ($("#VorgangFlugzeugtypId").val() != 0) {
 		$("#VorgangFlugzeugtypId option:selected").text().search(/.*\(Reichweite (.*), Begleitung (.*), Passagiere (.*)\)/g);
 		requiredAttendands = parseInt(RegExp.$2);
-		$("#VorgangAnzahlFlugbegleiter").val(requiredAttendands);
+		$("#VorgangFlugbegleiter").val(requiredAttendands);
 	
 	}
 	
@@ -446,7 +448,7 @@ function updateFlugzeuge() {
 					if (distance > maxdistance && ($(this).val() == $("#VorgangFlugzeugtypId option:selected").val())) {
 						$(this).attr("disabled","disabled");
 						$('#VorgangFlugzeugtypId').find('option:first').attr('selected', 'selected').parent('select');	
-						$("#VorgangAnzahlFlugbegleiter").val('');
+						$("#VorgangFlugbegleiter").val('');
 						$("#help_selectflugzeugtyp").fadeIn("fast");
 					}
 					if (distance > maxdistance && ($(this).val() != $("#VorgangFlugzeugtypId option:selected").val())) {
