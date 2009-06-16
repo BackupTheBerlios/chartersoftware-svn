@@ -206,7 +206,7 @@ class VorgaengeController extends AppController
 			//Speichern des Angebots
 			if (!$this->Vorgang->save($this->data)) {
 				//echo "nicht gespeichert";
-                $this->Session->setFlash('Fehler beim Speichern');
+                $this->Session->setFlash('Fehler beim Speichern',array('action' => 'indexAngebote'));
 			} else {
 				//echo "gespeichert";
 				$this->redirect(array('action' => 'indexAngebote'));

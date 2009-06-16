@@ -186,6 +186,8 @@ function updateFlugdaten() {
 	
 	$("#fluginfos").html('');
 	
+	$("#VorgangAnzahlFlugbegleiter").val(parseInt($("#VorgangFlugbegleiter").val()));
+	
 	if ($("input[name^='zwischenstop;']").size() > 0 || $("input[name^='start;']").size() > 0 || $("input[name^='ziel;']").size() > 0) {
 		add += "<table class=\"flugdaten_table\">\n";
 		add += "<tr><td class=\"title_top\" colspan=\"2\">Flugdaten<\/td><\/tr>\n";
