@@ -9,16 +9,28 @@
  */
 
 class Adresse extends AppModel {
-    //Das ist ein Array mit Valididierungsrichtlinien
     public $displayField = 'firma';
+    //Das ist ein Array mit Valididierungsrichtlinien
     public $validate = array(
-        'firma' => array('length'=>array('rule'=>array("maxLength"=>49))),
-        'abteilung' => array('length'=>array('rule'=>array("maxLength"=>49))),
-        'ansprechpartner' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>49))),
-        'strasse' => array('length'=>array('required'=>VALID_NOT_EMPTY, 'rule'=>array("maxLength"=>49))),
-        'plz' => array('length'=>array('required'=>VALID_NOT_EMPTY, 'rule'=>array("maxLength"=>49))),
-        'ort' => array('length'=>array('required'=>VALID_NOT_EMPTY, 'rule'=>array("maxLength"=>49)))
-    );
+    	'plz'=>array(
+    		'numeric'=>array(
+    			'rule'=>'numeric',
+    			'required'=>true,
+    			'message'=>'PLZ darf nur Zahlen enthalten und muss genau 5 Ziffern enthalten',
+    			'maxLength'=>5
+    		),
+    		'between' => array(
+				'rule' => array('between', 5, 5),
+    			'message'=>'PLZ darf nur Zahlen enthalten und muss genau 5 Ziffern enthalten'
+    		)
+    	),
+
+    	'firma'=>array('between' => array('rule' => array('between', 0, 50),'message'=>'Der Firmenname darf maximal 50 Zeichen lang sein')),
+    	'abteilung'=>array('between' => array('rule' => array('between', 0, 50),'message'=>'Der Abteilungsname darf maximal 50 Zeichen lang sein')),
+    	'ansprechpartner'=>array('notEmpty' => array('rule'=>'notEmpty', 'message'=>'Dieses Feld ist ein Pflichtfeld'),'between' => array('rule' => array('between', 0, 50),'message'=>'Der Straßenname darf maximal 50 Zeichen lang sein')),
+    	'strasse'=>array('notEmpty' => array('rule'=>'notEmpty', 'message'=>'Dieses Feld ist ein Pflichtfeld'),'between' => array('rule' => array('between', 0, 50),'message'=>'Der Straßenname darf maximal 50 Zeichen lang sein')),
+    	'ort'=>array('notEmpty' => array('rule'=>'notEmpty', 'message'=>'Dieses Feld ist ein Pflichtfeld'),'between' => array('rule' => array('between', 0, 50),'message'=>'Der Ortsname darf maximal 50 Zeichen lang sein'))
+    ); 
 }
 
 ?>

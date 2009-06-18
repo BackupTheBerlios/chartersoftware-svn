@@ -14,9 +14,9 @@ class Flugplatz extends AppModel {
     //validiert
     public $displayField = 'name';
     public $validate = array(
-        'name' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>49))),
-        'iata' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>9))),
-        'geoPosition' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>34)))
+        'name'=>array('notEmpty' => array('rule'=>'notEmpty', 'message'=>'Dieses Feld ist ein Pflichtfeld'),'between' => array('rule' => array('between', 0, 49),'message'=>'Der Text ist zu lang')),
+        'iata'=>array('notEmpty' => array('rule'=>'notEmpty', 'message'=>'Dieses Feld ist ein Pflichtfeld'),'between' => array('rule' => array('between', 0, 9),'message'=>'Der Text ist zu lang')),
+        'geoPosition'=>array('notEmpty' => array('rule'=>'notEmpty', 'message'=>'Dieses Feld ist ein Pflichtfeld'),'between' => array('rule' => array('between', 0, 34),'message'=>'Der Text ist zu lang')),
     );
 }
 
