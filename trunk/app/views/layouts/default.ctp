@@ -36,12 +36,12 @@
     echo $html->nestedList($list) . "\n";
     $list = array(
         '<span>Administration</span>',
-        $html->link('Flugzeughersteller','/flugzeughersteller',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
-        $html->link('Flugzeugtypen','/flugzeugtypen',array('update'=>'txtcontent','class'=>'nav1 showhelp')),
-        $html->link('Flugzeuge','/flugzeuge',array('class'=>'nav1 showhelp')),
-        $html->link('Flugplätze','/flugplaetze',array('class'=>'nav1 showhelp')),
-        $html->link('Mehrwertsteuersätze','/mehrwertsteuersaetze',array('class'=>'nav1 showhelp')),
-        $html->link('Vorgangstypen','/vorgangstypen',array('class'=>'nav1 showhelp')),
+        $html->link('Flugzeughersteller','/flugzeughersteller',array('update'=>'txtcontent','class'=>'nav1 showhelp','title' =>'Flugzeughersteller')),
+        $html->link('Flugzeugtypen','/flugzeugtypen',array('update'=>'txtcontent','class'=>'nav1 showhelp','title' =>'Flugzeugtypen')),
+        $html->link('Flugzeuge','/flugzeuge',array('class'=>'nav1 showhelp','title' =>'Flugzeuge')),
+        $html->link('Flugplätze','/flugplaetze',array('class'=>'nav1 showhelp','title' =>'Flugplätze')),
+        $html->link('Mehrwertsteuersätze','/mehrwertsteuersaetze',array('class'=>'nav1 showhelp','title' =>'Mehrwertsteuersätze')),
+        $html->link('Vorgangstypen','/vorgangstypen',array('class'=>'nav1 showhelp','title' =>'Vorgangstypen')),
         $html->link('Leistungstypen','/leistungstypen',array('class'=>'nav1 showhelp','title'=>'Leistungstypen')),
         $html->link('Zufriedenheitstypen','/zufriedenheitstypen',array('class'=>'nav1 showhelp','title'=>'Zufriedenheitstypen')),
         $html->link('Statistikformate','/reports',array('class'=>'nav1 showhelp','title'=>'Statistikformate')),
@@ -86,6 +86,12 @@ if (strlen($content_for_layout)>0 || strlen($cakeDebug)>0 ) {
 
 <div id="help_Kundenadressen" class="help"><span>Über diesen Menupunkt können Adressen verwaltet (suchen, löschen, anlegen) werden</span></div>
 <div id="help_Impressum" class="help"><span>Anzeigen eines Impressums.</span></div>
+<div id="help_Flugzeughersteller" class="help"><span>Flugzeughersteller anlegen, bearbeiten und löschen.</span></div>
+<div id="help_Flugzeugtypen" class="help"><span>Flugzeugtypen anlegen, bearbeiten und löschen.</span></div>
+<div id="help_Flugzeuge" class="help"><span>Flugzeuge anlegen, bearbeiten und löschen.</span></div>
+<div id="help_Flugplätze" class="help"><span>Flugplätze anlegen, bearbeiten und löschen.</span></div>
+<div id="help_Mehrwertsteuersätze" class="help"><span>Mehrwertsteuersätze anlegen, bearbeiten und löschen.</span></div>
+<div id="help_Vorgangstypen" class="help"><span>Vorgangstypen anlegen, bearbeiten und löschen.</span></div>
 <div id="help_Startseite" class="help"><span>Anzeigen der Startseite.</span></div>
 <div id="help_Kundenangebot" class="help"><span>Erstellen Sie ein neues Kundenangebot.</span></div>
 <div id="help_Vertrag" class="help"><span>Vertrag drucken und verschicken.</span></div>
