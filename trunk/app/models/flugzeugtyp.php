@@ -13,10 +13,31 @@ class Flugzeugtyp extends AppModel {
 	//ist optional. Wenn nicht vorhanden, wird nicht
 	//validiert
     public $validate = array(
-	'name' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>49))),
-    'seats' => VALID_NOT_EMPTY,
-    'crewPersonal' => VALID_NOT_EMPTY,
-    'cabinPersonal' =>VALID_NOT_EMPTY
+	'name' => array('notEmpty' => array('rule'=>'notEmpty', 'message'=>'Dieses Feld ist ein Pflichtfeld'),'between' => array('rule' => array('between', 0, 50),'message'=>'Der Name darf maximal 50 Zeichen lang sein')),
+    'seats' => array(
+    		'numeric'=>array(
+    			'rule'=>'numeric',
+    			'required'=>true,
+    			'message'=>'Das Feld darf nur Zahlen enthalten',
+    			'maxLength'=>2
+    		)
+    	),
+    'crewPersonal' => array(
+    		'numeric'=>array(
+    			'rule'=>'numeric',
+    			'required'=>true,
+    			'message'=>'Das Feld darf nur Zahlen enthalten',
+    			'maxLength'=>2
+    		)
+    	),
+    'cabinPersonal' => array(
+    		'numeric'=>array(
+    			'rule'=>'numeric',
+    			'required'=>true,
+    			'message'=>'Das Feld darf nur Zahlen enthalten',
+    			'maxLength'=>2
+    		)
+    	)
     );
     public $displayField = 'name';
 
