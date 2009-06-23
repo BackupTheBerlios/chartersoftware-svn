@@ -7,7 +7,7 @@ class Mehrwertsteuersatz extends AppModel {
     //validiert
     public $displayField = 'beschreibung';
     public $validate = array(
-		'beschreibung' => array('notEmpty' => array('rule'=>'notEmpty', 'message'=>'Dieses Feld ist ein Pflichtfeld'),'between' => array('rule' => array('between', 0, 50),'message'=>'Der Name darf maximal 50 Zeichen lang sein')),
+		'beschreibung' => array('notEmpty' => array('rule'=>'notEmpty', 'message'=>'Dieses Feld ist ein Pflichtfeld'),'between' => array('rule' => array('between', 0, 50),'message'=>'Die Beschreibung darf maximal 50 Zeichen lang sein')),
     	'scale'=>array(
     		'numeric'=>array(
     			'rule'=>'numeric',
