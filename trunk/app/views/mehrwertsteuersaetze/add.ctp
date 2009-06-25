@@ -6,5 +6,5 @@
 	echo $rentform->textInput('scale');
 
 	//Form Abschluss mit Speicher-Button
-    echo $form->end('Speichern');
+	echo $rentform->end('Speichern');
 ?>

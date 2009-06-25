@@ -10,7 +10,9 @@ class Flugzeughersteller extends AppModel {
 	//Das ist ein Array mit Valididierungsrichtilinien
 	//ist optional. Wenn nicht vorhanden, wird nicht
 	//validiert
-    public $validate = array('name' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>49))));
+    public $validate = array(
+		'name' => array('notEmpty' => array('rule'=>'notEmpty', 'message'=>'Dieses Feld ist ein Pflichtfeld'),'between' => array('rule' => array('between', 0, 50),'message'=>'Der Name darf maximal 50 Zeichen lang sein')),
+	);
 
 	//Datenbank-Assoziationen
 	public $hasMany = array('Flugzeugtyp');

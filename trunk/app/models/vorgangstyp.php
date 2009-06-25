@@ -6,7 +6,7 @@ class Vorgangstyp extends AppModel {
     //validiert
     public $displayField = 'beschreibung';
     public $validate = array(
-        'beschreibung' => array('required'=>VALID_NOT_EMPTY, 'length'=>array('rule'=>array("maxLength"=>24)))
+       'beschreibung' => array('notEmpty' => array('rule'=>'notEmpty', 'message'=>'Dieses Feld ist ein Pflichtfeld'),'between' => array('rule' => array('between', 0, 24),'message'=>'Die Beschreibung darf maximal 24 Zeichen lang sein')),
     );
 
     //Datenbank-Assoziationen
