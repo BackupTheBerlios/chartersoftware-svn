@@ -116,6 +116,10 @@ $htmlcontent .= "<tr>
 <td align=\"left\" width=\"180\">Flugzeugtyp: </td>
 <td width=\"310\"><b>".$this->data['Vorgang']['Flugzeug']['Flugzeughersteller']['name']." - ".$this->data['Vorgang']['Flugzeug']['Flugzeugtyp']['name']."</b></td>
 </tr>
+<tr>
+<td align=\"left\" width=\"180\">Flugzeugbild: </td>
+<td width=\"310\"><img src=\"app/webroot/img/".$this->data['Vorgang']['Flugzeug']['Flugzeugtyp']['bild']."\" border=\"0\" height=\"60\" align=\"top\" /></td>
+</tr>
 </table>";
 if ($this->data['Vorgang']['zeitcharter'] == 0) 
 {

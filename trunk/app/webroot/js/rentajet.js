@@ -145,13 +145,6 @@ $(document).ready(function () {
 		$("#help_"+title).fadeOut("fast");
 	}); 
 	
-	/* $("#loader").ajaxStop(function(){
-		$(this).hide();
-	});
-	
-	$("#loader").ajaxStart(function(){
-		$(this).show();
-	}); */
 	
 }); // DOCUMENT READY END
 
@@ -407,7 +400,7 @@ function updateFlugzeuge() {
 		$(this).attr("disabled","");
 	});
 	
-	if($("#VorgangAnzahlPersonen").val() != '' && $("#VorgangZeitcharter").val() != '1') {
+	if($("#VorgangAnzahlPersonen").val() != '') {
 		var personen = parseInt($("#VorgangAnzahlPersonen").val());
 		$("#VorgangFlugzeugtypId option[value!='']").each(function () {
 			$(this).text().search(/.*\(Reichweite (.*), Begleitung (.*), Passagiere (.*)\)/g);
