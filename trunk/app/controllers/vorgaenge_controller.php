@@ -209,7 +209,9 @@ class VorgaengeController extends AppController
                 $this->Session->setFlash('Fehler beim Speichern',array('action' => 'indexAngebote'));
 			} else {
 				//echo "gespeichert";
-				$this->redirect(array('action' => 'indexAngebote'));
+				//$this->redirect(array('action' => 'indexAngebote'));
+				var_dump($this->data['Vorgang']);
+				
 			}
         }		
 	}

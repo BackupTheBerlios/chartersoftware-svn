@@ -125,6 +125,14 @@ class KalkulationenComponent extends Object {
 		//Personalkosten
 		$begleiter = $this->istFlugbegleiter($flugzeugtyp, $vorgang['AnzahlFlugbegleiter']);
 		$crew = $vorgang['Flugzeug']['Flugzeugtyp']['crewPersonal'];
+		$buchungszeit =0;
+		$fixkosten =1000;
+		$varkosten =100;
+		$fixkostenMwst =190;
+		$varkostenMwst =19;
+		$fixkostenBrutto =1190;
+		$varkostenBrutto =119;
+		
 		$reisezeit =0;
 		if ($zeitflug==true) {
 			$reisezeit = $vorgang['reisezeit']; 
@@ -149,7 +157,15 @@ class KalkulationenComponent extends Object {
 
 		
 		//Ergebnis zusammen bauen
+		$result['buchungszeit']=$buchungszeit;
+		$result['fixkosten']=$fixkosten;
 		$result['reisezeit']=$reisezeit;
+
+		$result['fixkostenMwst']=$fixkostenMwst;
+		$result['varkostenMwst']=$varkostenMwst;
+		$result['fixkostenBrutto']=$fixkostenBrutto;
+		$result['varkostenBrutto']=$varkostenBrutto;
+
 		$result['sonderwunschNetto']=$sonderwünsche;
 		$result['personalkostenNetto']=$personalkosten;
 		$result['flugzeugkostenNetto']=$flugzeugkostenZeit;
