@@ -283,13 +283,14 @@ INSERT INTO `reports` (`id`, `name`, `befehl`) VALUES
 (3, 'Offene Rechnungen', 'select * from vorgaenge where brutto_soll > brutto_ist AND vorgangstyp_id = 3 ORDER by datum, vonDatum, adresse_id, id;'),
 (4, 'Faellige Rechnungen', '
 	select DISTINCT 
-	vorgaenge.id "Rechnungsnummer",
+	vorgaenge.id "RE",
+	vorgaenge.datum "Datum",
 	vorgaenge.netto "Netto",
 	vorgaenge.mwst "MwSt",
 	vorgaenge.brutto_soll "Brutto",
 	vorgaenge.brutto_ist "Gezahlt",
 	vorgaenge.brutto_soll-vorgaenge.brutto_ist "Offen",
-	adressen.id "Kundennummer",
+	adressen.id "KN",
 	adressen.firma "Firma",
 	adressen.abteilung "Abteilung",
 	adressen.Ansprechpartner "Ansprechpartner",
@@ -297,7 +298,19 @@ INSERT INTO `reports` (`id`, `name`, `befehl`) VALUES
 	adressen.plz "PLZ",
 	adressen.ort "Ort"
 	from vorgaenge LEFT JOIN adressen ON vorgaenge.adresse_id = adressen.id where vorgaenge.brutto_soll > vorgaenge.brutto_ist AND vorgaenge.vorgangstyp_id = 3 AND DATE_ADD(vorgaenge.datum,INTERVAL 30 DAY) < Now();
-	');
+	'),
+(5, 'Faellige Rechnungen (Überblick)', '
+		select DISTINCT 
+		vorgaenge.id "RE",
+		vorgaenge.datum "Datum",
+		vorgaenge.netto "Netto",
+		vorgaenge.brutto_soll "Brutto",
+		vorgaenge.brutto_ist "Gezahlt",
+		vorgaenge.brutto_soll-vorgaenge.brutto_ist "Offen",
+		adressen.id "KN",
+		adressen.firma "Firma"
+		from vorgaenge LEFT JOIN adressen ON vorgaenge.adresse_id = adressen.id where vorgaenge.brutto_soll > vorgaenge.brutto_ist AND vorgaenge.vorgangstyp_id = 3 AND DATE_ADD(vorgaenge.datum,INTERVAL 30 DAY) < Now();
+		');
 
 -- --------------------------------------------------------
 

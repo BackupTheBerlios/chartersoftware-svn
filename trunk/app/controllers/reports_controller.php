@@ -28,16 +28,15 @@ class ReportsController extends AppController
 		//SQL-Kommando aus DB auslesen
 		$this->Report->id = $report_id;
 		$Report = $this->Report->read();
-		$command = $Report['Report']['befehl'];
 		$name    = $Report['Report']['name'];
 
 		//Und ausführen
-		$this->data->ReportSet = $this->Report->query($command);
+		$this->data->ReportSet = $this->Report->doReport($report_id);
 			
 		//Und ausgeben
 		if ($this->RequestHandler->prefers('xml')) {
 				header('content-type: text/xml');
-				header('Content-Disposition: attachment; filename="' . $name .'.xml"');
+				//header('Content-Disposition: attachment; filename="' . $name .'.xml"');
 		} else if ($this->RequestHandler->prefers('xls')) {
 				//$this->autoRender=false;
 				header('content-type: application/excel');

@@ -5,14 +5,9 @@
 	if (count($this->data->ReportSet) > 0){
 		//Erstes Sub-Array holen
 		$temp = array_keys($this->data->ReportSet[0]);
-		$keys = $this->data->ReportSet[0][$temp[0]];
-		
-		//Schlüssel zu Array
-		$arr = array();
-		foreach($keys as $elem=>$value) array_push($arr, $elem);
 
 		//Array als Header ausgeben
-		echo $html->tableHeaders($arr);
+		echo $html->tableHeaders($temp);
 		
 	}
 
