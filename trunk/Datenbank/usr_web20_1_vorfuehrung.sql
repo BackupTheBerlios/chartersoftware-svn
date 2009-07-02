@@ -278,10 +278,26 @@ CREATE TABLE IF NOT EXISTS `reports` (
 --
 
 INSERT INTO `reports` (`id`, `name`, `befehl`) VALUES
-(1, 'Liste aller Flugzeugtypen', ' select * from flugzeugtypen;'),
-(2, 'Liste aller Kunden', ' select * from adressen; '),
-(3, 'Offene Rechnungen', 'select * from vorgaenge where brutto_soll > brutto_ist AND vorgangstyp_id = 3;'),
-(4, 'Faellige Rechnungen', 'select * from vorgaenge LEFT JOIN adressen ON vorgaenge.adresse_id = adressen.id where vorgaenge.brutto_soll > vorgaenge.brutto_ist AND vorgaenge.vorgangstyp_id = 3 AND DATE_ADD(vorgaenge.datum,INTERVAL 30 DAY) < Now();');
+(1, 'Liste aller Flugzeugtypen', ' select * from flugzeugtypen order by id;'),
+(2, 'Liste aller Kunden', ' select * from adressen order by id; '),
+(3, 'Offene Rechnungen', 'select * from vorgaenge where brutto_soll > brutto_ist AND vorgangstyp_id = 3 ORDER by datum, vonDatum, adresse_id, id;'),
+(4, 'Faellige Rechnungen', '
+	select DISTINCT 
+	vorgaenge.id "Rechnungsnummer",
+	vorgaenge.netto "Netto",
+	vorgaenge.mwst "MwSt",
+	vorgaenge.brutto_soll "Brutto",
+	vorgaenge.brutto_ist "Gezahlt",
+	vorgaenge.brutto_soll-vorgaenge.brutto_ist "Offen",
+	adressen.id "Kundennummer",
+	adressen.firma "Firma",
+	adressen.abteilung "Abteilung",
+	adressen.Ansprechpartner "Ansprechpartner",
+	adressen.strasse "Straße",
+	adressen.plz "PLZ",
+	adressen.ort "Ort"
+	from vorgaenge LEFT JOIN adressen ON vorgaenge.adresse_id = adressen.id where vorgaenge.brutto_soll > vorgaenge.brutto_ist AND vorgaenge.vorgangstyp_id = 3 AND DATE_ADD(vorgaenge.datum,INTERVAL 30 DAY) < Now();
+	');
 
 -- --------------------------------------------------------
 
