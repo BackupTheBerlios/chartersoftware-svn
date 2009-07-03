@@ -197,18 +197,33 @@ zusammen. Der Flugpreisanteil basiert auf den verflogenen Flugstunden und
 entspricht der Triebwerkslaufzeit. Sie ist aus der Anzeige der Triebwerkslaufzeit im
 Cockpit ersichtlich.
 <br><br><br>
-Grundpreis (netto):
+Grundpreis (netto): <b>".$this->data['Vorgang']['Kalkulation']['fixkosten']." EUR</b>
 <br>
-19% MwSt:
+19% MwSt: <b>".$this->data['Vorgang']['Flugzeug']['Kalkulation']['fixkostenMwst']." EUR</b>
 <br>
-Grundpreis (brutto):
+Grundpreis (brutto): <b>".$this->data['Vorgang']['Kalkulation']['Flugzeugtyp']['fixkostenBrutto']." EUR</b>
 <br><br>
-Flugpreis pro Stunde (netto): <b>".$this->data['Vorgang']['Flugzeug']['Flugzeugtyp']['stundenkosten']." EUR</b>
+Flugpreis pro Stunde (netto): <b>".$this->data['Vorgang']['Kalkulation']['Flugzeugtyp']['varkostenNetto']." EUR</b>
 <br>
-19% MwSt: ??
+19% MwSt: <b>".$this->data['Vorgang']['Kalkulation']['Flugzeugtyp']['varkostenMwst']." EUR</b>
 <br>
-Flugpreis pro Stunde (brutto): <b>".$this->data['Vorgang']['Flugzeug']['Flugzeugtyp']['stundenkosten']." EUR</b>
+Flugpreis pro Stunde (brutto): <b>".$this->data['Vorgang']['Kalkulation']['varkostenBrutto']." EUR</b>
 ";} 
+
+// ALT
+// <br><br><br>
+// Grundpreis (netto):
+// <br>
+// 19% MwSt:
+// <br>
+// Grundpreis (brutto):
+// <br><br>
+// Flugpreis pro Stunde (netto): <b>".$this->data['Vorgang']['Flugzeug']['Flugzeugtyp']['stundenkosten']." EUR</b>
+// <br>
+// 19% MwSt: ??
+// <br>
+// Flugpreis pro Stunde (brutto): <b>".$this->data['Vorgang']['Flugzeug']['Flugzeugtyp']['stundenkosten']." EUR</b>
+
 
 // HTML in PDF Format wandeln
 $pdf->writeHTML($htmlcontent, true, 0, true, 0);
