@@ -197,17 +197,17 @@ zusammen. Der Flugpreisanteil basiert auf den verflogenen Flugstunden und
 entspricht der Triebwerkslaufzeit. Sie ist aus der Anzeige der Triebwerkslaufzeit im
 Cockpit ersichtlich.
 <br><br><br>
-Grundpreis (netto): <b>".$this->data['Vorgang']['Kalkulation']['fixkosten']." EUR</b>
+Grundpreis (netto): <b>".number_format($this->data['Vorgang']['Kalkulation']['fixkosten'], 2, ',', '.')." EUR</b>
 <br>
-19% MwSt: <b>".$this->data['Vorgang']['Flugzeug']['Kalkulation']['fixkostenMwst']." EUR</b>
+19% MwSt: <b>".number_format($this->data['Vorgang']['Kalkulation']['fixkostenMwst'], 2, ',', '.')." EUR</b>
 <br>
-Grundpreis (brutto): <b>".$this->data['Vorgang']['Kalkulation']['Flugzeugtyp']['fixkostenBrutto']." EUR</b>
+Grundpreis (brutto): <b>".number_format($this->data['Vorgang']['Kalkulation']['fixkostenBrutto'], 2, ',', '.')." EUR</b>
 <br><br>
-Flugpreis pro Stunde (netto): <b>".$this->data['Vorgang']['Kalkulation']['Flugzeugtyp']['varkostenNetto']." EUR</b>
+Flugpreis pro Stunde (netto): <b>".number_format(($this->data['Vorgang']['Kalkulation']['varkostenBrutto']-$this->data['Vorgang']['Kalkulation']['varkostenMwst']), 2, ',', '.')." EUR</b>
 <br>
-19% MwSt: <b>".$this->data['Vorgang']['Kalkulation']['Flugzeugtyp']['varkostenMwst']." EUR</b>
+19% MwSt: <b>".number_format($this->data['Vorgang']['Kalkulation']['varkostenMwst'], 2, ',', '.')." EUR</b>
 <br>
-Flugpreis pro Stunde (brutto): <b>".$this->data['Vorgang']['Kalkulation']['varkostenBrutto']." EUR</b>
+Flugpreis pro Stunde (brutto): <b>".number_format($this->data['Vorgang']['Kalkulation']['varkostenBrutto'], 2, ',', '.')." EUR</b>
 ";} 
 
 // ALT
