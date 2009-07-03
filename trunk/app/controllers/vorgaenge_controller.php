@@ -55,7 +55,7 @@ class VorgaengeController extends AppController
 			$this->set('zeigtAlle','ja');
 		}
 
-		//Alle Vorgänge um Kalkulationen anreichern		
+		//Alle Vorgänge um Kalkulationen anreichern
 		for($count=0;$count<count($this->data);$count++){
 			$vorgang= $this->data[$count];
 			$vorgang['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($vorgang['Vorgang']);
@@ -65,7 +65,7 @@ class VorgaengeController extends AppController
 		//Ein paar Default-Sachen übergeben
 		$this->setDefaultData();
 	}
-	
+
 	public function indexVertraege($alle=null){
 		//Liste von Vorgängen aufbauen
 		if (empty($alle)){
@@ -76,7 +76,7 @@ class VorgaengeController extends AppController
 			$this->set('zeigtAlle','ja');
 		}
 
-		//Alle Vorgänge um Kalkulationen anreichern		
+		//Alle Vorgänge um Kalkulationen anreichern
 		for($count=0;$count<count($this->data);$count++){
 			$vorgang= $this->data[$count];
 			$vorgang['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($vorgang['Vorgang']);
@@ -86,7 +86,7 @@ class VorgaengeController extends AppController
 		//Ein paar Default-Sachen übergeben
 		$this->setDefaultData();
 	}
-	
+
 	// Fred
 	public function indexRechnungen($alle=null)
 	{
@@ -99,7 +99,7 @@ class VorgaengeController extends AppController
 			$this->set('zeigtAlle','ja');
 		}
 
-		//Alle Vorgänge um Kalkulationen anreichern		
+		//Alle Vorgänge um Kalkulationen anreichern
 		for($count=0;$count<count($this->data);$count++){
 			$vorgang= $this->data[$count];
 			$vorgang['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($vorgang['Vorgang']);
@@ -109,7 +109,7 @@ class VorgaengeController extends AppController
 		//Ein paar Default-Sachen übergeben
 		$this->setDefaultData();
 	}
-	
+
 
 
 	public function view($id){
@@ -119,16 +119,16 @@ class VorgaengeController extends AppController
         	$currentObject->id = $id;
         	$this->data=$currentObject->read();
         	$this->data['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($this->data['Vorgang']);
-        	
+
         }
-		
+
 	}
 
 	public function SimpleCalc($flugzeugtyp, $entfernung, $sonderwunsch_netto, $zeitflug, $begleiter, $landungen){
-		$this->data['Kalkulation']=$this->Kalkulationen->SimpleCalc($flugzeugtyp, $entfernung, $sonderwunsch_netto, $zeitflug, $begleiter,$landungen);		
+		$this->data['Kalkulation']=$this->Kalkulationen->SimpleCalc($flugzeugtyp, $entfernung, $sonderwunsch_netto, $zeitflug, $begleiter,$landungen);
 	}
 
-	
+
     /**
      * start: ID des StartFlugplatzes
      * ziel: ID des Zielflugplatzes
@@ -139,14 +139,14 @@ class VorgaengeController extends AppController
     	$this->Flugplatz->id=$start;
     	$startFlugplatz = $this->Flugplatz->field('geoPosition');
     	$bmStart = $this->Kalkulationen->GeografischeGradzuBogenmass($startFlugplatz);
-    	
+
     	$this->Flugplatz->id=$ziel;
     	$zielFlugplatz = $this->Flugplatz->field('geoPosition');
     	$bmZiel = $this->Kalkulationen->GeografischeGradzuBogenmass($zielFlugplatz);
-    	
+
     	return $this->Kalkulationen->CalcKugelDistanz($bmZiel,$bmStart);
     }
-    
+
 
     public function ablegenAngebot($id=null)
 	{
@@ -165,7 +165,7 @@ class VorgaengeController extends AppController
         	$this->data = $this->Vorgang->read();
 			$this->setDefaultData();
       	}
-	}	
+	}
 
     public function ablegenRechnung($id=null)
 	{
@@ -184,8 +184,8 @@ class VorgaengeController extends AppController
         	$this->data = $this->Vorgang->read();
 			$this->setDefaultData();
       	}
-	}	
-    
+	}
+
     public function addAngebot()
 	{
 		$this->pageTitle = 'Angebot erstellen';
@@ -194,39 +194,39 @@ class VorgaengeController extends AppController
 		{
 			//Standard-Daten setzen.
 			$this->data['Vorgang']['vorgangstyp_id']=1; //Typ ist angebot
-			$this->data['Vorgang']['reisezeit']=1.0;
 			$this->data['Vorgang']['datum']=date("d.m.Y",time()); //heutiges Datum
 			$this->data['Vorgang']['sonderwunsch_netto']=str_replace(',','.',$this->data['Vorgang']['sonderwunsch_netto']);
 			$this->data['Vorgang']['vorgangstyp_id']=1; //Typ ist angebot
-			
+            if ($this->data['Vorgang']['AnzahlFlugbegleiter']==null)
+            $this->data['Vorgang']['AnzahlFlugbegleiter']=0;
+
 			//Kalkulation durchführen
+            $this->data['Vorgang']['reisezeit']=1.0;
 			$this->data['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($this->data['Vorgang']);
 			$this->data['Vorgang']['reisezeit'] = $this->data['Vorgang']['Kalkulation']['reisezeit'];
 
 			//Speichern des Angebots
 			if (!$this->Vorgang->save($this->data)) {
-				//echo "nicht gespeichert";
                 $this->Session->setFlash('Fehler beim Speichern',array('action' => 'indexAngebote'));
 			} else {
-				//echo "gespeichert";
+                //var_dump($this->data['Vorgang']);
 				$this->redirect(array('action' => 'indexAngebote'));
-				//var_dump($this->data['Vorgang']);
 			}
-        }		
+        }
 	}
-	
+
 	public function addVertrag(){
 		if (empty($this->data)){
 			$this->setDefaultData();
 			$this->data=$this->Vorgang->find('all', array('conditions'=>array('vorgangstyp_id'=>'1','zufriedenheitstyp_id'=>null)));
 
-			//Alle Vorgänge um Kalkulationen anreichern		
+			//Alle Vorgänge um Kalkulationen anreichern
 			for($count=0;$count<count($this->data);$count++){
 				$vorgang= $this->data[$count];
 				$vorgang['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($vorgang['Vorgang']);
 				$this->data[$count]=$vorgang;
 			}
-			
+
 			$liste = array();
 			foreach($this->data as $angebot){
 				$firma = $angebot['Vorgang']['Adresse']['Adresse']['firma'];
@@ -240,7 +240,7 @@ class VorgaengeController extends AppController
 			$record = $this->Vorgang->read();
 			$record['Vorgang']['vorgangstyp_id']=2;
 			$record['Vorgang']['datum']=date("d.m.Y",time()); //heutiges Datum
-			
+
 			//Vorgang ist gewandelt, nun wird die nächste Seite aufgerufen
 			if (!$this->Vorgang->save($record)) {
                 $this->Session->setFlash('Fehler beim Speichern');
@@ -249,20 +249,20 @@ class VorgaengeController extends AppController
 			}
 		}
 	}
-	
+
 	//Fred 04.06.09
 	public function addRechnung(){
 		if (empty($this->data)){
 			$this->setDefaultData();
 			$this->data=$this->Vorgang->find('all', array('conditions'=>array('vorgangstyp_id'=>'2','zufriedenheitstyp_id'=>null)));
 
-			//Alle Vorgänge um Kalkulationen anreichern		
+			//Alle Vorgänge um Kalkulationen anreichern
 			for($count=0;$count<count($this->data);$count++){
 				$vorgang= $this->data[$count];
 				$vorgang['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($vorgang['Vorgang']);
 				$this->data[$count]=$vorgang;
 			}
-			
+
 			$liste = array();
 			foreach($this->data as $vertrag){
 				$firma = $vertrag['Vorgang']['Adresse']['Adresse']['firma'];
@@ -277,7 +277,7 @@ class VorgaengeController extends AppController
 			$record = $this->Vorgang->read();
 			$record['Vorgang']['vorgangstyp_id']=3;
 			$record['Vorgang']['datum']=date("d.m.Y",time()); //heutiges Datum
-	
+
 			//Speichern
 			if (!$this->Vorgang->save($record)) {
 				//Speichern hat nicht geklappt
@@ -292,8 +292,8 @@ class VorgaengeController extends AppController
 			}
 		}
 	}
-	
-	
+
+
 	public function angebot($id = null){
 		$this->setDefaultData();
 		if ($id != null)
@@ -357,7 +357,7 @@ class VorgaengeController extends AppController
         	///var_dump($vorgang);
         	$vorgang['Vorgang']['reisezeit']=str_replace(',','.',$this->data['Vorgang']['reisezeit']);
 			$vorgang['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($vorgang['Vorgang']);
-			
+
         	if (!$this->Vorgang->save($vorgang))
                 $this->Session->setFlash('Fehler beim Speichern');
             else
@@ -377,7 +377,7 @@ class VorgaengeController extends AppController
 		if (!empty($this->data))
 		{
 			$this->data['Vorgang']['brutto_ist']=str_replace(',','.',$this->data['Vorgang']['brutto_ist']);
-			
+
         	if (!$this->Vorgang->save($this->data))
                 $this->Session->setFlash('Fehler beim Speichern');
             else

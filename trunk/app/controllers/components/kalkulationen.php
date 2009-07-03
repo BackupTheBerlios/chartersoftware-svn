@@ -5,7 +5,7 @@
  * To change the template for this generated file go to
  * Window - Preferences - PHPeclipse - PHP - Code Templates
  */
- 
+
 class KalkulationenComponent extends Object {
 
 	private function getData($id, $modell){
@@ -30,7 +30,7 @@ class KalkulationenComponent extends Object {
 		return 1900;
 	}
 
-	
+
 	private function floatToTime($time){
 		$time = abs($time) * 60;
 		if ($time <= 60) {
@@ -40,7 +40,7 @@ class KalkulationenComponent extends Object {
 		$time=intval($time);
 		$h = intval($time / 60);
 		$m = $time - ($h*60);
-		
+
 		return sprintf('%02d:%02d:00',$h, $m);
 	}
 
@@ -48,7 +48,7 @@ class KalkulationenComponent extends Object {
 		$result = array();
 		$teile = split('[;]', $strecke);
 		$result['landungen']=count($teile)-1;
-		
+
 		//Start- und Landeflugplatz
 		if (count($teile)>0){
 			$result['startflugplatz']=$this->getFlugplatz($teile[0]);
@@ -78,14 +78,14 @@ class KalkulationenComponent extends Object {
 		$result['gesamtreisezeitStr']=$this->floatToTime($gesamtreisezeit);
 		$result['gesamtflugzeitStr']=$this->floatToTime($gesamtflugzeit);
 		$result['flugstrecke']=$teilstrecken;
-		
+
 		return $result;
 	}
 
 
 	public function KalkuliereVorgang($vorgang){
 		$result = $vorgang;
-		
+
 		$result['Adresse']=$this->getAdresse($vorgang['adresse_id']);
 		$result['Flugstrecke']=$this->calcStrecke($vorgang['flugstrecke'], $vorgang['flugzeugtyp_id']);
 		$result['Flugzeug']=$this->getFlugzeugtyp($vorgang['flugzeugtyp_id']);
@@ -95,7 +95,7 @@ class KalkulationenComponent extends Object {
 		$result['brutto_soll']=$result['Kalkulation']['gesamtbrutto'];
 
 		return $result;
-	} 
+	}
 
 	public function SimpleCalc($flugzeugtyp, $entfernung, $sonderwunsch_netto, $zeitflug, $begleiter, $landungen){
 		if ($flugzeugtyp == null || $entfernung == null || $sonderwunsch_netto == null || $zeitflug == null || $begleiter == null || $landungen == null) return null;
@@ -104,7 +104,7 @@ class KalkulationenComponent extends Object {
 		$vmax = $this->vMaxFlugzeug($flugzeugtyp);
 		$reisezeit = $this->CalcReisezeit($entfernung, $vmax, $landungen);
 		if ($zeitflug == 0) $reisezeit = 1;
-		
+
 		$begleiter = $this->istFlugbegleiter($flugzeugtyp, $begleiter);
 		$flugzeugkosten = $this->FlugzeugkostenZeit($flugzeugtyp, $reisezeit);
 		$crew = $this->Piloten($flugzeugtyp);
@@ -113,49 +113,56 @@ class KalkulationenComponent extends Object {
 		$result['netto']=round($flugzeugkosten + $personalkosten + $sonderwunsch_netto, 2);
 		$result['mwst']=round($result['netto'] * 19/100,2);
 		$result['brutto']=$result['netto']+$result['mwst'];
-		
-		return $result;	
-	}		
 
-	
+		return $result;
+	}
+
+
 	public function KalkulationKosten($vorgang, $zeitflug){
 		$result = array();
-		$flugzeugtyp =$vorgang['flugzeugtyp_id']; 
-		
+		$flugzeugtyp =$vorgang['flugzeugtyp_id'];
+
 		//Personalkosten
 		$begleiter = $this->istFlugbegleiter($flugzeugtyp, $vorgang['AnzahlFlugbegleiter']);
 		$crew = $vorgang['Flugzeug']['Flugzeugtyp']['crewPersonal'];
-		$buchungszeit =0;
-		$fixkosten =1000;
-		$varkosten =100;
-		$fixkostenMwst =190;
-		$varkostenMwst =19;
-		$fixkostenBrutto =1190;
-		$varkostenBrutto =119;
-		
+
 		$reisezeit =0;
 		if ($zeitflug==true) {
-			$reisezeit = $vorgang['reisezeit']; 
+			$reisezeit = $vorgang['reisezeit'];
 		}
 		else {
-			$reisezeit = $vorgang['Flugstrecke']['gesamtreisezeit'];	
+			$reisezeit = $vorgang['Flugstrecke']['gesamtreisezeit'];
 		}
 		$personalkosten = $this->PersonalKosten($crew, $begleiter, $reisezeit);
-		
+
 		//Flugzeugkosten
 		$flugzeugkostenStunde = $this->FlugzeugkostenStunde($flugzeugtyp);
 		$flugzeugkostenZeit = $this->FlugzeugkostenZeit($flugzeugtyp, $reisezeit);
 
 		//Sonderwünsche
 		$sonderwünsche = $vorgang['sonderwunsch_netto'];
-		
+
 		//Gesamtkosten
 		$gesamtnetto = $flugzeugkostenZeit + $personalkosten + $sonderwünsche;
 		$mwstsatz = 1900 ;
 		$mwst = round($gesamtnetto * $mwstsatz/10000,2);
 		$gesamtbrutto = $gesamtnetto + $mwst;
 
-		
+        //Var und Fixkosten
+        $diff = strtotime($vorgang['bisDatum'])-strtotime($vorgang['vonDatum']);
+        if ($diff != 0) $diff = $diff / 86400;
+        $diff += 1; //von morgens bis abends
+        $buchungszeit = $diff*8; //8 Stunden pro Tag
+        //$buchungszeit =8;
+        $fixkosten = round($this->FlugzeugfixkostenStunde($flugzeugtyp)*$buchungszeit+$sonderwünsche, 2);
+        $varkosten = round($this->FlugzeugvarkostenStunde($flugzeugtyp),2);
+        $fixkostenMwst = round($fixkosten * 0.19, 2);
+        $varkostenMwst = round($varkosten * 0.19, 2);
+        $fixkostenBrutto =$fixkosten + $fixkostenMwst;
+        $varkostenBrutto =$varkosten + $varkostenMwst;
+
+
+
 		//Ergebnis zusammen bauen
 		$result['buchungszeit']=$buchungszeit;
 		$result['fixkosten']=$fixkosten;
@@ -173,26 +180,26 @@ class KalkulationenComponent extends Object {
 		$result['mwstsatz']=$mwstsatz;
 		$result['mwst']=$mwst;
 		$result['gesamtbrutto']=$gesamtbrutto;
-		return $result;		
+		return $result;
 	}
 
 	public function vMaxFlugzeug($flugzeugtyp){
 		$daten = $this->getFlugzeugtyp($flugzeugtyp);
-		return $daten['Flugzeugtyp']['vmax'];	
+		return $daten['Flugzeugtyp']['vmax'];
 	}
-	
-	
+
+
 	public function CalcReisezeit($entfernung, $geschwindigkeit, $landungen){
 		return $entfernung / $geschwindigkeit + $landungen *0.75;
 	}
-	
+
 	public function CalcFlugzeit($entfernung, $geschwindigkeit){
 		return $entfernung / $geschwindigkeit;
 	}
 
 	public function minFlugbegleiter($flugzeugtyp){
 		$daten = $this->getFlugzeugtyp($flugzeugtyp);
-		return $daten['Flugzeugtyp']['cabinPersonal'];	
+		return $daten['Flugzeugtyp']['cabinPersonal'];
 	}
 
 	public function istFlugbegleiter($flugzeugtyp, $istBegleiter){
@@ -203,14 +210,23 @@ class KalkulationenComponent extends Object {
 		return $min;
 	}
 
+
+    public function FlugzeugfixkostenStunde($flugzeugtyp){
+        $daten = $this->getFlugzeugtyp($flugzeugtyp);
+        return round($daten['Flugzeugtyp']['jahreskosten']*1.2, 2);
+    }
+
+    public function FlugzeugvarkostenStunde($flugzeugtyp){
+        $daten = $this->getFlugzeugtyp($flugzeugtyp);
+        return round($daten['Flugzeugtyp']['stundenkosten']*1.2, 2);
+    }
+
+
 	public function FlugzeugkostenStunde($flugzeugtyp){
 		$result = 0;
-		$daten = $this->getFlugzeugtyp($flugzeugtyp);
-		$grundkosten = $daten['Flugzeugtyp']['jahreskosten']/2000;
-		$stundenkosten = $daten['Flugzeugtyp']['stundenkosten'];
-		return round(($grundkosten + $stundenkosten)*1.2,2);
+        return $this->FlugzeugvarkostenStunde($flugzeugtyp) + $this->FlugzeugfixkostenStunde($flugzeugtyp);
 	}
-	
+
 	public function FlugzeugkostenZeit($flugzeugtyp, $reisezeit){
 		return round($this->FlugzeugkostenStunde($flugzeugtyp)*$reisezeit, 2);
 	}
@@ -225,17 +241,17 @@ class KalkulationenComponent extends Object {
 		$flugzeugTypModell =& ClassRegistry::getObject('Flugzeugtyp');
 		$flugzeugTypModell->id = $flugzeugtyp;
 		$daten = $flugzeugTypModell->Read();
-		return $daten['Flugzeugtyp']['crewPersonal'];	
+		return $daten['Flugzeugtyp']['crewPersonal'];
 	}
 
-	
-	
+
+
 	    /**
-     * 
+     *
      * param $x = Angabe einer geografischen Position im Format 7° 25' N, 10° 59' O
      * wird umgerechnet zu Bogenmaß als Array der Form
      * array('lat','long'}
-     * wobei lat und long Floats sind. 
+     * wobei lat und long Floats sind.
      */
     public function GeografischeGradzuBogenmass($x)
     {
@@ -244,7 +260,7 @@ class KalkulationenComponent extends Object {
     	$x = str_replace('°',' ',$x);
     	$x = str_replace('"',' ',$x);
     	$x = str_replace(',',' ',$x);
-    	
+
     	//zerlegen in Token Umrechnung und Umrechnung in Grad
     	$step = 0;
     	$lat = 0;
@@ -257,16 +273,16 @@ class KalkulationenComponent extends Object {
     				//Lat
 					case 0: if (is_numeric($token)){$lat = (int)$token; $step++; break;}
 					case 1: if (is_numeric($token)){$lat += (int)$token/60; $step++; break;}
-					case 2: if (is_numeric($token)){$lat += (int)$token/3600; $step++; break;}		
+					case 2: if (is_numeric($token)){$lat += (int)$token/3600; $step++; break;}
 					case 3: if (strtoupper($token) == 'S' ){$lat = $lat * -1;} $step = 4; break;
-					    
-					//Long				
+
+					//Long
 					case 4: if (is_numeric($token)){$lng = (int)$token; $step++; break;}
 					case 5: if (is_numeric($token)){$lng += (int)$token/60; $step++; break;}
-					case 6: if (is_numeric($token)){$lng += (int)$token/3600; $step++; break;}		
+					case 6: if (is_numeric($token)){$lng += (int)$token/3600; $step++; break;}
 					case 7: if (strtoupper($token) == 'W' ){$lng = $lng * -1;} $step = 9; break;
 
-					default: break;   				
+					default: break;
     			}
    			}
     	endforeach;
@@ -283,17 +299,17 @@ class KalkulationenComponent extends Object {
     	$Modell->id=$start;
     	$startFlugplatz = $Modell->field('geoPosition');
     	$bmStart = $this->GeografischeGradzuBogenmass($startFlugplatz);
-    	
+
     	$Modell->id=$ziel;
     	$zielFlugplatz = $Modell->field('geoPosition');
     	$bmZiel = $this->GeografischeGradzuBogenmass($zielFlugplatz);
-    	
+
     	return $this->CalcKugelDistanz($bmZiel,$bmStart);
     }
 
 
 	/**
-	 * 
+	 *
 	 * Test der Berechnung mit http://www.koordinaten.de/cgi-ko/koordinaten_entfernung.cgi
 	 */
     public function CalcKugelDistanz($start, $ziel){
@@ -301,13 +317,13 @@ class KalkulationenComponent extends Object {
     	$lat2 = $ziel[0];
     	$long1 = $start[1];
     	$long2 = $ziel[1];
-    	
+
  		$km = acos(sin($lat1) * sin($lat2) + cos($lat1) * cos($lat2) * cos($long1- $long2) ) * 6378;
  		return round($km);
     }
-	
-	
-	
+
+
+
 }
- 
+
 ?>
