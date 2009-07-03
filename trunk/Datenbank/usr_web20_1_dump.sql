@@ -277,11 +277,11 @@ CREATE TABLE IF NOT EXISTS `reports` (
 -- Daten für Tabelle `reports`
 --
 
-INSERT INTO `reports` (`id`, `name`, `befehl`) VALUES
-(1, 'Liste aller Flugzeugtypen', ' select * from flugzeugtypen order by id;'),
-(2, 'Liste aller Kunden', ' select * from adressen order by id; '),
-(3, 'Offene Rechnungen', 'select * from vorgaenge where brutto_soll > brutto_ist AND vorgangstyp_id = 3 ORDER by datum, vonDatum, adresse_id, id;'),
-(4, 'Faellige Rechnungen', '
+INSERT INTO `reports` (`name`, `befehl`) VALUES
+('Liste aller Flugzeugtypen', ' select * from flugzeugtypen order by id;'),
+('Liste aller Kunden', ' select * from adressen order by id; '),
+('Offene Rechnungen', 'select * from vorgaenge where brutto_soll > brutto_ist AND vorgangstyp_id = 3 ORDER by datum, vonDatum, adresse_id, id;'),
+('Faellige Rechnungen', '
 	select DISTINCT 
 	vorgaenge.id "RE",
 	vorgaenge.datum "Datum",
@@ -299,7 +299,7 @@ INSERT INTO `reports` (`id`, `name`, `befehl`) VALUES
 	adressen.ort "Ort"
 	from vorgaenge LEFT JOIN adressen ON vorgaenge.adresse_id = adressen.id where vorgaenge.brutto_soll > vorgaenge.brutto_ist AND vorgaenge.vorgangstyp_id = 3 AND DATE_ADD(vorgaenge.datum,INTERVAL 30 DAY) < Now();
 	'),
-(5, 'Faellige Rechnungen (Überblick)', '
+('Faellige Rechnungen (Überblick)', '
 		select DISTINCT 
 		vorgaenge.id "RE",
 		vorgaenge.datum "Datum",
@@ -310,7 +310,49 @@ INSERT INTO `reports` (`id`, `name`, `befehl`) VALUES
 		adressen.id "KN",
 		adressen.firma "Firma"
 		from vorgaenge LEFT JOIN adressen ON vorgaenge.adresse_id = adressen.id where vorgaenge.brutto_soll > vorgaenge.brutto_ist AND vorgaenge.vorgangstyp_id = 3 AND DATE_ADD(vorgaenge.datum,INTERVAL 30 DAY) < Now();
-		');
+		'),
+('Liste abgelehnter Angebote', '
+	select  DISTINCT
+	vorgaenge.id "AN" ,
+	vorgaenge.datum "Datum",
+	vorgaenge.netto "Netto",
+	vorgaenge.mwst "MwSt",
+	vorgaenge.brutto_soll "Brutto",
+	z.beschreibung "Ablehnungsgrund",
+	adressen.id "KN",
+	adressen.firma "Firma",
+	adressen.abteilung "Abteilung",
+	adressen.Ansprechpartner "Ansprechpartner",
+	adressen.strasse "Straße",
+	adressen.plz "PLZ",
+	adressen.ort "Ort"
+	
+	from vorgaenge
+	 LEFT JOIN adressen ON vorgaenge.adresse_id = adressen.id 
+	 LEFT JOIN zufriedenheitstypen z ON vorgaenge.zufriedenheitstyp_id = z.id
+	where  vorgangstyp_id = 1 and zufriedenheitstyp_id is not null ;
+	');
+('Liste abgelegter Rechnungen', '
+    	select  DISTINCT
+    	vorgaenge.id "RE" ,
+    	vorgaenge.datum "Datum",
+    	vorgaenge.netto "Netto",
+    	vorgaenge.mwst "MwSt",
+    	vorgaenge.brutto_soll "Brutto",
+    	z.beschreibung "Zufriedenheit",
+    	adressen.id "KN",
+    	adressen.firma "Firma",
+    	adressen.abteilung "Abteilung",
+    	adressen.Ansprechpartner "Ansprechpartner",
+    	adressen.strasse "Straße",
+    	adressen.plz "PLZ",
+    	adressen.ort "Ort"
+
+    	from vorgaenge
+    	 LEFT JOIN adressen ON vorgaenge.adresse_id = adressen.id 
+    	 LEFT JOIN zufriedenheitstypen z ON vorgaenge.zufriedenheitstyp_id = z.id
+    	where  vorgangstyp_id = 3 and zufriedenheitstyp_id is not null ;
+    	');
 
 -- --------------------------------------------------------
 
