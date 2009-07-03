@@ -313,7 +313,7 @@ INSERT INTO `reports` (`name`, `befehl`) VALUES
 		'),
 ('Liste abgelehnter Angebote', '
 	select  DISTINCT
-	vorgaenge.id "AN" ,
+	vorgaenge.id "AN",
 	vorgaenge.datum "Datum",
 	vorgaenge.netto "Netto",
 	vorgaenge.mwst "MwSt",
@@ -331,10 +331,10 @@ INSERT INTO `reports` (`name`, `befehl`) VALUES
 	 LEFT JOIN adressen ON vorgaenge.adresse_id = adressen.id 
 	 LEFT JOIN zufriedenheitstypen z ON vorgaenge.zufriedenheitstyp_id = z.id
 	where  vorgangstyp_id = 1 and zufriedenheitstyp_id is not null ;
-	');
+	'),
 ('Liste abgelegter Rechnungen', '
     	select  DISTINCT
-    	vorgaenge.id "RE" ,
+    	vorgaenge.id "RE",
     	vorgaenge.datum "Datum",
     	vorgaenge.netto "Netto",
     	vorgaenge.mwst "MwSt",
