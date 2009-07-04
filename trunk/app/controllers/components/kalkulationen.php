@@ -144,8 +144,7 @@ class KalkulationenComponent extends Object {
 
 		//Gesamtkosten
 		$gesamtnetto = $flugzeugkostenZeit + $personalkosten + $sonderwünsche;
-		$mwstsatz = 1900 ;
-		$mwst = round($gesamtnetto * $mwstsatz/10000,2);
+		$mwst = round($gesamtnetto * 0.19,2);
 		$gesamtbrutto = $gesamtnetto + $mwst;
 
         //Var und Fixkosten
@@ -153,7 +152,6 @@ class KalkulationenComponent extends Object {
         if ($diff != 0) $diff = $diff / 86400;
         $diff += 1; //von morgens bis abends
         $buchungszeit = $diff*8; //8 Stunden pro Tag
-        //$buchungszeit =8;
         $fixkosten = round($this->FlugzeugfixkostenStunde($flugzeugtyp)*$buchungszeit+$sonderwünsche, 2);
         $varkosten = round($this->FlugzeugvarkostenStunde($flugzeugtyp),2);
         $fixkostenMwst = round($fixkosten * 0.19, 2);
@@ -166,6 +164,7 @@ class KalkulationenComponent extends Object {
 		//Ergebnis zusammen bauen
 		$result['buchungszeit']=$buchungszeit;
 		$result['fixkosten']=$fixkosten;
+        $result['varkosten']=$varkosten;
 		$result['reisezeit']=$reisezeit;
 
 		$result['fixkostenMwst']=$fixkostenMwst;
@@ -177,7 +176,7 @@ class KalkulationenComponent extends Object {
 		$result['personalkostenNetto']=$personalkosten;
 		$result['flugzeugkostenNetto']=$flugzeugkostenZeit;
 		$result['gesamtnetto']=$gesamtnetto;
-		$result['mwstsatz']=$mwstsatz;
+		$result['mwstsatz']=1900;
 		$result['mwst']=$mwst;
 		$result['gesamtbrutto']=$gesamtbrutto;
 		return $result;
@@ -213,7 +212,7 @@ class KalkulationenComponent extends Object {
 
     public function FlugzeugfixkostenStunde($flugzeugtyp){
         $daten = $this->getFlugzeugtyp($flugzeugtyp);
-        return round($daten['Flugzeugtyp']['jahreskosten']*1.2, 2);
+        return round($daten['Flugzeugtyp']['jahreskosten']*1.2/2000, 2);
     }
 
     public function FlugzeugvarkostenStunde($flugzeugtyp){

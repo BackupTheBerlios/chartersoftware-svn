@@ -354,7 +354,6 @@ class VorgaengeController extends AppController
 		{
       		$this->Vorgang->id = $this->data['Vorgang']['id'];
         	$vorgang = $this->Vorgang->Read();
-        	///var_dump($vorgang);
         	$vorgang['Vorgang']['reisezeit']=str_replace(',','.',$this->data['Vorgang']['reisezeit']);
 			$vorgang['Vorgang'] = $this->Kalkulationen->KalkuliereVorgang($vorgang['Vorgang']);
 
