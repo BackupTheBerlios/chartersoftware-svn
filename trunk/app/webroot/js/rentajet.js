@@ -324,7 +324,6 @@ function calcCosts() {
 		sonderwunsch = $("#VorgangSonderwunschNetto").val();
 		}
 		
-		//alert("../../vorgaenge/SimpleCalc/"+$("#VorgangFlugzeugtypId option:selected").val()+"/"+$("#distancesum").text()+"/"+sonderwunsch+"/"+$("#VorgangZeitcharter option:selected").val()+"/"+$("#VorgangFlugbegleiter").val()+"/"+$("input[name^='zwischenstop;']").size()+".xml");
 		$("#loader_costs").show();
 		$.ajax({
 			type: "GET",
@@ -409,7 +408,6 @@ function updateFlugzeuge() {
 			var requiredAttendands = parseInt(RegExp.$2);
 			var plaetze = parseInt(RegExp.$3);
 
-			// Wenn ein bereits gewählter Flugzeugtype rausfällt
 			if (personen > (plaetze-requiredAttendands) && ($(this).val() == $("#VorgangFlugzeugtypId option:selected").val())) {
 				$(this).attr("disabled","disabled");
 				$('#VorgangFlugzeugtypId').find('option:first').attr('selected', 'selected').parent('select');	
