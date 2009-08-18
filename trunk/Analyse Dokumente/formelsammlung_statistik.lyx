@@ -45,6 +45,8 @@
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
+\topmargin 1cm
+\bottommargin 1cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
@@ -52,7 +54,7 @@
 \quotes_language german
 \papercolumns 1
 \papersides 2
-\paperpagestyle headings
+\paperpagestyle empty
 \bullet 0 0 10 -1
 \tracking_changes false
 \output_changes false
@@ -178,23 +180,28 @@ Merkmalstypen
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Plain Layout
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+diskrete Merksmaltypen bestehen aus einer überschaubare, endliche Menge
+ (etwa Geschlecht)
+\emph on
+, 
+\end_layout
 
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+stetige
 \emph on
-diskrete
-\emph default
- Merksmaltypen bestehen aus einer überschaubare, endliche Menge (etwa Geschlecht
-)
-\emph on
-, stetige 
+ 
 \emph default
 Merksmaltypen können in einem bestimmten Bereich jeden reelen Wert annehmen,
  
-\emph on
-quasi-stetige
-\emph default
- Merksmaletypen sind eigentlich diskret, enthalten aber sehr grosse Menge
- von möglichen Merkmalen
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+quasi-stetige Merksmaletypen sind eigentlich diskret, enthalten aber sehr
+ grosse Menge von möglichen Merkmalen
 \end_layout
 
 \end_inset
@@ -264,12 +271,14 @@ Skalenniveau
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-nominal qualitativ (also keine Zahlen), etwa Geschlecht oder Studiengang
+nominal qualitativ (also keine Zahlen), etwa Geschlecht oder Studiengang.
+ Darstellung als gruppierter Wert.
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-ordinal Merkmalsausprägung mit objektiver Rangordnung, etwa Noten
+ordinal Merkmalsausprägung mit objektiver Rangordnung, etwa Noten.Darstellung
+ als gruppierter Wert.
 \end_layout
 
 \begin_layout Labeling
@@ -277,7 +286,8 @@ ordinal Merkmalsausprägung mit objektiver Rangordnung, etwa Noten
 metrisch interval quantitativ, reele Zahlen, natürliche Rangfolge, eindeutige
  Abstände, etwa Sparsumme, Verhältnis quantitativ, reele Zahlen, natürliche
  Rangfolge, eindeutige Abstände, absoluter Bezugspunkt (etwa Nullpunkt).
- Beispiel: Alter
+ Beispiel: Alter.
+ Darstellung als klassierter Wert.
 \end_layout
 
 \end_inset
@@ -296,7 +306,7 @@ Variablen
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="22" columns="3">
+<lyxtabular version="3" rows="13" columns="3">
 <features>
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
@@ -343,378 +353,6 @@ Klasse oder Gruppe einer statistischen Zählung.
 \end_inset
 
 -te oder letzte Gruppe/Klasse stehen.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $h$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-h
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Anzahl von Einheiten innerhalb einer Gruppe oder Klasse.
- Tiefgestellte Zeichen gleiche Bedeutung wie bei 
-\begin_inset Formula $x$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-Die Summe aller 
-\begin_inset Formula $h$
-\end_inset
-
- ist die statistische Masse
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $x_{i}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-xi
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $i$
-\end_inset
-
--te Klasse oder Gruppe
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $h_{i}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-hi
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-absolute Häufigkeit, d.h.
- die Anzahl von Einheiten innerhalb einer Gruppe oder Klasse
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $H_{i}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-shi
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-absolute Summenhäufigkeit, wie 
-\begin_inset Formula $h_{i}$
-\end_inset
-
- aber aufsteigend addiert
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $f_{i}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-fi
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-relative Häufigkeit.
- Summe aller 
-\begin_inset Formula $f_{i}=1$
-\end_inset
-
- Entspricht dem prozentualen Anteil an der statistischen Masse
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $F_{i}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-sfi
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-relative Summenhäufigkeit.
- Wie 
-\begin_inset Formula $f_{i}$
-\end_inset
-
- aber aufsummiert.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $x_{i}^{'}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Klassenmitte der
-\begin_inset Formula $i$
-\end_inset
-
--ten Klasse
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $ $
-\end_inset
-
-
-\begin_inset Formula $x_{i}^{u}$
-\end_inset
-
- 
-\begin_inset Formula $x_{i}^{o}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-untere bzw.
- obere Grenze der 
-\begin_inset Formula $i$
-\end_inset
-
--ten Klasse
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\text{∆}x_{i}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-dxi
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Klassenbreite der 
-\begin_inset Formula $i$
-\end_inset
-
--ten Klasse
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $s_{i}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-relative Summenhäufigkeit einer Klasse
 \end_layout
 
 \end_inset
@@ -790,38 +428,6 @@ Median, Mitte aller Merkmalsausprägungen, d.h.
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $N$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Statistische Masse, also die Menge aller Merkmalsausprägungen.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 \begin_inset Formula $x_{p}$
 \end_inset
 
@@ -856,6 +462,9 @@ nicht
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $x_{i}^{'}$
+\end_inset
+
 
 \end_layout
 
@@ -874,6 +483,141 @@ nicht
 \begin_inset Text
 
 \begin_layout Plain Layout
+Klassenmitte der
+\begin_inset Formula $i$
+\end_inset
+
+-ten Klasse
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $x_{i}^{u}$
+\end_inset
+
+ 
+\begin_inset Formula $x_{i}^{o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+untere bzw.
+ obere Grenze der 
+\begin_inset Formula $i$
+\end_inset
+
+-ten Klasse
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $h$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anzahl von Einheiten innerhalb einer Gruppe oder Klasse.
+ Tiefgestellte Zeichen gleiche Bedeutung wie bei 
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Die Summe aller 
+\begin_inset Formula $h$
+\end_inset
+
+ ist die statistische Masse
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $H_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+shi
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+absolute Summenhäufigkeit, wie 
+\begin_inset Formula $h_{i}$
+\end_inset
+
+ aber aufsteigend addiert.
+ Der größte Wert=
+\begin_inset Formula $N$
+\end_inset
+
 
 \end_layout
 
@@ -885,6 +629,9 @@ nicht
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $f_{i}$
+\end_inset
+
 
 \end_layout
 
@@ -894,45 +641,21 @@ nicht
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+fi
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
+relative Häufigkeit.
+ Summe aller 
+\begin_inset Formula $f_{i}=1$
 \end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
 
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+ Entspricht dem prozentualen Anteil an der statistischen Masse.
 \end_layout
 
 \end_inset
@@ -943,6 +666,9 @@ nicht
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $F_{i}$
+\end_inset
+
 
 \end_layout
 
@@ -952,7 +678,7 @@ nicht
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+sfi
 \end_layout
 
 \end_inset
@@ -961,36 +687,13 @@ nicht
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
+relative Summenhäufigkeit.
+ Wie 
+\begin_inset Formula $f_{i}$
 \end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
 
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+ aber aufsummiert.
+ Der größte Wert = 1
 \end_layout
 
 \end_inset
@@ -1001,6 +704,9 @@ nicht
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $\text{∆}x_{i}$
+\end_inset
+
 
 \end_layout
 
@@ -1010,16 +716,20 @@ nicht
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+dxi
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+Klassenbreite der 
+\begin_inset Formula $i$
+\end_inset
 
+-ten Klasse
 \end_layout
 
 \end_inset
@@ -1030,6 +740,9 @@ nicht
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $s_{i}$
+\end_inset
+
 
 \end_layout
 
@@ -1039,6 +752,29 @@ nicht
 \begin_inset Text
 
 \begin_layout Plain Layout
+si
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+relative Summenhäufigkeit einer Klasse
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $N$
+\end_inset
+
 
 \end_layout
 
@@ -1048,7 +784,16 @@ nicht
 \begin_inset Text
 
 \begin_layout Plain Layout
+n
+\end_layout
 
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Statistische Masse, also die Menge aller Merkmalsausprägungen.
 \end_layout
 
 \end_inset
@@ -1073,10 +818,10 @@ Eindimensionale Häufigkeitsverteilung
 Beispiele
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
 
 \lang english
-Beispiel Gruppierte Daten
+Gruppiert: Für nominale und ordinale Werte
 \end_layout
 
 \begin_layout Standard
@@ -1778,10 +1523,10 @@ Beispiel Gruppierte Daten
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
 
 \lang english
-Beispiel Klassifizierte Daten
+Klassiert: Für metrische Werte
 \end_layout
 
 \begin_layout Standard
@@ -2326,9 +2071,10 @@ Formeln:
 
 \lang english
 \begin_inset Tabular
-<lyxtabular version="3" rows="8" columns="4">
+<lyxtabular version="3" rows="8" columns="5">
 <features>
 <column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
@@ -2347,6 +2093,15 @@ Name
 
 \begin_layout Plain Layout
 Math
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -2397,6 +2152,15 @@ abs.
 \begin_inset Text
 
 \begin_layout Plain Layout
+hi
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 -
 \end_layout
 
@@ -2431,6 +2195,15 @@ abs.
 \end_inset
 
 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+shi
 \end_layout
 
 \end_inset
@@ -2486,14 +2259,23 @@ relative Häufigkeit
 \begin_inset Text
 
 \begin_layout Plain Layout
+fi
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 \begin_inset Formula $\mbox{\ensuremath{\frac{h_{i}}{N}}}$
 \end_inset
 
  mit 
-\begin_inset Formula $\underset{i=1}{\overset{k}{\sum f_{i}=1}}$
+\begin_inset Formula $\overset{k}{\underset{i=1}{\sum}f_{i}}$
 \end_inset
 
-
+ 
 \end_layout
 
 \end_inset
@@ -2530,6 +2312,15 @@ abs.
 \end_inset
 
 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sfi
 \end_layout
 
 \end_inset
@@ -2585,6 +2376,15 @@ Stat Masse
 \begin_inset Text
 
 \begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 \begin_inset Formula $\underset{i=1}{\overset{k}{\sum}h_{i}}$
 \end_inset
 
@@ -2624,6 +2424,15 @@ abs Häufigkeitsdichte
 \end_inset
 
 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+his
 \end_layout
 
 \end_inset
@@ -2676,6 +2485,15 @@ rel Häufigkeitsdichte
 \begin_inset Text
 
 \begin_layout Plain Layout
+fis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 \begin_inset Formula $\frac{f_{i}}{\Delta x_{i}}$
 \end_inset
 
@@ -2703,18 +2521,20 @@ fis
 
 \begin_layout Section
 Funktion der relatitiven Summenhäufigkeit
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Auch als Verteilungsfunktion bezeichnet
 \end_layout
 
-\begin_layout Standard
-auch als Verteilungsfunktion bezeichnet.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 Bei gruppierte Daten
-\end_layout
-
-\begin_layout Standard
-Als Formel:
 \end_layout
 
 \begin_layout Standard
@@ -2735,11 +2555,12 @@ Als Rechenbeispiel:
 \begin_inset Formula $\mbox{F(500)=}$
 \end_inset
 
-
+0,30 -> Es wird nicht gerechnet, sondern aus dem Diagramm abgelesen, da
+ es sich um gruppierte Werte handelt!
 \end_layout
 
 \begin_layout Standard
-Als grafische Lösung:
+Als grafische Lösung (Treppendiagramm, keine Zwischenwerte!)
 \end_layout
 
 \begin_layout Standard
@@ -2848,7 +2669,9 @@ vector(1,0){0.4}}[Bl] at  50 0.30
 
 
 \backslash
-put{$F(500)=0.40$} at 900 0.15
+put{$F(500) 
+\backslash
+approx 0.40$} at 900 0.15
 \end_layout
 
 \begin_layout Plain Layout
@@ -2964,21 +2787,6 @@ plot 740 0.8 740 0.9 /
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-%%
-\backslash
-put{500 EUR bei 0,4} at 800 0.2
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
 
 \backslash
 put{
@@ -3019,10 +2827,6 @@ Bei klassierten Daten
 \end_layout
 
 \begin_layout Standard
-Als Formel:
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula $F(x)=\begin{cases}
 0 & x<x_{1}^{u}\\
 F(x_{i}^{u})+\frac{f_{i}}{\Delta x_{i}}*(x-x_{i}^{u}) & x_{i}^{u}\leq x<x_{i}^{o}\\
@@ -3036,7 +2840,16 @@ F(x_{i}^{u})+\frac{f_{i}}{\Delta x_{i}}*(x-x_{i}^{u}) & x_{i}^{u}\leq x<x_{i}^{o
 als Rechenbeispiel: 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
+Klasse aus Diagramm ablesen (
+\begin_inset Formula $H_{i}$
+\end_inset
+
+), untere und obere Grenzen der Klasse herauslesen.
+\end_layout
+
+\begin_layout Enumerate
+In Formel einsetzen: 
 \begin_inset Formula $F(500)=0.21+\frac{0,56}{300}(500-400)=0,397=39,7\%$
 \end_inset
 
@@ -3120,7 +2933,9 @@ plot 500 0 500 0.4 500 0.4 0 0.4 /
 
 
 \backslash
-put{$F(500)=0.40$} at 900 0.15
+put{$F(500) 
+\backslash
+approx 0.40$} at 900 0.15
 \end_layout
 
 \begin_layout Plain Layout
@@ -3169,6 +2984,26 @@ Histogramm
 \end_layout
 
 \begin_layout Standard
+Zur Darstellung der Klassenhäufigkeit (
+\lang english
+
+\begin_inset Formula $f_{i}^{*}$
+\end_inset
+
+
+\lang ngerman
+ oder 
+\lang english
+
+\begin_inset Formula $h_{i}^{*}$
+\end_inset
+
+
+\lang ngerman
+) einer Klasse
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3190,7 +3025,7 @@ beginpicture
 
 
 \backslash
-setcoordinatesystem units <0.05mm,50cm>
+setcoordinatesystem units <0.04mm,25cm>
 \end_layout
 
 \begin_layout Plain Layout
@@ -3216,8 +3051,9 @@ axis bottom shiftedto y=0 ticks from 100 to 2000 by 100 numbered from  00
 
 
 \backslash
-axis left   shiftedto x=0 ticks from 0.010 to 0.180 by 0.009 numbered from
- 0.010 to 0.180 by 0.009 length <0pt> withvalues $his$ / at 0.200 / / 
+axis left   shiftedto x=0 ticks from 0.0100 to 0.1800 by 0.0100 numbered from
+ 0.0100 to 0.1800 by 0.0200 length <0pt> withvalues $h_{i}^{*}$ / at 0.2000
+ / / 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3270,22 +3106,6 @@ endpicture
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Auf der x-Achse kommen die 
-\begin_inset Formula $x_{i}$
-\end_inset
-
--Werte, auf die 
-\begin_inset Formula $y$
-\end_inset
-
--Achse die 
-\begin_inset Formula $ $
-\end_inset
-
-fis oder his Werte
 \end_layout
 
 \begin_layout Section
@@ -3534,6 +3354,10 @@ Gruppiert
 Modalwert (Modus)
 \end_layout
 
+\begin_layout Standard
+= die Stelle häufigste Merkmalsausprägung
+\end_layout
+
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 Gruppen da 
@@ -3572,6 +3396,10 @@ Klassen Mitte der modalen Klasse:
 Median (Zentralwert)
 \end_layout
 
+\begin_layout Standard
+= Mitte aller Merkmalsträger.
+\end_layout
+
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 Gruppe 
@@ -3579,16 +3407,27 @@ Gruppe
 \end_inset
 
  aber: wenn N gerade, dann Mittelwerte von aktueller Gruppe und nächster
- Gruppe (im Beispiel: 625)
+ Gruppe (im Beispiel: 625).
+ 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $x_{z}=\begin{cases}
+x_{(k)} & p*N\notin Z\: mit\: k=p*N<k<p*N+1\: und\: k\in Z\\
+\frac{x_{(k)}+x_{(k+1)}}{2} & p*N\in Z\: mit\: k=p*N\end{cases}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 Klasse 
-\begin_inset Formula $x_{z}=x_{i}^{u}+\frac{0.5-F(x_{i}^{u})}{f_{i}}*\Delta x$
+\begin_inset Formula $x_{z}=x_{i}^{u}+\frac{0.5-F(x_{i}^{u})}{f_{i}}*\Delta x_{i}$
 \end_inset
 
- Beispiel: Zuerst ungefähre Klasse bestimmen und dann 
+ Beispiel: Zuerst Klasse bestimmen und dann 
 \begin_inset Formula $400+\frac{0.5-0.21}{0.56}*300=555.36\, EUR$
 \end_inset
 
