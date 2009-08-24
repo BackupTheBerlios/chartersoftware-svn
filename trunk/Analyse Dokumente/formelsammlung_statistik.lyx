@@ -6,9 +6,12 @@
 \begin_preamble
 \usepackage{etex}
 \usepackage{m-pictex} %für PPCHtex 
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.2}
 \end_preamble
 \use_default_options true
+\begin_modules
+minimalistic
+\end_modules
 \language ngerman
 \inputencoding auto
 \font_roman default
@@ -3678,6 +3681,251 @@ Klassiert
 Standardabweichung
 \end_layout
 
+\begin_layout Section
+Relative Konzentration
+\end_layout
+
+\begin_layout Subsection
+Berechnung
+\end_layout
+
+\begin_layout Standard
+=konzentrieren sich Merkmalssumme auf wenige Merkmalsträger?
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Konzentrationskoeffizient 
+\begin_inset Formula $p_{i}=\frac{x_{i}\cdot hi}{N\cdot\bar{x}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Konzentrationsmaß 
+\begin_inset Formula $P_{i}=\overset{i}{\underset{j=1}{\sum}}p_{j}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Lorenzkurve
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+beginpicture
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcoordinatesystem units <10cm,10cm>
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setplotarea x from 0.000 to 1.000, y from 0.000 to 1.000
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis bottom shiftedto y=0 ticks from 0.000 to 1.000 by 0.100 numbered from
+ 0.1 to 1.0 by 0.1 length <0pt> withvalues $F_i$ / at 1.100 / /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis left   shiftedto x=0 ticks from 0.000 to 1.000 by 0.100 numbered from
+ 0.1 to 1.0 by 0.1 length <0pt> withvalues $P_i$ / at 1.100 / /
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%%äußere Kanten
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+plot 0.000 1.000 1.000 1.000 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+plot 1.000 0.000 1.000 1.000 /
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%%Gleichverteilungskurve
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+linethickness0.5pt
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+plot 0.000 0.000 1.000 1.000 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+put{Gleichverteilungsgerade}[Bl] at 0.2 0.7
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+linethickness2.0pt
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlinear
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+plot 0.000 0.000 0.210 0.106 0.770 0.626 0.960 0.899 0.980 0.941 1.000 1.000 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+put{Lorenzkurve}[Bl] at 0.5 0.3
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+put{A}[Bl] at 0.55 0.5
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setdots
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+linethickness0.7pt
+\end_layout
+
+\begin_layout Plain Layout
+
+%%
+\backslash
+plot 0.
+ /
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+endpicture
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Part
 
 \lang english
@@ -3716,6 +3964,48 @@ Formblätter
 \begin_layout Standard
 
 \lang english
+\begin_inset Float figure
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang english
+Abhängigkeiten Statistik
+\begin_inset Graphics
+	filename stat_layout.pdf
+	width 100page%
+	height 90pheight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
 \begin_inset CommandInset include
 LatexCommand include
 filename "tabelle_gruppierte_daten.lyx"
@@ -3728,13 +4018,125 @@ filename "tabelle_gruppierte_daten.lyx"
 \begin_layout Standard
 
 \lang english
-\begin_inset Graphics
-	filename stat_layout.eps
-	width 100page%
-	height 90pheight%
-	keepAspectRatio
-	draft
-	rotateAngle 90
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+beginpicture 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcoordinatesystem units <1.7cm,1.7cm>point at 0 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setplotarea x from 0 to 10, y from 0 to 16
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%große Abstände
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+linethickness.6pt 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+grid {10} {16} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%mittlere
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+linethickness.3pt 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+grid {20} {32} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%kleine
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+linethickness.1pt 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+grid {100} {160} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+endpicture 
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
