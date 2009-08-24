@@ -3727,6 +3727,18 @@ filename "tabelle_gruppierte_daten.lyx"
 
 \begin_layout Standard
 
+\lang english
+\begin_inset Graphics
+	filename stat_layout.eps
+	width 100page%
+	height 90pheight%
+	keepAspectRatio
+	draft
+	rotateAngle 90
+
+\end_inset
+
+
 \end_layout
 
 \end_body
