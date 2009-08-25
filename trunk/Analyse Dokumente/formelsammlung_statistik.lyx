@@ -92,7 +92,8 @@ Das ist eine Formelsammlung für Statistik.
  Die Formelsammlung enthält alle Formeln aus dem Skript des Wintersemesters
  2009/2010.
  Außerdem ein paar Sachen die mir sinnvoll erschienen und für die Klausur
- notwendig sein könnten.
+ notwendig sein könnten, sowie Formblätter zum schnellen Ausfüllen während
+ der Klausur.
 \end_layout
 
 \begin_layout Part
@@ -2860,10 +2861,16 @@ In Formel einsetzen:
 \end_layout
 
 \begin_layout Standard
-als grafische Lösung
+als grafische Lösung siehe Diagramm Verteilungsfunktion bei klass Daten
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -2982,6 +2989,175 @@ endpicture
 
 \end_layout
 
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Verteilungsfunktion bei klass.
+ Daten
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Stabdiagramm
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+beginpicture
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcoordinatesystem units <0.08mm,12cm>
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setplotarea x from 0 to 1200, y from 0 to 0.4
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis bottom shiftedto y=0 ticks from 100 to 1200 by 100 numbered from  00
+ to 1000 by 100 length <0pt> withvalues $EUR/Monat$ / at 1200 / /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis left   shiftedto x=0 ticks from 0.1 to 0.4 by 0.1 numbered from 0.1 to
+ 0.3  by 0.1 length <0pt> withvalues $f_i$ / at 0.4   / /
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+plot 275 0.0 275 0.1 285 0.1 285 0 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+plot 335 0.0 335 0.2 345 0.2 345 0 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+plot 555 0.0 555 0.1 565 0.1 565 0 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+plot 595 0.0 595 0.1 605 0.1 605 0 / 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+plot 645 0.0 645 0.3 655 0.3 655 0 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+plot 735 0.0 735 0.1 745 0.1 745 0 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+plot 1175 0.0 1175 0.1 1185 0.1 1185 0 /
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+endpicture
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Stabdiagramm 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Histogramm
 \end_layout
@@ -3007,6 +3183,12 @@ Zur Darstellung der Klassenhäufigkeit (
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -3104,6 +3286,23 @@ endpicture
 
 \backslash
 ]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Histogramm
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3484,6 +3683,14 @@ Klasse
 \end_inset
 
  Beispiel: Zuerst Klasse bestimmen und dann 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset Formula $400+\frac{0.5-0.21}{0.56}*300=555.36\, EUR$
 \end_inset
 
@@ -3544,6 +3751,10 @@ Klasse
 \begin_inset Newline newline
 \end_inset
 
+
+\begin_inset Newline newline
+\end_inset
+
  
 \begin_inset Formula $400+\frac{0.5-0.21}{0.56}*300=555.36\, EUR$
 \end_inset
@@ -3566,7 +3777,7 @@ Nur für metrische Werte geeignet
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 Gruppe 
-\begin_inset Formula $\bar{x}=\frac{\overset{k}{\underset{i=1}{\sum}}h_{i}*x_{i}}{N}$
+\begin_inset Formula $\bar{x}=\frac{\overset{k}{\underset{i=1}{\sum}}h_{i}*x_{i}}{N}=\overset{k}{\underset{i=1}{\sum}}x_{i}f_{i}$
 \end_inset
 
 
@@ -3575,7 +3786,7 @@ Gruppe
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 Klasse 
-\begin_inset Formula $\bar{x}=\frac{\overset{k}{\underset{i=1}{\sum}}h_{i}*x_{i}'}{N}$
+\begin_inset Formula $\bar{x}=\frac{\overset{k}{\underset{i=1}{\sum}}h_{i}*x_{i}'}{N}=\overset{k}{\underset{i=1}{\sum}}x_{i}^{'}f_{i}$
 \end_inset
 
 
@@ -3584,7 +3795,7 @@ Klasse
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 Addition 
-\begin_inset Formula $\bar{x}=\frac{\underset{i=1}{\overset{k}{\sum}}N_{i}*\bar{x_{i}}}{\underset{i=1}{\overset{k}{\sum}}N_{i}}$
+\begin_inset Formula $\bar{x}=\frac{\underset{m=1}{\overset{k}{\sum}}N_{m}*\bar{x_{m}}}{\underset{m=1}{\overset{k}{\sum}}N_{m}}$
 \end_inset
 
  wobei i i-te Variante der zu addierenden Durchschnitte ist 
@@ -3662,7 +3873,7 @@ mittlere quadratische Abweichung aller Merkmalsausprägungen vom arith.
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 Gruppiert 
-\begin_inset Formula $s_{x}^{2}=\frac{1}{N}\overset{k}{\underset{i=1}{\sum}}\left[(x_{i}-\overline{x})^{2}\cdot h_{i}\right]=\overset{k}{\underset{i=1}{\sum}}\left[x_{i}^{2}\cdot f_{i}-\overline{x}^{2}\right]$
+\begin_inset Formula $s_{x}^{2}=\frac{1}{N}\overset{k}{\underset{i=1}{\sum}}\left[(x_{i}-\overline{x})^{2}\cdot h_{i}\right]=\overset{k}{\underset{i=1}{\sum}}\left[x_{i}^{2}\cdot f_{i}\right]-\overline{x}$
 \end_inset
 
 
@@ -3671,7 +3882,7 @@ Gruppiert
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 Klassiert 
-\begin_inset Formula $s_{x}^{2}=\frac{1}{N}\overset{k}{\underset{i=1}{\sum}}\left[(x_{i}^{'}-\overline{x})^{2}\cdot h_{i}\right]=\overset{k}{\underset{i=1}{\sum}}\left[(x_{i}^{'})^{2}\cdot f_{i}-\overline{x}^{2}\right]$
+\begin_inset Formula $s_{x}^{2}=\frac{1}{N}\overset{k}{\underset{i=1}{\sum}}\left[(x_{i}^{'}-\overline{x})^{2}\cdot h_{i}\right]=\overset{k}{\underset{i=1}{\sum}}\left[(x_{i}^{'})^{2}\cdot f_{i}\right]-\overline{x}^{2}$
 \end_inset
 
 
@@ -3679,6 +3890,28 @@ Klassiert
 
 \begin_layout Subsection
 Standardabweichung
+\end_layout
+
+\begin_layout Standard
+=mittlere Abweichung vom Mittelwert
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $s_{x}=\sqrt{s_{x}^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Variationskoeffizient
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v=\frac{s_{x}}{\bar{x}}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -3726,7 +3959,7 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -3970,6 +4203,16 @@ sideways true
 status open
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Volumes/user/tukaram/Sites/Rent-A-Jet/Analyse Dokumente/stat_layout.pdf
+	scale 130
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \lang english
 \begin_inset Caption
@@ -3978,23 +4221,10 @@ status open
 
 \lang english
 Abhängigkeiten Statistik
-\begin_inset Graphics
-	filename stat_layout.pdf
-	width 100page%
-	height 90pheight%
-	keepAspectRatio
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -4009,6 +4239,18 @@ Abhängigkeiten Statistik
 \begin_inset CommandInset include
 LatexCommand include
 filename "tabelle_gruppierte_daten.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset CommandInset include
+LatexCommand include
+filename "tabelle_klassierte_daten.lyx"
 
 \end_inset
 
@@ -4047,14 +4289,76 @@ beginpicture
 
 
 \backslash
-setcoordinatesystem units <1.7cm,1.7cm>point at 0 0 
+setcoordinatesystem units <1.0cm,1.0cm>point at 0 0 
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-setplotarea x from 0 to 10, y from 0 to 16
+setplotarea x from 0 to 15, y from 0 to 20
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%kleine
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+linethickness0.2pt 
+\end_layout
+
+\begin_layout Plain Layout
+
+%spalten zeilen
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+setdots
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+grid {150} {200} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%mittlere
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+linethickness.1pt 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+grid {30} {40} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4077,7 +4381,7 @@ linethickness.6pt
 
 
 \backslash
-grid {10} {16} 
+grid {15} {20} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4086,44 +4390,6 @@ grid {10} {16}
 
 \begin_layout Plain Layout
 
-%mittlere
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-linethickness.3pt 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-grid {20} {32} 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-%kleine
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-linethickness.1pt 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-grid {100} {160} 
 \end_layout
 
 \begin_layout Plain Layout
