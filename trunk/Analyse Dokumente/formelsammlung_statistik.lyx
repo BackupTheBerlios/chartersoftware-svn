@@ -3012,6 +3012,21 @@ Stabdiagramm
 \end_layout
 
 \begin_layout Standard
+=relative Häufigkeitsfunktion für klassierte Daten.
+ Numerische Lösung ist 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ die grafische Lösung ein Histogramm über 
+\lang english
+
+\begin_inset Formula $h_{i}^{*}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -3160,6 +3175,21 @@ Stabdiagramm
 
 \begin_layout Subsection
 Histogramm
+\end_layout
+
+\begin_layout Standard
+=relative Häufigkeitsfunktion für klassierte Daten.
+ Numerische Lösung ist 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ die grafische Lösung ein Histogramm über 
+\lang english
+
+\begin_inset Formula $f_{i}^{*}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4270,7 +4300,7 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
