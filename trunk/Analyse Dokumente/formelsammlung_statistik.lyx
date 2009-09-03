@@ -69,26 +69,18 @@ minimalistic
 \begin_body
 
 \begin_layout Title
-
-\lang english
 Formelsammlung Statistik
 \end_layout
 
 \begin_layout Author
-
-\lang english
 Andrey Behrens
 \end_layout
 
 \begin_layout Date
-
-\lang english
 August 2009
 \end_layout
 
 \begin_layout Abstract
-
-\lang english
 Das ist eine Formelsammlung für Statistik.
  Die Formelsammlung enthält alle Formeln aus dem Skript des Wintersemesters
  2009/2010.
@@ -2060,6 +2052,1729 @@ reference "fig:Funktion-relativer-Sumenhäufigkeit"
 
 \end_layout
 
+\begin_layout Subsection
+Bei klassierten Daten
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F(x)=\begin{cases}
+0 & x<x_{1}^{u}\\
+F(x_{i}^{u})+\frac{f_{i}}{\Delta x_{i}}*(x-x_{i}^{u}) & x_{i}^{u}\leq x<x_{i}^{o}\\
+1 & x\geq x_{k}^{o}\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+als Rechenbeispiel: 
+\end_layout
+
+\begin_layout Enumerate
+Klasse aus Diagramm ablesen (
+\begin_inset Formula $H_{i}$
+\end_inset
+
+), untere und obere Grenzen der Klasse herauslesen.
+\end_layout
+
+\begin_layout Enumerate
+In Formel einsetzen: 
+\begin_inset Formula $F(500)=0.21+\frac{0,56}{300}(500-400)=0,397=39,7\%$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+als grafische Lösung siehe Funktionsdiagramm 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Verteilungsfunktion-bei-klass."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Darstellung der relativen Häufigkeiten
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+gruppiert Stabdiagramm siehe Abbildung 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Stabdiagramm-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+klassiert Histogramm, siehe Abbildung 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Relative-Häufigkeit-von-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Weiteres
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="7">
+<features rotate="true">
+<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="8cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Math
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+nominal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ordinal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+metrisch
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vor- und Nachteile
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Modal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{D}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+xd
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ermittelt Ausprägung mit höchster Häufigkeit
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Median
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+xz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ja
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ja
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mitte aller Merkmalsträger, bzw.
+ welcher Merkmalswert wird von der Hälfte aller Merkmalsträger nicht überschritt
+en.
+\end_layout
+
+\begin_layout Plain Layout
+Vorteil: Robust gegen Ausreißer.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quantil
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+xp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ein Teil aller Merkmalsträger (etwa 0,25x oder 0,75x) bzw.
+ welcher Merkmalswert wird von einem Teil aller Merkmalsträger nicht überschritt
+en.
+ Dabe ist das 
+\begin_inset Formula $x_{p}=x_{0.5}=x_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arith.
+ Mittelw.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\bar{x}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+xs
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+nein
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+nein
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ja
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Der Durchschnitt oder Mittelwert aller Merkmale 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Geom Mittelw.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{G}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+xg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ja
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mittelwert für Produkte, etwa bei Verhältnissen oder Wachstumswerten.
+ Nur für Zahlen>0 sinnvoll.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Überblick Lageparameter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="4">
+<features rotate="true">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="12cm">
+<column alignment="left" valignment="top" width="8cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Math
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Erläuterung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{D}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+xd
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Gruppen da 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ wo 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ am größsten ist: 
+\begin_inset Formula $x_{D}=x_{i}$
+\end_inset
+
+ mit 
+\begin_inset Formula $f_{i}\rightarrow max$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Klassen Mitte der modalen Klasse: 
+\begin_inset Formula $x_{D}=\frac{x_{i}^{u}+x_{i}^{o}}{2}=x_{i}^{'}$
+\end_inset
+
+ mit 
+\begin_inset Formula $h_{i}^{*}\rightarrow max$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Modus oder Modalwert
+\end_layout
+
+\begin_layout Plain Layout
+Stelle der häufigsten Merkmalsausprägung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+xz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Gruppe 
+\begin_inset Formula $x_{z}=0.5N$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Klasse 
+\begin_inset Formula $x_{z}=x_{i}^{u}+\frac{0.5-F(x_{i}^{u})}{f_{i}}*\Delta x_{i}$
+\end_inset
+
+ Beispiel: Zuerst Klasse bestimmen und dann 
+\begin_inset Formula $400+\frac{0.5-0.21}{0.56}*300=555.36\, EUR$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Median bzw.
+ Zentralwert
+\end_layout
+
+\begin_layout Plain Layout
+Aber: wenn N bei Gruppen gerade, dann Mittelwerte von aktueller Gruppe und
+ nächster Gruppe (im Beispiel: 625).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+xp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Gruppe 
+\begin_inset Formula $x_{p}=\begin{cases}
+p*N & N=ungerade\\
+\frac{x_{(k)}+x_{(k+1)}}{2} & N=gerade\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Klasse 
+\begin_inset Formula $x_{p}=x_{i}^{u}+\frac{p-F(x_{i}^{u})}{f_{i}}*\Delta x_{i}$
+\end_inset
+
+ Beispiel: Zuerst Klasse bestimmen und dann 
+\begin_inset Formula $400+\frac{0.5-0.21}{0.56}*300=555.36\, EUR$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quantil
+\end_layout
+
+\begin_layout Plain Layout
+Wobei 
+\begin_inset Formula $p$
+\end_inset
+
+ das Quantil ist, etwa 0,5, 0,75 oder 0,25.
+ aber: wenn N gerade, dann Mittelwerte von aktueller Gruppe und nächster
+ Gruppe (im Beispiel: 625).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $\bar{x}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+xa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Gruppe 
+\begin_inset Formula $\bar{x}=\frac{\overset{k}{\underset{i=1}{\sum}}h_{i}*x_{i}}{N}=\overset{k}{\underset{i=1}{\sum}}x_{i}f_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Klasse 
+\begin_inset Formula $\bar{x}=\frac{\overset{k}{\underset{i=1}{\sum}}h_{i}*x_{i}'}{N}=\overset{k}{\underset{i=1}{\sum}}x_{i}^{'}f_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Addition 
+\begin_inset Formula $\bar{x}=\frac{\underset{m=1}{\overset{k}{\sum}}N_{m}*\bar{x_{m}}}{\underset{m=1}{\overset{k}{\sum}}N_{m}}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arithmetischer Mittelwert bzw.
+ Durchschnitt
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{G}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+xg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $x_{G}=\sqrt[N]{\overset{k}{\underset{i=1}{\prod}}x}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Geometrischer Mittelwert
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Lageparameter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="4">
+<features rotate="true">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="45text%">
+<column alignment="left" valignment="top" width="8cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Math
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Erläuterung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R$
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+r
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Gruppe 
+\begin_inset Formula $R=x_{max}-x_{min}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Klasse 
+\begin_inset Formula $R=x_{k}^{o}-x_{1}^{u}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Spannweite
+\end_layout
+
+\begin_layout Plain Layout
+Abstand zw.
+ größter und kleinster Merkmalsausprägung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+q
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q=x_{0.75}-x_{0.25}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quartilsabstand
+\end_layout
+
+\begin_layout Plain Layout
+der Abstand zwischen oberem und unterem Quartil 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $s_{x}^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+s2x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Gruppe 
+\begin_inset Formula $s_{x}^{2}=\frac{1}{N}\overset{k}{\underset{i=1}{\sum}}\left[(x_{i}-\overline{x})^{2}\cdot h_{i}\right]=\overset{k}{\underset{i=1}{\sum}}\left[x_{i}^{2}\cdot f_{i}\right]-\overline{x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Klasse 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula \begin{eqnarray*}
+s_{x}^{2} & = & \frac{1}{N}\overset{k}{\underset{i=1}{\sum}}\left[(x_{i}^{'}-\overline{x})^{2}\cdot h_{i}\right]\\
+\\ & = & \overset{k}{\underset{i=1}{\sum}}\left[(x_{i}^{'})^{2}\cdot f_{i}\right]-\overline{x}^{2}\\
+\\\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Varianz
+\end_layout
+
+\begin_layout Plain Layout
+mittlere quadratische Abweichung aller Merkmalsausprägungen vom arith.
+ Mittelwert
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s_{x}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sx
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s_{x}=\sqrt{s_{x}^{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Standardabweichung
+\end_layout
+
+\begin_layout Plain Layout
+mittlere Abweichung vom Mittelwert
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+v
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v=\frac{s_{x}}{\bar{x}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Variationskoeffizient
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Streuungsparameter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="4">
+<features rotate="true">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="45text%">
+<column alignment="left" valignment="top" width="8cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Math
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Erläuterung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{I}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pi
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $p_{i}=\frac{x_{i}\cdot hi}{N\cdot\bar{x}}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Konzentrationskoeffizient
+\end_layout
+
+\begin_layout Plain Layout
+konzentrieren sich Merkmalssumme auf wenige Merkmalsträger?
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+spi
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $P_{i}=\overset{i}{\underset{j=1}{\sum}}p_{j}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Konzentrationsmaß 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Relative Konzentration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Diagramme
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float figure
 placement p
@@ -2350,51 +4065,6 @@ name "fig:Funktion-relativer-Sumenhäufigkeit"
 
 \end_layout
 
-\begin_layout Subsection
-Bei klassierten Daten
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $F(x)=\begin{cases}
-0 & x<x_{1}^{u}\\
-F(x_{i}^{u})+\frac{f_{i}}{\Delta x_{i}}*(x-x_{i}^{u}) & x_{i}^{u}\leq x<x_{i}^{o}\\
-1 & x\geq x_{k}^{o}\end{cases}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-als Rechenbeispiel: 
-\end_layout
-
-\begin_layout Enumerate
-Klasse aus Diagramm ablesen (
-\begin_inset Formula $H_{i}$
-\end_inset
-
-), untere und obere Grenzen der Klasse herauslesen.
-\end_layout
-
-\begin_layout Enumerate
-In Formel einsetzen: 
-\begin_inset Formula $F(500)=0.21+\frac{0,56}{300}(500-400)=0,397=39,7\%$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-als grafische Lösung siehe Funktionsdiagramm 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:Verteilungsfunktion-bei-klass."
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 \begin_inset Float figure
 wide false
@@ -2544,20 +4214,7 @@ Funktion relativer Summenhäufigkeit bei klass.
 
 \end_layout
 
-\begin_layout Section
-Darstellung der relativen Häufigkeiten
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-gruppiert Stabdiagramm siehe Abbildung 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:Stabdiagramm"
-
-\end_inset
-
-
+\begin_layout Standard
 \begin_inset Float figure
 placement ph
 wide false
@@ -2694,7 +4351,7 @@ endpicture
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Stabdiagramm"
+name "fig:Stabdiagramm-1"
 
 \end_inset
 
@@ -2711,16 +4368,7 @@ Relative Häufigkeit von Gruppen: Stabdiagramm
 
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-klassiert Histogramm, siehe Abbildung 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:Relative-Häufigkeit-von"
-
-\end_inset
-
-
+\begin_layout Standard
 \begin_inset Float figure
 placement ph
 wide false
@@ -2838,7 +4486,7 @@ endpicture
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Relative-Häufigkeit-von"
+name "fig:Relative-Häufigkeit-von-1"
 
 \end_inset
 
@@ -2856,783 +4504,9 @@ Relative Häufigkeit von Klassen: Histogramm
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-placement H
+\begin_inset Float figure
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="7">
-<features rotate="true">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="left" valignment="top" width="8cm">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Name
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Math
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-TR
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-nominal
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ordinal
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-metrisch
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Vor- und Nachteile
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Modal
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $x_{D}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-xd
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-?
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-?
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-?
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Ermittelt Ausprägung mit höchster Häufigkeit
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Median
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $x_{z}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-xz
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-?
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ja
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ja
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Mitte aller Merkmalsträger, bzw.
- welcher Merkmalswert wird von der Hälfte aller Merkmalsträger nicht überschritt
-en.
-\end_layout
-
-\begin_layout Plain Layout
-Vorteil: Robust gegen Ausreißer.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Quantil
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $x_{p}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-xp
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-?
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-?
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-?
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-= ein Teil aller Merkmalsträger (etwa 0,25x oder 0,75x) bzw.
- welcher Merkmalswert wird von einem Teil aller Merkmalsträger nicht überschritt
-en.
- Dabe ist das 
-\begin_inset Formula $x_{p}=x_{0.5}=x_{z}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Arith.
- Mittelw.
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\bar{x}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-xs
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-nein
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-nein
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ja
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Der Durchschnitt oder Mittelwert aller Merkmale 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Geom Mittelw.
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $x_{G}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-xg
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-?
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-?
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ja
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Mittelwert für Produkte, etwa bei Verhältnissen oder Wachstumswerten.
- Nur für Zahlen>0 sinnvoll.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Überblick Lageparameter
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Lageparameter
-\end_layout
-
-\begin_layout Subsection
-Modalwert (Modus)
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Gruppen da 
-\begin_inset Formula $x_{i}$
-\end_inset
-
- wo 
-\begin_inset Formula $f_{i}$
-\end_inset
-
- am größsten ist: 
-\begin_inset Formula $x_{D}=x_{i}$
-\end_inset
-
- mit 
-\begin_inset Formula $f_{i}\rightarrow max$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Klassen Mitte der modalen Klasse: 
-\begin_inset Formula $x_{D}=\frac{x_{i}^{u}+x_{i}^{o}}{2}=x_{i}^{'}$
-\end_inset
-
- mit 
-\begin_inset Formula $h_{i}^{*}\rightarrow max$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Median (Zentralwert)
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Gruppe 
-\begin_inset Formula $x_{z}=0.5N$
-\end_inset
-
- aber: wenn N gerade, dann Mittelwerte von aktueller Gruppe und nächster
- Gruppe (im Beispiel: 625).
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Klasse 
-\begin_inset Formula $x_{z}=x_{i}^{u}+\frac{0.5-F(x_{i}^{u})}{f_{i}}*\Delta x_{i}$
-\end_inset
-
- Beispiel: Zuerst Klasse bestimmen und dann 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $400+\frac{0.5-0.21}{0.56}*300=555.36\, EUR$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Quantile
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Gruppe 
-\begin_inset Formula $x_{p}=p*N$
-\end_inset
-
- Wobei 
-\begin_inset Formula $p$
-\end_inset
-
- das Quantil ist, etwa 0,5, 0,75 oder 0,25.
- aber: wenn N gerade, dann Mittelwerte von aktueller Gruppe und nächster
- Gruppe (im Beispiel: 625).
-\begin_inset Newline newline
-\end_inset
-
- 
-\begin_inset Formula $ $
-\end_inset
-
-
-\begin_inset Formula $x_{p}=\begin{cases}
-x_{(k)} & p*N\notin Z\: mit\: k=p*N<k<p*N+1\: und\: k\in Z\\
-\frac{x_{(k)}+x_{(k+1)}}{2} & p*N\in Z\: mit\: k=p*N\end{cases}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Klasse 
-\begin_inset Formula $x_{p}=x_{i}^{u}+\frac{p-F(x_{i}^{u})}{f_{i}}*\Delta x_{i}$
-\end_inset
-
- Beispiel: Zuerst Klasse bestimmen und dann
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
- 
-\begin_inset Formula $400+\frac{0.5-0.21}{0.56}*300=555.36\, EUR$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Arithmetischer Mittelwert
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Gruppe 
-\begin_inset Formula $\bar{x}=\frac{\overset{k}{\underset{i=1}{\sum}}h_{i}*x_{i}}{N}=\overset{k}{\underset{i=1}{\sum}}x_{i}f_{i}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Klasse 
-\begin_inset Formula $\bar{x}=\frac{\overset{k}{\underset{i=1}{\sum}}h_{i}*x_{i}'}{N}=\overset{k}{\underset{i=1}{\sum}}x_{i}^{'}f_{i}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Addition 
-\begin_inset Formula $\bar{x}=\frac{\underset{m=1}{\overset{k}{\sum}}N_{m}*\bar{x_{m}}}{\underset{m=1}{\overset{k}{\sum}}N_{m}}$
-\end_inset
-
- wobei i i-te Variante der zu addierenden Durchschnitte ist 
-\end_layout
-
-\begin_layout Subsection
-Geometrischer Mittelwert
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Gruppe 
-\begin_inset Formula $x_{G}=\sqrt[N]{\overset{k}{\underset{i=1}{\prod}}x}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Streuungsparameter
-\end_layout
-
-\begin_layout Subsection
-Spannweite
-\end_layout
-
-\begin_layout Standard
-Abstand zw.
- größter und kleinster Merkmalsausprägung
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Gruppiert 
-\begin_inset Formula $R=x_{max}-x_{min}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Klassiert 
-\begin_inset Formula $R=x_{k}^{o}-x_{1}^{u}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Quartilsabstand
-\end_layout
-
-\begin_layout Standard
-Abstand zwischen oberem und unterem Quartil 
-\begin_inset Formula $Q=x_{0.75}-x_{0.25}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Varianz
-\end_layout
-
-\begin_layout Standard
-mittlere quadratische Abweichung aller Merkmalsausprägungen vom arith.
- Mittelwert
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Gruppiert 
-\begin_inset Formula $s_{x}^{2}=\frac{1}{N}\overset{k}{\underset{i=1}{\sum}}\left[(x_{i}-\overline{x})^{2}\cdot h_{i}\right]=\overset{k}{\underset{i=1}{\sum}}\left[x_{i}^{2}\cdot f_{i}\right]-\overline{x}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Klassiert 
-\begin_inset Formula $s_{x}^{2}=\frac{1}{N}\overset{k}{\underset{i=1}{\sum}}\left[(x_{i}^{'}-\overline{x})^{2}\cdot h_{i}\right]=\overset{k}{\underset{i=1}{\sum}}\left[(x_{i}^{'})^{2}\cdot f_{i}\right]-\overline{x}^{2}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Standardabweichung
-\end_layout
-
-\begin_layout Standard
-=mittlere Abweichung vom Mittelwert
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $s_{x}=\sqrt{s_{x}^{2}}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Variationskoeffizient
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $v=\frac{s_{x}}{\bar{x}}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Relative Konzentration
-\end_layout
-
-\begin_layout Subsection
-Berechnung
-\end_layout
-
-\begin_layout Standard
-=konzentrieren sich Merkmalssumme auf wenige Merkmalsträger?
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Konzentrationskoeffizient 
-\begin_inset Formula $p_{i}=\frac{x_{i}\cdot hi}{N\cdot\bar{x}}$
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Konzentrationsmaß 
-\begin_inset Formula $P_{i}=\overset{i}{\underset{j=1}{\sum}}p_{j}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Lorenzkurve
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
 status collapsed
 
 \begin_layout Plain Layout
@@ -3657,7 +4531,7 @@ beginpicture
 
 
 \backslash
-setcoordinatesystem units <10cm,10cm>
+setcoordinatesystem units <10cm,6cm>
 \end_layout
 
 \begin_layout Plain Layout
@@ -3825,6 +4699,22 @@ endpicture
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Lorenzkurve
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
