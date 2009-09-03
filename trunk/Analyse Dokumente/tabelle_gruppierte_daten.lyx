@@ -82,19 +82,6 @@ status open
 \begin_layout Plain Layout
 
 \lang english
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{empty}
-\end_layout
-
-\end_inset
-
-
 \begin_inset Tabular
 <lyxtabular version="3" rows="14" columns="11">
 <features rotate="true">
