@@ -1,0 +1,268 @@
+#LyX 1.6.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrreprt
+\use_default_options true
+\language ngerman
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Part
+Begriffe
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features>
+<column alignment="left" valignment="top" width="30text%">
+<column alignment="left" valignment="top" width="70text%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Statistische Masse
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Umfang der Einheiten einer statistischen Untersuchung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Statistische Einheit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Untersuchungsobjekt einer statistischen Untersuchung.
+ Träger der interessanten Informationen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Merkmal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zu betrachtendes Attribut einer Einheit.
+ Etwa Einkommen, Altern, ...
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Merkmalstypen 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+diskrete Merksmaltypen bestehen aus einer überschaubare, endliche Menge
+ (etwa Geschlecht)
+\emph on
+, 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+stetige
+\emph on
+ 
+\emph default
+Merksmaltypen können in einem bestimmten Bereich jeden reelen Wert annehmen,
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+quasi-stetige Merksmaletypen sind eigentlich diskret, enthalten aber sehr
+ grosse Menge von möglichen Merkmalen
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gruppierung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sortierung, gleiche Merkmalsausprägung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Klassifizierung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+benachbarte Ausprägungen werden zu einer Klasse zusammengefasst.
+ Übliche Schreibweise 
+\begin_inset Formula $[200;400)$
+\end_inset
+
+ mit der Bedeutung 
+\begin_inset Formula $200\leq x<400$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Skalenniveau
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+nominal qualitativ (also keine Zahlen), etwa Geschlecht oder Studiengang.
+ Darstellung als gruppierter Wert.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ordinal Merkmalsausprägung mit objektiver Rangordnung, Abstände sind aber
+ nicht bezifferbar (etwa Noten).
+ Darstellung als gruppierter Wert.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+metrisch 
+\emph on
+Interval quantitativ
+\emph default
+: reele Zahlen, natürliche Rangfolge, eindeutige Abstände, etwa Sparsumme,
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\emph on
+Verhältnis quantitativ
+\emph default
+: reele Zahlen, natürliche Rangfolge, eindeutige Abstände, absoluter Bezugspunkt
+ (etwa Nullpunkt).
+ Beispiel: Alter.
+ Darstellung als klassierter Wert.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
