@@ -48,7 +48,7 @@ Begriffe
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="2">
+<lyxtabular version="3" rows="6" columns="2">
 <features>
 <column alignment="left" valignment="top" width="30text%">
 <column alignment="left" valignment="top" width="70text%">
@@ -159,7 +159,7 @@ quasi-stetige Merksmaletypen sind eigentlich diskret, enthalten aber sehr
 \begin_inset Text
 
 \begin_layout Plain Layout
-Gruppierung
+Merkmalsausprägung
 \end_layout
 
 \end_inset
@@ -167,28 +167,13 @@ Gruppierung
 <cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Plain Layout
-Sortierung, gleiche Merkmalsausprägung
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Gruppierung Sortierung, gleiche Merkmalsausprägung
 \end_layout
 
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
 \begin_layout Plain Layout
-Klassifizierung
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-benachbarte Ausprägungen werden zu einer Klasse zusammengefasst.
+Klassifizierung benachbarte Ausprägungen werden zu einer Klasse zusammengefasst.
  Übliche Schreibweise 
 \begin_inset Formula $[200;400)$
 \end_inset

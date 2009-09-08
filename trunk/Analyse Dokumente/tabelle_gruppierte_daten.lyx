@@ -65,8 +65,6 @@
 \begin_body
 
 \begin_layout Standard
-
-\lang english
 \begin_inset Box Frameless
 position "t"
 hor_pos "c"
@@ -80,22 +78,20 @@ height_special "totalheight"
 status open
 
 \begin_layout Plain Layout
-
-\lang english
 \begin_inset Tabular
 <lyxtabular version="3" rows="14" columns="11">
 <features rotate="true">
-<column alignment="center" valignment="top" width="9page%">
-<column alignment="center" valignment="top" width="9page%">
-<column alignment="center" valignment="top" width="9page%">
-<column alignment="center" valignment="top" width="9page%">
-<column alignment="center" valignment="top" width="9page%">
-<column alignment="center" valignment="top" width="9page%">
-<column alignment="center" valignment="top" width="9page%">
-<column alignment="center" valignment="top" width="9page%">
-<column alignment="center" valignment="top" width="9page%">
-<column alignment="center" valignment="top" width="9page%">
-<column alignment="center" valignment="top" width="9page%">
+<column alignment="left" valignment="top" width="9page%">
+<column alignment="left" valignment="top" width="9page%">
+<column alignment="left" valignment="top" width="9page%">
+<column alignment="left" valignment="top" width="9page%">
+<column alignment="left" valignment="top" width="9page%">
+<column alignment="left" valignment="top" width="9page%">
+<column alignment="left" valignment="top" width="9page%">
+<column alignment="left" valignment="top" width="9page%">
+<column alignment="left" valignment="top" width="9page%">
+<column alignment="left" valignment="top" width="9page%">
+<column alignment="left" valignment="top" width="9page%">
 <row>
 <cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
@@ -222,8 +218,6 @@ Fläche unter Lorenzkurve
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
 \begin_inset Formula $x_{i}$
 \end_inset
 
@@ -236,8 +230,6 @@ Fläche unter Lorenzkurve
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
 \begin_inset Formula $h_{i}$
 \end_inset
 
@@ -250,8 +242,6 @@ Fläche unter Lorenzkurve
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
 \begin_inset Formula $\mbox{\ensuremath{H_{i}\hphantom{}}}$
 \end_inset
 
@@ -264,8 +254,6 @@ Fläche unter Lorenzkurve
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
 \begin_inset Formula $f_{i}$
 \end_inset
 
@@ -278,8 +266,6 @@ Fläche unter Lorenzkurve
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
 \begin_inset Formula $F_{i}$
 \end_inset
 
@@ -292,7 +278,7 @@ Fläche unter Lorenzkurve
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $x_{i}f_{i}$
+\begin_inset Formula $x_{i}h_{i}$
 \end_inset
 
 
@@ -304,7 +290,7 @@ Fläche unter Lorenzkurve
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $x_{i}\cdot h_{i}$
+\begin_inset Formula $x_{i}\cdot f_{i}$
 \end_inset
 
 
@@ -316,7 +302,7 @@ Fläche unter Lorenzkurve
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $x_{i}^{2}\cdot h_{i}$
+\begin_inset Formula $\left(x_{i}\right)^{2}\cdot f_{i}$
 \end_inset
 
 
@@ -1485,7 +1471,7 @@ Fläche unter Lorenzkurve
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1497,7 +1483,7 @@ Fläche unter Lorenzkurve
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1506,7 +1492,7 @@ Fläche unter Lorenzkurve
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1518,7 +1504,7 @@ Fläche unter Lorenzkurve
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1527,19 +1513,28 @@ Fläche unter Lorenzkurve
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\bar{x}$
-\end_inset
-
 =
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\bar{x}=$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1551,19 +1546,7 @@ Fläche unter Lorenzkurve
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $=$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1572,7 +1555,7 @@ Fläche unter Lorenzkurve
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1581,7 +1564,7 @@ Fläche unter Lorenzkurve
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout

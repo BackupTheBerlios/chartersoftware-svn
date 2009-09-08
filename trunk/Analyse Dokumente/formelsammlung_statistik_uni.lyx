@@ -52,17 +52,530 @@
 Univariante Datenanalyse
 \end_layout
 
-\begin_layout Chapter
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
 Beispiele
 \end_layout
 
-\begin_layout Standard
-Gruppiert: Für nominale und ordinale Werte
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="8" columns="8">
+<lyxtabular version="3" rows="5" columns="9">
+<features>
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Auto
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{i}$
+\end_inset
+
+steht für die Menge der Gruppe, 
+\begin_inset Formula $h_{i}$
+\end_inset
+
+ ist immer =1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $h_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mbox{\ensuremath{H_{i}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $F_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{i}h_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{i}\cdot f_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(x_{i}\right)^{2}\cdot f_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BMW
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+342
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,167
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,167
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+342
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+57,00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+19494
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mercedes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+549
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,167
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,333
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+549
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+91,50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50234
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+VW/Audi
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1501
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,167
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,833
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1501
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+250,17
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3,76E5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sonstige
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1713
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,167
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1713
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+285,50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4,89E5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Beispiel gruppierter, nominaler Werte
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="8">
 <features>
 <column alignment="left" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
@@ -137,7 +650,7 @@ Gruppiert: Für nominale und ordinale Werte
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\triangle x_{i}$
+\begin_inset Formula $x_{i}h_{i}$
 \end_inset
 
 
@@ -149,7 +662,7 @@ Gruppiert: Für nominale und ordinale Werte
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $f_{i}^{*}$
+\begin_inset Formula $x_{i}\cdot f_{i}$
 \end_inset
 
 
@@ -161,7 +674,7 @@ Gruppiert: Für nominale und ordinale Werte
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $h_{i}^{*}$
+\begin_inset Formula $\left(x_{i}\right)^{2}\cdot f_{i}$
 \end_inset
 
 
@@ -220,7 +733,7 @@ Gruppiert: Für nominale und ordinale Werte
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+280
 \end_layout
 
 \end_inset
@@ -229,7 +742,8 @@ Gruppiert: Für nominale und ordinale Werte
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+\SpecialChar \ldots{}
+
 \end_layout
 
 \end_inset
@@ -238,7 +752,8 @@ Gruppiert: Für nominale und ordinale Werte
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+\SpecialChar \ldots{}
+
 \end_layout
 
 \end_inset
@@ -294,7 +809,7 @@ Gruppiert: Für nominale und ordinale Werte
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+680
 \end_layout
 
 \end_inset
@@ -303,7 +818,8 @@ Gruppiert: Für nominale und ordinale Werte
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+\SpecialChar \ldots{}
+
 \end_layout
 
 \end_inset
@@ -312,229 +828,8 @@ Gruppiert: Für nominale und ordinale Werte
 \begin_inset Text
 
 \begin_layout Plain Layout
--
-\end_layout
+\SpecialChar \ldots{}
 
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-560
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-4
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0,1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0,4
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-600
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-5
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0,1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0,5
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-650
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-8
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0,3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0,8
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--
 \end_layout
 
 \end_inset
@@ -590,7 +885,7 @@ Gruppiert: Für nominale und ordinale Werte
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+740
 \end_layout
 
 \end_inset
@@ -599,7 +894,8 @@ Gruppiert: Für nominale und ordinale Werte
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+\SpecialChar \ldots{}
+
 \end_layout
 
 \end_inset
@@ -608,7 +904,8 @@ Gruppiert: Für nominale und ordinale Werte
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+\SpecialChar \ldots{}
+
 \end_layout
 
 \end_inset
@@ -664,7 +961,7 @@ Gruppiert: Für nominale und ordinale Werte
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+1180
 \end_layout
 
 \end_inset
@@ -673,7 +970,8 @@ Gruppiert: Für nominale und ordinale Werte
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+\SpecialChar \ldots{}
+
 \end_layout
 
 \end_inset
@@ -682,7 +980,8 @@ Gruppiert: Für nominale und ordinale Werte
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+\SpecialChar \ldots{}
+
 \end_layout
 
 \end_inset
@@ -695,13 +994,34 @@ Gruppiert: Für nominale und ordinale Werte
 
 \end_layout
 
-\begin_layout Standard
-Klassiert: Für metrische Werte
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Beispiel gruppierter, ordinaler Werte
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="8">
+<lyxtabular version="3" rows="5" columns="8">
 <features>
 <column alignment="left" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
@@ -881,80 +1201,6 @@ Klassiert: Für metrische Werte
 
 \begin_layout Plain Layout
 0,1050
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-[400;700)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-56
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-77
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0,56
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0,77
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-300
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0,00187
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0,1867
 \end_layout
 
 \end_inset
@@ -1189,29 +1435,55 @@ Klassiert: Für metrische Werte
 
 \end_layout
 
-\begin_layout Chapter
-Häufigkeiten
-\end_layout
-
-\begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="8" columns="5">
-<features>
-<column alignment="left" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
-<row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Caption
 
 \begin_layout Plain Layout
-Name
+Beispiel klassierter,metrischer Werte
 \end_layout
 
 \end_inset
-</cell>
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Häufigkeiten
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="4">
+<features rotate="true">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="9cm">
+<column alignment="left" valignment="top" width="11cm">
+<row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
@@ -1225,12 +1497,12 @@ Math
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+TR
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1243,23 +1515,13 @@ Formel
 \begin_inset Text
 
 \begin_layout Plain Layout
-TR
+Erläuterung
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-abs.
- Häufigkeit
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
@@ -1281,11 +1543,11 @@ hi
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+
 \end_layout
 
 \end_inset
@@ -1294,23 +1556,14 @@ hi
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+abs.
+ Häufigkeit
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-abs.
- Summenhäufigkeit
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
@@ -1332,7 +1585,7 @@ shi
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1348,6 +1601,8 @@ shi
 \begin_inset Text
 
 \begin_layout Plain Layout
+abs.
+ Summenhäufigkeit
 \begin_inset Formula $\mbox{cusum(hi)}$
 \end_inset
 
@@ -1358,15 +1613,6 @@ shi
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-relative Häufigkeit
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
@@ -1408,7 +1654,28 @@ fi
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $relhfg(hi)$
+relative Häufigkeit
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+gruppiert Stabdiagramm siehe Abbildung 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Stabdiagramm-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+klassiert Histogramm, siehe Abbildung 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Relative-Häufigkeit-von-1"
+
 \end_inset
 
 
@@ -1418,16 +1685,6 @@ fi
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-abs.
- Summenhäufigkeit
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
@@ -1465,25 +1722,14 @@ sfi
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $cumsum(relhfg(hi))$
-\end_inset
-
-
+abs.
+ Summenhäufigkeit
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Stat Masse
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
@@ -1505,7 +1751,7 @@ n
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1521,25 +1767,13 @@ n
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $sum(hi)$
-\end_inset
-
-
+Stat Masse
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-abs Häufigkeitsdichte
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
@@ -1577,22 +1811,13 @@ his
 \begin_inset Text
 
 \begin_layout Plain Layout
-his
+abs Häufigkeitsdichte
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-rel Häufigkeitsdichte
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
@@ -1630,28 +1855,40 @@ fis
 \begin_inset Text
 
 \begin_layout Plain Layout
-fis
+rel Häufigkeitsdichte
 \end_layout
 
 \end_inset
 </cell>
 </row>
-</lyxtabular>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
+\begin_layout Plain Layout
+\begin_inset Formula $F(x)$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Section
-Funktion der relatitiven Summenhäufigkeit/Verteilungsfunktion
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+f(x)
 \end_layout
 
-\begin_layout Subsection
-Bei gruppierte Daten
-\end_layout
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
-\begin_layout Standard
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Gruppe 
 \begin_inset Formula $F(x)=\begin{cases}
 0 & x<x_{1}\\
 F_{i} & x_{i}\leq x<x_{i+1}\\
@@ -1661,21 +1898,44 @@ F_{i} & x_{i}\leq x<x_{i+1}\\
 
 \end_layout
 
-\begin_layout Standard
-Als Rechenbeispiel: 
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Klasse 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $F(x)=\begin{cases}
+0 & x<x_{1}^{u}\\
+F(x_{i}^{u})+\frac{f_{i}}{\Delta x_{i}}(x-x_{i}^{u}) & x_{i}^{u}\leq x<x_{i}^{o}\\
+1 & x\geq x_{k}^{o}\end{cases}$
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verteilungsfunktion, Funktion der relativen Summenhäufigkeit
+\end_layout
+
+\begin_layout Plain Layout
+Als Beispiel für gruppierte Daten: 
 \begin_inset Formula $\mbox{F(500)=}$
 \end_inset
 
 0,30 -> Es wird nicht gerechnet, sondern aus dem Diagramm abgelesen, da
- es sich um gruppierte Werte handelt!
-\end_layout
-
-\begin_layout Standard
-Als grafische Lösung (Treppendiagramm, keine Zwischenwerte!) siehe Abbildung
- 
+ es sich um gruppierte Werte handelt! Als grafische Lösung (Treppendiagramm,
+ keine Zwischenwerte!) siehe Abbildung 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "fig:Funktion-relativer-Sumenhäufigkeit"
@@ -1685,41 +1945,20 @@ reference "fig:Funktion-relativer-Sumenhäufigkeit"
 
 \end_layout
 
-\begin_layout Subsection
-Bei klassierten Daten
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $F(x)=\begin{cases}
-0 & x<x_{1}^{u}\\
-F(x_{i}^{u})+\frac{f_{i}}{\Delta x_{i}}*(x-x_{i}^{u}) & x_{i}^{u}\leq x<x_{i}^{o}\\
-1 & x\geq x_{k}^{o}\end{cases}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-als Rechenbeispiel: 
-\end_layout
-
-\begin_layout Enumerate
-Klasse aus Diagramm ablesen (
+\begin_layout Plain Layout
+Bei klassierten Daten: Klasse aus Diagramm ablesen (
 \begin_inset Formula $H_{i}$
 \end_inset
 
-), untere und obere Grenzen der Klasse herauslesen.
-\end_layout
-
-\begin_layout Enumerate
-In Formel einsetzen: 
+), untere und obere Grenzen der Klasse herauslesen, in Formel einsetzen:
+ 
 \begin_inset Formula $F(500)=0.21+\frac{0,56}{300}(500-400)=0,397=39,7\%$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 als grafische Lösung siehe Funktionsdiagramm 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -1730,36 +1969,66 @@ reference "fig:Verteilungsfunktion-bei-klass."
 
 \end_layout
 
-\begin_layout Section
-Darstellung der relativen Häufigkeiten
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-gruppiert Stabdiagramm siehe Abbildung 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:Stabdiagramm-1"
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Überblick Häufigkeiten
+\end_layout
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-klassiert Histogramm, siehe Abbildung 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:Relative-Häufigkeit-von-1"
-
 \end_inset
 
 
-\end_layout
-
-\begin_layout Chapter
-Statistische Maßzahlen
 \end_layout
 
 \begin_layout Standard
@@ -1767,7 +2036,7 @@ Statistische Maßzahlen
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -2229,7 +2498,7 @@ Mittelwert für Produkte, etwa bei Verhältnissen oder Wachstumswerten.
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -2456,6 +2725,10 @@ Wird eine Variationsreihe in gleich große Teile zerlegt, entstehen Quantile.
 
 .
  Das 0,5-Quantil ist gleich dem Median.
+\end_layout
+
+\begin_layout Plain Layout
+Quantil ist gewissermaßen das Gegenüber der Verteilungsfunktion!
 \end_layout
 
 \end_inset
@@ -2904,6 +3177,10 @@ Gleichungsbeispiel bei der Annahme, dass es zwei Teilmengen gibt und die
  jeweils die Varianzen und Mittelwerte bekannt sind.
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
 \end_inset
 </cell>
 </row>
@@ -2955,6 +3232,15 @@ mittlere Abweichung vom Mittelwert.
  daher ggf.
  nicht mehr sinnvoll.
  Statt dessen: Variationskoeffizient.
+\end_layout
+
+\begin_layout Plain Layout
+Hinweis: Bei 
+\begin_inset Formula $s_{x}=0$
+\end_inset
+
+ gibt es einen eindeutigen Hinweis auf Konzentration.
+ Ansonsten nicht.
 \end_layout
 
 \end_inset
@@ -3108,6 +3394,16 @@ pi
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
+Gruppe 
+\begin_inset Formula $p_{i}=\frac{x_{i}\cdot hi}{N\cdot\bar{x}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Klasse 
 \begin_inset Formula $p_{i}=\frac{x_{i}'\cdot hi}{N\cdot\bar{x}}$
 \end_inset
 
@@ -3121,7 +3417,8 @@ pi
 
 \begin_layout Plain Layout
 Konzentrationskoeffizient berechnet den Anteil eines Merkalswertes an der
- Merkmalssumme
+ Merkmalssumme, bzw.
+ zeigt den prozentualen Anteil an der Gesamtsumme.
 \end_layout
 
 \end_inset
@@ -3152,8 +3449,7 @@ spi
 <cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
+\begin_layout Plain Layout
 \begin_inset Formula $P_{i}=\overset{i}{\underset{j=1}{\sum}}p_{j}$
 \end_inset
 
@@ -3355,7 +3651,24 @@ Hinweis: Sind großgeschriebene P's also spi.
 \begin_inset Text
 
 \begin_layout Plain Layout
+Lorenzkurve: Welchen Anteil haben Merkalsträger an Merkmalen.
+ Etwa 
+\begin_inset Formula $0.5=50\%$
+\end_inset
 
+ der Autohersteller(
+\begin_inset Formula $F_{i}$
+\end_inset
+
+) haben Anteil von 
+\begin_inset Formula $0.25=25\%$
+\end_inset
+
+ 
+\begin_inset Formula $P_{i}$
+\end_inset
+
+ der Produktion 
 \end_layout
 
 \end_inset
@@ -3454,6 +3767,19 @@ Relative Konzentration
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Diagramme
 \end_layout
 
 \end_inset
@@ -3755,7 +4081,7 @@ name "fig:Funktion-relativer-Sumenhäufigkeit"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -3886,7 +4212,7 @@ name "fig:Verteilungsfunktion-bei-klass."
 
 \end_inset
 
-Funktion relativer Summenhäufigkeit bei klass.
+Funktion F(x) relativer Summenhäufigkeit bei klass.
  Daten
 \end_layout
 
@@ -3905,7 +4231,7 @@ Funktion relativer Summenhäufigkeit bei klass.
 placement ph
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -4041,7 +4367,7 @@ name "fig:Stabdiagramm-1"
 
 \end_inset
 
-Relative Häufigkeit von Gruppen: Stabdiagramm 
+ Darstellung rel Häufigkeit von Gruppen: Stabdiagramm 
 \end_layout
 
 \end_inset
@@ -4059,7 +4385,7 @@ Relative Häufigkeit von Gruppen: Stabdiagramm
 placement ph
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -4176,7 +4502,8 @@ name "fig:Relative-Häufigkeit-von-1"
 
 \end_inset
 
-Relative Häufigkeit von Klassen: Histogramm
+Darstellung rel.
+ Häufigkeit von Klassen: Histogramm
 \end_layout
 
 \end_inset
