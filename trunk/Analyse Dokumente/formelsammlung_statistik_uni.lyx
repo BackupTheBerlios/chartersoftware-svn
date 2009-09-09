@@ -3323,12 +3323,12 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="9" columns="4">
+<lyxtabular version="3" rows="6" columns="4">
 <features rotate="true">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
-<column alignment="left" valignment="top" width="9cm">
-<column alignment="left" valignment="top" width="11cm">
+<column alignment="left" valignment="top" width="7cm">
+<column alignment="left" valignment="top" width="13cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
@@ -3475,7 +3475,10 @@ Das Konzentrationsmaß beschreibt die relative Merkmalssumme.
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+\begin_inset Formula $L(F_{i})$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3505,10 +3508,7 @@ Das Konzentrationsmaß beschreibt die relative Merkmalssumme.
 Die Fläche zwischen Gleichverteilung und Lorenzkurve wird als Lorenzfläche
  bezeichnet und ist ein weiteres Konzentrationsmaß.
  Je größer die Fläche, desto größer die Konzentration.
-\end_layout
-
-\begin_layout Plain Layout
-Beispiel zur Lorenzkurve siehe 
+ Beispiel zur Lorenzkurve siehe 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "fig:Lorenzkurve"
@@ -3516,6 +3516,27 @@ reference "fig:Lorenzkurve"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+Lorenzkurve: Welchen Anteil haben Merkalsträger an Merkmalen.
+ Etwa 
+\begin_inset Formula $0.5=50\%$
+\end_inset
+
+ der Autohersteller(
+\begin_inset Formula $F_{i}$
+\end_inset
+
+) haben Anteil von 
+\begin_inset Formula $0.25=25\%$
+\end_inset
+
+ 
+\begin_inset Formula $P_{i}$
+\end_inset
+
+ der Produktion 
 \end_layout
 
 \end_inset
@@ -3550,6 +3571,10 @@ g
 \begin_inset Formula $G=\frac{0.5-A(L)}{0.5}$
 \end_inset
 
+ im Bereich 
+\begin_inset Formula $0\leq G\leq1$
+\end_inset
+
 
 \end_layout
 
@@ -3559,16 +3584,59 @@ g
 \begin_inset Text
 
 \begin_layout Plain Layout
+Stat.
+ Maß zur Darstellung der Ungleichverteilung.
+ 
+\end_layout
+
+\begin_layout Plain Layout
 Der Gini-Koeffizient misst die Höhe der relatitiven Konzentration über das
- Verhältnis der Lorenzfläche zur Fläche bei maximaler Konzentration mit
- 0.5
+ Verhältnis der Lorenzfläche zur Fläche bei maximaler Konzentration.
+ Es kann unterschiedliche Lorenzflächen bei identischem G geben.
+\end_layout
+
+\begin_layout Plain Layout
+
+\emph on
+Eigenschaft: 
+\emph default
+Werden alle 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ um denselben Prozentsatz erhöht oder gesenkt, dann bleibt der Gini-Koeffizient
+ unverändert.
+ Werden alle 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ um einen additiven Zuschlag erhöht, dann wird der Gini-Koeffizient kleiner.
+ Wird ein 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+-teilbetrag von einem größeren zu einem kleineren 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ transferiert, so wird der Gini-Koeffizient kleiner.
+\end_layout
+
+\begin_layout Plain Layout
+
+\emph on
+Beispiel: 
+\emph default
+Der Ginikoeffizient für die Einkommensverteilung liegt in Deutschland bei
+ 0,274 (2003), in Frankreich bei 0,327 (1995), in Großbritannien bei 0,360
+ (1999), in Japan bei 0,249 (1993) und in den USA bei 0,408
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3580,7 +3648,7 @@ Der Gini-Koeffizient misst die Höhe der relatitiven Konzentration über das
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3589,7 +3657,7 @@ al
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3605,7 +3673,7 @@ al
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3614,137 +3682,6 @@ Fläche unter der Trapezkurve
 
 \begin_layout Plain Layout
 Hinweis: Sind großgeschriebene P's also spi.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Lorenzkurve: Welchen Anteil haben Merkalsträger an Merkmalen.
- Etwa 
-\begin_inset Formula $0.5=50\%$
-\end_inset
-
- der Autohersteller(
-\begin_inset Formula $F_{i}$
-\end_inset
-
-) haben Anteil von 
-\begin_inset Formula $0.25=25\%$
-\end_inset
-
- 
-\begin_inset Formula $P_{i}$
-\end_inset
-
- der Produktion 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
