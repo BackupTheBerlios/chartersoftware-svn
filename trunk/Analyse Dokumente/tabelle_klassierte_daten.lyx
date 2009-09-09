@@ -103,7 +103,7 @@ status open
 \begin_layout Plain Layout
 
 \size scriptsize
-Gruppe
+Klasse
 \end_layout
 
 \end_inset
@@ -113,6 +113,8 @@ Gruppe
 
 \begin_layout Plain Layout
 
+\size scriptsize
+K-Mitte
 \end_layout
 
 \end_inset
@@ -122,6 +124,8 @@ Gruppe
 
 \begin_layout Plain Layout
 
+\size scriptsize
+K-Delta
 \end_layout
 
 \end_inset

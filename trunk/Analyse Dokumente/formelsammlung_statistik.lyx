@@ -684,13 +684,14 @@ marginsize{0.5cm}{0.5cm}{0.5cm}{0.5cm}
 \lang english
 \begin_inset Float figure
 wide false
-sideways true
-status collapsed
+sideways false
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename /Volumes/user/tukaram/Sites/Rent-A-Jet/Analyse Dokumente/stat_layout.pdf
 	scale 130
+	rotateAngle 90
 
 \end_inset
 

@@ -172,7 +172,8 @@ Merkmalsausprägung
 Gruppierung Sortierung, gleiche Merkmalsausprägung
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 Klassifizierung benachbarte Ausprägungen werden zu einer Klasse zusammengefasst.
  Übliche Schreibweise 
 \begin_inset Formula $[200;400)$
