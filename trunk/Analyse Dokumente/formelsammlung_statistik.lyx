@@ -913,5 +913,228 @@ endpicture
 
 \end_layout
 
+\begin_layout Standard
+
+\lang english
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+beginpicture 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcoordinatesystem units <10.0cm,10.0cm> point at 0 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setplotarea x from 0.0 to 1.0, y from 0.0 to 1.0
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis bottom shiftedto y=0.0 ticks from 0.1 to 1.0 by 0.1 numbered from  0.1 to
+ 1.0 by 0.1 length <0pt> withvalues $F_i$ / at 1.1 / /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis left   shiftedto x=0.0 ticks from 0.1 to 1.0 by 0.1 numbered from 0.1 to
+ 1.0  by 0.1 length <0pt> withvalues $P_i$ / at 1.1  / / 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis right ticks from 0.0 to 1.0 by 0.1 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis top   ticks from 0.0 to 1.0 by 0.1 /
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%Gleichverteilungsgerade
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+plot 0.0   0.0   1.0 1.0    /
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%Testlinien
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+plot 0.0   0.5   1.0 0.5    /
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+plot 0.5   0.0   0.5 1.0    /
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.1 invisible  ticks in length <1pt> from 0.1 to 0.9 by 0.1
+ /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.2 invisible  ticks in length <1pt> from 0.2 to 0.9 by 0.1
+ /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.3 invisible  ticks in length <1pt> from 0.3 to 0.9 by 0.1
+ /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.4 invisible  ticks in length <1pt> from 0.4 to 0.9 by 0.1
+ /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.5 invisible  ticks in length <1pt> from 0.5 to 0.9 by 0.1
+ /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.6 invisible  ticks in length <1pt> from 0.6 to 0.9 by 0.1
+ /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.7 invisible  ticks in length <1pt> from 0.7 to 0.9 by 0.1
+ /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.8 invisible  ticks in length <1pt> from 0.8 to 0.9 by 0.1
+ /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.9 invisible  ticks in length <1pt> from 0.9 to 0.9 by 0.1
+ /
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+put{0.0} at -0.05 -0.05
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+endpicture 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
