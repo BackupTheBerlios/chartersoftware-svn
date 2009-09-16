@@ -117,9 +117,15 @@ arraystretch}{1.2}
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="15" columns="11">
-<features rotate="true">
+<features>
 <column alignment="left" valignment="top" width="9page%">
 <column alignment="left" valignment="top" width="9page%">
 <column alignment="left" valignment="top" width="9page%">
@@ -1724,10 +1730,37 @@ Fläche unter Lorenzkurve
 
 \end_layout
 
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 10cm
+\end_inset
+
+Arbeitsblatt
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 10cm
+\end_inset
+
+Aufgabe: 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="14" columns="14">
-<features rotate="true">
+<features>
 <column alignment="left" valignment="top" width="6.9page%">
 <column alignment="left" valignment="top" width="6.9page%">
 <column alignment="left" valignment="top" width="6.9page%">
@@ -3627,6 +3660,27 @@ Fl unt.
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 10cm
+\end_inset
+
+Arbeitsblatt
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 10cm
+\end_inset
+
+Aufgabe: 
+\end_layout
 
 \end_inset
 

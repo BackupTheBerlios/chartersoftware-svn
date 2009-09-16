@@ -25,7 +25,7 @@
 \paperfontsize default
 \spacing single
 \use_hyperref false
-\papersize default
+\papersize a4paper
 \use_geometry false
 \use_amsmath 1
 \use_esint 1
@@ -48,7 +48,271 @@
 
 \begin_body
 
-\begin_layout Part
+\begin_layout Title
+Formelsammlung Statistik
+\end_layout
+
+\begin_layout Author
+Andrey Behrens
+\end_layout
+
+\begin_layout Date
+August 2009
+\end_layout
+
+\begin_layout Abstract
+Das ist eine Formelsammlung für Statistik.
+ Die Formelsammlung enthält alle Formeln aus dem Skript des Wintersemesters
+ 2009/2010.
+ Außerdem ein paar Sachen die mir sinnvoll erschienen und für die Klausur
+ notwendig sein könnten, sowie Formblätter zum schnellen Ausfüllen während
+ der Klausur.
+ 
+\end_layout
+
+\begin_layout Abstract
+Quellen sind (1) Statistikscript Prof.
+ Dr.
+ Müller, HS Wismar und (2) Taschenbuch der Wirtschaftsmathematik, Wolfgang
+ Eichholz und Eberhard Vilkner.
+\end_layout
+
+\begin_layout Chapter
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features>
+<column alignment="left" valignment="top" width="30text%">
+<column alignment="left" valignment="top" width="70text%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Statistische Masse
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Umfang der Einheiten einer statistischen Untersuchung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Statistische Einheit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Untersuchungsobjekt einer statistischen Untersuchung.
+ Träger der interessanten Informationen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Merkmal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zu betrachtendes Attribut einer Einheit.
+ Etwa Einkommen, Altern, ...
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Merkmalstypen 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+diskrete Merksmaltypen bestehen aus einer überschaubare, endliche Menge
+ (etwa Geschlecht)
+\emph on
+, 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+stetige
+\emph on
+ 
+\emph default
+Merksmaltypen können in einem bestimmten Bereich jeden reelen Wert annehmen,
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+quasi-stetige Merksmaletypen sind eigentlich diskret, enthalten aber sehr
+ grosse Menge von möglichen Merkmalen
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Merkmalsausprägung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Gruppierung Sortierung, gleiche Merkmalsausprägung
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Klassifizierung benachbarte Ausprägungen werden zu einer Klasse zusammengefasst.
+ Übliche Schreibweise 
+\begin_inset Formula $[200;400)$
+\end_inset
+
+ mit der Bedeutung 
+\begin_inset Formula $200\leq x<400$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Skalenniveau
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+nominal qualitativ (also keine Zahlen), etwa Geschlecht oder Studiengang.
+ Darstellung als gruppierter Wert.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ordinal Merkmalsausprägung mit objektiver Rangordnung, Abstände sind aber
+ nicht bezifferbar (etwa Noten).
+ Darstellung als gruppierter Wert.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+metrisch 
+\emph on
+Interval quantitativ
+\emph default
+: reele Zahlen, natürliche Rangfolge, eindeutige Abstände, etwa Sparsumme,
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\emph on
+Verhältnis quantitativ
+\emph default
+: reele Zahlen, natürliche Rangfolge, eindeutige Abstände, absoluter Bezugspunkt
+ (etwa Nullpunkt).
+ Beispiel: Alter.
+ Darstellung als klassierter Wert.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Begriffe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
 Univariante Datenanalyse
 \end_layout
 
@@ -1472,13 +1736,13 @@ Häufigkeiten
 \begin_layout Standard
 \begin_inset Float table
 wide false
-sideways false
+sideways true
 status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="10" columns="4">
-<features rotate="true">
+<features>
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <column alignment="left" valignment="top" width="9cm">
@@ -2035,13 +2299,13 @@ reference "fig:Verteilungsfunktion-bei-klass."
 \begin_inset Float table
 placement H
 wide false
-sideways false
+sideways true
 status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="7">
-<features rotate="true">
+<features>
 <column alignment="left" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
@@ -2497,15 +2761,15 @@ Mittelwert für Produkte, etwa bei Verhältnissen oder Wachstumswerten.
 \begin_layout Standard
 \begin_inset Float table
 wide false
-sideways false
+sideways true
 status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="4">
-<features rotate="true">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<lyxtabular version="3" rows="7" columns="4">
+<features>
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
 <column alignment="left" valignment="top" width="9cm">
 <column alignment="left" valignment="top" width="11cm">
 <row>
@@ -2571,9 +2835,27 @@ xd
 <cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Gruppen da 
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features>
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="7cm">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gruppe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+da 
 \begin_inset Formula $x_{i}$
 \end_inset
 
@@ -2584,13 +2866,39 @@ Gruppen da
  am größsten ist
 \end_layout
 
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Klasse
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Klassen Mitte der modalen Klasse 
+Mitte der modalen Klasse 
 \begin_inset Formula $x_{D}=\frac{x_{i}^{u}+x_{i}^{o}}{2}=x_{i}^{'}$
 \end_inset
 
  
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2631,22 +2939,13 @@ xz
 <cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Gruppe 
-\begin_inset Formula $x_{z}=0.5N$
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{array}{cc}
+Gruppe & x_{z}=0.5N\\
+Klasse & x_{z}=x_{i}^{u}+\frac{0.5-F(x_{i}^{u})}{f_{i}}*\Delta x_{i}\end{array}$
 \end_inset
 
- 
-\end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Klasse 
-\begin_inset Formula $x_{z}=x_{i}^{u}+\frac{0.5-F(x_{i}^{u})}{f_{i}}*\Delta x_{i}$
-\end_inset
-
- 
 \end_layout
 
 \end_inset
@@ -2662,6 +2961,44 @@ Median bzw.
 \begin_inset Formula $400+\frac{0.5-0.21}{0.56}*300=555.36$
 \end_inset
 
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -2695,20 +3032,12 @@ xp
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Gruppe 
-\begin_inset Formula $x_{p}=p\cdot N$
+\begin_inset Formula $\begin{array}{cc}
+Gruppe & x_{p}=p\cdot N\\
+Klasse & x_{p}=x_{i}^{u}+\frac{p-F(x_{i}^{u})}{f_{i}}*\Delta x_{i}\end{array}$
 \end_inset
 
 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Klasse 
-\begin_inset Formula $x_{p}=x_{i}^{u}+\frac{p-F(x_{i}^{u})}{f_{i}}*\Delta x_{i}$
-\end_inset
-
- 
 \end_layout
 
 \end_inset
@@ -2777,19 +3106,10 @@ xa
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Gruppe 
-\begin_inset Formula $\bar{x}=\overset{k}{\underset{i=1}{\sum}}x_{i}f_{i}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Klasse 
-\begin_inset Formula $\bar{x}=\overset{k}{\underset{i=1}{\sum}}x_{i}^{'}f_{i}$
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{array}{cc}
+Gruppe & \bar{x}=\overset{k}{\underset{i=1}{\sum}}x_{i}f_{i}\\
+Klasse & \bar{x}=\overset{k}{\underset{i=1}{\sum}}x_{i}^{'}f_{i}\end{array}$
 \end_inset
 
 
@@ -2886,13 +3206,14 @@ Lageparameter
 \begin_layout Standard
 \begin_inset Float table
 wide false
-sideways false
-status open
+sideways true
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="4">
-<features rotate="true">
+<lyxtabular version="3" rows="10" columns="5">
+<features>
+<column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <column alignment="left" valignment="top" width="9cm">
@@ -2912,6 +3233,15 @@ Math
 
 \begin_layout Plain Layout
 TR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -2961,25 +3291,23 @@ r
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+G
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Gruppe 
+\begin_layout Plain Layout
 \begin_inset Formula $R=x_{max}-x_{min}$
 \end_inset
 
  
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Klasse 
-\begin_inset Formula $R=x_{k}^{o}-x_{1}^{u}$
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -2989,6 +3317,56 @@ Klasse
 
 \begin_layout Plain Layout
 Die Spannweite ist die Differenz zwischen größtem und kleinstem Merkmalswert.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+K
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R=x_{k}^{o}-x_{1}^{u}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -3016,6 +3394,15 @@ q
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+G
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
@@ -3033,6 +3420,53 @@ q
 
 \begin_layout Plain Layout
 Der Quantilsabstand ist der Abstand zwischen oberem und unterem Quantil.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -3078,22 +3512,21 @@ s2x
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+G
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="bottom" usebox="none">
 \begin_inset Text
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-Gruppe 
 \begin_inset Formula $s_{x}^{2}=\left\{ \overset{k}{\underset{i=1}{\sum}}\left[(x_{i})^{2}\cdot f_{i}\right]\right\} -\overline{x}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Klasse 
-\begin_inset Formula $s_{x}^{2}=\left\{ \overset{k}{\underset{i=1}{\sum}}\left[(x_{i}^{'})^{2}\cdot f_{i}\right]\right\} -\overline{x}^{2}$
 \end_inset
 
 
@@ -3154,6 +3587,65 @@ Alternative Zeichen der Varianz sind
 \begin_inset Text
 
 \begin_layout Plain Layout
+K
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s_{x}^{2}=\left\{ \overset{k}{\underset{i=1}{\sum}}\left[(x_{i}^{'})^{2}\cdot f_{i}\right]\right\} -\overline{x}^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+G/K
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 \begin_inset Formula \begin{eqnarray*}
 \\s^{2} & = & \cfrac[l]{N_{1}s_{1}^{2}+N_{2}s_{2}^{2}}{N_{1}+N_{2}}+\cfrac[r]{N_{1}\left(\bar{x_{1}}-\bar{x}\right)^{2}+N_{2}\left(\bar{x_{2}}-\bar{x}\right)^{2}}{N_{1}+N_{2}}\end{eqnarray*}
 
@@ -3202,6 +3694,15 @@ Gleichungsbeispiel bei der Annahme, dass es zwei Teilmengen gibt und die
 
 \begin_layout Plain Layout
 sx
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+G/K
 \end_layout
 
 \end_inset
@@ -3272,6 +3773,15 @@ v
 \begin_inset Text
 
 \begin_layout Plain Layout
+G/K
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 \begin_inset Formula $v=\frac{s_{x}}{\bar{x}}$
 \end_inset
 
@@ -3318,13 +3828,13 @@ Streuungsparameter
 \begin_layout Standard
 \begin_inset Float table
 wide false
-sideways false
-status open
+sideways true
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="4">
-<features rotate="true">
+<features>
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <column alignment="left" valignment="top" width="7cm">
@@ -4018,7 +4528,7 @@ name "fig:Funktion-relativer-Sumenhäufigkeit"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -4168,7 +4678,7 @@ Funktion F(x) relativer Summenhäufigkeit bei klass.
 placement ph
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -4322,7 +4832,7 @@ name "fig:Stabdiagramm-1"
 placement ph
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -4663,6 +5173,602 @@ name "fig:Lorenzkurve"
 \end_inset
 
 Lorenzkurve
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="3">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="80text%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Klasse oder Gruppe einer statistischen Zählung.
+ Variable kann Zeichen haben wie 
+\begin_inset Formula $1,\: i,\: k$
+\end_inset
+
+ die für das 
+\begin_inset Formula $1$
+\end_inset
+
+-te, 
+\begin_inset Formula $i$
+\end_inset
+
+-te oder letzte Gruppe/Klasse stehen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{d}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+xd
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Modalwert, der Wert mit der häufigsten Merkmalsausprägung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+xz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Median, Mitte aller Merkmalsausprägungen, d.h.
+ nach oben und unten gleich viele Merkmalsausprägungen
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+xp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quantile überschreiten einen gewissen Anteil von Merkmalsausprägungen 
+\emph on
+nicht
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{i}^{'}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Klassenmitte der
+\begin_inset Formula $i$
+\end_inset
+
+-ten Klasse
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $x_{i}^{u}$
+\end_inset
+
+ 
+\begin_inset Formula $x_{i}^{o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+untere bzw.
+ obere Grenze der 
+\begin_inset Formula $i$
+\end_inset
+
+-ten Klasse
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $h$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anzahl von Einheiten innerhalb einer Gruppe oder Klasse.
+ Tiefgestellte Zeichen gleiche Bedeutung wie bei 
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Die Summe aller 
+\begin_inset Formula $h$
+\end_inset
+
+ ist die statistische Masse
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $H_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+shi
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+absolute Summenhäufigkeit, wie 
+\begin_inset Formula $h_{i}$
+\end_inset
+
+ aber aufsteigend addiert.
+ Der größte Wert=
+\begin_inset Formula $N$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fi
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+relative Häufigkeit.
+ Summe aller 
+\begin_inset Formula $f_{i}=1$
+\end_inset
+
+ Entspricht dem prozentualen Anteil an der statistischen Masse.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $F_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sfi
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+relative Summenhäufigkeit.
+ Wie 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ aber aufsummiert.
+ Der größte Wert = 1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{∆}x_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+dxi
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Klassenbreite der 
+\begin_inset Formula $i$
+\end_inset
+
+-ten Klasse
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+si
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+relative Summenhäufigkeit einer Klasse
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $N$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Statistische Masse, also die Menge aller Merkmalsausprägungen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang english
+Überblick Variablen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+pagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+marginsize{0.5cm}{0.5cm}{0.5cm}{0.5cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Float figure
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Volumes/user/tukaram/Sites/Rent-A-Jet/Analyse Dokumente/stat_layout.pdf
+	scale 130
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang english
+Zusammenhänge von Variablen
 \end_layout
 
 \end_inset
