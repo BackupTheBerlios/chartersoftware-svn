@@ -1,4 +1,4 @@
-#LyX 1.6.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.4.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -3799,72 +3799,156 @@ plot 0.5   0.0   0.5 1.0    /
 
 
 \backslash
-axis  shiftedto y=0.1 invisible  ticks in length <1pt> from 0.1 to 0.9 by 0.1
- /
+axis  shiftedto y=0.05 invisible  ticks in length <1pt> from 0.05 to 0.95 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.2 invisible  ticks in length <1pt> from 0.2 to 0.9 by 0.1
- /
+axis  shiftedto y=0.10 invisible  ticks in length <1pt> from 0.10 to 0.95 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.3 invisible  ticks in length <1pt> from 0.3 to 0.9 by 0.1
- /
+axis  shiftedto y=0.15 invisible  ticks in length <1pt> from 0.15 to 0.95 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.4 invisible  ticks in length <1pt> from 0.4 to 0.9 by 0.1
- /
+axis  shiftedto y=0.20 invisible  ticks in length <1pt> from 0.20 to 0.95 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.5 invisible  ticks in length <1pt> from 0.5 to 0.9 by 0.1
- /
+axis  shiftedto y=0.25 invisible  ticks in length <1pt> from 0.25 to 0.95 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.6 invisible  ticks in length <1pt> from 0.6 to 0.9 by 0.1
- /
+axis  shiftedto y=0.30 invisible  ticks in length <1pt> from 0.30 to 0.95 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.7 invisible  ticks in length <1pt> from 0.7 to 0.9 by 0.1
- /
+axis  shiftedto y=0.35 invisible  ticks in length <1pt> from 0.35 to 0.95 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.8 invisible  ticks in length <1pt> from 0.8 to 0.9 by 0.1
- /
+axis  shiftedto y=0.40 invisible  ticks in length <1pt> from 0.40 to 0.95 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.9 invisible  ticks in length <1pt> from 0.9 to 0.9 by 0.1
- /
+axis  shiftedto y=0.45 invisible  ticks in length <1pt> from 0.45 to 0.95 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.50 invisible  ticks in length <1pt> from 0.50 to 0.95 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.55 invisible  ticks in length <1pt> from 0.55 to 0.95 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.60 invisible  ticks in length <1pt> from 0.60 to 0.95 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.65 invisible  ticks in length <1pt> from 0.65 to 0.95 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.70 invisible  ticks in length <1pt> from 0.70 to 0.95 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.75 invisible  ticks in length <1pt> from 0.75 to 0.95 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.80 invisible  ticks in length <1pt> from 0.80 to 0.95 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.85 invisible  ticks in length <1pt> from 0.85 to 0.95 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.90 invisible  ticks in length <1pt> from 0.90 to 0.95 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.95 invisible  ticks in length <1pt> from 0.95 to 0.95 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -3919,7 +4003,7 @@ Aufgabe:
 \begin_inset Float figure
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -4021,78 +4105,154 @@ arrow <10pt> [0.15,1.0] from 1.3 0 to 1.4 0
 
 \begin_layout Plain Layout
 
+
+\backslash
+axis  shiftedto y=0.05 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.1 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.10 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.2 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.15 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.3 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.20 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.4 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.25 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.5 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.30 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.6 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.35 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.7 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.40 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.8 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.45 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.9 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.50 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.55 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.60 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.65 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.70 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.75 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.80 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.85 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.90 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.95 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
@@ -4151,7 +4311,7 @@ Aufgabe:
 \begin_inset Float figure
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -4255,72 +4415,156 @@ arrow <10pt> [0.15,1.0] from 1.3 0 to 1.4 0
 
 
 \backslash
-axis  shiftedto y=0.1 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.05 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.2 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.10 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.3 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.15 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.4 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.20 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.5 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.25 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.6 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.30 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.7 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.35 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.8 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.40 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.9 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.45 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.50 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.55 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.60 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.65 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.70 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.75 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.80 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.85 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.90 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.95 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -4468,72 +4712,152 @@ arrow <10pt> [0.15,1.0] from 1.3 0 to 1.4 0
 
 
 \backslash
-axis  shiftedto y=0.1 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.05 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.2 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.10 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.3 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.15 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.4 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.20 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.5 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.25 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.6 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.30 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.7 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.35 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.8 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.40 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-axis  shiftedto y=0.9 invisible  ticks in length <1pt> from 0.1 to 1.4 by 0.1
- /
+axis  shiftedto y=0.45 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.50 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.55 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.60 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.65 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.70 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.75 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.80 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.85 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.90 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=0.95 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
 \end_layout
 
 \begin_layout Plain Layout
