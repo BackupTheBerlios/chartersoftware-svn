@@ -4909,7 +4909,7 @@ Aufgabe:
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -5951,7 +5951,7 @@ Rang
 </cell>
 </row>
 <row>
-<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multicolumn="1" alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5963,7 +5963,7 @@ Rang
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6037,7 +6037,7 @@ Rang
 </cell>
 </row>
 <row>
-<cell alignment="right" valignment="top" bottomline="true" leftline="true" usebox="none">
+<cell multicolumn="1" alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6046,7 +6046,7 @@ Mittelwert
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6055,7 +6055,7 @@ Mittelwert
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6064,7 +6064,7 @@ Mittelwert
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6073,7 +6073,7 @@ Mittelwert
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6082,7 +6082,7 @@ Mittelwert
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6091,7 +6091,7 @@ Mittelwert
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6100,7 +6100,7 @@ Mittelwert
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6109,7 +6109,7 @@ Mittelwert
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6120,7 +6120,7 @@ Mittelwert
 </cell>
 </row>
 <row>
-<cell alignment="right" valignment="top" bottomline="true" leftline="true" usebox="none">
+<cell multicolumn="1" alignment="right" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6129,7 +6129,7 @@ Varianz
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6203,7 +6203,7 @@ Varianz
 </cell>
 </row>
 <row>
-<cell alignment="right" valignment="top" bottomline="true" leftline="true" usebox="none">
+<cell multicolumn="1" alignment="right" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6212,7 +6212,7 @@ Standardabweichung
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6325,11 +6325,11 @@ status open
 <features>
 <column alignment="right" valignment="top" width="1cm">
 <column alignment="center" valignment="top" width="9page%">
-<column alignment="center" valignment="top" width="9page%">
-<column alignment="center" valignment="top" width="9page%">
-<column alignment="center" valignment="top" width="9page%">
-<column alignment="center" valignment="top" width="9page%">
-<column alignment="left" valignment="top" width="6cm">
+<column alignment="center" valignment="top" width="12page%">
+<column alignment="center" valignment="top" width="12page%">
+<column alignment="center" valignment="top" width="12page%">
+<column alignment="center" valignment="top" width="12page%">
+<column alignment="left" valignment="top" width="12page%">
 <row>
 <cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
@@ -6396,7 +6396,7 @@ Struktur y
 </cell>
 </row>
 <row>
-<cell multicolumn="1" alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none" width="12page%">
 \begin_inset Text
 
 \begin_layout Plain Layout
