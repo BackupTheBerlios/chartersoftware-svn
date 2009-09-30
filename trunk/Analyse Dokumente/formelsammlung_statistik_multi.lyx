@@ -82,7 +82,7 @@ Beispiele
 placement ph
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -772,7 +772,7 @@ Beispiel Abs.
 placement ph
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -1648,7 +1648,7 @@ Erläuterung
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+hip
 \end_layout
 
 \end_inset
@@ -1679,7 +1679,15 @@ abs.
 \begin_inset Formula $x$
 \end_inset
 
+ oder auch schlicht 
+\begin_inset Quotes eld
+\end_inset
 
+Zeilensumme
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -1702,7 +1710,7 @@ abs.
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+hpk
 \end_layout
 
 \end_inset
@@ -1733,7 +1741,15 @@ abs.
 \begin_inset Formula $y$
 \end_inset
 
+ oder auch schlicht 
+\begin_inset Quotes eld
+\end_inset
 
+Spaltensumme
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -1779,7 +1795,8 @@ n
 \begin_layout Plain Layout
 abs.
  Häufigkeit bzw.
- Anzahl Merkmalsträger
+ Anzahl Merkmalsträger oder auch schlicht: Die Summe aller Spalten bzw.
+ Summe aller Zeilen.
 \end_layout
 
 \end_inset
@@ -1802,7 +1819,7 @@ abs.
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+fik
 \end_layout
 
 \end_inset
@@ -1854,7 +1871,7 @@ rel.
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+sfik
 \end_layout
 
 \end_inset
@@ -1886,6 +1903,9 @@ Summe aller relativen Häufigkeiten
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $f(y_{k}|x_{i})$
+\end_inset
+
 
 \end_layout
 
@@ -1904,6 +1924,9 @@ Summe aller relativen Häufigkeiten
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $f(y_{k}|x_{i})=\frac{h_{ik}}{h_{i.}}$
+\end_inset
+
 
 \end_layout
 
@@ -1913,6 +1936,12 @@ Summe aller relativen Häufigkeiten
 \begin_inset Text
 
 \begin_layout Plain Layout
+Bedingte relative Häufigkeit.
+ Absolute Häufigkeit durch Zeilensumme.
+ Beispiel: 
+\begin_inset Formula $f(y_{1},x_{1})=\frac{h_{11}}{h_{1.}}=\frac{57}{59}=0.966$
+\end_inset
+
 
 \end_layout
 
@@ -1942,6 +1971,13 @@ Summe aller relativen Häufigkeiten
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $f(y_{k}|x_{i})=f(y_{k}|x_{2})=\ldots=f(y_{k}|x_{m})=f_{.k}$
+\end_inset
+
+ für 
+\begin_inset Formula $k=1,2,\ldots m$
+\end_inset
+
 
 \end_layout
 
@@ -1951,7 +1987,8 @@ Summe aller relativen Häufigkeiten
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Statistische Unabhängigkeit: Wenn alle bedingten, relativen Häufigkeiten
+ gleich sind, sind die Merkmale statistisch unabhängig.
 \end_layout
 
 \end_inset
