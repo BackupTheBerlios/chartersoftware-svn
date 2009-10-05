@@ -951,7 +951,7 @@ Beispiel Rel.
 
 \begin_layout Standard
 \begin_inset Note Comment
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Häufigkeiten
@@ -966,7 +966,7 @@ Häufigkeiten
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -1019,7 +1019,7 @@ Erläuterung
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $h_{i.}$
+\begin_inset Formula $h_{i\centerdot}$
 \end_inset
 
 
@@ -1040,7 +1040,7 @@ hip
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\overset{n}{\underset{k=1}{\sum}}h_{ik}\qquad(i=1,2,\ldots,n)$
+\begin_inset Formula $\overset{n}{\underset{k=1}{\sum}}h_{ik}\qquad(i=1,2,\ldots,m)$
 \end_inset
 
 
@@ -1081,7 +1081,7 @@ Zeilensumme
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $h_{.k}$
+\begin_inset Formula $h_{\centerdot k}$
 \end_inset
 
 
@@ -1102,7 +1102,7 @@ hpk
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\overset{n}{\underset{k=1}{\sum}}h_{ik}\qquad(k=1,2,\ldots,m)$
+\begin_inset Formula $\overset{m}{\underset{k=1}{\sum}}h_{ik}\qquad(k=1,2,\ldots,n)$
 \end_inset
 
 
@@ -1286,6 +1286,9 @@ Summe aller relativen Häufigkeiten
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $H$
+\end_inset
+
 
 \end_layout
 
@@ -1314,7 +1317,7 @@ Summe aller relativen Häufigkeiten
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+abs Häufigkeitstabelle von Matrix mit m_abshae
 \end_layout
 
 \end_inset
@@ -1325,7 +1328,7 @@ Summe aller relativen Häufigkeiten
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+F
 \end_layout
 
 \end_inset
@@ -1352,7 +1355,7 @@ Summe aller relativen Häufigkeiten
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+rel Häufigkeitstabelle von Matrix mit m_relhae
 \end_layout
 
 \end_inset
@@ -1592,7 +1595,15 @@ kap
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-\begin_inset Formula $N\cdot\left[\left(\overset{m}{\underset{i=1}{\sum}}\overset{n}{\underset{k=1}{\sum}\frac{h_{ik}^{2}}{h_{i.}\cdot h_{.k}}}\right)-1\right]$
+\begin_inset Formula $N\cdot\left[\left(\overset{m}{\underset{i=1}{\sum}}\overset{n}{\underset{k=1}{\sum}}\frac{h_{ik}^{2}}{h_{i.}\cdot h_{.k}}\right)-1\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $N\cdot\left[\left(\sum\sum\frac{h^{2}}{Zeilensumme_{h}\cdot Spaltensumme_{h}}\right)-1\right]$
 \end_inset
 
 
@@ -1613,6 +1624,10 @@ Chi-Quadrat.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+=m_chiquad(m_abshae())
 \end_layout
 
 \end_inset
@@ -1665,6 +1680,362 @@ Maß von Cramer.
 \begin_inset Formula $C=\sqrt{\frac{1}{110}*\frac{5.0047}{min((2-1);(2-1))}}=0.213$
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
+=m_cramer(m_abshae())
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Zusammenhang nominaler Merkmale
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="4">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="9cm">
+<column alignment="left" valignment="top" width="11cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Math
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Erläuterung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Darstellung als
+\end_layout
+
+\begin_layout Plain Layout
+- Wertpaar
+\end_layout
+
+\begin_layout Plain Layout
+- Korrelationstabelle
+\end_layout
+
+\begin_layout Plain Layout
+- Streudiagramm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 
 \end_layout
 
