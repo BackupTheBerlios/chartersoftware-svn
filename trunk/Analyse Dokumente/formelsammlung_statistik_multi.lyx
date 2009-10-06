@@ -48,18 +48,6 @@
 
 \begin_body
 
-\begin_layout Title
-Formelsammlung Statistik
-\end_layout
-
-\begin_layout Author
-Andrey Behrens
-\end_layout
-
-\begin_layout Date
-August 2009
-\end_layout
-
 \begin_layout Chapter
 Multivariante Datenanalyse
 \end_layout
@@ -1883,7 +1871,7 @@ Darstellung als
 \end_layout
 
 \begin_layout Plain Layout
-- Streudiagramm
+- Streudiagramm (linear, polynom, kein Zusammenhang)
 \end_layout
 
 \end_inset
@@ -1894,6 +1882,9 @@ Darstellung als
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $\mbox{Cov(x,y)}$
+\end_inset
+
 
 \end_layout
 
@@ -1903,6 +1894,25 @@ Darstellung als
 \begin_inset Text
 
 \begin_layout Plain Layout
+cov(x,y)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $=\frac{1}{N}\overset{N}{\underset{i=1}{\sum}}\left(x_{i}-\overline{x}\right)\left(y_{i}-\overline{y}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $=\frac{1}{N}\overset{N}{\underset{i=1}{\sum}}x_{i}y_{i}-\overline{x}\overline{y}$
+\end_inset
+
 
 \end_layout
 
@@ -1912,54 +1922,24 @@ Darstellung als
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Kovarianz für Wertepaare
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
 \begin_layout Plain Layout
-
+Bei klassierten Daten Klassenmitten benutzen.
 \end_layout
 
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
 \begin_layout Plain Layout
-
-\end_layout
-
+Bei =0 kein 
+\emph on
+linearer
+\emph default
+ Zusammenhang.
+ Einheit von 
+\begin_inset Formula $cov(x,y)$
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
 
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+ ist das Produkt von x-Einheit und y-Einheit (etwa EuroJahr)
 \end_layout
 
 \end_inset
@@ -1970,6 +1950,9 @@ Darstellung als
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $\mbox{Cov(x,y)}$
+\end_inset
+
 
 \end_layout
 
@@ -1979,7 +1962,75 @@ Darstellung als
 \begin_inset Text
 
 \begin_layout Plain Layout
+cov(x,y)
+\end_layout
 
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $=\frac{1}{N}\overset{m}{\underset{i=1}{\sum}}\overset{n}{\underset{k=1}{\sum}}\left(x_{i}-\overline{x}\right)\left(y_{k}-\overline{y}\right)h_{ik}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $=\frac{1}{N}\overset{m}{\underset{i=1}{\sum}}\overset{n}{\underset{k=1}{\sum}}x_{i}y_{i}f_{ik}-\overline{x}\overline{y}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kovarianz für zweidim Häufigkeitsverteilung
+\end_layout
+
+\begin_layout Plain Layout
+Bei klassierten Daten Klassenmitten benutzen.
+\end_layout
+
+\begin_layout Plain Layout
+Bei =0 kein 
+\emph on
+linearer
+\emph default
+ Zusammenhang.
+ Einheit von 
+\begin_inset Formula $cov(x,y)$
+\end_inset
+
+ ist das Produkt von x-Einheit und y-Einheit (etwa EuroJahr)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $r_{xy}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rxy
 \end_layout
 
 \end_inset
@@ -1989,6 +2040,9 @@ Darstellung als
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
+\begin_inset Formula $=\frac{Cov(x,y)}{s_{x}s_{y}}$
+\end_inset
+
 
 \end_layout
 
@@ -1998,7 +2052,25 @@ Darstellung als
 \begin_inset Text
 
 \begin_layout Plain Layout
+Korrelationskoeffizient nach Pearson/Bravis = Maß für die Höhe des linearen
+ Zusammenhangs
+\end_layout
 
+\begin_layout Plain Layout
+Wertebereich 
+\begin_inset Formula $ $
+\end_inset
+
+im Interval -1 (=vollständig negative Abhängigkeit) und +1(vollständig positiver
+ Abhängigkeit) 
+\end_layout
+
+\begin_layout Plain Layout
+0=kein 
+\emph on
+linearer
+\emph default
+ Zusammenhang
 \end_layout
 
 \end_inset
@@ -2127,6 +2199,397 @@ Darstellung als
 
 \begin_layout Plain Layout
 Zusammenhang nominaler Merkmale
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="4">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="9cm">
+<column alignment="left" valignment="top" width="11cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Math
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Erläuterung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{array}{ll}
+linear & \hat{y}=a_{1}x+a_{0}\\
+polynom & \widehat{y}=a_{2}x^{2}+a_{1}x+a_{0}\end{array}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Geschätzte Regressionsgleichung nur sinnvoll, wenn eingesetzte Werte im
+ Bereich der Messwerte liegen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $=\frac{Cov(x,y)}{s_{x}^{2}}=r_{xy}\frac{s_{y}}{s_{x}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Einheit x/y z.B.
+ 
+\begin_inset Formula $\frac{Euro}{Jahr}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $=\overline{y}-a_{1}\overline{x}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Einheit x z.B.
+ 
+\begin_inset Formula $Euro$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bewertung der Schätzqualität: desto besser desto mehr die Schwankungen der
+ y-Werte durch die Gleichung erklärt werden können bzw.
+ desto geringer die Residuen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $B^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $=\frac{s_{\widehat{y}}^{2}}{s_{\widehat{y}}^{2}}=\frac{a_{1}^{2}s_{x}^{2}}{s_{y}^{2}}=1-\frac{s_{e}^{2}}{s_{y}^{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bestimmheitsmaß=Kriterium der Schätzqualität einer Regressionsfunktion
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $B^{2}$
+\end_inset
+
+ gibt den Erklärungswert der Regressionsfunktion im Intervall von 0 bis
+ 1 an.
+ Er bringt zum Ausdruck, wie der Zusammenhang zwischen den beiden Werten
+ durch die Reg-Funktion beschrieben wird.
+ 1=alle Werte liegen auf der Funktion.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Regressionsrechnung
 \end_layout
 
 \end_inset
