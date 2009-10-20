@@ -9484,6 +9484,10 @@ Aufgabe:
 \end_inset
 
 
+\begin_inset Formula $ $
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10405,7 +10409,7 @@ status open
 <column alignment="center" valignment="top" width="1cm">
 <column alignment="left" valignment="top" width="1.5cm">
 <column alignment="left" valignment="top" width="2cm">
-<column alignment="left" valignment="top" width="1.5cm">
+<column alignment="left" valignment="top" width="2.5cm">
 <row>
 <cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none" width="5text%">
 \begin_inset Text
@@ -10824,6 +10828,9 @@ Mittelwert
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $\overline{xy}=$
+\end_inset
+
 
 \end_layout
 
@@ -10964,6 +10971,13 @@ Mittelwert
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $\mbox{}$
+\end_inset
+
+
+\begin_inset Formula $\frac{\sum xy}{n}=$
+\end_inset
+
 
 \end_layout
 
@@ -11105,6 +11119,9 @@ Produkt
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $\frac{\sum xy}{n}-\overline{xy}$
+\end_inset
+
 
 \end_layout
 
