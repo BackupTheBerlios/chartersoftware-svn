@@ -9384,7 +9384,8 @@ Darstellung als
 \end_layout
 
 \begin_layout Plain Layout
-- Streudiagramm (linear, polynom, kein Zusammenhang)
+- Streudiagramm (mit Verlauf des Funktionsgraphen) linear, polynom, kein
+ Zusammenhang)
 \end_layout
 
 \end_inset
@@ -9460,7 +9461,11 @@ Basis: Arbeitstabelle Wertepaare
 \end_layout
 
 \begin_layout Plain Layout
-m_cov(wertematrix mit zwei zeilen)
+m_cov_w(wertematrix mit zwei zeilen)
+\end_layout
+
+\begin_layout Plain Layout
+m_cov_wf(wertematrix mit zwei zeilen)
 \end_layout
 
 \end_inset
@@ -9598,6 +9603,18 @@ linearer
  Zusammenhang
 \end_layout
 
+\begin_layout Plain Layout
+m_s2x_w(wertetabelle)
+\end_layout
+
+\begin_layout Plain Layout
+m_s2y_w(wertetabelle)
+\end_layout
+
+\begin_layout Plain Layout
+m_rxy(wertematrix mit 2 Zeilen)
+\end_layout
+
 \end_inset
 </cell>
 </row>
@@ -9643,7 +9660,7 @@ oder = m_xaf(tabelle, zeilen[]) (nur Wert)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Mittelwert der x-Zeile
+Mittelwert der x-Zeile für Korrelationstabelle
 \end_layout
 
 \end_inset
@@ -9691,7 +9708,7 @@ oder = m_yaf(tabelle, spalten[]) (nur Wert)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Mittelwert der y-Zeile
+Mittelwert der y-Zeile für Korrelationstabelle
 \end_layout
 
 \end_inset
@@ -9798,7 +9815,7 @@ Zusammenhang metrischer Merkmale
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -9940,6 +9957,10 @@ Einheit x/y z.B.
 
 \end_layout
 
+\begin_layout Plain Layout
+m_a1_w(wertetabelle)
+\end_layout
+
 \end_inset
 </cell>
 </row>
@@ -9987,6 +10008,10 @@ Einheit x z.B.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+m_a0_w(wertetabelle)
 \end_layout
 
 \end_inset
@@ -10083,6 +10108,10 @@ Bestimmheitsmaß=Kriterium der Schätzqualität einer Regressionsfunktion
  Er bringt zum Ausdruck, wie der Zusammenhang zwischen den beiden Werten
  durch die Reg-Funktion beschrieben wird.
  1=alle Werte liegen auf der Funktion.
+\end_layout
+
+\begin_layout Plain Layout
+m_b2_w(wertetabelle)
 \end_layout
 
 \end_inset
@@ -10283,42 +10312,12 @@ Rangkorrelationskoeffizient nach Spearman als Maß der Ausgeprägtheit des
  Zusammenhangs zweier Merkmale.
 \end_layout
 
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
 \begin_layout Plain Layout
-
+Für ordinale Werte (klare Rangordnung, aber Abstand nicht interpretierbar)
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+RZ=Fortlaufend, aber Mittelwert für identische Werte
 \end_layout
 
 \end_inset
@@ -10356,7 +10355,45 @@ Rangkorrelationskoeffizient nach Spearman als Maß der Ausgeprägtheit des
 \begin_inset Text
 
 \begin_layout Plain Layout
+l_rang(list) Rangzahlen einer Liste aufsteigend
+\end_layout
 
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+m_rang(list, list) -> Rangzahlen Arbeitstabelle
 \end_layout
 
 \end_inset
@@ -10395,7 +10432,7 @@ Rangkorrelationskoeffizient nach Spearman als Maß der Ausgeprägtheit des
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+m_rangko(m_rang) -> Rangzahlenkoeffizient
 \end_layout
 
 \end_inset
