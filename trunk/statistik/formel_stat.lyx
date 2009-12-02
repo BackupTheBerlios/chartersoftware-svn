@@ -8770,7 +8770,7 @@ Erläuterung
 
 \begin_layout Plain Layout
 \begin_inset Formula $\begin{array}{ll}
-linear & \hat{y}=a_{1}x+a_{0}\\
+linear & \widehat{y}=a_{1}x+a_{0}\\
 polynom & \widehat{y}=a_{2}x^{2}+a_{1}x+a_{0}\end{array}$
 \end_inset
 
@@ -8958,7 +8958,9 @@ b2
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $=\frac{s_{\widehat{y}}^{2}}{s_{\widehat{y}}^{2}}=\frac{a_{1}^{2}s_{x}^{2}}{s_{y}^{2}}=1-\frac{s_{e}^{2}}{s_{y}^{2}}$
+
+\size largest
+\begin_inset Formula $=s_{\widehat{y}}^{2}/s_{y}^{2}=a_{1}^{2}s_{x}^{2}/s_{y}^{2}=1-(s_{e}^{2}/s_{y}^{2})$
 \end_inset
 
 

@@ -6495,7 +6495,7 @@ Standardabweichung
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $a_{1}=\overline{y}-a_{1}\overline{x}$
+\begin_inset Formula $a_{1}=\overline{y}-a_{0}\overline{x}$
 \end_inset
 
 
@@ -12516,7 +12516,7 @@ Differenz
 \length 10cm
 \end_inset
 
-Arbeitsblatt Rangzahle und Rangdifferenzen
+Arbeitsblatt Rangzahlen und Rangdifferenzen
 \end_layout
 
 \begin_layout Plain Layout
