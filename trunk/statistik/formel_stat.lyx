@@ -1,4 +1,4 @@
-#LyX 1.6.4.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.4.2 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -89,7 +89,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="2">
+<lyxtabular version="3" rows="7" columns="2">
 <features>
 <column alignment="left" valignment="top" width="30text%">
 <column alignment="left" valignment="top" width="70text%">
@@ -279,6 +279,42 @@ Verhältnis quantitativ
 \end_inset
 
 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verteilungen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Symmetrisch Modus, Mittelwert liegen nah beeinander
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Unsymmetrisch
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Unimodal Eine Spitze 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Bimodal Zwei Spitzen
 \end_layout
 
 \end_inset
@@ -1737,7 +1773,7 @@ Häufigkeiten
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -2176,7 +2212,7 @@ Klasse
 
 \begin_inset Formula $F(x)=\begin{cases}
 0 & x<x_{1}^{u}\\
-F(x_{i}^{u})+\frac{f_{i}}{\Delta x_{i}}(x-x_{i}^{u}) & x_{i}^{u}\leq x<x_{i}^{o}\\
+F_{i}^{u}+\frac{f_{i}}{\Delta x_{i}}(x-x_{i}^{u}) & x_{i}^{u}\leq x<x_{i}^{o}\\
 1 & x\geq x_{k}^{o}\end{cases}$
 \end_inset
 
@@ -3226,7 +3262,7 @@ Lageparameter
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -3848,7 +3884,7 @@ Streuungsparameter
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -3950,6 +3986,10 @@ Konzentrationskoeffizient berechnet den Anteil eines Merkalswertes an der
  zeigt den prozentualen Anteil an der Gesamtsumme.
 \end_layout
 
+\begin_layout Plain Layout
+Wert in Prozent, also <0
+\end_layout
+
 \end_inset
 </cell>
 </row>
@@ -3994,6 +4034,10 @@ spi
 Das Konzentrationsmaß beschreibt die relative Merkmalssumme.
  Die Lorenzkurve veranschaulicht das Konzentrationsmaß grafisch.
  
+\end_layout
+
+\begin_layout Plain Layout
+Wert in Prozent, also <0
 \end_layout
 
 \end_inset
@@ -4211,6 +4255,7 @@ Fläche unter der Trapezkurve
 
 \begin_layout Plain Layout
 Hinweis: Sind großgeschriebene P's also spi.
+ Auf Größe achten, Wert in Prozent, also <0
 \end_layout
 
 \end_inset
