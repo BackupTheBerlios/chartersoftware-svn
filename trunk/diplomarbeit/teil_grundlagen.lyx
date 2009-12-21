@@ -1,0 +1,490 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrbook
+\begin_preamble
+\bibpunct{(}{)}{,}{a}{,}{,}
+\end_preamble
+\use_default_options true
+\master diplomarbeit.lyx
+\language ngerman
+\inputencoding auto
+\font_roman lmodern
+\font_sans lmss
+\font_typewriter default
+\font_default_family rmdefault
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language german
+\papercolumns 1
+\papersides 1
+\paperpagestyle plain
+\bullet 0 0 10 -1
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Part
+Vorbemerkungen
+\end_layout
+
+\begin_layout Chapter
+Variablen
+\end_layout
+
+\begin_layout Standard
+Im Rahmen vorliegender Arbeit werden, soweit möglich, übergreifend folgende
+ Variablen bzw.
+ Schemata zur Variablenbenamung benutzt:
+\end_layout
+
+\begin_layout Itemize
+für Variablen, konstante Funktionsparameter und Funktionen werden mit kleinen
+ Buchstaben benutzt
+\end_layout
+
+\begin_layout Itemize
+für Matrizen werden Großbuchstaben benutzt.
+\end_layout
+
+\begin_layout Standard
+Rohstoffe
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $e$
+\end_inset
+
+ für 
+\emph on
+electricity
+\emph default
+ bzw.
+ Strom
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $o$
+\end_inset
+
+ für 
+\emph on
+oil
+\emph default
+ bzw.
+ Öl
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $w$
+\end_inset
+
+ für 
+\emph on
+wood
+\emph default
+ bzw.
+ Holz
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $s$
+\end_inset
+
+ für 
+\emph on
+stone
+\emph default
+ bzw.
+ Stein
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $t$
+\end_inset
+
+ für 
+\emph on
+time 
+\emph default
+bzw.
+ Zeit
+\end_layout
+
+\begin_layout Standard
+Funktionen
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\mathit{\mathcal{R}}$
+\end_inset
+
+ Die Menge aller auf ein System einwirkenden Relationen.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\mathcal{V}$
+\end_inset
+
+ Die Menge aller verhaltensbestimmenden Kenngrößen eines Systems
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $g$
+\end_inset
+
+ Eine Systemgleichung
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $p$
+\end_inset
+
+ konstante Parameter einer Systemgleichung
+\end_layout
+
+\begin_layout Standard
+Eine Systemgleichung hat dabei die allgemeine Form Wobei 
+\begin_inset Formula $\mathit{\mathcal{R}}$
+\end_inset
+
+ und 
+\begin_inset Formula $\mathcal{V}$
+\end_inset
+
+ im allgemeinen für Vektoren der Form stehen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{R}=g(p,\mathcal{V})\qquad$
+\end_inset
+
+ wobei 
+\begin_inset Formula $\mathit{\mathcal{R}}$
+\end_inset
+
+ und 
+\begin_inset Formula $\mathcal{V}$
+\end_inset
+
+ die Form
+\begin_inset Formula $\left[\begin{array}{c}
+e\\
+o\\
+w\\
+s\\
+t\end{array}\right]$
+\end_inset
+
+ besitzen
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Form einer Systemgleichung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Zielsetzung
+\end_layout
+
+\begin_layout Standard
+Wie überall auf der Welt sind Computerspiele Alltag geworden.
+ Die 
+\begin_inset Quotes gld
+\end_inset
+
+Welt
+\begin_inset Quotes grd
+\end_inset
+
+ nennt pro Jahr einen Umsatz von von über 2,5 Mrd EUR, mit zweistelligen
+ Wachstumsraten pro Jahr 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "welt2009"
+
+\end_inset
+
+.
+ Computerspiele sind Mainstream geworden.
+ Der Markttrend geht dabei deutlich in Richtung Onlinespiele, d.h.
+ Spiele, für die zwingend einer Internetzugang erforderlich ist.
+ 
+\end_layout
+
+\begin_layout Standard
+Ebenso so alt wie Computerspiele sind Versuche, Spiele zu 
+\begin_inset Quotes gld
+\end_inset
+
+cheaten
+\begin_inset Quotes grd
+\end_inset
+
+
+\begin_inset Index
+status open
+
+\begin_layout Plain Layout
+cheat
+\end_layout
+
+\end_inset
+
+, d.h.
+ sich vom Entwickler nicht vorgesehene Erleichterungen zu verschaffen.
+ Ursprünglich gab es dabei keine Leidtragenden, Spieler haben für sich allein
+ gespielt.
+ Mit dem Aufkommen der Netzwerk- und Internet-Spiele wurde das Übervorteilen
+ anderer Spielteilnehmer primäres Ziel des cheatens.
+ 
+\end_layout
+
+\begin_layout Standard
+Grundsätzlich gibt es vier Möglichkeiten solcher unerwünschten Einflussnahmen:
+\end_layout
+
+\begin_layout Enumerate
+Das Ausnutzen von Software- und Designfehlern: Ein klassisches Beispiel
+ ist die Installation einer Erweiterung, um Wände durchsichtig zu machen
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Giga1"
+
+\end_inset
+
+.
+ Ein Spieler kann so anderer Spieler früher sehen.
+ Hersteller von Computerspielen versuchen solchen Cheats mit technischen
+ Maßnahmen (etwa Hashsummen von Dateien) zu unterbinden.
+\end_layout
+
+\begin_layout Enumerate
+Die Benutzung von Wasserträgern: Also Personen, die für realwirtschaftliches
+ Geld Dienstleistungen innerhalb einer Spielwelt erbringen.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Schikor:2009aa"
+
+\end_inset
+
+.
+ Über solche Wasserträger kann man Ausrüstungsgegenstände oder Unterstützung
+ bei schwierigen Missionen kaufen.
+ Hersteller von Computerspielen versuchen solchen Cheats durch statistische
+ Analysen des Spielteilnehmer zu erkennen.
+\end_layout
+
+\begin_layout Enumerate
+Die Entwicklung von Bots: Bots sind Computerprogramme, die einen menschlichen
+ Spieler bei Routinehandlungen unterstützen.
+ Etwa seine Zielfähigkeiten in Shootern verbessern.
+ 
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+Quelle?
+\end_layout
+
+\end_inset
+
+.
+ Wie bei Wasserträgern wird hier von Seiten der Anbieter mit statistischen
+ Analysen zur Gegenwehr gearbeitet.
+ Zusätzlich kann das Onlineprotokoll regelmäßig (unter Umständen sogar dynamisch
+) geändert werden, um so die Entwicklung des Bots aufwendiger zu machen.
+ Bots können aufgrund stereotypischer Handlungsweisen auch von menschlichen
+ Spielern erkannt und an den Hersteller gemeldet werden.
+\end_layout
+
+\begin_layout Enumerate
+Analyse des mathematischen Modells: Insbesondere Aufbau- und Strategiespiele
+ benutzen ein mehr oder weniger komplexes mathematisches Modell zur Beschreibung
+ der Spiellandschaft.
+ Obwohl bereits in der Gegenwartsliteratur (etwa 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Pratchett:1992aa"
+
+\end_inset
+
+) bereits früh erwähnt, gibt es scheinbar bislang keine ernsthaften Versuche,
+ die Mechanik eines Spiels methodisch zu untersuchen und darauf aufbauend
+ eine optimale Spielstrategie zu entwickeln.
+\end_layout
+
+\begin_layout Standard
+Die vorliegende Arbeit konzentriert sich ausschließlich auf die vierte Variante.
+ Anhand des Spiels 
+\begin_inset Quotes gld
+\end_inset
+
+Zone 857
+\begin_inset Quotes grd
+\end_inset
+
+ der Dresdner Firma online4ever soll die Machbarkeit und Methodik eines
+ solches Angriffs untersucht werden.
+ Als Vorgehensmodell wird grundsätzlich die in im Buch 
+\begin_inset Quotes gld
+\end_inset
+
+Systeme, Dynamik, Simulation
+\begin_inset Quotes grd
+\end_inset
+
+ von Prof.
+ i.R.
+ Hartmut Bossel vorgeschlagene Methode benutzt.
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Bos04"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Zone 857
+\end_layout
+
+\begin_layout Standard
+Bei Zone 857 handelt es sich um ein klassisches Aufbau- und Strategiespiel.
+ Auf einem fiktivem Wüstenplanet (Zone 857) muss der Spieler ein Camp errichten.
+ Hierzu werden Ressourcen (Holz, Öl, Energie, Steine) benötigt, muss sich
+ der Spieler gegen feindliche Spieler zur Wehr setzen und kann Nomadenstämme
+ überfallen.
+\end_layout
+
+\begin_layout Standard
+Zone 857 ist ein Echtzeit-Browser-Spiel.
+ Das heißt, dass das Spiel mit jedem aktuellen Browser gespielt wird.
+ Unabhänging von der (virtuellen) Anwesenheit des Spielers entwickelt sich
+ die Spielwelt ständig weiter.
+ Die Spielwelt hat ein eigenes Zeitsystem und im Schnitt zu jedem Zeitpunkt
+ etwa 500 aktive Spieler, die auf der gleichen Welt das gleiche Ziel anstreben.
+\end_layout
+
+\begin_layout Standard
+Das Ziel besteht letztlich darin, dass eigene Camp größer als andere Camps
+ zu bauen und dadurch im High Score des Spiels möglichst weit nach oben
+ zu kommen.
+\end_layout
+
+\begin_layout Standard
+Das Spiel besteht technisch aus zwei Phasen:
+\end_layout
+
+\begin_layout Standard
+In der ersten Phase beginnt der Spieler mit einem einfachen Camp.
+ Für einen Zeitraum von dreißig Tagen ist das Camp geschützt gegen Angriffe.
+ Während dieser Zeit kann der Spieler Ressourcen aufbauen, Gebäude errichten
+ und eigene Armeen zur Verteidigung und Angriff errichten.
+ Nach Ablauf der Schonfrist beginnt die zweite Phase, ein Spieler muss erstellte
+ Ressourcen so einsetzen, dass er sich gegen Angriffe feindlicher Spieler
+ erwehren kann, eigene Angriffe auf Nomadenstämme und Mitspieler-Camps durchführ
+en kann, sowie seine Gebäude weiter ausbaut.
+\end_layout
+
+\begin_layout Standard
+Zone 857 eignet sich im besonderen Maße zur Untersuchung eines methodischen
+ Cheats, da die Zahlen zur Gebäudeentwicklung offen gelegt wurden und die
+ so Sammlung statistischer Daten gespart werden kann.
+\end_layout
+
+\begin_layout Chapter
+Werkzeuge
+\end_layout
+
+\begin_layout Standard
+Zur Erstellung vorliegender Arbeit wurde folgende Werkzeuge benutzt:
+\end_layout
+
+\begin_layout Description
+Maple Ein spezialisiertes mathematisches Computerprogramm zur Durchführung
+ notwendiger Berechnungen
+\end_layout
+
+\begin_layout Description
+MapleSim Ein auf Maple basierendes Programm zur Simulation von Computermodellen
+\end_layout
+
+\begin_layout Description
+Java Eine Programmiersprache / Laufzeitumgebung um gefundene Mechanismen
+ in der realen virtuellen Welt zu prüfen.
+\end_layout
+
+\begin_layout Description
+LaTeX/Lyx Ein Textsatzsystem um vorliegenden Text zu schreiben.
+\end_layout
+
+\end_body
+\end_document
