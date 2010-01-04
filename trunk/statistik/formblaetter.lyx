@@ -1,4 +1,4 @@
-#LyX 1.6.4.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -4003,7 +4003,7 @@ Aufgabe:
 \begin_inset Float figure
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -4257,6 +4257,14 @@ axis  shiftedto y=0.95 invisible  ticks in length <1pt> from 0.05 to 1.45 by
 
 \begin_layout Plain Layout
 
+
+\backslash
+axis  shiftedto y=1.00 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -4311,7 +4319,7 @@ Aufgabe:
 \begin_inset Float figure
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -4565,6 +4573,14 @@ axis  shiftedto y=0.95 invisible  ticks in length <1pt> from 0.05 to 1.45 by
 
 \begin_layout Plain Layout
 
+
+\backslash
+axis  shiftedto y=1.00 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -4616,7 +4632,7 @@ Aufgabe:
 \begin_inset Float figure
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -4857,6 +4873,14 @@ axis  shiftedto y=0.90 invisible  ticks in length <1pt> from 0.05 to 1.45 by
 
 \backslash
 axis  shiftedto y=0.95 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=1.00 invisible  ticks in length <1pt> from 0.05 to 1.45 by
  0.05 /
 \end_layout
 
@@ -5161,6 +5185,14 @@ axis  shiftedto y=0.90 invisible  ticks in length <1pt> from 0.05 to 1.45 by
 
 \backslash
 axis  shiftedto y=0.95 invisible  ticks in length <1pt> from 0.05 to 1.45 by
+ 0.05 /
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+axis  shiftedto y=1.00 invisible  ticks in length <1pt> from 0.05 to 1.45 by
  0.05 /
 \end_layout
 

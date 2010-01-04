@@ -1,4 +1,4 @@
-#LyX 1.6.4.2 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -2518,7 +2518,7 @@ xz
 \begin_inset Text
 
 \begin_layout Plain Layout
-?
+nein
 \end_layout
 
 \end_inset
@@ -2596,7 +2596,7 @@ xp
 \begin_inset Text
 
 \begin_layout Plain Layout
-?
+nein
 \end_layout
 
 \end_inset
@@ -2605,7 +2605,7 @@ xp
 \begin_inset Text
 
 \begin_layout Plain Layout
-?
+nein
 \end_layout
 
 \end_inset
@@ -2614,7 +2614,7 @@ xp
 \begin_inset Text
 
 \begin_layout Plain Layout
-?
+ja
 \end_layout
 
 \end_inset
@@ -2744,7 +2744,7 @@ xg
 \begin_inset Text
 
 \begin_layout Plain Layout
-?
+nein
 \end_layout
 
 \end_inset
@@ -2753,7 +2753,7 @@ xg
 \begin_inset Text
 
 \begin_layout Plain Layout
-?
+nein
 \end_layout
 
 \end_inset
