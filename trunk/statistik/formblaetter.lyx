@@ -1,4 +1,4 @@
-#LyX 1.6.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -4933,7 +4933,7 @@ Aufgabe:
 \begin_inset Float figure
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -5246,7 +5246,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="21" columns="7">
+<lyxtabular version="3" rows="22" columns="7">
 <features>
 <column alignment="right" valignment="top" width="9page%">
 <column alignment="left" valignment="top" width="1cm">
@@ -6193,7 +6193,15 @@ Mittelwert
 \begin_inset Text
 
 \begin_layout Plain Layout
-Varianz
+Std-Abwg 
+\begin_inset Formula $s_{x}$
+\end_inset
+
+ und 
+\begin_inset Formula $s_{y}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -6258,7 +6266,15 @@ Varianz
 \begin_inset Text
 
 \begin_layout Plain Layout
-Standardabweichung
+Varianz 
+\begin_inset Formula $s_{x}^{2}$
+\end_inset
+
+ und 
+\begin_inset Formula $s_{y}^{2}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -6604,6 +6620,74 @@ Standardabweichung
 \end_inset
 </cell>
 <cell multicolumn="2" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="right" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $B^{2}=\frac{a_{1}^{2}s_{x}^{2}}{s_{y}^{2}}=$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
