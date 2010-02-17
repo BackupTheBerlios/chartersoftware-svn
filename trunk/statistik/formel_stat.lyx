@@ -1,4 +1,4 @@
-#LyX 1.6.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -67,18 +67,6 @@ Quellen sind (1) Statistikscript Prof.
  Dr.
  Müller, HS Wismar und (2) Taschenbuch der Wirtschaftsmathematik, Wolfgang
  Eichholz und Eberhard Vilkner.
-\end_layout
-
-\begin_layout Abstract
-Fragen:
-\end_layout
-
-\begin_layout Abstract
-- 
-\begin_inset Formula $Cov(x,y)=\frac{1}{N}\overline{x}\overline{y}$
-\end_inset
-
- ?????
 \end_layout
 
 \begin_layout Standard
@@ -8042,7 +8030,7 @@ Chi-Quadrat.
 \end_layout
 
 \begin_layout Plain Layout
-=m_chiquad(m_abshae())
+=m_chiqua(m_abshae())
 \end_layout
 
 \end_inset
@@ -8075,6 +8063,18 @@ c
 
 \begin_layout Plain Layout
 \begin_inset Formula $C=\sqrt{\frac{1}{N}*\frac{\chi^{2}}{min((m-1);(n-1))}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+wobei 
+\begin_inset Formula $m=Anzahl_{Zeilen}$
+\end_inset
+
+ und 
+\begin_inset Formula $n=Anzahl_{Spalten}$
 \end_inset
 
 
