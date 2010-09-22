@@ -10,6 +10,7 @@ import java.util.SortedSet;
 
 import de.oa.nn.trainer.interfaces.ILongTradingStrategy;
 import de.oa.nn.trainer.interfaces.ITradingStrategy;
+import de.oa.nn.trainer.network.MLP;
 import de.oa.nn.trainer.strategy.LongMovementStrategy;
 import de.oa.nn.trainer.strategy.ShortMovementStrategy;
 import de.oa.system.Bar;
@@ -100,6 +101,10 @@ public class Training {
     for (final Signal s : resultList) {
       //System.out.println(s.toString());
     }
+    
+    MLP mlp = new MLP(5);
+    mlp.training(resultList);
+    mlp.testing(resultList);
 
   }
 

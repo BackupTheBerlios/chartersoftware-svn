@@ -229,6 +229,10 @@ public class Bar implements Comparable<Bar> {
     builder.append("close=");
     builder.append(close);
 
+    builder.append('\t');
+    builder.append("v=");
+    builder.append(volume);
+
     builder.append(']');
     return builder.toString();
   }
