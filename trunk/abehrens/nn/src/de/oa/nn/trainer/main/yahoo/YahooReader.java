@@ -1,4 +1,4 @@
-package de.oa.nn.trainer.main;
+package de.oa.nn.trainer.main.yahoo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,9 +6,10 @@ import java.text.ParseException;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import de.oa.nn.trainer.main.StockReader;
 import de.oa.system.Bar;
 
-public class YahooReader {
+public abstract class YahooReader implements StockReader{
 
   public SortedSet<Bar> read(final BufferedReader buff) throws IOException, ParseException {
     final SortedSet<Bar> result = new TreeSet<Bar>();

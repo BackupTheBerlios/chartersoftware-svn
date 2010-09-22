@@ -3,9 +3,9 @@
  */
 package de.oa.nn.trainer.main;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.SortedSet;
+import java.util.TreeSet;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -16,6 +16,7 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 
+import de.oa.nn.trainer.main.yahoo.YahooCsvReader;
 import de.oa.system.Bar;
 
 /**
@@ -23,6 +24,10 @@ import de.oa.system.Bar;
  * 
  */
 public class Trainer {
+
+  public Trainer() {
+  //
+  }
 
   /**
    * @param args
@@ -36,8 +41,9 @@ public class Trainer {
     final Option verbose = new Option("verbose", "be extra verbose");
     final Option help = new Option("help", "print help text");
     final Option stock = OptionBuilder.withArgName("filename").hasArg().withDescription("Filename to yahoo csv file")
-        .create("stock");
-    final Option name = OptionBuilder.withArgName("stockname").hasArg().withDescription("Name of Stock").create("name");
+        .create("stockfile");
+    final Option name = OptionBuilder.withArgName("stockname").hasArg().withDescription("Name of Stock").create(
+        "stockname");
     final Option dax = OptionBuilder.withArgName("filename").hasArg().withDescription("Filename to yahoo csv file")
         .create("dax");
     options.addOption(verbose);
@@ -50,7 +56,7 @@ public class Trainer {
     final CommandLine cmd;
     try {
       cmd = parser.parse(options, args);
-      if (cmd.hasOption("help") || !cmd.hasOption("name") || !cmd.hasOption("stock")) {
+      if (cmd.hasOption("help") || !cmd.hasOption("stockname") || !cmd.hasOption("stockfile")) {
         final HelpFormatter formatter = new HelpFormatter();
         formatter.printHelp("Trainer", options);
         return;
@@ -62,38 +68,28 @@ public class Trainer {
     }
 
     final Trainer trainer = new Trainer();
-    trainer.executeTraining(cmd.getOptionValue("name"), cmd.getOptionValue("stock"));
+    trainer.executeTraining(cmd.getOptionValue("stockname"), cmd.getOptionValue("stockfile"));
   }
 
-  /**
-   * 
-   */
-  public Trainer() {
-  //
+  public void executeTraining(final String stockname, final String stockfile) {
+    final SortedSet<Bar> list = readCsvYahoo(stockfile);
+    final Training training = new Training(stockname, list);
+    training.execute();
   }
 
-  public void executeTraining(final String stockname, final String filename) {
-    final File file = new File(filename);
-    if (!file.canRead()) {
-      System.err.println("Cannot read from file " + filename);
-      return;
-    }
-
+  public SortedSet<Bar> readCsvYahoo(final String stockfile) {
+    final StockReader reader = new YahooCsvReader();
     try {
-      final SortedSet<Bar> list = readCsvYahoo(file);
-      final Training training = new Training(stockname, list);
-      training.execute();
-
-    } catch (final IOException e) {
-      System.err.println("Cannot Read from file <" + filename + ">");
-    } catch (final java.text.ParseException e) {
-      System.err.println("File <" + filename + "> has broken format");
+      return reader.read(stockfile);
+    } catch (IOException e) {
+      System.err.println("IOException: " + e.getLocalizedMessage());
+      e.printStackTrace();
+      return new TreeSet<Bar>();
+    } catch (java.text.ParseException e) {
+      System.err.println("ParseException: " + e.getLocalizedMessage());
+      e.printStackTrace();
+      return new TreeSet<Bar>();
     }
-  }
-
-  public SortedSet<Bar> readCsvYahoo(final File file) throws IOException, java.text.ParseException {
-    final YahooCsvReader reader = new YahooCsvReader();
-    return reader.read(file);
   }
 
 }

@@ -1,4 +1,4 @@
-package de.oa.nn.trainer.main;
+package de.oa.nn.trainer.main.yahoo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,5 +22,6 @@ public class YahooWebStockReader extends YahooReader {
     final InputStream is = url.openStream();
     return read(new BufferedReader(new InputStreamReader(is)));
   }
+
 
 }
