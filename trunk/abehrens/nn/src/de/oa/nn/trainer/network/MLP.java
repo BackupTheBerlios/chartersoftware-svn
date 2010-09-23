@@ -19,17 +19,17 @@ public class MLP implements INeuralNetwork {
     this.numOfBars = numOfBars;
     network = new MultiLayerPerceptron(TransferFunctionType.TANH, // transfer function
         numOfBars * 5, // input layer
-        numOfBars * 5, // 1st hidden layer
+        numOfBars, // 1st hidden layer
         //numOfBars * 5 * 5, // 2nd hidden layer
         //numOfBars * 5 * 5, // 3th hidden layer
         //numOfBars * 5 * 5, // 4th hidden layer
-        3 // output layer
+        1 // output layer
     );
   }
 
   public void training(ArrayList<Signal> resultList) {
     // setup traing set
-    TrainingSet trainingSet = new TrainingSet(numOfBars * 5, 3);
+    TrainingSet trainingSet = new TrainingSet(numOfBars * 5, 1);
     for (int i = 0; i < resultList.size() - numOfBars - new Double(resultList.size() * 0.8).intValue(); i++) {
       // i is the starting point for a new training element
       // a training element are the now + 40 next bars
@@ -61,16 +61,16 @@ public class MLP implements INeuralNetwork {
       final double[] output;
       switch (signal.getSignalType()) {
       case DO_NOTHING:
-        output = new double[] { 1, 0, 0 };
+        output = new double[] { 0 };
         break;
       case GO_LONG:
-        output = new double[] { 0, 1, 0 };
+        output = new double[] { 1 };
         break;
       case GO_SHORT:
-        output = new double[] { 0, 0, 1 };
+        output = new double[] { -1 };
         break;
       default:
-        output = new double[] { 0, 0, 0 };
+        output = new double[] { 0 };
       }
 
       // add the training element
