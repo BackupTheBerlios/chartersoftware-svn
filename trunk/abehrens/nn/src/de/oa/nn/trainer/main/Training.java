@@ -10,7 +10,7 @@ import java.util.SortedSet;
 
 import de.oa.nn.trainer.interfaces.ILongTradingStrategy;
 import de.oa.nn.trainer.interfaces.ITradingStrategy;
-import de.oa.nn.trainer.network.MLP;
+import de.oa.nn.trainer.network.TestSetProducer;
 import de.oa.nn.trainer.strategy.LongMovementStrategy;
 import de.oa.nn.trainer.strategy.ShortMovementStrategy;
 import de.oa.system.Bar;
@@ -99,12 +99,19 @@ public class Training {
     System.out.println("Long  Strategy was successfull on " + lDays + " with " + lProfit + " profit");
     System.out.println("Short Strategy was successfull on " + sDays + " with " + sProfit + " profit");
     for (final Signal s : resultList) {
-      //System.out.println(s.toString());
+      // System.out.println(s.toString());
     }
-    
-    MLP mlp = new MLP(5);
-    mlp.training(resultList);
-    mlp.testing(resultList);
+
+    final String filename = "/tmp/testset.csv";
+    TestSetProducer producer = new TestSetProducer(20, filename);
+    try {
+      producer.write(resultList);
+    } catch (IOException e) {
+      System.err.println("Cannot write testset to " + filename + ": " + e.getLocalizedMessage());
+    }
+    // MLP mlp = new MLP(5);
+    // mlp.training(resultList);
+    // mlp.testing(resultList);
 
   }
 
