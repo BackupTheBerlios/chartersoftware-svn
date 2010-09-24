@@ -16,8 +16,8 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 
-import de.oa.nn.trainer.main.yahoo.YahooCsvReader;
 import de.oa.system.Bar;
+import de.oa.system.importer.yahoo.YahooCsvReader;
 
 /**
  * @author abehrens

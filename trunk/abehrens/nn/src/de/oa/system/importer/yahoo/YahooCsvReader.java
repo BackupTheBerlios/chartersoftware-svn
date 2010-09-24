@@ -1,4 +1,4 @@
-package de.oa.nn.trainer.main.yahoo;
+package de.oa.system.importer.yahoo;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -16,7 +16,10 @@ public class YahooCsvReader extends YahooReader {
 
   @Override
   public SortedSet<Bar> read(String name) throws IOException, ParseException {
-    final File file = new File(name);
+    return read(new File(name));
+  }
+
+  public SortedSet<Bar> read(File file) throws IOException, ParseException {
     final FileReader myFile = new FileReader(file);
     final BufferedReader buff = new BufferedReader(myFile);
     return read(buff);

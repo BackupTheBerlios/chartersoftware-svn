@@ -1,4 +1,4 @@
-package de.oa.nn.trainer.main.yahoo;
+package de.oa.system.importer.yahoo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
