@@ -103,7 +103,7 @@ public class Training {
     }
 
     final String filename = "/tmp/testset.csv";
-    TestSetProducer producer = new TestSetProducer(20, filename);
+    TestSetProducer producer = new TestSetProducer(5, filename);
     try {
       producer.write(resultList);
     } catch (IOException e) {

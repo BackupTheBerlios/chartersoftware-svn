@@ -34,7 +34,7 @@ public class TestSetProducer {
       if (b.getLow() < minValue)
         minValue = b.getLow();
     }
-    minValue += 0.01;// avoid division by 0;
+    minValue*=0.8;// avoid division by 0;
 
     double maxValue = -9999999999.;
     for (final Signal s : resultList) {
@@ -42,8 +42,10 @@ public class TestSetProducer {
       if (b.getHigh() - minValue > maxValue)
         maxValue = b.getHigh() - minValue;
     }
-    minValue=0;
-    maxValue=1;
+    maxValue*=1.2;
+    //minValue=0;
+    //maxValue=1;
+    
 
     // sort signals to table
     // for (int i = 0; i < resultList.size() - numOfBars - new Double(resultList.size() * 0.8).intValue();i++)
@@ -61,26 +63,25 @@ public class TestSetProducer {
         final Signal sig = resultList.get(j);
         final StringBuilder builder = new StringBuilder();
         final Bar bar = sig.getBar();
-        builder.append((bar.getOpen() - minValue) / maxValue);
-        builder.append(' ');
-        builder.append((bar.getLow() - minValue) / maxValue);
-        builder.append(' ');
-        builder.append((bar.getHigh() - minValue) / maxValue);
-        builder.append(' ');
+        //builder.append((bar.getOpen() - minValue) / maxValue);
+        //builder.append(' ');
+        //builder.append((bar.getLow() - minValue) / maxValue);
+        //builder.append(' ');
+        //builder.append((bar.getHigh() - minValue) / maxValue);
+        //builder.append(' ');
         builder.append((bar.getClose() - minValue) / maxValue);
         builder.append(' ');
         outputBuffer.write(builder.toString());
-        builder.append(' ');
       }
       switch (resultList.get(j).getSignalType()) {
       case GO_LONG:
-        outputBuffer.write("1");
+        //outputBuffer.write("1");
         break;
       case GO_SHORT:
-        outputBuffer.write("-1");
+        //outputBuffer.write("-1");
         break;
       default:
-        outputBuffer.write("0");
+        //outputBuffer.write("0");
       }
       outputBuffer.newLine();
     }

@@ -36,13 +36,21 @@ public class SimulationStarter {
   public void simulate() {
     final YahooCsvReader yahooReader = new YahooCsvReader();
     for (final File file : listFilesInPath()) {
+      SortedSet<Bar> bars = null;
       try {
-        final SortedSet<Bar> bars = yahooReader.read(file);
+        bars = yahooReader.read(file);
       } catch (IOException e) {
+        System.err.println("Cannot read file " + file.getName() + ": " + e.getLocalizedMessage());
         e.printStackTrace();
       } catch (ParseException e) {
+        System.err.println("Cannot read file " + file.getName() + ": " + e.getLocalizedMessage());
         e.printStackTrace();
       }
+      if (bars == null)
+        continue;
+      
+      String stockname = file.getName();
+      new Simulator(stockname, bars).simulate();
     }
 
   }
