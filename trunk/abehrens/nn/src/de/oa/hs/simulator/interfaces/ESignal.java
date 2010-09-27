@@ -8,6 +8,15 @@ package de.oa.hs.simulator.interfaces;
  * 
  */
 public enum ESignal {
-  GO_LONG(0), GO_SHORT(1), CLOSE_LONG(2), CLOSE_SHORT, HOLD, IGNORE
+  GO_LONG(0), GO_SHORT(1), CLOSE_LONG(2), CLOSE_SHORT(3), HOLD(4), IGNORE(5);
+  final int value;
+
+  ESignal(int v) {
+    this.value = v;
+  }
+
+  public int getValue() {
+    return this.value;
+  }
 
 }
